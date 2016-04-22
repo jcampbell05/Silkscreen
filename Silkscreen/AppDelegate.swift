@@ -15,43 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bounds = UIScreen.mainScreen().bounds
         return UIWindow(frame: bounds)
     }()
-
-    lazy var mainViewController: DividableViewController = {
-        return DividableViewController(arrangedSubviewControllers: [self.contentAreaViewController, self.timelineViewController])
-    }()
     
-    lazy var contentAreaViewController: DividableViewController = {
-        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetViewController, self.previewViewController])
-        viewController.axis = .Horizontal
-        return viewController
-    }()
-    
-    lazy var assetViewController: UIViewController = {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.yellowColor()
-        
-        return viewController
-    }()
-    
-    lazy var previewViewController: UIViewController = {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.purpleColor()
-        
-        return viewController
-    }()
-    
-    let timelineViewController = TimelineViewController()
+    let rootViewController = EditorViewController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        if let window = window {
-            
-            window.rootViewController = mainViewController
-            window.makeKeyAndVisible()
-            
-            contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(window.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
-            assetViewController.view.widthAnchor.constraintEqualToAnchor(window.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
-        }
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
         
         return true
     }

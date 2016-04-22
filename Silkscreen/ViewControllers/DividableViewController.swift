@@ -18,9 +18,9 @@ class DividableViewController: UIViewController {
         }
     }
 
-    init(arrangedSubviewControllers: [UIViewController]) {
+    init(arrangedSubviewControllers: [UIViewController] = []) {
         super.init(nibName: nil, bundle: nil)
-        arrangedSubviewControllers.forEach(addArrangedSubviewController)
+        arrangedSubviewControllers.forEach(addArrangedChildViewController)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,10 +32,11 @@ class DividableViewController: UIViewController {
         view = stackView
     }
     
-    private func addArrangedSubviewController(viewController: UIViewController) {
+    func addArrangedChildViewController(viewController: UIViewController) {
         
         viewController.beginAppearanceTransition(true, animated: false)
         viewController.willMoveToParentViewController(self)
+        addChildViewController(viewController)
         stackView.addArrangedSubview(viewController.view)
         viewController.endAppearanceTransition()
     }

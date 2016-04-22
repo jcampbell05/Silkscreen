@@ -16,20 +16,8 @@ class EditorViewController: DividableViewController {
         return viewController
     }()
     
-    lazy var assetViewController: UIViewController = {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.yellowColor()
-        
-        return viewController
-    }()
-    
-    lazy var previewViewController: UIViewController = {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.purpleColor()
-        
-        return viewController
-    }()
-    
+    let assetViewController = AssetsViewController()
+    let previewViewController = PreviewViewController()
     let timelineViewController = TimelineViewController()
     
     init() {

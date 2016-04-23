@@ -46,6 +46,5 @@ class DividableViewController: UIViewController {
         stackView.axis = axis
         stackView.distribution = .Fill
         stackView.alignment = .Fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
     }
 }

@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIWindow(frame: bounds)
     }()
     
-    let rootViewController = EditorViewController()
+    let rootViewController: EditorViewController = EditorViewController()
+    
+    lazy var rootNavigationController: UINavigationController = {
+       return UINavigationController(rootViewController: self.rootViewController)
+    }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         

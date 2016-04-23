@@ -8,6 +8,24 @@
 
 import UIKit
 
-class AssetsViewController: UINavigationController {
+class AssetsViewController: UIViewController {
     
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.purpleColor()
+        
+        toolbarItems = [
+            UIBarButtonItem(title: ":D", style: .Plain, target: nil, action: nil)
+        ]
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setToolbarHidden(false, animated: animated)
+    }
 }

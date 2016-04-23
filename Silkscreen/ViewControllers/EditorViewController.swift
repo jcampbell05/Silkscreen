@@ -11,23 +11,35 @@ import UIKit
 class EditorViewController: DividableViewController {
     
     lazy var contentAreaViewController: DividableViewController = {
-        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetViewController, self.previewViewController])
+        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationController, self.previewNavigationController])
         viewController.axis = .Horizontal
         return viewController
     }()
     
+    lazy var assetsNavigationController: UINavigationController = {
+        return UINavigationController(rootViewController: self.assetViewController)
+    }()
+    
     let assetViewController = AssetsViewController()
+    
+    lazy var previewNavigationController: UINavigationController = {
+        return UINavigationController(rootViewController: self.previewViewController)
+    }()
+    
     let previewViewController = PreviewViewController()
+    
     let timelineViewController = TimelineViewController()
     
     init() {
         super.init()
+        
+        self.title = NSLocalizedString("Untitled Project", comment: "")
 
         addArrangedChildViewController(contentAreaViewController)
         addArrangedChildViewController(timelineViewController)
         
         contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
-        assetViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
+        assetsNavigationController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
     }
     
     required init?(coder aDecoder: NSCoder) {

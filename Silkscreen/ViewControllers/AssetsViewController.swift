@@ -8,14 +8,12 @@
 
 import UIKit
 
-class AssetsViewController: UIViewController {
+class AssetsViewController: UITableViewController {
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.purpleColor()
-        
+
         toolbarItems = []
     }
     

@@ -17,7 +17,7 @@ class AnimatedZoomTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
 
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.5
+        return 0.25
     }
 
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -32,20 +32,29 @@ class AnimatedZoomTransition: NSObject, UIViewControllerAnimatedTransitioning {
             return
         }
         
-        let toFrame = transitionContext.finalFrameForViewController(toViewController)
-        
+        let isPresenting = (toViewController.presentingViewController != nil)
+        let animatedViewController = (isPresenting) ? toViewController : fromViewController
         let containerView = transitionContext.containerView()
         
-        guard let fromFrame = containerView?.convertRect(sourceView.frame, fromView: sourceView.superview) else {
+        guard let sourceRect = containerView?.convertRect(sourceView.frame, fromView: sourceView.superview) else {
             transitionContext.cancelInteractiveTransition()
             return
         }
         
-        toViewController.view.frame = fromFrame
+        let initialFrame = (isPresenting) ? sourceRect : transitionContext.initialFrameForViewController(animatedViewController)
+        let finalFrame = (isPresenting) ? transitionContext.finalFrameForViewController(animatedViewController) : sourceRect
+        
+        
+        animatedViewController.view.frame = initialFrame
+        
         containerView?.addSubview(toViewController.view)
         
+        if !isPresenting {
+            containerView?.sendSubviewToBack(toViewController.view)
+        }
+   
         UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
-                toViewController.view.frame = toFrame
+                animatedViewController.view.frame = finalFrame
         }, completion: {
             if $0 {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())

@@ -14,6 +14,7 @@
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
 		74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */; };
 		74B8DC811CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */; };
+		74B8DC831CCBEC2600B9E1ED /* FullscreenPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC821CCBEC2600B9E1ED /* FullscreenPreviewViewController.swift */; };
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
 		74D638F11C4D941F00175740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedZoomTransition.swift; sourceTree = "<group>"; };
 		74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitioningDelegate.swift; sourceTree = "<group>"; };
+		74B8DC821CCBEC2600B9E1ED /* FullscreenPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullscreenPreviewViewController.swift; sourceTree = "<group>"; };
 		74D638E31C4D941F00175740 /* Silkscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D638E61C4D941F00175740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D638ED1C4D941F00175740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */,
 				74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */,
 				74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */,
+				74B8DC821CCBEC2600B9E1ED /* FullscreenPreviewViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
+				74B8DC831CCBEC2600B9E1ED /* FullscreenPreviewViewController.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,

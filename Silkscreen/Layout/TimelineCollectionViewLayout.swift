@@ -49,6 +49,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
 
             let attribute = UICollectionViewLayoutAttributes(forDecorationViewOfKind: elementKind, withIndexPath: indexPath)
             attribute.frame = CGRect(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y, width: collectionView.frame.width, height: 50)
+            
+            return attribute
         }
         
         return nil

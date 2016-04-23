@@ -11,7 +11,7 @@ import UIKit
 class EditorViewController: DividableViewController {
     
     lazy var menuButton: UIBarButtonItem = {
-        return UIBarButtonItem(title: NSLocalizedString("Menu", comment: ""), style: .Plain, target: nil, action: nil)
+        return UIBarButtonItem(title: NSLocalizedString("Menu", comment: ""), style: .Plain, target: self, action: #selector(didPressMenu))
     }()
     
     lazy var contentAreaViewController: DividableViewController = {
@@ -49,5 +49,15 @@ class EditorViewController: DividableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func didPressMenu() {
+        
+        let viewController = MenuViewController()
+        
+        viewController.modalPresentationStyle = .Popover
+        viewController.popoverPresentationController?.barButtonItem = menuButton
+        
+        presentViewController(viewController, animated: true, completion: nil)
     }
 }

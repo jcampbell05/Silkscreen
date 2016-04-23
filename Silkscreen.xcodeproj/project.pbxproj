@@ -12,6 +12,8 @@
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
 		74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */; };
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
+		74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */; };
+		74B8DC811CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */; };
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
 		74D638F11C4D941F00175740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */; };
@@ -23,6 +25,8 @@
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedZoomTransition.swift; sourceTree = "<group>"; };
+		74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitioningDelegate.swift; sourceTree = "<group>"; };
 		74D638E31C4D941F00175740 /* Silkscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D638E61C4D941F00175740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D638ED1C4D941F00175740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				74B8DC7F1CCBE71A00B9E1ED /* PreviewViewController */,
 				74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */,
 				74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */,
 				74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */,
@@ -67,6 +72,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		74B8DC7C1CCBE63700B9E1ED /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		74B8DC7F1CCBE71A00B9E1ED /* PreviewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */,
+			);
+			path = PreviewViewController;
+			sourceTree = "<group>";
+		};
 		74D638DA1C4D941F00175740 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +107,7 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				74B8DC7C1CCBE63700B9E1ED /* Transitions */,
 				74B4FACE1CCAA54500AE26EC /* Models */,
 				74B4FACF1CCAA54500AE26EC /* ViewModels */,
 				74B4FACB1CCAA52D00AE26EC /* ViewControllers */,
@@ -168,11 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
+				74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
+				74B8DC811CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

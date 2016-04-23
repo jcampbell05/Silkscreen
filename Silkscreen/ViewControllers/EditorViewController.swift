@@ -10,6 +10,10 @@ import UIKit
 
 class EditorViewController: DividableViewController {
     
+    lazy var menuButton: UIBarButtonItem = {
+        return UIBarButtonItem(title: NSLocalizedString("Menu", comment: ""), style: .Plain, target: nil, action: nil)
+    }()
+    
     lazy var contentAreaViewController: DividableViewController = {
         let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationController, self.previewNavigationController])
         viewController.axis = .Horizontal
@@ -33,7 +37,8 @@ class EditorViewController: DividableViewController {
     init() {
         super.init()
         
-        self.title = NSLocalizedString("Untitled Project", comment: "")
+        title = NSLocalizedString("Untitled Project", comment: "")
+        navigationItem.leftBarButtonItem = menuButton
 
         addArrangedChildViewController(contentAreaViewController)
         addArrangedChildViewController(timelineViewController)

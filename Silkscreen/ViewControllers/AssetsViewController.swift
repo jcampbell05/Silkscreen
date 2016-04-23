@@ -16,9 +16,7 @@ class AssetsViewController: UIViewController {
         
         view.backgroundColor = UIColor.purpleColor()
         
-        toolbarItems = [
-            UIBarButtonItem(title: ":D", style: .Plain, target: nil, action: nil)
-        ]
+        toolbarItems = []
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -9,6 +9,8 @@
 import UIKit
 
 class PreviewViewController: UIViewController {
+    
+    let viewFullscreenButton = UIBarButtonItem(barButtonSystemItem: .Play, target: nil, action: nil)
 
     override func viewDidLoad() {
         
@@ -17,7 +19,7 @@ class PreviewViewController: UIViewController {
         view.backgroundColor = UIColor.orangeColor()
         
         toolbarItems = [
-            UIBarButtonItem(title: ":D", style: .Plain, target: nil, action: nil)
+            viewFullscreenButton
         ]
     }
     

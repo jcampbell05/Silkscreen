@@ -10,7 +10,9 @@ import UIKit
 
 class PreviewViewController: UIViewController {
     
-    let viewFullscreenButton = UIBarButtonItem(barButtonSystemItem: .Play, target: nil, action: nil)
+    lazy var viewFullscreenButton: UIBarButtonItem = {
+       return UIBarButtonItem(barButtonSystemItem: .Play, target: self, action: #selector(didPressViewFullscreen))
+    }()
 
     override func viewDidLoad() {
         
@@ -29,5 +31,10 @@ class PreviewViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
         navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    @objc private func didPressViewFullscreen() {
+        
+        presentViewController(PreviewViewController(), animated: true, completion: nil)
     }
 }

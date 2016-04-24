@@ -33,12 +33,19 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
-        let items = [
-            layoutAttributesForDecorationViewOfKind(TimelineElementKindHeader, atIndexPath: NSIndexPath(forRow: 0, inSection: 0))
-        ]
-        .flatMap({$0})
+        var items: [UICollectionViewLayoutAttributes] = []
+
+        if let headerAttributes = layoutAttributesForDecorationViewOfKind(TimelineElementKindHeader, atIndexPath: NSIndexPath(forRow: 0, inSection: 0)) {
+            items += [headerAttributes]
+        }
+        
+        items += layoutAttributesForTimeMarkersInRact(rect)
         
         return items
+    }
+    
+    private func layoutAttributesForTimeMarkersInRact(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
+        return []
     }
     
     override func layoutAttributesForDecorationViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {

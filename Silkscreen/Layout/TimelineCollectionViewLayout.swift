@@ -51,10 +51,11 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         }
         
         let timeMarkersPerScreen = Int(rect.width / 50)
+        let blockOffset = Int(collectionView.contentOffset.x / rect.width)
         
-        let attributes: [UICollectionViewLayoutAttributes] = (0...timeMarkersPerScreen).enumerate().map {
+        let attributes: [UICollectionViewLayoutAttributes] = (0...(timeMarkersPerScreen * 2)).enumerate().map {
             let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
-            attribute.frame = CGRect(x: $0.element * 50, y: 0, width: 50, height:  30)
+            attribute.frame = CGRect(x: ($0.element * 50) + (blockOffset * Int(rect.width)), y: 0, width: 50, height:  30)
             attribute.zIndex = 1
             return attribute
         }

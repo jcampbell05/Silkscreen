@@ -55,6 +55,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         let offset = (screenNumber * Int(rect.width))
         
         let attributes: [UICollectionViewLayoutAttributes] = (0...(timeMarkersPerScreen * 2)).enumerate().map {
+            
             let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
             attribute.frame = CGRect(x: ($0.element * 50) + offset, y: 0, width: 50, height:  30)
             attribute.zIndex = 1
@@ -62,7 +63,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         }
             
         return attributes
-    }
+    } 
     
     override func layoutAttributesForDecorationViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
         

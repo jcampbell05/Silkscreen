@@ -46,10 +46,13 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
     
     private func layoutAttributesForTimeMarkersInRact(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
         
-        let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: 0, inSection: 0))
-        attribute.frame = CGRect(x: 50, y: 50, width: 50, height:  50)
+        let attributes: [UICollectionViewLayoutAttributes] = (1...10).enumerate().map {
+            let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.0, inSection: 0))
+            attribute.frame = CGRect(x: $0.0 * 50, y: 50, width: 50, height:  50)
+            return attribute
+        }
         
-        return [attribute]
+        return attributes
     }
     
     override func layoutAttributesForDecorationViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {

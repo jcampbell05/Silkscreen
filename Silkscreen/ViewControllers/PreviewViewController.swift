@@ -11,4 +11,11 @@ import AVKit
 
 class PreviewViewController: AVPlayerViewController {
 
+    var editorContext: EditorContext? = nil {
+        didSet {
+            if let editorContext = editorContext {
+                player = editorContext.player
+            }
+        }
+    }
 }

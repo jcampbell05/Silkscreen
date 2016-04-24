@@ -6,8 +6,8 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import AVKit
+import AVFoundation
 
 class EditorContext {
-    
+    let player = AVPlayer()
 }

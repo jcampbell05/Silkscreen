@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    // - Move into editor ?
     private func checkForExternalDisplay() {
         
         guard let secondScreen = UIScreen.screens().filter({

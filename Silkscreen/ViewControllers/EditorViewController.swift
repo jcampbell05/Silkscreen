@@ -10,6 +10,8 @@ import UIKit
 
 class EditorViewController: DividableViewController {
     
+    let editorContext = EditorContext()
+    
     lazy var menuButton: UIBarButtonItem = {
         return UIBarButtonItem(title: NSLocalizedString("Menu", comment: ""), style: .Plain, target: self, action: #selector(didPressMenu))
     }()
@@ -45,6 +47,13 @@ class EditorViewController: DividableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        previewViewController.editorContext = editorContext
     }
     
     @objc private func didPressMenu() {

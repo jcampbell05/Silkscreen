@@ -9,5 +9,7 @@
 import AVFoundation
 
 class EditorContext {
+ 
     let player = AVPlayer()
+    let composition = AVcompo
 }

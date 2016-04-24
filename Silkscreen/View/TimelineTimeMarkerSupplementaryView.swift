@@ -9,7 +9,6 @@
 import UIKit
 import Darwin
 
-// - Implement Layout Attribute for time offset 
 class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
     
     private let textLabel = UILabel()
@@ -32,5 +31,14 @@ class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+        
+        super.applyLayoutAttributes(layoutAttributes)
+        
+        if let layoutAttributes = layoutAttributes as? TimelineCollectionViewLayoutAttributes {
+            time = layoutAttributes.time
+        }
     }
 }

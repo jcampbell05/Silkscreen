@@ -62,9 +62,13 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         
         let attributes: [UICollectionViewLayoutAttributes] = (0...(timeMarkersPerScreen * 2)).enumerate().map {
             
-            let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
+            let attribute = TimelineCollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
+            
+            //Figure out how to calculate this.
+            attribute.time = Double($0.element + offset)
             attribute.frame = CGRect(x: ($0.element * 50) + offset, y: 0, width: 50, height:  30)
             attribute.zIndex = 1
+            
             return attribute
         }
             

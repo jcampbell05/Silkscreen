@@ -50,15 +50,15 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             return []
         }
         
-        let attributes: [UICollectionViewLayoutAttributes] = collectionView.contentOffset.x.stride(to: rect.width, by: 5)
-            .enumerate()
-            .map {
-                let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
-                attribute.frame = CGRect(x: $0.element * 50, y: 0, width: 50, height:  50)
-                attribute.zIndex = 1
-                return attribute
-            }
+        let timeMarkersPerScreen = Int(rect.width / 50)
         
+        let attributes: [UICollectionViewLayoutAttributes] = (0...timeMarkersPerScreen).enumerate().map {
+            let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
+            attribute.frame = CGRect(x: $0.element * 50, y: 0, width: 50, height:  30)
+            attribute.zIndex = 1
+            return attribute
+        }
+            
         return attributes
     }
     
@@ -67,7 +67,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         if let collectionView = collectionView {
 
             let attribute = UICollectionViewLayoutAttributes(forDecorationViewOfKind: elementKind, withIndexPath: indexPath)
-            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y, width: collectionView.frame.width, height: 50)
+            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y, width: collectionView.frame.width, height: 30)
             
             return attribute
         }

@@ -36,10 +36,8 @@ class PreviewViewController: UIViewController {
     @objc private func didPressViewFullscreen() {
         
         let viewController = FullscreenPreviewViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        viewController.transitioningDelegate = self
         
-        navigationController.transitioningDelegate = self
-        
-        presentViewController(navigationController, animated: true, completion: nil)
+        presentViewController(viewController, animated: true, completion: nil)
     }
 }

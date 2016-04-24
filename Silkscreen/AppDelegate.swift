@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let secondWindow = UIWindow(frame: secondScreen.bounds)
-        secondWindow.rootViewController = FullscreenPreviewViewController()
+        secondWindow.rootViewController = PreviewViewController()
         secondWindow.screen = secondScreen
         secondWindow.makeKeyAndVisible()
      }

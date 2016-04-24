@@ -15,7 +15,7 @@ class EditorViewController: DividableViewController {
     }()
     
     lazy var contentAreaViewController: DividableViewController = {
-        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationController, self.previewNavigationController])
+        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationController, self.previewViewController])
         viewController.axis = .Horizontal
         return viewController
     }()
@@ -25,10 +25,6 @@ class EditorViewController: DividableViewController {
     }()
     
     let assetViewController = AssetsViewController()
-    
-    lazy var previewNavigationController: UINavigationController = {
-        return UINavigationController(rootViewController: self.previewViewController)
-    }()
     
     let previewViewController = PreviewViewController()
     

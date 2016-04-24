@@ -18,6 +18,8 @@ class PreviewViewController: UIViewController {
         
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.blackColor()
+        
         toolbarItems = [
             viewFullscreenButton
         ]

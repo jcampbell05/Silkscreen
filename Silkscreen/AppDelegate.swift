@@ -27,7 +27,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
         
+        checkForExternalDisplay()
+        
         return true
     }
+    
+    private func checkForExternalDisplay() {
+        
+        guard let secondScreen = UIScreen.screens().filter({
+            $0 != UIScreen.mainScreen()
+        }).first else {
+            return
+        }
+        
+        let secondWindow = UIWindow(frame: secondScreen.bounds)
+        secondWindow.rootViewController = FullscreenPreviewViewController()
+        secondWindow.screen = secondScreen
+        secondWindow.makeKeyAndVisible()
+     }
 }
 

@@ -8,15 +8,13 @@
 
 import UIKit
 
+let TimelineElementKindTimeMarker = "TimelineElementKindTimeMarker"
 private let TimelineElementKindHeader = "TimelineElementKindHeader"
 
 class TimelineCollectionViewLayout: UICollectionViewLayout {
     
     override init() {
         super.init()
-        
-        // Do time indicators at the top.
-        // - Time Marker
         
         registerClass(TimelineHeaderDecorationView.self, forDecorationViewOfKind: TimelineElementKindHeader)
     }

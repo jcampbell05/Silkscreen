@@ -14,6 +14,8 @@ class TimelineViewController: UICollectionViewController {
     
     init() {
         super.init(collectionViewLayout: layout)
+        
+        collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: String(TimelineTimeMarkerSupplementaryView.self))
     }
     
     required init?(coder aDecoder: NSCoder) {

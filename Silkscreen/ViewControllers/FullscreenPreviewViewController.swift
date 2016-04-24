@@ -19,6 +19,7 @@ class FullscreenPreviewViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.blackColor()
+
         navigationItem.leftBarButtonItem = dismissButton
     }
     

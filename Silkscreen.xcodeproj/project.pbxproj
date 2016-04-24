@@ -18,6 +18,7 @@
 		74B8DC851CCBF11600B9E1ED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC841CCBF11600B9E1ED /* MenuViewController.swift */; };
 		74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */; };
 		74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */; };
+		74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC8D1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift */; };
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
 		74D638F11C4D941F00175740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */; };
@@ -35,6 +36,7 @@
 		74B8DC841CCBF11600B9E1ED /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewLayout.swift; sourceTree = "<group>"; };
 		74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHeaderDecorationView.swift; sourceTree = "<group>"; };
+		74B8DC8D1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTimeMarkerSupplementaryView.swift; sourceTree = "<group>"; };
 		74D638E31C4D941F00175740 /* Silkscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D638E61C4D941F00175740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D638ED1C4D941F00175740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */,
+				74B8DC8D1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74B8DC851CCBF11600B9E1ED /* MenuViewController.swift in Sources */,
+				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
 				74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,

@@ -12,8 +12,6 @@
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
 		74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */; };
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
-		74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */; };
-		74B8DC811CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */; };
 		74B8DC851CCBF11600B9E1ED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC841CCBF11600B9E1ED /* MenuViewController.swift */; };
 		74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */; };
 		74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */; };
@@ -30,8 +28,6 @@
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
-		74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedZoomTransition.swift; sourceTree = "<group>"; };
-		74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitioningDelegate.swift; sourceTree = "<group>"; };
 		74B8DC841CCBF11600B9E1ED /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewLayout.swift; sourceTree = "<group>"; };
 		74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHeaderDecorationView.swift; sourceTree = "<group>"; };
@@ -58,7 +54,6 @@
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				74B8DC7F1CCBE71A00B9E1ED /* PreviewViewController */,
 				74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */,
 				74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */,
 				74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */,
@@ -81,22 +76,6 @@
 			children = (
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		74B8DC7C1CCBE63700B9E1ED /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				74B8DC7D1CCBE65900B9E1ED /* AnimatedZoomTransition.swift */,
-			);
-			path = Transitions;
-			sourceTree = "<group>";
-		};
-		74B8DC7F1CCBE71A00B9E1ED /* PreviewViewController */ = {
-			isa = PBXGroup;
-			children = (
-				74B8DC801CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift */,
-			);
-			path = PreviewViewController;
 			sourceTree = "<group>";
 		};
 		74B8DC871CCBF31600B9E1ED /* Layout */ = {
@@ -146,7 +125,6 @@
 			children = (
 				74B8DC8A1CCBF69100B9E1ED /* View */,
 				74B8DC871CCBF31600B9E1ED /* Layout */,
-				74B8DC7C1CCBE63700B9E1ED /* Transitions */,
 				74B4FACE1CCAA54500AE26EC /* Models */,
 				74B4FACF1CCAA54500AE26EC /* ViewModels */,
 				74B4FACB1CCAA52D00AE26EC /* ViewControllers */,
@@ -234,13 +212,11 @@
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74B8DC851CCBF11600B9E1ED /* MenuViewController.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
-				74B8DC7E1CCBE65900B9E1ED /* AnimatedZoomTransition.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
-				74B8DC811CCBE72500B9E1ED /* UIViewControllerTransitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Darwin
 
 class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
     
@@ -14,7 +15,7 @@ class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
         
         super.init(frame: frame)
         
-        backgroundColor = UIColor.redColor()
+        backgroundColor = UIColor(colorLiteralRed: Float(arc4random_uniform(255)) / 255.0, green:  Float(arc4random_uniform(255)) / 255.0, blue:  Float(arc4random_uniform(255)) / 255.0, alpha: 1.0)
     }
     
     required init?(coder aDecoder: NSCoder) {

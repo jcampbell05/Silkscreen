@@ -8,8 +8,8 @@
 
 import AVFoundation
 
+// - Figure out a basic demo context to test player
 class EditorContext {
  
     let player = AVPlayer()
-    let composition = AVcompo
 }

@@ -30,6 +30,10 @@ class FullscreenPreviewViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     @objc private func didPressDismiss() {
         dismissViewControllerAnimated(true, completion: nil)
     }

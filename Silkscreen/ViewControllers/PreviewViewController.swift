@@ -10,5 +10,5 @@ import UIKit
 import AVKit
 
 class PreviewViewController: AVPlayerViewController {
- 
+
 }

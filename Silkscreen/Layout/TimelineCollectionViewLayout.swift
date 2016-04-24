@@ -11,7 +11,13 @@ import UIKit
 let TimelineElementKindTimeMarker = "TimelineElementKindTimeMarker"
 private let TimelineElementKindHeader = "TimelineElementKindHeader"
 
+// - Implement Layout Attribute for time offset
+
 class TimelineCollectionViewLayout: UICollectionViewLayout {
+    
+    override class func layoutAttributesClass() -> AnyClass {
+        return TimelineCollectionViewLayoutAttributes.self
+    }
     
     override init() {
         super.init()

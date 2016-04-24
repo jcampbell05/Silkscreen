@@ -9,9 +9,16 @@
 import UIKit
 import Darwin
 
+// - Implement Layout Attribute for time offset 
 class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
     
     private let textLabel = UILabel()
+    
+    var time: NSTimeInterval = 0 {
+        didSet {
+            textLabel.text = "\(time)"
+        }
+    }
     
     override init(frame: CGRect) {
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-// - Manually Add Navigation Bar VC
+// - Manually Add Navigation Bar VC or in a super VC
 class TimelineViewController: UICollectionViewController {
     
     var editorContext: EditorContext? = nil {
@@ -21,6 +21,8 @@ class TimelineViewController: UICollectionViewController {
     
     init() {
         super.init(collectionViewLayout: layout)
+        
+        title = NSLocalizedString("Untitled Project", comment: "")
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)

@@ -9,6 +9,7 @@
 import UIKit
 
 let TimelineElementKindTimeMarker = "TimelineElementKindTimeMarker"
+let TimelineElementKindTrackHeader = "TimelineElementKindTrackHeader"
 private let TimelineElementKindHeader = "TimelineElementKindHeader"
 private let TimelineElementKindTrack = "TimelineElementKindTrack"
 
@@ -18,6 +19,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
     
     private let TimelineHeaderHeight: CGFloat = 30
     private let TimelineTrackHeight: CGFloat = 60
+    private let TimelineTrackHeaderWidth: CGFloat = 100
     private let TimelineTimeMarkerWidth: CGFloat = 50
     
     override class func layoutAttributesClass() -> AnyClass {
@@ -54,6 +56,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         
         items += layoutAttributesForTimeMarkersInRect(rect)
         items += layoutAttributesForTracksInRect(rect)
+        items += layoutAttributesForTrackHeadersInRect(rect)
         
         return items
     }
@@ -65,7 +68,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         }
         
         let timeMarkersPerScreen = Int(rect.width / TimelineTimeMarkerWidth)
-        let screenNumber = Int(collectionView.contentOffset.x / rect.width)
+        let screenNumber = Int((collectionView.contentOffset.x - TimelineTrackHeaderWidth) / rect.width)
         let offset = (screenNumber * Int(rect.width))
         
         let attributes: [UICollectionViewLayoutAttributes] = (0...(timeMarkersPerScreen * 2)).enumerate().map {
@@ -76,7 +79,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             //Figure out how to calculate this.
             attribute.time = Double($0.element + offset)
-            attribute.frame = CGRect(x: x, y: collectionView.contentOffset.y + collectionView.contentInset.top, width: TimelineTimeMarkerWidth, height:  TimelineHeaderHeight)
+            attribute.frame = CGRect(x: x + TimelineTrackHeaderWidth, y: collectionView.contentOffset.y + collectionView.contentInset.top, width: TimelineTimeMarkerWidth, height:  TimelineHeaderHeight)
             attribute.zIndex = 2
             
             return attribute
@@ -99,6 +102,27 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             //Figure out how to calculate this.
             attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y + collectionView.contentInset.top, width: rect.width, height:  TimelineTrackHeight)
+            
+            return attribute
+        }
+        
+        return attributes
+    }
+    
+    private func layoutAttributesForTrackHeadersInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
+        
+        guard let collectionView = collectionView else {
+            return []
+        }
+        
+        let attributes: [UICollectionViewLayoutAttributes] = (0...(collectionView.numberOfSections() - 1)).enumerate().map {
+            
+            let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withIndexPath: NSIndexPath(forRow: 0, inSection: $0.element))
+            
+            let y = CGFloat(($0.element * Int(TimelineTrackHeight)))
+            
+            //Figure out how to calculate this.
+            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y + collectionView.contentInset.top, width: TimelineTrackHeaderWidth, height:  TimelineTrackHeight)
             
             return attribute
         }

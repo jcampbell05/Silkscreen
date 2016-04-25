@@ -26,6 +26,7 @@ class TimelineViewController: UICollectionViewController {
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
+        collectionView?.registerClass(TimelineTrackHeaderSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withReuseIdentifier: TimelineElementKindTrackHeader)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +36,15 @@ class TimelineViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kind, forIndexPath: indexPath)
+        
+        switch view  {
+        case let view as TimelineTrackHeaderSupplementaryView:
+            view.trackID = indexPath.section + 1
+            break
+        default:
+            break
+        }
+        
         return view
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// - Manually Add Navigation Bar VC
 class TimelineViewController: UICollectionViewController {
     
     var editorContext: EditorContext? = nil {

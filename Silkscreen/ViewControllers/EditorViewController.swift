@@ -13,13 +13,9 @@ class EditorViewController: DividableViewController {
     let editorContext = EditorContext()
     
     lazy var contentAreaViewController: DividableViewController = {
-        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationController, self.previewViewController])
+        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetViewController, self.previewViewController])
         viewController.axis = .Horizontal
         return viewController
-    }()
-    
-    lazy var assetsNavigationController: UINavigationController = {
-        return UINavigationController(rootViewController: self.assetViewController)
     }()
     
     let assetViewController = AssetsViewController()
@@ -38,7 +34,7 @@ class EditorViewController: DividableViewController {
         addArrangedChildViewController(timelineNavigationController)
         
         contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
-        assetsNavigationController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
+        assetViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
     }
     
     required init?(coder aDecoder: NSCoder) {

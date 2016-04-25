@@ -8,6 +8,7 @@
 
 import UIKit
 
+// - Add Tab Bar
 class AssetsViewController: UITableViewController {
     
     override func viewDidLoad() {
@@ -15,13 +16,5 @@ class AssetsViewController: UITableViewController {
         super.viewDidLoad()
 
         toolbarItems = []
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        navigationController?.setToolbarHidden(false, animated: animated)
     }
 }

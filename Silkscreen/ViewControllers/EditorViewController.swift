@@ -23,18 +23,19 @@ class EditorViewController: DividableViewController {
     }()
     
     let assetViewController = AssetsViewController()
-    
     let previewViewController = PreviewViewController()
+    
+    lazy var timelineNavigationController: UINavigationController = {
+        return UINavigationController(rootViewController: self.timelineViewController)
+    }()
     
     let timelineViewController = TimelineViewController()
     
     init() {
         super.init()
-        
-        title = NSLocalizedString("Untitled Project", comment: "")
 
         addArrangedChildViewController(contentAreaViewController)
-        addArrangedChildViewController(timelineViewController)
+        addArrangedChildViewController(timelineNavigationController)
         
         contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
         assetsNavigationController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
@@ -50,5 +51,12 @@ class EditorViewController: DividableViewController {
         
         previewViewController.editorContext = editorContext
         timelineViewController.editorContext = editorContext
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+    
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

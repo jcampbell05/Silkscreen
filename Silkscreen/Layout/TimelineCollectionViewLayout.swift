@@ -123,6 +123,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             //Figure out how to calculate this.
             attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y, width: TimelineTrackHeaderWidth, height:  TimelineTrackHeight)
+            attribute.zIndex = 1
             
             return attribute
         }

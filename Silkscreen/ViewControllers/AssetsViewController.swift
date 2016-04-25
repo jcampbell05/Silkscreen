@@ -15,6 +15,6 @@ class AssetsViewController: UITableViewController {
         
         super.viewDidLoad()
 
-        toolbarItems = []
+        title = NSLocalizedString("Assets", comment: "")
     }
 }

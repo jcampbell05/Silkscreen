@@ -26,6 +26,7 @@ class TimelineViewController: UICollectionViewController {
         title = NSLocalizedString("Untitled Project", comment: "")
         
         collectionView?.alwaysBounceVertical = true
+        collectionView?.backgroundColor = UIColor.darkGrayColor()
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
         collectionView?.registerClass(TimelineTrackHeaderSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withReuseIdentifier: TimelineElementKindTrackHeader)
     }

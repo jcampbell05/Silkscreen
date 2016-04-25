@@ -55,4 +55,8 @@ class EditorViewController: DividableViewController {
     
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }

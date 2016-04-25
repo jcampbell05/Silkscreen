@@ -1,0 +1,23 @@
+//
+//  TimelineTrackDecorationView.swift
+//  Silkscreen
+//
+//  Created by James Campbell on 4/25/16.
+//  Copyright © 2016 SK. All rights reserved.
+//
+
+import UIKit
+
+class TimelineTrackDecorationView: UICollectionReusableView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        layer.borderColor = UIColor.whiteColor().CGColor
+        layer.borderWidth = 1
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

@@ -20,7 +20,7 @@
 		74B8DC951CCE083400B9E1ED /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC941CCE083400B9E1ED /* Track.swift */; };
 		74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC981CCE090900B9E1ED /* Frozen.swift */; };
 		74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9B1CCE0B5700B9E1ED /* CollectionType.swift */; };
-		74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackSupplementaryView.swift */; };
+		74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */; };
 		74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */; };
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
@@ -41,7 +41,7 @@
 		74B8DC941CCE083400B9E1ED /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		74B8DC981CCE090900B9E1ED /* Frozen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frozen.swift; sourceTree = "<group>"; };
 		74B8DC9B1CCE0B5700B9E1ED /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
-		74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackSupplementaryView.swift; sourceTree = "<group>"; };
+		74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackDecorationView.swift; sourceTree = "<group>"; };
 		74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackHeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		74D638E31C4D941F00175740 /* Silkscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D638E61C4D941F00175740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			children = (
 				74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */,
 				74B8DC8D1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift */,
-				74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackSupplementaryView.swift */,
+				74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */,
 				74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */,
 			);
 			path = View;
@@ -252,7 +252,7 @@
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,
-				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackSupplementaryView.swift in Sources */,
+				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

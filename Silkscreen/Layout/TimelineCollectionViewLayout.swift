@@ -10,10 +10,15 @@ import UIKit
 
 let TimelineElementKindTimeMarker = "TimelineElementKindTimeMarker"
 private let TimelineElementKindHeader = "TimelineElementKindHeader"
+private let TimelineElementKindTrack = "TimelineElementKindTrack"
 
 // - Implement Layout Attribute for time offset
 
 class TimelineCollectionViewLayout: UICollectionViewLayout {
+    
+    private let TimelineHeaderHeight: CGFloat = 30
+    private let TimelineTrackHeight: CGFloat = 60
+    private let TimelineTimeMarkerWidth: CGFloat = 50
     
     override class func layoutAttributesClass() -> AnyClass {
         return TimelineCollectionViewLayoutAttributes.self
@@ -23,6 +28,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         super.init()
         
         registerClass(TimelineHeaderDecorationView.self, forDecorationViewOfKind: TimelineElementKindHeader)
+        registerClass(TimelineTrackDecorationView.self, forDecorationViewOfKind: TimelineElementKindTrack)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +40,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
     }
  
     override func collectionViewContentSize() -> CGSize {
-        return CGSize(width: CGFloat.max, height: 10)
+        let numberOfTracks = CGFloat(collectionView?.numberOfSections() ?? 0)
+        return CGSize(width: CGFloat.max, height: TimelineTrackHeight * numberOfTracks)
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -45,18 +52,19 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             items += [headerAttributes]
         }
         
-        items += layoutAttributesForTimeMarkersInRact(rect)
+        items += layoutAttributesForTimeMarkersInRect(rect)
+        items += layoutAttributesForTracksInRect(rect)
         
         return items
     }
     
-    private func layoutAttributesForTimeMarkersInRact(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
+    private func layoutAttributesForTimeMarkersInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
         
         guard let collectionView = collectionView else {
             return []
         }
         
-        let timeMarkersPerScreen = Int(rect.width / 50)
+        let timeMarkersPerScreen = Int(rect.width / TimelineTimeMarkerWidth)
         let screenNumber = Int(collectionView.contentOffset.x / rect.width)
         let offset = (screenNumber * Int(rect.width))
         
@@ -64,23 +72,47 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             let attribute = TimelineCollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
             
+            let x = CGFloat(($0.element * Int(TimelineTimeMarkerWidth)) + offset)
+            
             //Figure out how to calculate this.
             attribute.time = Double($0.element + offset)
-            attribute.frame = CGRect(x: ($0.element * 50) + offset, y: 0, width: 50, height:  30)
-            attribute.zIndex = 1
+            attribute.frame = CGRect(x: x, y: collectionView.contentOffset.y + collectionView.contentInset.top, width: TimelineTimeMarkerWidth, height:  TimelineHeaderHeight)
+            attribute.zIndex = 2
             
             return attribute
         }
             
         return attributes
-    } 
+    }
+    
+    private func layoutAttributesForTracksInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
+        
+        guard let collectionView = collectionView else {
+            return []
+        }
+        
+        let attributes: [UICollectionViewLayoutAttributes] = (0...(collectionView.numberOfSections() - 1)).enumerate().map {
+            
+            let attribute = UICollectionViewLayoutAttributes(forDecorationViewOfKind: TimelineElementKindTrack, withIndexPath: NSIndexPath(forRow: 0, inSection: $0.element))
+            
+            let y = CGFloat(($0.element * Int(TimelineTrackHeight)))
+            
+            //Figure out how to calculate this.
+            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y + collectionView.contentInset.top, width: rect.width, height:  TimelineTrackHeight)
+            
+            return attribute
+        }
+        
+        return attributes
+    }
     
     override func layoutAttributesForDecorationViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
         
         if let collectionView = collectionView {
 
             let attribute = UICollectionViewLayoutAttributes(forDecorationViewOfKind: elementKind, withIndexPath: indexPath)
-            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y, width: collectionView.frame.width, height: 30)
+            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: collectionView.contentOffset.y + collectionView.contentInset.top, width: collectionView.frame.width, height: TimelineHeaderHeight)
+            attribute.zIndex = 1
             
             return attribute
         }

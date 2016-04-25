@@ -22,6 +22,7 @@ class TimelineViewController: UICollectionViewController {
     init() {
         super.init(collectionViewLayout: layout)
         
+        collectionView?.alwaysBounceVertical = true
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
     }
     

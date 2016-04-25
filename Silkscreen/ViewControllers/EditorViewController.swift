@@ -12,10 +12,6 @@ class EditorViewController: DividableViewController {
     
     let editorContext = EditorContext()
     
-    lazy var menuButton: UIBarButtonItem = {
-        return UIBarButtonItem(title: NSLocalizedString("Menu", comment: ""), style: .Plain, target: self, action: #selector(didPressMenu))
-    }()
-    
     lazy var contentAreaViewController: DividableViewController = {
         let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationController, self.previewViewController])
         viewController.axis = .Horizontal
@@ -36,7 +32,6 @@ class EditorViewController: DividableViewController {
         super.init()
         
         title = NSLocalizedString("Untitled Project", comment: "")
-        navigationItem.leftBarButtonItem = menuButton
 
         addArrangedChildViewController(contentAreaViewController)
         addArrangedChildViewController(timelineViewController)
@@ -54,15 +49,6 @@ class EditorViewController: DividableViewController {
         super.viewDidLoad()
         
         previewViewController.editorContext = editorContext
-    }
-    
-    @objc private func didPressMenu() {
-        
-        let viewController = MenuViewController()
-        
-        viewController.modalPresentationStyle = .Popover
-        viewController.popoverPresentationController?.barButtonItem = menuButton
-        
-        presentViewController(viewController, animated: true, completion: nil)
+        timelineViewController.editorContext = editorContext
     }
 }

@@ -10,6 +10,12 @@ import UIKit
 
 class TimelineViewController: UICollectionViewController {
     
+    var editorContext: EditorContext? = nil {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
+    
     let layout = TimelineCollectionViewLayout()
     
     init() {
@@ -26,5 +32,13 @@ class TimelineViewController: UICollectionViewController {
         
         let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kind, forIndexPath: indexPath)
         return view
+    }
+    
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return editorContext?.internalTracks.count ?? 0
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
     }
 }

@@ -20,6 +20,7 @@ class TimelineViewController: UICollectionViewController {
     let layout = TimelineCollectionViewLayout()
     
     init() {
+        
         super.init(collectionViewLayout: layout)
         
         title = NSLocalizedString("Untitled Project", comment: "")

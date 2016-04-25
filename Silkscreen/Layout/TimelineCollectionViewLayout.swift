@@ -98,10 +98,10 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             let attribute = UICollectionViewLayoutAttributes(forDecorationViewOfKind: TimelineElementKindTrack, withIndexPath: NSIndexPath(forRow: 0, inSection: $0.element))
             
-            let y = CGFloat(($0.element * Int(TimelineTrackHeight)))
+            let y: CGFloat = CGFloat(($0.element * Int(TimelineTrackHeight))) + TimelineHeaderHeight
             
             //Figure out how to calculate this.
-            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y + collectionView.contentInset.top, width: rect.width, height:  TimelineTrackHeight)
+            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y, width: rect.width, height:  TimelineTrackHeight)
             
             return attribute
         }
@@ -119,10 +119,10 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withIndexPath: NSIndexPath(forRow: 0, inSection: $0.element))
             
-            let y = CGFloat(($0.element * Int(TimelineTrackHeight)))
+            let y: CGFloat = CGFloat(($0.element * Int(TimelineTrackHeight))) + TimelineHeaderHeight
             
             //Figure out how to calculate this.
-            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y + collectionView.contentInset.top, width: TimelineTrackHeaderWidth, height:  TimelineTrackHeight)
+            attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y, width: TimelineTrackHeaderWidth, height:  TimelineTrackHeight)
             
             return attribute
         }

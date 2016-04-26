@@ -9,11 +9,20 @@
 import UIKit
 
 class UtilitesViewController: UITabBarController {
+    
+    let assetsViewController = AssetsViewController()
+    lazy var assetsNavigationViewController: UINavigationController = {
+        return UINavigationController(rootViewController: self.assetsViewController)
+    }()
+    
+    let inspectorViewController = InspectorViewController()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         
         viewControllers = [
-            AssetsViewController()
+            assetsNavigationViewController,
+            inspectorViewController
         ]
     }
     

@@ -8,6 +8,10 @@
 
 import UIKit
 
+// - Implement a nicer Image Picker with:
+// - 3D Touch
+// - Preview
+// - Extra Properties
 class ImagePickerViewController: DividableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private lazy var imageController: UIImagePickerController = {

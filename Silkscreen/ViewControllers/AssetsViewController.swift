@@ -23,24 +23,23 @@ class AssetsViewController: UITableViewController {
         navigationItem.leftBarButtonItem = addButton
     }
     
-    @objc private func didPressAdd() {
+    override func viewWillAppear(animated: Bool) {
         
-        // - Create asset source system
-        // - Create previews / icons for sources
-        // - Present in way that tabs are hidden
-        // - Move hiding the navigation bar into the VC we are about to present as not all need that
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    @objc private func didPressAdd() {
+
         let viewController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         let fromLibraryAction = UIAlertAction(title: NSLocalizedString("From Library", comment: ""), style: .Default) {
             _ in
             
-            let viewController = UIImagePickerController()
-            let viewControllerContainer = DividableViewController(arrangedSubviewControllers: [viewController])
-            
+            let viewController = ImagePickerViewController()
             viewController.sourceType = .PhotoLibrary
             
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-            self.navigationController?.pushViewController(viewControllerContainer, animated: true)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
         
         viewController.addAction(fromLibraryAction)

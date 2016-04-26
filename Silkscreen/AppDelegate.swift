@@ -9,6 +9,10 @@
 import UIKit
 
 // - Swinject
+// - RxSwift
+// - Remove need for Frozen
+// - Remove need for Slot and Signal
+// - Implement ReFlow
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

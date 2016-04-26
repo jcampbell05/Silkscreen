@@ -51,7 +51,7 @@ class TimelineViewController: UICollectionViewController {
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return editorContext?.internalTracks.count ?? 0
+        return editorContext?.tracks.count ?? 0
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -45,6 +45,7 @@ class EditorViewController: DividableViewController {
         
         super.viewDidLoad()
         
+        utilitesViewController.editorContext = editorContext
         previewViewController.editorContext = editorContext
         timelineViewController.editorContext = editorContext
     }

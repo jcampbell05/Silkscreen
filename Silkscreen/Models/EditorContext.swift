@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 // - Figure out a basic demo context to test player
+// - Can we get rid of Frozen ?
 class EditorContext {
     
     init () {
@@ -40,10 +41,25 @@ class EditorContext {
     
     //MARK:- Tracks
     
-    private(set) var internalTracks = Frozen<[Track]>(value: [])
+    private(set) var tracks = Frozen<[Track]>(value: [])
     
     func addTrack() {
         let newTrack = Track()
-        internalTracks = Frozen(value: internalTracks.value + [newTrack])
+        tracks = Frozen(value: tracks.value + [newTrack])
+    }
+    
+    //MARK:- Assets
+    
+    private(set) var assets = Frozen<[Asset]>(value: []) {
+        didSet {
+            assetsDidChangeSignal.trigger()
+        }
+    }
+    
+    private(set) var assetsDidChangeSignal = Signal()
+    
+    func addAsset(path: NSURL) {
+        let newAsset = Asset(path: path)
+        assets = Frozen(value: assets.value + [newAsset])
     }
 }

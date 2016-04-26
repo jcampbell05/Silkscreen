@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		745521AF1CCF92A50041C072 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521AE1CCF92A50041C072 /* ImagePickerViewController.swift */; };
+		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
+		745521B91CCFEA900041C072 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B81CCFEA900041C072 /* Signal.swift */; };
+		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
+		745521BD1CCFFECD0041C072 /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetTableViewCell.swift */; };
+		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		745521AE1CCF92A50041C072 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		745521B81CCFEA900041C072 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		745521BC1CCFFECD0041C072 /* AssetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
+		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +97,8 @@
 			children = (
 				74B8DC921CCD712100B9E1ED /* EditorContext.swift */,
 				74B8DC941CCE083400B9E1ED /* Track.swift */,
+				745521B61CCFE9D20041C072 /* Asset.swift */,
+				745521BE1CD00BEC0041C072 /* Project.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +126,7 @@
 				74B8DC8D1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift */,
 				74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */,
 				74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */,
+				745521BC1CCFFECD0041C072 /* AssetTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +144,8 @@
 			children = (
 				74B8DC9A1CCE0B4F00B9E1ED /* Frozen */,
 				74B8DC981CCE090900B9E1ED /* Frozen.swift */,
+				745521B81CCFEA900041C072 /* Signal.swift */,
+				745521BA1CCFEB160041C072 /* Slot.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -247,7 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
+				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
+				745521B71CCFE9D20041C072 /* Asset.swift in Sources */,
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
@@ -260,11 +277,14 @@
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
+				745521BD1CCFFECD0041C072 /* AssetTableViewCell.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,
 				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
+				745521BB1CCFEB160041C072 /* Slot.swift in Sources */,
+				745521BF1CD00BEC0041C072 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

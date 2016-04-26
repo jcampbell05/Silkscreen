@@ -10,6 +10,12 @@ import UIKit
 
 class UtilitesViewController: UITabBarController {
     
+    var editorContext: EditorContext? = nil {
+        didSet {
+            assetsViewController.editorContext = editorContext
+        }
+    }
+    
     let assetsViewController = AssetsViewController()
     lazy var assetsNavigationViewController: UINavigationController = {
         return UINavigationController(rootViewController: self.assetsViewController)

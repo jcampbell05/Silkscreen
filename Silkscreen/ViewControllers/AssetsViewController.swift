@@ -9,7 +9,21 @@
 import UIKit
 
 // - Add Tab Bar
+// - Should we move to Rx over Signal / Slot ?
+// - Use Diff
+// - Simplify datasource
+// - UIDocumentInteractionController Support
 class AssetsViewController: UITableViewController {
+    
+    var editorContext: EditorContext? = nil {
+        didSet {
+            assetsDidChangeSlot = editorContext?.assetsDidChangeSignal.addSlot() {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private var assetsDidChangeSlot: Slot? = nil
     
     lazy var addButton: UIBarButtonItem = {
        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))
@@ -21,6 +35,8 @@ class AssetsViewController: UITableViewController {
 
         title = NSLocalizedString("Assets", comment: "")
         navigationItem.leftBarButtonItem = addButton
+        
+        tableView.registerClass(AssetTableViewCell.self, forCellReuseIdentifier: String(AssetTableViewCell))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,6 +53,7 @@ class AssetsViewController: UITableViewController {
             _ in
             
             let viewController = ImagePickerViewController()
+            viewController.editorContext = self.editorContext
             viewController.sourceType = .PhotoLibrary
             
             self.navigationController?.pushViewController(viewController, animated: true)
@@ -47,5 +64,19 @@ class AssetsViewController: UITableViewController {
         viewController.popoverPresentationController?.barButtonItem = addButton
         
         presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return editorContext?.assets.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(AssetTableViewCell), forIndexPath: indexPath)
+        
+        if let cell = cell as? AssetTableViewCell {
+            cell.asset = editorContext?.assets.value[indexPath.row]
+        }
+        
+        return cell
     }
 }

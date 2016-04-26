@@ -8,6 +8,8 @@
 
 import UIKit
 
+// - Swinject
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

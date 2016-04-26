@@ -12,7 +12,10 @@ import UIKit
 // - 3D Touch
 // - Preview
 // - Extra Properties
+// - Fix Pop View Controller Animation Glitch
 class ImagePickerViewController: DividableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var editorContext: EditorContext? = nil
     
     private lazy var imageController: UIImagePickerController = {
         
@@ -47,7 +50,11 @@ class ImagePickerViewController: DividableViewController, UIImagePickerControlle
     
     //MARK:- UIImagePickerControllerDelegate
 
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        if let url = info[UIImagePickerControllerReferenceURL] as? NSURL {
+            editorContext?.addAsset(url)
+        }
         
         navigationController?.popViewControllerAnimated(true)
     }

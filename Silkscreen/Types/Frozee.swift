@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Frozen<T> {
+class Frozen<T: CollectionType> {
     
     let value: T
     

@@ -11,6 +11,7 @@ import UIKit
 class DividableViewController: UIViewController {
     
     private let stackView = UIStackView(arrangedSubviews: [])
+    private let arrangedSubviewControllers: [UIViewController]
     
     var axis: UILayoutConstraintAxis = .Vertical {
         didSet {
@@ -19,8 +20,10 @@ class DividableViewController: UIViewController {
     }
 
     init(arrangedSubviewControllers: [UIViewController] = []) {
+        
+        self.arrangedSubviewControllers = arrangedSubviewControllers
+        
         super.init(nibName: nil, bundle: nil)
-        arrangedSubviewControllers.forEach(addArrangedChildViewController)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,6 +31,7 @@ class DividableViewController: UIViewController {
     }
     
     override func loadView() {
+        arrangedSubviewControllers.forEach(addArrangedChildViewController)
         updateStackViewProperties()
         view = stackView
     }

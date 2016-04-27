@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIWindow(frame: bounds)
     }()
     
-    let rootViewController: EditorViewController = EditorViewController()
+    lazy var rootViewController: EditorViewController = {
+       return EditorViewController()
+    }()
     
     lazy var rootNavigationController: UINavigationController = {
        return UINavigationController(rootViewController: self.rootViewController)

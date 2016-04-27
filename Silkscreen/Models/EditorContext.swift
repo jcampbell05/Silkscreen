@@ -44,8 +44,7 @@ class EditorContext {
     private(set) var tracks = Frozen<[Track]>(value: [])
     
     func addTrack() {
-        let newTrack = Track()
-        tracks = Frozen(value: tracks.value + [newTrack])
+        tracks = tracks.append(Track())
     }
     
     //MARK:- Assets
@@ -59,7 +58,6 @@ class EditorContext {
     private(set) var assetsDidChangeSignal = Signal()
     
     func addAsset(path: NSURL) {
-        let newAsset = Asset(path: path)
-        assets = Frozen(value: assets.value + [newAsset])
+        assets = assets.append(Asset(path: path))
     }
 }

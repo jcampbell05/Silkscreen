@@ -6,14 +6,14 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
+import CoreDragon
 import UIKit
 
 // - Swinject
 // - RxSwift
-// - Remove need for Frozen
 // - Remove need for Slot and Signal
 // - Implement ReFlow
-// - iOS Drag And Drop System
+// - iOS Drag And Drop System - Reimplement Dragon Drag And Drop (Or Tidy it up)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        if let window = window {
+            DragonController.sharedController().enableLongPressDraggingInWindow(window)
+        }
         
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()

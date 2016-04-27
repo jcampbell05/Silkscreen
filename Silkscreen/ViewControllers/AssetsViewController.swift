@@ -6,6 +6,8 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
+import CoreDragon
+import MobileCoreServices
 import UIKit
 
 // - Add Tab Bar
@@ -13,7 +15,7 @@ import UIKit
 // - Use Diff
 // - Simplify datasource
 // - UIDocumentInteractionController Support
-class AssetsViewController: UITableViewController {
+class AssetsViewController: UITableViewController, DragonDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -74,9 +76,15 @@ class AssetsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(String(AssetTableViewCell), forIndexPath: indexPath)
         
         if let cell = cell as? AssetTableViewCell {
-            cell.asset = editorContext?.assets.value[indexPath.row]
+            cell.asset = editorContext?.assets[indexPath.row]
         }
         
+        DragonController.sharedController().registerDragSource(cell, delegate:self)
+        
         return cell
+    }
+    
+    func beginDragOperation(info: DragonInfo, fromView: UIView) {
+        info.pasteboard.setValue("Hey", forPasteboardType:kUTTypePlainText as String)
     }
 }

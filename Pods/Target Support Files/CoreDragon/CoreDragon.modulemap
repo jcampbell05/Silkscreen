@@ -1,0 +1,6 @@
+framework module CoreDragon {
+  umbrella header "CoreDragon-umbrella.h"
+
+  export *
+  module * { export * }
+}

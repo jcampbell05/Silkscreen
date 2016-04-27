@@ -10,17 +10,16 @@ import CoreDragon
 import MobileCoreServices
 import UIKit
 
-// - Add Tab Bar
-// - Should we move to Rx over Signal / Slot ?
+// - Fix layout issue cause by collection view
 // - Use Diff
 // - Simplify datasource
 // - UIDocumentInteractionController Support
-class AssetsViewController: UITableViewController, DragonDelegate {
+class AssetsViewController: UICollectionViewController, DragonDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
             assetsDidChangeSlot = editorContext?.assetsDidChangeSignal.addSlot() {
-                self.tableView.reloadData()
+                self.collectionView?.reloadData()
             }
         }
     }
@@ -31,6 +30,20 @@ class AssetsViewController: UITableViewController, DragonDelegate {
        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))
     }()
     
+    init() {
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.itemSize = CGSizeMake(100, 100)
+        layout.minimumInteritemSpacing = 5
+        
+        super.init(collectionViewLayout: layout)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -38,44 +51,33 @@ class AssetsViewController: UITableViewController, DragonDelegate {
         title = NSLocalizedString("Assets", comment: "")
         navigationItem.leftBarButtonItem = addButton
         
-        tableView.registerClass(AssetTableViewCell.self, forCellReuseIdentifier: String(AssetTableViewCell))
+        collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @objc private func didPressAdd() {
 
-        let viewController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let viewController = ImagePickerViewController()
+        viewController.editorContext = self.editorContext
+        viewController.sourceType = .PhotoLibrary
+        viewController.modalPresentationStyle = .PageSheet
         
-        let fromLibraryAction = UIAlertAction(title: NSLocalizedString("From Library", comment: ""), style: .Default) {
-            _ in
-            
-            let viewController = ImagePickerViewController()
-            viewController.editorContext = self.editorContext
-            viewController.sourceType = .PhotoLibrary
-            
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
-        
-        viewController.addAction(fromLibraryAction)
-        viewController.modalPresentationStyle = .Popover
-        viewController.popoverPresentationController?.barButtonItem = addButton
-        
-        presentViewController(viewController, animated: true, completion: nil)
+        self.presentViewController(viewController, animated: true, completion: nil)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return editorContext?.assets.count ?? 0
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(String(AssetTableViewCell), forIndexPath: indexPath)
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        if let cell = cell as? AssetTableViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetCollectionViewCell), forIndexPath: indexPath)
+        
+        if let cell = cell as? AssetCollectionViewCell {
             cell.asset = editorContext?.assets[indexPath.row]
         }
         

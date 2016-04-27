@@ -13,6 +13,7 @@ import UIKit
 // - Preview
 // - Extra Properties
 // - Fix Pop View Controller Animation Glitch
+// - Multi-select
 class ImagePickerViewController: DividableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var editorContext: EditorContext? = nil
@@ -56,11 +57,11 @@ class ImagePickerViewController: DividableViewController, UIImagePickerControlle
             editorContext?.addAsset(url)
         }
         
-        navigationController?.popViewControllerAnimated(true)
+        dismissViewControllerAnimated(true, completion:  nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         
-        navigationController?.popViewControllerAnimated(true)
+        dismissViewControllerAnimated(true, completion:  nil)
     }
 }

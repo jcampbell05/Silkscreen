@@ -32,6 +32,11 @@ class DividableViewController: UIViewController {
         view = stackView
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        view.setNeedsLayout()
+    }
+    
     func addArrangedChildViewController(viewController: UIViewController) {
         
         viewController.beginAppearanceTransition(true, animated: false)

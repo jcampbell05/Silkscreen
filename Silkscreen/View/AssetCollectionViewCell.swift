@@ -1,5 +1,5 @@
 //
-//  AssetTableViewCell.swift
+//  AssetCollectionViewCell.swift
 //  Silkscreen
 //
 //  Created by James Campbell on 4/26/16.
@@ -11,7 +11,7 @@ import UIKit
 
 // - Come up with way to load assets
 // - Come up with good Arch
-class AssetTableViewCell: UITableViewCell {
+class AssetCollectionViewCell: UICollectionViewCell {
     
     var asset: Asset? = nil {
         didSet {
@@ -21,9 +21,7 @@ class AssetTableViewCell: UITableViewCell {
                 
                 if let asset = asset as? PHAsset,
                    let resource = PHAssetResource.assetResourcesForAsset(asset).first {
-                    
-                    textLabel?.text = resource.originalFilename
-                    
+                
                     let manager = PHImageManager.defaultManager()
                     let option = PHImageRequestOptions()
                     
@@ -35,8 +33,8 @@ class AssetTableViewCell: UITableViewCell {
                             return
                         }
                         
-                        self.imageView?.contentMode = .ScaleAspectFill
-                        self.imageView?.image = result
+                        self.imageView.contentMode = .ScaleAspectFill
+                        self.imageView.image = result
                         self.setNeedsLayout()
                     })
                 }
@@ -44,12 +42,16 @@ class AssetTableViewCell: UITableViewCell {
         }
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    lazy var imageView: UIImageView = {
+        return UIImageView(frame: self.bounds)
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+        clipsToBounds = true
         
-        userInteractionEnabled = true
-        textLabel?.userInteractionEnabled = true
+        addSubview(imageView)
     }
     
     required init?(coder aDecoder: NSCoder) {

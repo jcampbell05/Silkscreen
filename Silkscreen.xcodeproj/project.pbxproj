@@ -11,7 +11,7 @@
 		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
 		745521B91CCFEA900041C072 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B81CCFEA900041C072 /* Signal.swift */; };
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
-		745521BD1CCFFECD0041C072 /* AssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetTableViewCell.swift */; };
+		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
@@ -24,7 +24,7 @@
 		74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC901CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift */; };
 		74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC921CCD712100B9E1ED /* EditorContext.swift */; };
 		74B8DC951CCE083400B9E1ED /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC941CCE083400B9E1ED /* Track.swift */; };
-		74B8DC991CCE090900B9E1ED /* Frozee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC981CCE090900B9E1ED /* Frozee.swift */; };
+		74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC981CCE090900B9E1ED /* Frozen.swift */; };
 		74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9B1CCE0B5700B9E1ED /* CollectionType.swift */; };
 		74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */; };
 		74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */; };
@@ -42,7 +42,7 @@
 		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		745521B81CCFEA900041C072 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
-		745521BC1CCFFECD0041C072 /* AssetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTableViewCell.swift; sourceTree = "<group>"; };
+		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		74B8DC901CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		74B8DC921CCD712100B9E1ED /* EditorContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorContext.swift; sourceTree = "<group>"; };
 		74B8DC941CCE083400B9E1ED /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		74B8DC981CCE090900B9E1ED /* Frozee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frozee.swift; sourceTree = "<group>"; };
+		74B8DC981CCE090900B9E1ED /* Frozen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frozen.swift; sourceTree = "<group>"; };
 		74B8DC9B1CCE0B5700B9E1ED /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
 		74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackDecorationView.swift; sourceTree = "<group>"; };
 		74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackHeaderSupplementaryView.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				74B8DC8D1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift */,
 				74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */,
 				74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */,
-				745521BC1CCFFECD0041C072 /* AssetTableViewCell.swift */,
+				745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				74B8DC9A1CCE0B4F00B9E1ED /* Frozen */,
-				74B8DC981CCE090900B9E1ED /* Frozee.swift */,
+				74B8DC981CCE090900B9E1ED /* Frozen.swift */,
 				745521B81CCFEA900041C072 /* Signal.swift */,
 				745521BA1CCFEB160041C072 /* Slot.swift */,
 			);
@@ -348,12 +348,12 @@
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
 				745521AF1CCF92A50041C072 /* ImagePickerViewController.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,
-				74B8DC991CCE090900B9E1ED /* Frozee.swift in Sources */,
+				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
-				745521BD1CCFFECD0041C072 /* AssetTableViewCell.swift in Sources */,
+				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,

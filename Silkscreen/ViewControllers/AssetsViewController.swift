@@ -79,7 +79,8 @@ class AssetsViewController: UITableViewController, DragonDelegate {
             cell.asset = editorContext?.assets[indexPath.row]
         }
         
-        // - Fix bug with multiple windows in PR
+        // - Fix bug with multiple windows in PR to CoreDragon
+        // - Add ability to remove highlight.
         DragonController.sharedController().registerDragSource(cell, delegate:self)
         
         return cell

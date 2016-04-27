@@ -8,7 +8,6 @@
 
 import Foundation
 
-// - Can this work as a struct so we can get rid of Frozen?
 class Signal {
     
     private var slots = Frozen<[Slot]>(value: [])
@@ -23,7 +22,7 @@ class Signal {
         let slot = Slot(signal: self)
         slot.callback = callback
         
-        slots = Frozen<[Slot]>(value: slots.value + [slot])
+        slots = slots.append(slot)
         return slot
     }
     

@@ -8,7 +8,6 @@
 
 import Foundation
 
-// - Can this work as a struct so we can get rid of Frozen?
 class Slot {
     
     let signalID: String

@@ -79,6 +79,7 @@ class AssetsViewController: UITableViewController, DragonDelegate {
             cell.asset = editorContext?.assets[indexPath.row]
         }
         
+        // - Fix bug with multiple windows in PR
         DragonController.sharedController().registerDragSource(cell, delegate:self)
         
         return cell

@@ -680,7 +680,8 @@ static UIImage *unserializedImage(NSDictionary *rep)
 			view = [view superview];
 		} while(view);
 
-		return source;
+        if (source)
+            return source;
 	}
 	return nil;
 }
@@ -700,7 +701,8 @@ static UIImage *unserializedImage(NSDictionary *rep)
 			view = [view superview];
 		} while(view);
 
-		return target;
+        if (target)
+            return target;
 	}
 	return nil;
 }

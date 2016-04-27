@@ -47,6 +47,9 @@ class AssetTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+        
+        userInteractionEnabled = true
+        textLabel?.userInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {

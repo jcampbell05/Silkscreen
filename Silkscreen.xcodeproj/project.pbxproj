@@ -250,6 +250,7 @@
 				TargetAttributes = {
 					74D638E21C4D941F00175740 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = F7GK735YXN;
 					};
 				};
 			};
@@ -465,6 +466,7 @@
 			baseConfigurationReference = 92DCBA880119C05DC0024177 /* Pods-Silkscreen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -478,6 +480,7 @@
 			baseConfigurationReference = 6A6E6AB810AAE655ECB631B4 /* Pods-Silkscreen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

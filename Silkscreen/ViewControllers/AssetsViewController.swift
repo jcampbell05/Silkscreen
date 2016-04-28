@@ -11,10 +11,9 @@ import MobileCoreServices
 import UICollectionViewLeftAlignedLayout
 import UIKit
 
-// - Fix layout issue cause by collection view
 // - Use Diff
-// - Simplify datasource
 // - UIDocumentInteractionController Support
+// - Zoom in and out
 class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate {
     
     var editorContext: EditorContext? = nil {

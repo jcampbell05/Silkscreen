@@ -61,10 +61,10 @@ class AssetsViewController: UICollectionViewController, DragonDelegate {
     
     @objc private func didPressAdd() {
 
-        let viewController = ImagePickerViewController()
-        viewController.editorContext = self.editorContext
-        viewController.sourceType = .PhotoLibrary
-        viewController.modalPresentationStyle = .PageSheet
+        // - Move to custom presentation 
+        // - Form sheet with blurred background
+        let viewController = AddAssetViewController()
+        viewController.modalPresentationStyle = .FullScreen
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }

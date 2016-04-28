@@ -66,10 +66,6 @@ class TimelineViewController: UICollectionViewController, DragonDropDelegate {
         return true
     }
     
-    func dropTarget(droppable: UIView, updateHighlight highlightContainer: UIView, forDrag drag: DragonInfo, atPoint p: CGPoint) {
-        collectionView?.backgroundColor = UIColor.redColor()
-    }
-    
     func dropTarget(droppable: UIView, acceptDrag drag: DragonInfo, atPoint p: CGPoint) {
         collectionView?.backgroundColor = UIColor.darkGrayColor()
         drag.pasteboard.valueForPasteboardType(kUTTypePlainText as String)

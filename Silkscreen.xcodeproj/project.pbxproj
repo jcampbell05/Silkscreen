@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74461E991CD1E5230043A86F /* DragonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E981CD1E5230043A86F /* DragonCore.swift */; };
 		745521AF1CCF92A50041C072 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521AE1CCF92A50041C072 /* ImagePickerViewController.swift */; };
 		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
 		745521B91CCFEA900041C072 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B81CCFEA900041C072 /* Signal.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		6A6E6AB810AAE655ECB631B4 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
+		74461E981CD1E5230043A86F /* DragonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCore.swift; sourceTree = "<group>"; };
 		745521AE1CCF92A50041C072 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		745521B81CCFEA900041C072 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
@@ -89,6 +91,22 @@
 				6A6E6AB810AAE655ECB631B4 /* Pods-Silkscreen.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		74461E961CD1E5070043A86F /* VendorExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				74461E971CD1E5150043A86F /* UIViewController */,
+			);
+			path = VendorExtensions;
+			sourceTree = "<group>";
+		};
+		74461E971CD1E5150043A86F /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74461E981CD1E5230043A86F /* DragonCore.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
@@ -193,6 +211,7 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				74461E961CD1E5070043A86F /* VendorExtensions */,
 				74B8DC971CCE090100B9E1ED /* Types */,
 				74B8DC8A1CCBF69100B9E1ED /* View */,
 				74B8DC871CCBF31600B9E1ED /* Layout */,
@@ -351,6 +370,7 @@
 				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
+				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,

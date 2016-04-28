@@ -83,7 +83,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate {
         
         // - Fix bug with multiple windows in PR to CoreDragon
         // - Add ability to remove highlight.
-        DragonController.sharedController().registerDragSource(cell, delegate:self)
+        registerDragSource(cell, delegate:self)
         
         return cell
     }

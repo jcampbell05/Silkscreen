@@ -27,7 +27,7 @@ class TimelineViewController: UICollectionViewController, DragonDropDelegate {
         
         title = NSLocalizedString("Untitled Project", comment: "")
         
-        DragonController.sharedController().registerDropTarget(collectionView!, delegate: self)
+        registerDropTarget(collectionView!, delegate: self)
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.darkGrayColor()

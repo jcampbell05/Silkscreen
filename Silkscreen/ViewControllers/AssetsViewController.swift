@@ -66,7 +66,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         viewController.transitioningDelegate = self
         viewController.modalPresentationStyle = .Custom
         
-        self.presentViewController(viewController, animated: true, completion: nil)
+        presentViewController(viewController, animated: true, completion: nil)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -89,7 +89,8 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     }
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return BlurredSheetPresentationController()
+        
+        return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
     func beginDragOperation(info: DragonInfo, fromView: UIView) {

@@ -15,7 +15,7 @@ import UIKit
 // - Use Diff
 // - Simplify datasource
 // - UIDocumentInteractionController Support
-class AssetsViewController: UICollectionViewController, DragonDelegate {
+class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -64,7 +64,8 @@ class AssetsViewController: UICollectionViewController, DragonDelegate {
         // - Move to custom presentation 
         // - Form sheet with blurred background
         let viewController = AddAssetViewController()
-        viewController.modalPresentationStyle = .FullScreen
+        viewController.transitioningDelegate = self
+        viewController.modalPresentationStyle = .Custom
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
@@ -86,6 +87,10 @@ class AssetsViewController: UICollectionViewController, DragonDelegate {
         registerDragSource(cell, delegate:self)
         
         return cell
+    }
+    
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return BlurredSheetPresentationController()
     }
     
     func beginDragOperation(info: DragonInfo, fromView: UIView) {

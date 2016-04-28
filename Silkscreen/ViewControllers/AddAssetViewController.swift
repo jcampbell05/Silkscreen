@@ -10,10 +10,18 @@ import UIKit
 
 class AddAssetViewController: UISplitViewController {
     
+    let imagePickerViewController = ImagePickerViewController()
+    
+    var editorContext: EditorContext? = nil {
+        didSet {
+            imagePickerViewController.editorContext = editorContext
+        }
+    }
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        viewControllers = [UIViewController(), UIViewController()]
+        viewControllers = [UIViewController(), imagePickerViewController]
     }
     
     required init?(coder aDecoder: NSCoder) {

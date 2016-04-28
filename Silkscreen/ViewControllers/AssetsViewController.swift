@@ -60,9 +60,8 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     
     @objc private func didPressAdd() {
 
-        // - Move to custom presentation 
-        // - Form sheet with blurred background
         let viewController = AddAssetViewController()
+        viewController.editorContext = editorContext
         viewController.transitioningDelegate = self
         viewController.modalPresentationStyle = .Custom
         

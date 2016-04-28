@@ -34,10 +34,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UICollectionViewLeftAlignedLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0B5E93526B3CE265E5B46C0C1FB0D693</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1040F8A72AD7AD8138AA1A17D8211B83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89012227B4279E9019EE4CCD94D4C015</key>
+		<key>5FD20A67583DD852E01A59217DF2C274</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBBD5901E28B963C70EA4003267584CB</key>
+		<key>89012227B4279E9019EE4CCD94D4C015</key>
 		<dict>
 			<key>primary</key>
 			<true/>

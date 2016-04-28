@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '37A8161A31BACDFD12FC37A8'
+               BlueprintIdentifier = '38C4E6ED14A978A9B976DF47'
                BlueprintName = 'Cerfing'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Cerfing.framework'>

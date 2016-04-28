@@ -8,6 +8,7 @@
 
 import CoreDragon
 import MobileCoreServices
+import UICollectionViewLeftAlignedLayout
 import UIKit
 
 // - Fix layout issue cause by collection view
@@ -32,11 +33,10 @@ class AssetsViewController: UICollectionViewController, DragonDelegate {
     
     init() {
         
-        let layout = UICollectionViewFlowLayout()
-        
-        layout.itemSize = CGSizeMake(100, 100)
+        let layout = UICollectionViewLeftAlignedLayout()
         layout.minimumInteritemSpacing = 5
-        
+        layout.itemSize = CGSizeMake(100, 100)
+
         super.init(collectionViewLayout: layout)
     }
     

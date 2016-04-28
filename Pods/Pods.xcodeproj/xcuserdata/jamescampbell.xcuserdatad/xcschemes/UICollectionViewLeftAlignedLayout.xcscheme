@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '55B2BBBEB316CE29111D67EF'
-               BlueprintName = 'GZIP'
+               BlueprintIdentifier = '1A1F06827157D076A3F94D86'
+               BlueprintName = 'UICollectionViewLeftAlignedLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'GZIP.framework'>
+               BuildableName = 'UICollectionViewLeftAlignedLayout.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

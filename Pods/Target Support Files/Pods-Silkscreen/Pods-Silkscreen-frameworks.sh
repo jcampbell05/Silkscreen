@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Silkscreen/CoreDragon.framework"
   install_framework "Pods-Silkscreen/GZIP.framework"
   install_framework "Pods-Silkscreen/MeshPipe.framework"
+  install_framework "Pods-Silkscreen/UICollectionViewLeftAlignedLayout.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Silkscreen/Cerfing.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Silkscreen/CoreDragon.framework"
   install_framework "Pods-Silkscreen/GZIP.framework"
   install_framework "Pods-Silkscreen/MeshPipe.framework"
+  install_framework "Pods-Silkscreen/UICollectionViewLeftAlignedLayout.framework"
 fi

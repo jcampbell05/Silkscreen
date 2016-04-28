@@ -18,9 +18,11 @@ PODS:
   - MeshPipe/Core (0.1.3):
     - CocoaAsyncSocket (~> 7.4)
     - GZIP (~> 1.1)
+  - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
   - CoreDragon
+  - UICollectionViewLeftAlignedLayout
 
 SPEC CHECKSUMS:
   Cerfing: 81577784a7ec8f9947fad28ea06e62a2533d9cb5
@@ -28,5 +30,6 @@ SPEC CHECKSUMS:
   CoreDragon: d001ab5136f33036be12e9624395ae6c156897b0
   GZIP: f8beb59597f651e6970a45b816508a9c6d700b77
   MeshPipe: 1791a80fe51afbdaadffb889cb9641e400cf4758
+  UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
 COCOAPODS: 0.39.0

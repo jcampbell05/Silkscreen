@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Cerfing.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CocoaAsyncSocket.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CoreDragon.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GZIP.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MeshPipe.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Cerfing" -framework "CocoaAsyncSocket" -framework "CoreDragon" -framework "GZIP" -framework "MeshPipe"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Cerfing.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CocoaAsyncSocket.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/CoreDragon.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GZIP.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MeshPipe.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/UICollectionViewLeftAlignedLayout.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Cerfing" -framework "CocoaAsyncSocket" -framework "CoreDragon" -framework "GZIP" -framework "MeshPipe" -framework "UICollectionViewLeftAlignedLayout"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Silkscreen
 PODS_ROOT = ${SRCROOT}/Pods

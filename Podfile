@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'Silkscreen' do
     pod 'CoreDragon'
+    pod 'UICollectionViewLeftAlignedLayout'
 end
 

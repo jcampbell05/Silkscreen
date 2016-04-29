@@ -8,11 +8,15 @@
 
 import UIKit
 
-class CameraViewController: UIViewController {
+class CameraViewController: DividableViewController {
+    
+    private let imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.blackColor()
+        imagePickerController.sourceType = .Camera
+        
+        addArrangedChildViewController(imagePickerController)
     }
 }

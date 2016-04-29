@@ -9,7 +9,7 @@
 import UIKit
 
 class AddAssetViewController: DividableViewController {
-    
+
     private let assetSourcePicker = UISplitViewController()
     
     private let assetSourceViewController = AssetSourceViewController()
@@ -25,6 +25,7 @@ class AddAssetViewController: DividableViewController {
         
         super.init()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(didPressCancel))
         title = NSLocalizedString("Import Asset", comment: "")
         
         self.addArrangedChildViewController(assetSourcePicker)
@@ -34,5 +35,9 @@ class AddAssetViewController: DividableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func didPressCancel() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

@@ -10,9 +10,11 @@ import UIKit
 
 class AssetSourceViewController: UITableViewController {
     
-    let sources = [
-        PhotoLibraryAssetImportSource()
-    ]
+    var sources: [AssetImportSource] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         

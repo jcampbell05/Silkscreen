@@ -30,6 +30,9 @@ class AddAssetViewController: DividableViewController {
         
         self.addArrangedChildViewController(assetSourcePicker)
         
+        assetSourceViewController.sources = [
+            PhotoLibraryAssetImportSource()
+        ]
         assetSourcePicker.viewControllers = [assetSourceViewController, imagePickerViewController]
     }
     

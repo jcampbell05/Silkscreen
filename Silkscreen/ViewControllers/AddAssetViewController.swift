@@ -8,9 +8,12 @@
 
 import UIKit
 
-class AddAssetViewController: UISplitViewController {
+class AddAssetViewController: DividableViewController {
     
-    let imagePickerViewController = ImagePickerViewController()
+    private let assetSourcePicker = UISplitViewController()
+    
+    private let assetSourceViewController = AssetSourceViewController()
+    private let imagePickerViewController = ImagePickerViewController()
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -19,9 +22,14 @@ class AddAssetViewController: UISplitViewController {
     }
     
     init() {
-        super.init(nibName: nil, bundle: nil)
         
-        viewControllers = [UIViewController(), imagePickerViewController]
+        super.init()
+        
+        title = NSLocalizedString("Import Asset", comment: "")
+        
+        self.addArrangedChildViewController(assetSourcePicker)
+        
+        assetSourcePicker.viewControllers = [assetSourceViewController, imagePickerViewController]
     }
     
     required init?(coder aDecoder: NSCoder) {

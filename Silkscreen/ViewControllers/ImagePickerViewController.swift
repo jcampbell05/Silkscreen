@@ -42,13 +42,6 @@ class ImagePickerViewController: DividableViewController, UIImagePickerControlle
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
     //MARK:- UIImagePickerControllerDelegate
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

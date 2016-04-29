@@ -62,10 +62,12 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
 
         let viewController = AddAssetViewController()
         viewController.editorContext = editorContext
-        viewController.transitioningDelegate = self
-        viewController.modalPresentationStyle = .Custom
         
-        presentViewController(viewController, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.transitioningDelegate = self
+        navigationController.modalPresentationStyle = .Custom
+        
+        presentViewController(navigationController, animated: true, completion: nil)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

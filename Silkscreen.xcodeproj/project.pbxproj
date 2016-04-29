@@ -38,6 +38,7 @@
 		74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */; };
 		74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */; };
 		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
+		74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */; };
 		E6AD3F4CF844B56F7D9EC4B2 /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FA9D7765ABC55FF1D63292 /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetSourceViewController.swift; sourceTree = "<group>"; };
 		74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
+		74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
 		92DCBA880119C05DC0024177 /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		E9FA9D7765ABC55FF1D63292 /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */,
 				74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */,
 				74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */,
+				74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
+				74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,

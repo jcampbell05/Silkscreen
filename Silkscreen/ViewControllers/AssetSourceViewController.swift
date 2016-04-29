@@ -11,7 +11,7 @@ import UIKit
 class AssetSourceViewController: UITableViewController {
     
     let sources = [
-        "Photo Library"
+        PhotoLibraryAssetImportSource()
     ]
     
     override func viewWillAppear(animated: Bool) {
@@ -29,9 +29,10 @@ class AssetSourceViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let source = sources[indexPath.row]
         let cell = UITableViewCell(style: .Default, reuseIdentifier: "")
         
-        cell.textLabel?.text = sources[indexPath.row]
+        cell.textLabel?.text = source.name
         cell.accessoryType = .DisclosureIndicator
         
         return cell

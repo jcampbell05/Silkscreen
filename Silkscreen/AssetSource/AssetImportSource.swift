@@ -10,4 +10,5 @@ import Foundation
 
 protocol AssetImportSource {
     
+    var name: String { get }
 }

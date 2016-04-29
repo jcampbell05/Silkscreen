@@ -13,11 +13,11 @@ class AddAssetViewController: DividableViewController {
     private let assetSourcePicker = UISplitViewController()
     
     private let assetSourceViewController = AssetSourceViewController()
-    private let imagePickerViewController = ImagePickerViewController()
+    private let imagePickerViewController = UITableViewController()
     
     var editorContext: EditorContext? = nil {
         didSet {
-            imagePickerViewController.editorContext = editorContext
+           // imagePickerViewController.editorContext = editorContext
         }
     }
     

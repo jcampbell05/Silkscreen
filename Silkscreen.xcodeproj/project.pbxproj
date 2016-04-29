@@ -39,6 +39,7 @@
 		74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */; };
 		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
 		74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */; };
+		74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */; };
 		E6AD3F4CF844B56F7D9EC4B2 /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FA9D7765ABC55FF1D63292 /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
+		74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		92DCBA880119C05DC0024177 /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		E9FA9D7765ABC55FF1D63292 /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 				74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */,
 				74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */,
 				74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */,
+				74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */,
+				74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,

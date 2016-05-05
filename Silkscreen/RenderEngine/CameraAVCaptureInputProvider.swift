@@ -11,18 +11,34 @@ import AVFoundation
 
 enum CameraAVCaptureInputProvider: AVCaptureInputProvider {
     
-    var inputCaptureDevice: AVCaptureInput? {
+    private var captureDevice: AVCaptureDevice? {
+        let availableCameraDevices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo) as? [AVCaptureDevice]
+        
         switch self {
+            
         case .Front:
-            return nil
+            return availableCameraDevices?.filter {
+                return $0.position == AVCaptureDevicePosition.Front
+                }.first
         case .Back:
-            return nil
+            return availableCameraDevices?.filter {
+                return $0.position == AVCaptureDevicePosition.Back
+                }.first
         default:
             return nil
         }
     }
     
+    var captureInput: AVCaptureInput? {
+        
+        guard let captureDevice = captureDevice else {
+            return nil
+        }
+        
+        return try? AVCaptureDeviceInput(device: captureDevice)
+    }
+    
+    case None
     case Front
     case Back
-    case None
 }

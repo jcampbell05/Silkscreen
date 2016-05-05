@@ -16,6 +16,11 @@ class AVCaptureSessionNode: RenderNode {
     // - Ouput System
     private let captureSession = AVCaptureSession()
     
-    var inputSources: [AVCaptureInputProvider] = []
+    func addInputSource(input: AVCaptureInput) {
+        captureSession.addInput(input)
+    }
     
+    func removeInputSource(input: AVCaptureInput) {
+        captureSession.removeInput(input)
+    }
 }

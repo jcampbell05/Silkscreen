@@ -8,6 +8,7 @@
 
 import UIKit
 
+// - Fix crash in portrait
 class AddAssetViewController: DividableViewController {
 
     private let assetSourcePicker = UISplitViewController()

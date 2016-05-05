@@ -11,5 +11,5 @@ import AVFoundation
 
 protocol AVCaptureInputProvider {
     
-    var inputCaptureDevice: AVCaptureInput? { get }
+    var captureInput: AVCaptureInput? { get }
 }

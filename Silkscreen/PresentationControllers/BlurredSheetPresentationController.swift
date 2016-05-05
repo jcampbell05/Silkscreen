@@ -8,6 +8,7 @@
 
 import UIKit
 
+// - Tap outside to dismiss
 class BlurredSheetPresentationController: UIPresentationController {
     
     let blurringView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))

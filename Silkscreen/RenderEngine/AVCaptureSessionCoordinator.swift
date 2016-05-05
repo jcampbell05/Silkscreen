@@ -12,6 +12,19 @@ class AVCaptureSessionCoordinator {
     
     let captureSessionNode = AVCaptureSessionNode()
     
+    var cameraSource: CameraAVCaptureInputProvider = .None {
+        didSet(oldCameraSource) {
+            
+            if let oldInput = oldCameraSource.captureInput {
+                captureSessionNode.removeInputSource(oldInput)
+            }
+            
+            if let newInput = cameraSource.captureInput {
+                captureSessionNode.addInputSource(newInput)
+            }
+        }
+    }
+    
     // - Control Cameras
     // - Control Microphones
     // - Controler other settings.

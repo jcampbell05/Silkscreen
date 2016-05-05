@@ -8,15 +8,29 @@
 
 import UIKit
 
-class CameraViewController: DividableViewController {
+// - Add capture options
+// - Add record button
+class CameraViewController: UIViewController {
     
-    private let imagePickerController = UIImagePickerController()
+    // - Audio Output.
+    // - Visually render audio.
+    let coordinator = AVCaptureSessionCoordinator()
+    let previewLayer = RenderNodePreviewLayer()
+    
+    let captureSourceSegmentControl = UISegmentedControl(items: [
+        NSLocalizedString("Photo", comment: ""),
+        NSLocalizedString("Video", comment: ""),
+        NSLocalizedString("Audio", comment: ""),
+    ])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imagePickerController.sourceType = .Camera
+        navigationItem.titleView = captureSourceSegmentControl
+        captureSourceSegmentControl.selectedSegmentIndex = 1
         
-        addArrangedChildViewController(imagePickerController)
+        previewLayer.renderNode = coordinator.captureSessionNode
+        previewLayer.frame = view.bounds
+        view.layer.addSublayer(previewLayer)
     }
 }

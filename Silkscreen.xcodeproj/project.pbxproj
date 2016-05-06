@@ -21,6 +21,8 @@
 		74765B051CDBDA8900E8653A /* AVCaptureInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74765B041CDBDA8900E8653A /* AVCaptureInputProvider.swift */; };
 		74765B071CDBDAB800E8653A /* CameraAVCaptureInputProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74765B061CDBDAB800E8653A /* CameraAVCaptureInputProvider.swift */; };
 		74765B091CDBDB6600E8653A /* AVCaptureSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74765B081CDBDB6600E8653A /* AVCaptureSessionCoordinator.swift */; };
+		74A28BB31CDC87DD00512EA9 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A28BB21CDC87DD00512EA9 /* Frame.swift */; };
+		74A2A3661CDD4A66001D0068 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2A3651CDD4A66001D0068 /* Player.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
@@ -65,6 +67,8 @@
 		74765B041CDBDA8900E8653A /* AVCaptureInputProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCaptureInputProvider.swift; sourceTree = "<group>"; };
 		74765B061CDBDAB800E8653A /* CameraAVCaptureInputProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAVCaptureInputProvider.swift; sourceTree = "<group>"; };
 		74765B081CDBDB6600E8653A /* AVCaptureSessionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionCoordinator.swift; sourceTree = "<group>"; };
+		74A28BB21CDC87DD00512EA9 /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		74A2A3651CDD4A66001D0068 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				74765B041CDBDA8900E8653A /* AVCaptureInputProvider.swift */,
 				74765B061CDBDAB800E8653A /* CameraAVCaptureInputProvider.swift */,
 				74765B081CDBDB6600E8653A /* AVCaptureSessionCoordinator.swift */,
+				74A28BB21CDC87DD00512EA9 /* Frame.swift */,
+				74A2A3651CDD4A66001D0068 /* Player.swift */,
 			);
 			path = RenderEngine;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				74765B011CDBD86300E8653A /* AVCaptureSessionNode.swift in Sources */,
+				74A28BB31CDC87DD00512EA9 /* Frame.swift in Sources */,
 				74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */,
 				74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
@@ -446,6 +453,7 @@
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74765B051CDBDA8900E8653A /* AVCaptureInputProvider.swift in Sources */,
+				74A2A3661CDD4A66001D0068 /* Player.swift in Sources */,
 				74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,

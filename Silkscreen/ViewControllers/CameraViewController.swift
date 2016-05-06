@@ -15,6 +15,7 @@ class CameraViewController: UIViewController {
     // - Audio Output.
     // - Visually render audio.
     let coordinator = AVCaptureSessionCoordinator()
+    let player = Player()
     let previewLayer = RenderNodePreviewLayer()
     
     let captureSourceSegmentControl = UISegmentedControl(items: [
@@ -29,8 +30,11 @@ class CameraViewController: UIViewController {
         navigationItem.titleView = captureSourceSegmentControl
         captureSourceSegmentControl.selectedSegmentIndex = 1
         
-        previewLayer.renderNode = coordinator.captureSessionNode
+        // player.renderNode = coordinator.captureSessionNode
+        // previewLayer.player = player
         previewLayer.frame = view.bounds
         view.layer.addSublayer(previewLayer)
+        
+        coordinator.cameraSource = .Front
     }
 }

@@ -28,7 +28,7 @@ class AVCaptureSessionCoordinator {
     // - Control Cameras
     // - Control Microphones
     // - Controler other settings.
-    
+    // - Is this how we should record it ?
     func takeImage() {
         
     }

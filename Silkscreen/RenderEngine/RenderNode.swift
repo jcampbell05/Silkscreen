@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import CoreMedia
 
-class RenderNode {
+class RenderNode: NSObject {
     
+    // - How do we push the output data ?
+    func frameAtTime(time: CMTime) -> Frame {
+        return Frame(sampleBuffers: [])
+    }
 }

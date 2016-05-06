@@ -8,9 +8,10 @@
 
 import UIKit
 
+// - play audio
+// - render to open GL
+// - player
 class RenderNodePreviewLayer: CALayer {
-    
-    var renderNode: RenderNode? = nil
     
     override init() {
         super.init()

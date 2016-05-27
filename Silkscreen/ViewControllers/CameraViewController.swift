@@ -12,13 +12,11 @@ import GPUImage
 // - Add capture options
 // - Add record button
 // - Abstract away GPUImage
-let testImage = UIImage(named: "test-image")
-
 class CameraViewController: UIViewController {
     
     let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
     
-    let simulator = GPUImagePicture(image: testImage)
+    let simulator = GPUImagePicture(image: UIImage(named: "test-image"))
     
     let imageView: GPUImageView = GPUImageView()
     

@@ -107,6 +107,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7433DBE51CF8F40800529931 /* RenderEngine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RenderEngine;
+			sourceTree = "<group>";
+		};
 		74461E961CD1E5070043A86F /* VendorExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +244,7 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				7433DBE51CF8F40800529931 /* RenderEngine */,
 				74EBF2991CD3C7E30094F1DF /* AssetSource */,
 				74461E9C1CD1E6F70043A86F /* PresentationControllers */,
 				74461E961CD1E5070043A86F /* VendorExtensions */,

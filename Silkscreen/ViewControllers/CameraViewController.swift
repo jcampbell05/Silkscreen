@@ -11,11 +11,14 @@ import GPUImage
 
 // - Add capture options
 // - Add record button
-// - Abstract away certain nodes
+// - Abstract away GPUImage
+let testImage = UIImage(named: "test-image")
+
 class CameraViewController: UIViewController {
     
     let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
-    let simulator = GPUImagePicture(image: UIImage(named: "test-image"))
+    
+    let simulator = GPUImagePicture(image: testImage)
     
     let imageView: GPUImageView = GPUImageView()
     
@@ -28,17 +31,20 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.grayColor()
+        
         navigationItem.titleView = captureSourceSegmentControl
         captureSourceSegmentControl.selectedSegmentIndex = 1
-    
+        
         if Platform.isSimulator {
             simulator.addTarget(imageView)
+            simulator.processImage()
         }
         else {
             videoCamera.addTarget(imageView)
         }
         
-        imageView.frame = view.frame
+        imageView.frame = view.bounds
         view.addSubview(imageView)
     }
 }

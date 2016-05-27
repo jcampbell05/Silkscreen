@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import GPUImage
 
 // - Add capture options
 // - Add record button
+// - Abstract away certain nodes
 class CameraViewController: UIViewController {
     
-    // - Build Render Graph (This abstracts away GPUImage buth as same result :) )
+    let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
+    let simulator = GPUImagePicture(image: UIImage(named: "test-image"))
+    
+    let imageView: GPUImageView = GPUImageView()
     
     let captureSourceSegmentControl = UISegmentedControl(items: [
         NSLocalizedString("Photo", comment: ""),
@@ -25,7 +30,15 @@ class CameraViewController: UIViewController {
         
         navigationItem.titleView = captureSourceSegmentControl
         captureSourceSegmentControl.selectedSegmentIndex = 1
+    
+        if Platform.isSimulator {
+            simulator.addTarget(imageView)
+        }
+        else {
+            videoCamera.addTarget(imageView)
+        }
         
-        // - Hook up rendering of render graph.
+        imageView.frame = view.frame
+        view.addSubview(imageView)
     }
 }

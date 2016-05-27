@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '209346C22F0D5E31A9F12FFE'
+               BlueprintIdentifier = '2FA0A7FD6A3A14691E2818DE'
                BlueprintName = 'Pods-Silkscreen'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Silkscreen.framework'>

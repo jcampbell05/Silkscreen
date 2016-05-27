@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8400B429FEF120D654242673'
+               BlueprintIdentifier = '615513C0CADA22D31EAD33F0'
                BlueprintName = 'CoreDragon'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CoreDragon.framework'>

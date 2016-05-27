@@ -12,11 +12,7 @@ import UIKit
 // - Add record button
 class CameraViewController: UIViewController {
     
-    // - Audio Output.
-    // - Visually render audio.
-    let coordinator = AVCaptureSessionCoordinator()
-    let player = Player()
-    let previewLayer = RenderNodePreviewLayer()
+    // - Build Render Graph (This abstracts away GPUImage buth as same result :) )
     
     let captureSourceSegmentControl = UISegmentedControl(items: [
         NSLocalizedString("Photo", comment: ""),
@@ -30,11 +26,6 @@ class CameraViewController: UIViewController {
         navigationItem.titleView = captureSourceSegmentControl
         captureSourceSegmentControl.selectedSegmentIndex = 1
         
-        // player.renderNode = coordinator.captureSessionNode
-        // previewLayer.player = player
-        previewLayer.frame = view.bounds
-        view.layer.addSublayer(previewLayer)
-        
-        coordinator.cameraSource = .Front
+        // - Hook up rendering of render graph.
     }
 }

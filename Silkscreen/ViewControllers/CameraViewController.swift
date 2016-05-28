@@ -14,10 +14,7 @@ import GPUImage
 // - Abstract away GPUImage
 class CameraViewController: UIViewController {
     
-    let videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
-    
-    let simulator = GPUImagePicture(image: UIImage(named: "test-image"))
-    
+    let outputNode = VideoCameraNode()
     let imageView: GPUImageView = GPUImageView()
     
     let captureSourceSegmentControl = UISegmentedControl(items: [
@@ -34,13 +31,7 @@ class CameraViewController: UIViewController {
         navigationItem.titleView = captureSourceSegmentControl
         captureSourceSegmentControl.selectedSegmentIndex = 1
         
-        if Platform.isSimulator {
-            simulator.addTarget(imageView)
-            simulator.processImage()
-        }
-        else {
-            videoCamera.addTarget(imageView)
-        }
+        outputNode.startRendering()
         
         imageView.frame = view.bounds
         view.addSubview(imageView)

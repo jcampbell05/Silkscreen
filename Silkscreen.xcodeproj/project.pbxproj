@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7433DBE41CF8F1B500529931 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE31CF8F1B500529931 /* Platform.swift */; };
-		7433DBE91CF8F53D00529931 /* VideoCameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE81CF8F53D00529931 /* VideoCameraNode.swift */; };
 		74461E991CD1E5230043A86F /* DragonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E981CD1E5230043A86F /* DragonCore.swift */; };
 		74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */; };
 		74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */; };
@@ -17,6 +16,10 @@
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
+		74565E551CFA1441005AC140 /* OutputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E541CFA1441005AC140 /* OutputNode.swift */; };
+		74565E571CFA1454005AC140 /* InputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E561CFA1454005AC140 /* InputNode.swift */; };
+		74565E591CFA1460005AC140 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E581CFA1460005AC140 /* Node.swift */; };
+		74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E5A1CFA14CE005AC140 /* CameraNode.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
@@ -48,7 +51,6 @@
 /* Begin PBXFileReference section */
 		20A0F24F2E770C6631C00547 /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		7433DBE81CF8F53D00529931 /* VideoCameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCameraNode.swift; sourceTree = "<group>"; };
 		74461E981CD1E5230043A86F /* DragonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCore.swift; sourceTree = "<group>"; };
 		74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssetViewController.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		74565E541CFA1441005AC140 /* OutputNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputNode.swift; sourceTree = "<group>"; };
+		74565E561CFA1454005AC140 /* InputNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputNode.swift; sourceTree = "<group>"; };
+		74565E581CFA1460005AC140 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		74565E5A1CFA14CE005AC140 /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +118,10 @@
 		7433DBE51CF8F40800529931 /* RenderEngine */ = {
 			isa = PBXGroup;
 			children = (
-				7433DBE81CF8F53D00529931 /* VideoCameraNode.swift */,
+				74565E541CFA1441005AC140 /* OutputNode.swift */,
+				74565E561CFA1454005AC140 /* InputNode.swift */,
+				74565E581CFA1460005AC140 /* Node.swift */,
+				74565E5A1CFA14CE005AC140 /* CameraNode.swift */,
 			);
 			path = RenderEngine;
 			sourceTree = "<group>";
@@ -420,16 +429,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74565E571CFA1454005AC140 /* InputNode.swift in Sources */,
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
 				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
 				745521B71CCFE9D20041C072 /* Asset.swift in Sources */,
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,
+				74565E591CFA1460005AC140 /* Node.swift in Sources */,
 				74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,
-				7433DBE91CF8F53D00529931 /* VideoCameraNode.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
 				74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,
@@ -449,10 +459,12 @@
 				74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
+				74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,
 				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
 				745521BB1CCFEB160041C072 /* Slot.swift in Sources */,
 				745521BF1CD00BEC0041C072 /* Project.swift in Sources */,
+				74565E551CFA1441005AC140 /* OutputNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,29 +11,31 @@ import GPUImage
 
 // - Add capture options
 // - Add record button
-// - Abstract away GPUImage
 class CameraViewController: UIViewController {
     
-    let outputNode = VideoCameraNode()
-    let imageView: GPUImageView = GPUImageView()
-    
-    let captureSourceSegmentControl = UISegmentedControl(items: [
-        NSLocalizedString("Photo", comment: ""),
-        NSLocalizedString("Video", comment: ""),
-        NSLocalizedString("Audio", comment: ""),
-    ])
+    private let outputNode = CameraNode()
+    private let imageView: GPUImageView = GPUImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.grayColor()
         
-        navigationItem.titleView = captureSourceSegmentControl
-        captureSourceSegmentControl.selectedSegmentIndex = 1
-        
-        outputNode.startRendering()
-        
         imageView.frame = view.bounds
         view.addSubview(imageView)
+        
+        outputNode.addTarget(imageView)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setToolbarHidden(true, animated: animated)
     }
 }

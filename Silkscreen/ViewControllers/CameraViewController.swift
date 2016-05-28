@@ -11,6 +11,7 @@ import GPUImage
 
 // - Add capture options
 // - Add record button
+// - Build our own node / device handling system for this part.
 class CameraViewController: UIViewController {
     
     private let outputNode = CameraNode()

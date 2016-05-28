@@ -13,4 +13,7 @@ import Foundation
 // - The Amazing Audio Engine
 protocol Node {
     associatedtype InternalNodeType
+    associatedtype TargetInputNodeType
+    
+    func addTarget(node: TargetInputNodeType)
 }

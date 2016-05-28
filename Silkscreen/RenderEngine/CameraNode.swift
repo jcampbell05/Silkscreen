@@ -9,7 +9,7 @@
 import Foundation
 import GPUImage
 
-class CameraNode: OutputNode {
+class CameraNode: Node {
     
     typealias InternalNodeType = GPUImageOutput
     typealias TargetInputNodeType = GPUImageInput

@@ -16,7 +16,6 @@
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
-		74565E551CFA1441005AC140 /* OutputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E541CFA1441005AC140 /* OutputNode.swift */; };
 		74565E591CFA1460005AC140 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E581CFA1460005AC140 /* Node.swift */; };
 		74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E5A1CFA14CE005AC140 /* CameraNode.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
@@ -58,7 +57,6 @@
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		74565E541CFA1441005AC140 /* OutputNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputNode.swift; sourceTree = "<group>"; };
 		74565E581CFA1460005AC140 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		74565E5A1CFA14CE005AC140 /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		7433DBE51CF8F40800529931 /* RenderEngine */ = {
 			isa = PBXGroup;
 			children = (
-				74565E541CFA1441005AC140 /* OutputNode.swift */,
 				74565E581CFA1460005AC140 /* Node.swift */,
 				74565E5A1CFA14CE005AC140 /* CameraNode.swift */,
 			);
@@ -460,7 +457,6 @@
 				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
 				745521BB1CCFEB160041C072 /* Slot.swift in Sources */,
 				745521BF1CD00BEC0041C072 /* Project.swift in Sources */,
-				74565E551CFA1441005AC140 /* OutputNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

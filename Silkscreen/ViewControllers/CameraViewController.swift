@@ -8,9 +8,10 @@
 
 import UIKit
 import GPUImage
+import AVFoundation
 
 // - Source options
-// - Camera / Audio Controls
+// - Camera / Audio Controls to control options for those.
 // - Add capture options
 // - Add record button
 // - Build our own node / device handling system for this part.
@@ -24,6 +25,8 @@ class CameraViewController: UIViewController {
         button.setTitle("Video", forState: .Normal)
         button.sizeToFit()
         
+        button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
+        
         return button
     }()
     
@@ -31,6 +34,8 @@ class CameraViewController: UIViewController {
         let button = UIButton(type: .System)
         button.setTitle("Audio", forState: .Normal)
         button.sizeToFit()
+        
+        button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
         
         return button
     }()
@@ -69,5 +74,16 @@ class CameraViewController: UIViewController {
     
     @objc private func didPressToggle() {
         outputNode.toggleCamera()
+    }
+    
+    @objc private func didPressSource(sender: UIButton) {
+        
+        let mediaType = (sender == videoSourceButton) ? AVMediaTypeVideo : AVMediaTypeAudio
+        let viewController = DevicePickerViewController(mediaType: mediaType)
+        
+        viewController.modalPresentationStyle = .Popover
+        viewController.popoverPresentationController?.sourceView = sender
+        
+        presentViewController(viewController, animated: true, completion: nil)
     }
 }

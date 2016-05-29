@@ -18,16 +18,24 @@ class DevicePickerViewController: UITableViewController {
     private var devices: [AVCaptureDevice] = []
     
     init(mediaType: String) {
+        
         self.mediaType = mediaType
-        devices = AVCaptureDevice.devicesWithMediaType(mediaType) as! [AVCaptureDevice]
         
         super.init(nibName: nil, bundle: nil)
         
-        tableView.reloadData()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateDevices), name: AVCaptureDeviceWasConnectedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateDevices), name: AVCaptureDeviceWasDisconnectedNotification, object: nil)
+        
+        updateDevices()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func updateDevices() {
+        devices = AVCaptureDevice.devicesWithMediaType(mediaType) as! [AVCaptureDevice]
+        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

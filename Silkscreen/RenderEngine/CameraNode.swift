@@ -9,25 +9,28 @@
 import Foundation
 import GPUImage
 
+// - Move this back to the camera.
 class CameraNode: Node {
-    
-    typealias InternalNodeType = GPUImageOutput
-    typealias TargetInputNodeType = GPUImageInput
-    
     private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
     private let simulatorImageNode = GPUImagePicture(image: UIImage(named: "test-image"))
     
-    private var outputNode: GPUImageOutput {
+    func addTarget(node: GPUImageInput) {
         if Platform.isSimulator {
-            return simulatorImageNode
-        }
-        else {
-            return videoCameraNode
+            simulatorImageNode.addTarget(node)
+        } else {
+            videoCameraNode.addTarget(node)
         }
     }
     
-    func addTarget(node: TargetInputNodeType) {
-        outputNode.addTarget(node)
-        simulatorImageNode.processImage()
+    func startRendering() {
+        if Platform.isSimulator {
+            simulatorImageNode.processImage()
+        } else {
+            videoCameraNode.startCameraCapture()
+        }
+    }
+    
+    func toggleCamera() {
+        videoCameraNode.rotateCamera()
     }
 }

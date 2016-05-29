@@ -7,13 +7,12 @@
 //
 
 import Foundation
+import GPUImage
 
 // - Abstract the backing in the future so it works across engines
 // - GPUImage
 // - The Amazing Audio Engine
 protocol Node {
-    associatedtype InternalNodeType
-    associatedtype TargetInputNodeType
-    
-    func addTarget(node: TargetInputNodeType)
+    func addTarget(node: GPUImageInput)
+    func startRendering()
 }

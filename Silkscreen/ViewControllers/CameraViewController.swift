@@ -9,6 +9,8 @@
 import UIKit
 import GPUImage
 
+// - Source options
+// - Camera / Audio Controls
 // - Add capture options
 // - Add record button
 // - Build our own node / device handling system for this part.
@@ -17,8 +19,31 @@ class CameraViewController: UIViewController {
     private let outputNode = CameraNode()
     private let imageView: GPUImageView = GPUImageView()
     
+    private lazy var videoSourceButton: UIButton = {
+        let button = UIButton(type: .System)
+        button.setTitle("Video", forState: .Normal)
+        button.sizeToFit()
+        
+        return button
+    }()
+    
+    private lazy var audioSourceButton: UIButton = {
+        let button = UIButton(type: .System)
+        button.setTitle("Audio", forState: .Normal)
+        button.sizeToFit()
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // - Make Icon for this
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Toggle", comment: ""), style: .Plain, target: self, action: #selector(didPressToggle))
+        toolbarItems = [
+            UIBarButtonItem(customView: videoSourceButton),
+            UIBarButtonItem(customView: audioSourceButton)
+        ]
         
         view.backgroundColor = UIColor.grayColor()
         
@@ -31,6 +56,8 @@ class CameraViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        outputNode.startRendering()
+        
         navigationController?.setToolbarHidden(false, animated: animated)
     }
     
@@ -38,5 +65,9 @@ class CameraViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.setToolbarHidden(true, animated: animated)
+    }
+    
+    @objc private func didPressToggle() {
+        outputNode.toggleCamera()
     }
 }

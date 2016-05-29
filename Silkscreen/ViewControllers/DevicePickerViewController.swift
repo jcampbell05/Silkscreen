@@ -11,6 +11,7 @@ import AVFoundation
 
 // - Handle Updates
 // - Select Default
+// - Move into view model shared across device picker and camera view controller
 class DevicePickerViewController: UITableViewController {
     
     private let mediaType: String
@@ -54,5 +55,9 @@ class DevicePickerViewController: UITableViewController {
         cell.textLabel?.text = device.localizedName
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

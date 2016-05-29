@@ -20,8 +20,8 @@ class CameraViewController: UIViewController {
     private let outputNode = CameraNode()
     private let imageView: GPUImageView = GPUImageView()
     
-    private let videoDevicePickerViewModel = DevicePickerViewModel()
-    private let audioDevicePickerViewModel = DevicePickerViewModel()
+    private let videoDevicePickerViewModel = DevicePickerViewModel(mediaType: AVMediaTypeVideo)
+    private let audioDevicePickerViewModel = DevicePickerViewModel(mediaType: AVMediaTypeAudio)
     
     private lazy var videoSourceButton: UIButton = {
         let button = UIButton(type: .System)

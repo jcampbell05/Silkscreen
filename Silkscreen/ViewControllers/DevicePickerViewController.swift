@@ -12,6 +12,7 @@ import AVFoundation
 // - Handle Updates
 // - Select Default
 // - Move into view model shared across device picker and camera view controller
+// - Add None Option
 class DevicePickerViewController: UITableViewController {
     
     private let mediaType: String

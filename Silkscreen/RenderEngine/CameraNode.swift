@@ -10,6 +10,7 @@ import Foundation
 import GPUImage
 
 // - Move this back to the camera.
+// - Implement own Camera node which makes handling devices easier
 class CameraNode: Node {
     private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
     private let simulatorImageNode = GPUImagePicture(image: UIImage(named: "test-image"))

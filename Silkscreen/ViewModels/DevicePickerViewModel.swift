@@ -11,6 +11,7 @@ import AVFoundation
 
 // - BDD This
 // - Implement None State
+// - Signal for device changes.
 class DevicePickerViewModel {
     
     private let mediaType: String
@@ -23,7 +24,7 @@ class DevicePickerViewModel {
         }
     }
     
-    var devices: [AVCaptureDevice] = []
+    private(set) var devices: [AVCaptureDevice] = []
     
     init(mediaType: String) {
         

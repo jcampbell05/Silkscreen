@@ -24,6 +24,16 @@ class DevicePickerViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        let deviceCount = CGFloat(viewModel.devices.count)
+        let height = tableView.rowHeight * deviceCount
+        
+        preferredContentSize = CGSize(width: 0, height: height)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -53,6 +63,9 @@ class DevicePickerViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        viewModel.selectedDevice = viewModel.devices[indexPath.row]
+        tableView.reloadData()
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 }

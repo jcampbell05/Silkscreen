@@ -97,7 +97,9 @@ class CameraViewController: UIViewController {
         let viewController = DevicePickerViewController(viewModel: viewModel)
         
         viewController.modalPresentationStyle = .Popover
+        
         viewController.popoverPresentationController?.sourceView = sender
+        viewController.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: sender.frame.width, height: sender.frame.height)
         
         presentViewController(viewController, animated: true, completion: nil)
     }

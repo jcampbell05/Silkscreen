@@ -25,7 +25,7 @@ class CameraViewController: UIViewController {
     
     private lazy var videoSourceButton: UIButton = {
         let button = UIButton(type: .System)
-        button.setTitle("Video", forState: .Normal)
+        button.setTitle(NSLocalizedString("Video Source: %@", comment:""), forState: .Normal)
         button.sizeToFit()
         
         button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
@@ -35,7 +35,7 @@ class CameraViewController: UIViewController {
     
     private lazy var audioSourceButton: UIButton = {
         let button = UIButton(type: .System)
-        button.setTitle("Audio", forState: .Normal)
+        button.setTitle(NSLocalizedString("Audio Source: %@", comment:""), forState: .Normal)
         button.sizeToFit()
         
         button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
@@ -50,6 +50,7 @@ class CameraViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Toggle", comment: ""), style: .Plain, target: self, action: #selector(didPressToggle))
         toolbarItems = [
             UIBarButtonItem(customView: videoSourceButton),
+            UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil),
             UIBarButtonItem(customView: audioSourceButton)
         ]
         

@@ -28,8 +28,9 @@ class DevicePickerViewController: UITableViewController {
         
         super.viewWillAppear(animated)
         
+        // - Make height a constant
         let deviceCount = CGFloat(viewModel.devices.count)
-        let height = tableView.rowHeight * deviceCount
+        let height = 44.0 * deviceCount
         
         preferredContentSize = CGSize(width: 0, height: height)
     }

@@ -26,8 +26,6 @@ class CameraViewController: UIViewController {
     private lazy var videoSourceButton: UIButton = {
         let button = UIButton(type: .System)
         button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
-    
-        self.updateSourceButton(button)
         
         return button
     }()
@@ -36,14 +34,15 @@ class CameraViewController: UIViewController {
         let button = UIButton(type: .System)
         button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
         
-        self.updateSourceButton(button)
-        
         return button
     }()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        updateSourceButton(videoSourceButton)
+        updateSourceButton(audioSourceButton)
         
         videoDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
             self.updateSourceButton(self.videoSourceButton)

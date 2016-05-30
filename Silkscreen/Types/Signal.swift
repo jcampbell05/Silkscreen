@@ -8,6 +8,7 @@
 
 import Foundation
 
+// - Remove
 class Signal {
     
     private var slots = Frozen<[Slot]>(value: [])

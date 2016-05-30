@@ -11,7 +11,7 @@ import GPUImage
 import AVFoundation
 
 // - Source options
-// - Camera / Audio Controls to control options for those.
+// - Camera / Audio Controls to control settings for those.
 // - Add capture options
 // - Add record button
 // - Build our own node / device handling system for this part.
@@ -25,28 +25,36 @@ class CameraViewController: UIViewController {
     
     private lazy var videoSourceButton: UIButton = {
         let button = UIButton(type: .System)
-        button.setTitle(NSLocalizedString("Video Source: %@", comment:""), forState: .Normal)
-        button.sizeToFit()
-        
         button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
+    
+        self.updateSourceButton(button)
         
         return button
     }()
     
     private lazy var audioSourceButton: UIButton = {
         let button = UIButton(type: .System)
-        button.setTitle(NSLocalizedString("Audio Source: %@", comment:""), forState: .Normal)
-        button.sizeToFit()
-        
         button.addTarget(self, action: #selector(didPressSource), forControlEvents: .TouchUpInside)
+        
+        self.updateSourceButton(button)
         
         return button
     }()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        videoDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
+            self.updateSourceButton(self.videoSourceButton)
+        }
+        
+        audioDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
+            self.updateSourceButton(self.audioSourceButton)
+        }
+        
         // - Make Icon for this
+        // - Disable with no video sources
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Toggle", comment: ""), style: .Plain, target: self, action: #selector(didPressToggle))
         toolbarItems = [
             UIBarButtonItem(customView: videoSourceButton),
@@ -80,14 +88,29 @@ class CameraViewController: UIViewController {
         outputNode.toggleCamera()
     }
     
+    private func viewModelForSourceButton(sender: UIButton) -> DevicePickerViewModel {
+        return (sender == videoSourceButton) ? videoDevicePickerViewModel : audioDevicePickerViewModel
+    }
+    
     @objc private func didPressSource(sender: UIButton) {
         
-        let mediaType = (sender == videoSourceButton) ? AVMediaTypeVideo : AVMediaTypeAudio
-        let viewController = DevicePickerViewController(mediaType: mediaType)
+        let viewModel = viewModelForSourceButton(sender)
+        let viewController = DevicePickerViewController(viewModel: viewModel)
         
         viewController.modalPresentationStyle = .Popover
         viewController.popoverPresentationController?.sourceView = sender
         
         presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    private func updateSourceButton(sender: UIButton) {
+    
+        let titleFormat = (sender == videoSourceButton) ? NSLocalizedString("Video Source: %@", comment:"") : NSLocalizedString("Audio Source: %@", comment:"")
+        let viewModel = viewModelForSourceButton(sender)
+        let deviceName = viewModel.selectedDevice?.localizedName ?? ""
+        let title = String(format: titleFormat, deviceName)
+        
+        sender.setTitle(title, forState: .Normal)
+        sender.sizeToFit()
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// - Remove
 class Slot {
     
     let signalID: String

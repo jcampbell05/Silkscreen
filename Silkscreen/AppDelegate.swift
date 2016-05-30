@@ -10,8 +10,9 @@ import CoreDragon
 import UIKit
 
 // - Swinject
-// - RxSwift
-// - Remove need for Slot and Signal
+// - RxSwift when needed
+// - Render
+// - Remove need for Slot and Signal <-- OSS this ?
 // - Implement ReFlow
 // - iOS Drag And Drop System - Reimplement Dragon Drag And Drop (Or Tidy it up)
 

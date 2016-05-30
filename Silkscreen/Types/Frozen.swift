@@ -8,6 +8,7 @@
 
 import Foundation
 
+// - Remove
 class Frozen<T: CollectionType> {
     
     let value: T

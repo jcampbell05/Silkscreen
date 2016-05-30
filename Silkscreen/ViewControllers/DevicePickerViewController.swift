@@ -15,29 +15,17 @@ import AVFoundation
 // - Add None Option
 class DevicePickerViewController: UITableViewController {
     
-    private let mediaType: String
+    private let viewModel: DevicePickerViewModel
     
-    private var devices: [AVCaptureDevice] = []
-    
-    init(mediaType: String) {
+    init(viewModel: DevicePickerViewModel) {
         
-        self.mediaType = mediaType
+        self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateDevices), name: AVCaptureDeviceWasConnectedNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateDevices), name: AVCaptureDeviceWasDisconnectedNotification, object: nil)
-        
-        updateDevices()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc private func updateDevices() {
-        devices = AVCaptureDevice.devicesWithMediaType(mediaType) as! [AVCaptureDevice]
-        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,15 +33,21 @@ class DevicePickerViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return devices.count
+        return viewModel.devices.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") ?? UITableViewCell(style: .Default, reuseIdentifier: "Cell")
-        let device = devices[indexPath.row]
+        let device = viewModel.devices[indexPath.row]
         
         cell.textLabel?.text = device.localizedName
+        
+        if viewModel.selectedDevice == .Some(device) {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
         
         return cell
     }

@@ -19,6 +19,8 @@ class CameraNode: Node {
         if Platform.isSimulator {
             simulatorImageNode.addTarget(node)
         } else {
+            
+            videoCameraNode.horizontallyMirrorFrontFacingCamera = false
             videoCameraNode.addTarget(node)
         }
     }

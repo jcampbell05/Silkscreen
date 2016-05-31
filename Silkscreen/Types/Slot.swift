@@ -9,20 +9,16 @@
 import Foundation
 
 // - Remove
-class Slot {
+class Slot<T> {
     
     let signalID: String
-    private let signal: Signal
+    private let signal: Signal<T>
     
-    var callback: (() -> Void)? = nil
+    var callback: ((sender: T) -> Void)? = nil
  
-    init(signal: Signal) {
+    init(signal: Signal<T>) {
         self.signalID = NSUUID().UUIDString
         self.signal = signal
-    }
-    
-    func trigger() {
-        
     }
     
     deinit {

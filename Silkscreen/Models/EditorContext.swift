@@ -55,7 +55,9 @@ class EditorContext {
         }
     }
     
-    private(set) var assetsDidChangeSignal = Signal()
+    private(set) lazy var assetsDidChangeSignal: Signal<EditorContext> = {
+        return Signal(sender: self)
+    }()
     
     func addAsset(path: NSURL) {
         assets = assets.append(Asset(path: path))

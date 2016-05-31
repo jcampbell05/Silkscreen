@@ -18,13 +18,12 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     
     var editorContext: EditorContext? = nil {
         didSet {
-            assetsDidChangeSlot = editorContext?.assetsDidChangeSignal.addSlot() {
+            editorContext?.assetsDidChangeSignal.addSlot() {
+                _ in
                 self.collectionView?.reloadData()
             }
         }
     }
-    
-    private var assetsDidChangeSlot: Slot? = nil
     
     lazy var addButton: UIBarButtonItem = {
        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))

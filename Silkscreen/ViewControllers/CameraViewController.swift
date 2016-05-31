@@ -41,14 +41,13 @@ class CameraViewController: UIViewController {
         
         super.viewDidLoad()
         
-        updateSourceButton(videoSourceButton)
-        updateSourceButton(audioSourceButton)
-        
         videoDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
+            self.outputNode.videoDevice = $0.selectedDevice.captureDevice
             self.updateSourceButton(self.videoSourceButton)
         }
         
         audioDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
+            self.outputNode.audioDevice = $0.selectedDevice.captureDevice
             self.updateSourceButton(self.audioSourceButton)
         }
         
@@ -108,7 +107,7 @@ class CameraViewController: UIViewController {
     
         let titleFormat = (sender == videoSourceButton) ? NSLocalizedString("Video Source: %@", comment:"") : NSLocalizedString("Audio Source: %@", comment:"")
         let viewModel = viewModelForSourceButton(sender)
-        let deviceName = viewModel.selectedDevice?.localizedName ?? ""
+        let deviceName = viewModel.selectedDevice.localizedName ?? ""
         let title = String(format: titleFormat, deviceName)
         
         sender.setTitle(title, forState: .Normal)

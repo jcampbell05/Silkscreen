@@ -86,7 +86,7 @@ class CameraViewController: UIViewController {
     }
     
     @objc private func didPressToggle() {
-        outputNode.toggleCamera()
+        videoDevicePickerViewModel.selectNextDevice()
     }
     
     private func viewModelForSourceButton(sender: UIButton) -> DevicePickerViewModel {

@@ -32,8 +32,4 @@ class CameraNode: Node {
             videoCameraNode.startCameraCapture()
         }
     }
-    
-    func toggleCamera() {
-        videoCameraNode.rotateCamera()
-    }
 }

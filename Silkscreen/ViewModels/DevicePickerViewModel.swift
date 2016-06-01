@@ -80,6 +80,12 @@ class DevicePickerViewModel {
         
         devices = [.None] + captureDevices
     }
+    
+    func selectNextDevice() {
+        
+        let selectedDeviceIndex = devices.indexOf(selectedDevice) ?? 0
+        selectedDevice = devices[selectedDeviceIndex + 1 % devices.count]
+    }
 }
 
 func == (lhs: DevicePickerViewModel.Device, rhs: DevicePickerViewModel.Device) -> Bool {

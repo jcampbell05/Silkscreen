@@ -15,8 +15,10 @@ class BlurredSheetPresentationController: UIPresentationController {
        return UITapGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
     }()
     
+    private(set) var interactiveDismissTransition: UIPercentDrivenInteractiveTransition? = nil
+    
     private lazy var panGesture: UIPanGestureRecognizer = {
-        return UIPanGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
+        return UIPanGestureRecognizer(target: self, action: #selector(panGestureStateDidUpdate))
     }()
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
@@ -31,7 +33,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         guard let containerView = containerView else {
             return
         }
-
+        
         blurringView.frame = containerView.bounds
         blurringView.alpha = 0
         blurringView.addGestureRecognizer(tapGesture)
@@ -72,6 +74,35 @@ class BlurredSheetPresentationController: UIPresentationController {
         
         if completed {
             blurringView.removeFromSuperview()
+        }
+    }
+    
+    // - Move this into some kind of interactor object
+    @objc private func panGestureStateDidUpdate() {
+        
+        let translation = panGesture.translationInView(panGesture.view)
+        let progress = translation.y / (panGesture.view?.bounds.height ?? 1.0)
+        
+        switch panGesture.state {
+        case .Began:
+            interactiveDismissTransition = UIPercentDrivenInteractiveTransition()
+            didPerformDismissGesture()
+            break
+            
+        case .Changed:
+            interactiveDismissTransition?.updateInteractiveTransition(progress)
+            break
+            
+        default:
+            if (progress > 0.5) {
+                interactiveDismissTransition?.finishInteractiveTransition()
+            } else {
+                interactiveDismissTransition?.cancelInteractiveTransition()
+            }
+            
+            interactiveDismissTransition = nil
+            
+            break
         }
     }
     

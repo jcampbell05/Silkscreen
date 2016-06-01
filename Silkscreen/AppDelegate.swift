@@ -15,6 +15,7 @@ import UIKit
 // - Remove need for Slot and Signal <-- OSS this ?
 // - Implement ReFlow
 // - iOS Drag And Drop System - Reimplement Dragon Drag And Drop (Or Tidy it up)
+// - Simplify Apple's transition system
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

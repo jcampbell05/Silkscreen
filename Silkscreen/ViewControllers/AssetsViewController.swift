@@ -94,11 +94,9 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     }
     
     func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        
-        print(presentingViewController)
 
-        
-        return nil
+        let presentationController = presentedViewController?.presentationController as? BlurredSheetPresentationController
+        return presentationController?.interactiveDismissTransition
     }
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {

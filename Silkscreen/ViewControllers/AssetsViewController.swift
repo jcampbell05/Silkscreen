@@ -88,6 +88,19 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         return cell
     }
     
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return SlideInAnimatedTransition()
+    }
+    
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        print(presentingViewController)
+
+        
+        return nil
+    }
+    
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)

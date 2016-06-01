@@ -8,12 +8,15 @@
 
 import UIKit
 
-// - Slide to dismiss as well
 class BlurredSheetPresentationController: UIPresentationController {
     
     private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
     private lazy var tapGesture: UITapGestureRecognizer = {
        return UITapGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
+    }()
+    
+    private lazy var panGesture: UIPanGestureRecognizer = {
+        return UIPanGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
     }()
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
@@ -28,13 +31,14 @@ class BlurredSheetPresentationController: UIPresentationController {
         guard let containerView = containerView else {
             return
         }
-        
+
         blurringView.frame = containerView.bounds
         blurringView.alpha = 0
         blurringView.addGestureRecognizer(tapGesture)
         
+        containerView.addGestureRecognizer(panGesture)
         containerView.addSubview(blurringView)
-        
+ 
         presentingViewController.transitionCoordinator()?.animateAlongsideTransition({ _ in
             
             self.blurringView.alpha = 1.0

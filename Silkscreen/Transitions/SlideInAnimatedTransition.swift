@@ -19,20 +19,29 @@ import UIKit
         guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
             return
         }
+        
         guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) else {
             return
         }
         
+        let isPresenting = (fromViewController.presentedViewController != nil)
+        let targetViewController = (isPresenting) ? toViewController : fromViewController
+        
+        if isPresenting {
+            targetViewController.view.frame = CGRectOffset(transitionContext.initialFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
+        }
+        
         UIView.animateWithDuration(transitionDuration(transitionContext),
                                    animations: {
-            
-            // - Make fram off bottom of screen
-            fromViewController.view.frame = transitionContext.finalFrameForViewController(fromViewController)
-            
+                                    
+                                    let finalFrame = transitionContext.finalFrameForViewController(targetViewController)
+                                    let yOffset = isPresenting ? 0 : targetViewController.view.bounds.height
+                                    
+                                    targetViewController.view.frame = CGRectOffset(finalFrame, 0, yOffset)
         },
                                    completion: {
                                     _ in
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         })
     }
 }

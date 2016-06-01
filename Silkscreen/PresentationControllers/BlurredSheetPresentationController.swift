@@ -8,10 +8,13 @@
 
 import UIKit
 
-// - Tap outside to dismiss
+// - Slide to dismiss as well
 class BlurredSheetPresentationController: UIPresentationController {
     
-    let blurringView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+    private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+    private lazy var tapGesture: UITapGestureRecognizer = {
+       return UITapGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
+    }()
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
         let insets = UIEdgeInsetsMake(100, 100, 100, 100)
@@ -28,6 +31,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         
         blurringView.frame = containerView.bounds
         blurringView.alpha = 0
+        blurringView.addGestureRecognizer(tapGesture)
         
         containerView.addSubview(blurringView)
         
@@ -67,4 +71,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         }
     }
     
+    @objc private func didPerformDismissGesture() {
+        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

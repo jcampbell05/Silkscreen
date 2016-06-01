@@ -20,7 +20,6 @@
 		74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E5A1CFA14CE005AC140 /* CameraNode.swift */; };
 		74565E611CFBA3A7005AC140 /* DevicePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E601CFBA3A7005AC140 /* DevicePickerViewController.swift */; };
 		74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */; };
-		74565E651CFDD2B6005AC140 /* VideoCameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E641CFDD2B6005AC140 /* VideoCameraNode.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
@@ -64,7 +63,6 @@
 		74565E5A1CFA14CE005AC140 /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
 		74565E601CFBA3A7005AC140 /* DevicePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewController.swift; sourceTree = "<group>"; };
 		74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewModel.swift; sourceTree = "<group>"; };
-		74565E641CFDD2B6005AC140 /* VideoCameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCameraNode.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			children = (
 				74565E581CFA1460005AC140 /* Node.swift */,
 				74565E5A1CFA14CE005AC140 /* CameraNode.swift */,
-				74565E641CFDD2B6005AC140 /* VideoCameraNode.swift */,
 			);
 			path = RenderEngine;
 			sourceTree = "<group>";
@@ -434,7 +431,6 @@
 			files = (
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
 				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
-				74565E651CFDD2B6005AC140 /* VideoCameraNode.swift in Sources */,
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
 				745521B71CCFE9D20041C072 /* Asset.swift in Sources */,
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,

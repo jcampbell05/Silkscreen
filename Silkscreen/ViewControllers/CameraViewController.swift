@@ -18,7 +18,9 @@ import AVFoundation
 class CameraViewController: UIViewController {
     
     private let outputNode = CameraNode()
-    private let imageView: GPUImageView = GPUImageView()
+    
+    private let emptyImageView = UIImageView(image: UIImage(named: "test-image"))
+    private let videoImageView = GPUImageView()
     
     private let videoDevicePickerViewModel = DevicePickerViewModel(mediaType: AVMediaTypeVideo)
     private let audioDevicePickerViewModel = DevicePickerViewModel(mediaType: AVMediaTypeAudio)
@@ -60,12 +62,13 @@ class CameraViewController: UIViewController {
             UIBarButtonItem(customView: audioSourceButton)
         ]
         
-        view.backgroundColor = UIColor.grayColor()
+        emptyImageView.frame = view.bounds
+        videoImageView.frame = view.bounds
         
-        imageView.frame = view.bounds
-        view.addSubview(imageView)
+        view.addSubview(emptyImageView)
+        view.addSubview(videoImageView)
         
-        outputNode.addTarget(imageView)
+        outputNode.addTarget(videoImageView)
     }
     
     override func viewWillAppear(animated: Bool) {

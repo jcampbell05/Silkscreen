@@ -19,22 +19,16 @@ class CameraNode: Node {
     var audioDevice: AVCaptureDevice? = nil
     
     private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
-    private let simulatorImageNode = GPUImagePicture(image: UIImage(named: "test-image"))
-    
     func addTarget(node: GPUImageInput) {
-        if Platform.isSimulator {
-            simulatorImageNode.addTarget(node)
-        } else {
-            
+       
+        if Platform.isSimulator == false {
             videoCameraNode.horizontallyMirrorFrontFacingCamera = false
             videoCameraNode.addTarget(node)
         }
     }
     
     func startRendering() {
-        if Platform.isSimulator {
-            simulatorImageNode.processImage()
-        } else {
+        if Platform.isSimulator == false {
             videoCameraNode.startCameraCapture()
         }
     }

@@ -19,8 +19,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
                 
                 let asset = PHAsset.fetchAssetsWithALAssetURLs([path], options: nil).firstObject
                 
-                if let asset = asset as? PHAsset,
-                   let resource = PHAssetResource.assetResourcesForAsset(asset).first {
+                if let asset = asset as? PHAsset {
                 
                     let manager = PHImageManager.defaultManager()
                     let option = PHImageRequestOptions()

@@ -15,6 +15,8 @@ import AVFoundation
 // - Add capture options
 // - Add record button
 // - Build our own node / device handling system for this part.
+// - Add sound equaliser
+// - Add Video Setting UI (ISO etc)
 class CameraViewController: UIViewController {
     
     private let outputNode = CameraNode()
@@ -39,6 +41,8 @@ class CameraViewController: UIViewController {
         return button
     }()
     
+    let cameraControlsView = CameraControlsView()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -53,9 +57,6 @@ class CameraViewController: UIViewController {
             self.updateSourceButton(self.audioSourceButton)
         }
         
-        // - Make Icon for this
-        // - Disable with no video sources
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Toggle", comment: ""), style: .Plain, target: self, action: #selector(didPressToggle))
         toolbarItems = [
             UIBarButtonItem(customView: videoSourceButton),
             UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil),
@@ -67,6 +68,15 @@ class CameraViewController: UIViewController {
         
         view.addSubview(emptyImageView)
         view.addSubview(videoImageView)
+        view.addSubview(cameraControlsView)
+        
+        // - Make into constants
+        cameraControlsView.translatesAutoresizingMaskIntoConstraints = false
+        cameraControlsView.backgroundColor = UIColor.greenColor()
+        cameraControlsView.widthAnchor.constraintEqualToConstant(100.0).active = true
+        cameraControlsView.heightAnchor.constraintEqualToConstant(100.0).active = true
+        cameraControlsView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+        cameraControlsView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor, constant: -75.0).active = true
         
         outputNode.addTarget(videoImageView)
     }
@@ -83,10 +93,6 @@ class CameraViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.setToolbarHidden(true, animated: animated)
-    }
-    
-    @objc private func didPressToggle() {
-        videoDevicePickerViewModel.selectNextDevice()
     }
     
     private func viewModelForSourceButton(sender: UIButton) -> DevicePickerViewModel {

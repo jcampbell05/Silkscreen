@@ -16,13 +16,13 @@ class CameraNode: Node {
         
         willSet {
             videoDevice.unwrap {
-                self.videoCameraNode.captureSession.removeInput($0)
+                self.captureSession.removeInput($0)
             }
         }
         
         didSet {
             videoDevice.unwrap {
-                self.videoCameraNode.captureSession.addInput($0)
+                self.captureSession.addInput($0)
             }
         }
     }
@@ -31,36 +31,38 @@ class CameraNode: Node {
         
         willSet {
             audioDevice.unwrap {
-                self.videoCameraNode.captureSession.removeInput($0)
+                self.captureSession.removeInput($0)
             }
         }
         
         didSet {
             audioDevice.unwrap {
-                self.videoCameraNode.captureSession.addInput($0)
+                self.captureSession.addInput($0)
             }
         }
     }
     
-    private lazy var captureSessionCoordinator: CaptureSessionCoordinator = {
-        return CaptureSessionCoordinator(captureSession: self.videoCameraNode.captureSession)
-    }()
+    private var captureSession: AVCaptureSession {
+        return videoCameraNode.captureSession
+    }
     
     private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
     
     init() {
+
         
-        captureSessionCoordinator.lastVideoFrameDidChange.addSlot {
-            $0.lastVideoFrame.unwrap {
-                self.videoCameraNode.processVideoSampleBuffer($0)
-            }
-        }
-        
-        captureSessionCoordinator.lastAudioFrameDidChange.addSlot {
-            $0.lastAudioFrame.unwrap {
-                self.videoCameraNode.processAudioSampleBuffer($0)
-            }
-        }
+// - Reimplement Here
+//        captureSessionCoordinator.lastVideoFrameDidChange.addSlot {
+//            $0.lastVideoFrame.unwrap {
+//                self.videoCameraNode.processVideoSampleBuffer($0)
+//            }
+//        }
+//        
+//        captureSessionCoordinator.lastAudioFrameDidChange.addSlot {
+//            $0.lastAudioFrame.unwrap {
+//                self.videoCameraNode.processAudioSampleBuffer($0)
+//            }
+//        }
     }
     
     func addTarget(node: GPUImageInput) {

@@ -51,7 +51,7 @@ class CameraNode: Node {
     init() {
 
         
-// - Reimplement Here
+// - Reimplement Here - Build output buffers which call function which pushes to GPUImage
 //        captureSessionCoordinator.lastVideoFrameDidChange.addSlot {
 //            $0.lastVideoFrame.unwrap {
 //                self.videoCameraNode.processVideoSampleBuffer($0)

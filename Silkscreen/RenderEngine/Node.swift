@@ -14,5 +14,4 @@ import GPUImage
 // - The Amazing Audio Engine
 protocol Node {
     func addTarget(node: GPUImageInput)
-    func startRendering()
 }

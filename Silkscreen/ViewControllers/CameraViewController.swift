@@ -48,12 +48,12 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         
         videoDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
-            self.outputNode.videoDevice = $0.selectedDevice.captureDevice
+            self.outputNode.videoDevice = try? AVCaptureDeviceInput(device: $0.selectedDevice.captureDevice)
             self.updateSourceButton(self.videoSourceButton)
         }
         
         audioDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
-            self.outputNode.audioDevice = $0.selectedDevice.captureDevice
+            self.outputNode.audioDevice = try? AVCaptureDeviceInput(device: $0.selectedDevice.captureDevice)
             self.updateSourceButton(self.audioSourceButton)
         }
         
@@ -83,8 +83,6 @@ class CameraViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        outputNode.startRendering()
         
         navigationController?.setToolbarHidden(false, animated: animated)
     }

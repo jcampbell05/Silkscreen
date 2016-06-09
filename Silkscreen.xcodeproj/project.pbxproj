@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */; };
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
+		741CEC591D0A2C0D008CDA50 /* CaptureSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC581D0A2C0D008CDA50 /* CaptureSessionCoordinator.swift */; };
+		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
 		7433DBE41CF8F1B500529931 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE31CF8F1B500529931 /* Platform.swift */; };
 		74461E991CD1E5230043A86F /* DragonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E981CD1E5230043A86F /* DragonCore.swift */; };
 		74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */; };
@@ -54,6 +56,8 @@
 		20A0F24F2E770C6631C00547 /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlsView.swift; sourceTree = "<group>"; };
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
+		741CEC581D0A2C0D008CDA50 /* CaptureSessionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSessionCoordinator.swift; sourceTree = "<group>"; };
+		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		74461E981CD1E5230043A86F /* DragonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCore.swift; sourceTree = "<group>"; };
 		74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssetViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			children = (
 				74565E581CFA1460005AC140 /* Node.swift */,
 				74565E5A1CFA14CE005AC140 /* CameraNode.swift */,
+				741CEC581D0A2C0D008CDA50 /* CaptureSessionCoordinator.swift */,
 			);
 			path = RenderEngine;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				74B8DC981CCE090900B9E1ED /* Frozen.swift */,
 				745521B81CCFEA900041C072 /* Signal.swift */,
 				745521BA1CCFEB160041C072 /* Slot.swift */,
+				741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -465,6 +471,8 @@
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
+				741CEC591D0A2C0D008CDA50 /* CaptureSessionCoordinator.swift in Sources */,
+				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
 				74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */,

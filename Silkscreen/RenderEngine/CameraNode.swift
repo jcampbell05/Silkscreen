@@ -9,27 +9,61 @@
 import Foundation
 import GPUImage
 
-// - Move this back to the camera.
-// - Move the camera stuff to its own node ?
-// - Implement own Camera node which makes handling devices easier
-// - Pass along to GPUImageVideoCamera
 class CameraNode: Node {
     
-    var videoDevice: AVCaptureDevice? = nil
-    var audioDevice: AVCaptureDevice? = nil
-    
-    private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
-    func addTarget(node: GPUImageInput) {
-       
-        if Platform.isSimulator == false {
-            videoCameraNode.horizontallyMirrorFrontFacingCamera = false
-            videoCameraNode.addTarget(node)
+    // - Take AVCaptureDeviceInput instead?
+    var videoDevice: AVCaptureDeviceInput? = nil {
+        
+        willSet {
+            videoDevice.unwrap {
+                self.videoCameraNode.captureSession.removeInput($0)
+            }
+        }
+        
+        didSet {
+            videoDevice.unwrap {
+                self.videoCameraNode.captureSession.addInput($0)
+            }
         }
     }
     
-    func startRendering() {
-        if Platform.isSimulator == false {
-            videoCameraNode.startCameraCapture()
+    var audioDevice: AVCaptureDeviceInput? = nil {
+        
+        willSet {
+            audioDevice.unwrap {
+                self.videoCameraNode.captureSession.removeInput($0)
+            }
         }
+        
+        didSet {
+            audioDevice.unwrap {
+                self.videoCameraNode.captureSession.addInput($0)
+            }
+        }
+    }
+    
+    private lazy var captureSessionCoordinator: CaptureSessionCoordinator = {
+        return CaptureSessionCoordinator(captureSession: self.videoCameraNode.captureSession)
+    }()
+    
+    private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
+    
+    init() {
+        
+        captureSessionCoordinator.lastVideoFrameDidChange.addSlot {
+            $0.lastVideoFrame.unwrap {
+                self.videoCameraNode.processVideoSampleBuffer($0)
+            }
+        }
+        
+        captureSessionCoordinator.lastAudioFrameDidChange.addSlot {
+            $0.lastAudioFrame.unwrap {
+                self.videoCameraNode.processAudioSampleBuffer($0)
+            }
+        }
+    }
+    
+    func addTarget(node: GPUImageInput) {
+        videoCameraNode.addTarget(node)
     }
 }

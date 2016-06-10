@@ -17,6 +17,7 @@ import AVFoundation
 // - Build our own node / device handling system for this part.
 // - Add sound equaliser
 // - Add Video Setting UI (ISO etc)
+// - Handle no Video source.
 class CameraViewController: UIViewController {
     
     private let outputNode = CameraNode()
@@ -48,7 +49,10 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         
         videoDevicePickerViewModel.selectedDeviceDidChangeSignal.addSlot {
+            
             self.outputNode.videoDevice = try? AVCaptureDeviceInput(device: $0.selectedDevice.captureDevice)
+            
+            self.videoImageView.hidden = ($0.selectedDevice == .None)
             self.updateSourceButton(self.videoSourceButton)
         }
         

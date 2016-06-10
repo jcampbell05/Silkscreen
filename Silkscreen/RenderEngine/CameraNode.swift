@@ -9,9 +9,9 @@
 import Foundation
 import GPUImage
 
-class CameraNode: Node {
+// - What do we do with the metadata?
+class CameraNode: NSObject, Node, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
     
-    // - Take AVCaptureDeviceInput instead?
     var videoDevice: AVCaptureDeviceInput? = nil {
         
         willSet {
@@ -42,30 +42,54 @@ class CameraNode: Node {
         }
     }
     
+    private let sampleBufferQueue = dispatch_queue_create("com.silkscreen.sample-buffer-queue", nil)
+    
+    private let videoOutput = AVCaptureVideoDataOutput()
+    private let audioOutput = AVCaptureAudioDataOutput()
+    
     private var captureSession: AVCaptureSession {
         return videoCameraNode.captureSession
     }
     
     private let videoCameraNode = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
     
-    init() {
-
+    override init() {
         
-// - Reimplement Here - Build output buffers which call function which pushes to GPUImage
-//        captureSessionCoordinator.lastVideoFrameDidChange.addSlot {
-//            $0.lastVideoFrame.unwrap {
-//                self.videoCameraNode.processVideoSampleBuffer($0)
-//            }
-//        }
-//        
-//        captureSessionCoordinator.lastAudioFrameDidChange.addSlot {
-//            $0.lastAudioFrame.unwrap {
-//                self.videoCameraNode.processAudioSampleBuffer($0)
-//            }
-//        }
+        super.init()
+        
+        videoOutput.setSampleBufferDelegate(self, queue: sampleBufferQueue)
+        audioOutput.setSampleBufferDelegate(self, queue: sampleBufferQueue)
+        
+        videoCameraNode.removeInputsAndOutputs()
+        
+        captureSession.addOutput(videoOutput)
+        captureSession.addOutput(audioOutput)
+        
+        videoCameraNode.startCameraCapture()
     }
     
     func addTarget(node: GPUImageInput) {
         videoCameraNode.addTarget(node)
+    }
+    
+    @objc func captureOutput(captureOutput: AVCaptureOutput!, didDropSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        // - Do we show warning to the user ?
+    }
+    
+    @objc func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        
+        switch captureOutput {
+            
+        case videoOutput:
+            videoCameraNode.processVideoSampleBuffer(sampleBuffer)
+            break
+            
+        case audioOutput:
+            videoCameraNode.processAudioSampleBuffer(sampleBuffer)
+            break
+            
+        default:
+            break
+        }
     }
 }

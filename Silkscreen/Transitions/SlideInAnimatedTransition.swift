@@ -32,10 +32,6 @@ import UIKit
         }
         
         UIView.animateWithDuration(transitionDuration(transitionContext),
-                                   delay: 0,
-                                   usingSpringWithDamping: (isPresenting) ? 0.23 : 0.0,
-                                   initialSpringVelocity: 0,
-                                   options: [],
                                    animations: {
                                     
                                     let finalFrame = transitionContext.finalFrameForViewController(targetViewController)

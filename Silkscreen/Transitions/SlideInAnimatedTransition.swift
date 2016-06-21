@@ -27,10 +27,6 @@ import UIKit
         let isPresenting = (fromViewController.presentedViewController != nil)
         let targetViewController = (isPresenting) ? toViewController : fromViewController
         
-        if targetViewController.view.superview == nil {
-            transitionContext.containerView()?.addSubview(targetViewController.view)
-        }
-        
         if isPresenting {
             targetViewController.view.frame = CGRectOffset(transitionContext.initialFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
         }

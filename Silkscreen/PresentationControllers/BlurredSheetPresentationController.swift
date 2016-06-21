@@ -40,6 +40,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         
         containerView.addGestureRecognizer(panGesture)
         containerView.addSubview(blurringView)
+        containerView.addSubview(presentedViewController.view)
  
         presentingViewController.transitionCoordinator()?.animateAlongsideTransition({ _ in
             

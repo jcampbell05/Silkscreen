@@ -27,11 +27,19 @@ import UIKit
         let isPresenting = (fromViewController.presentedViewController != nil)
         let targetViewController = (isPresenting) ? toViewController : fromViewController
         
+        if targetViewController.view.superview == nil {
+            transitionContext.containerView()?.addSubview(targetViewController.view)
+        }
+        
         if isPresenting {
             targetViewController.view.frame = CGRectOffset(transitionContext.initialFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
         }
         
         UIView.animateWithDuration(transitionDuration(transitionContext),
+                                   delay: 0,
+                                   usingSpringWithDamping: (isPresenting) ? 1 : 0.0,
+                                   initialSpringVelocity: 0,
+                                   options: [],
                                    animations: {
                                     
                                     let finalFrame = transitionContext.finalFrameForViewController(targetViewController)

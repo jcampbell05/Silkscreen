@@ -88,6 +88,11 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         return cell
     }
     
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return SlideInAnimatedTransition()
+    }
+    
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         return SlideInAnimatedTransition()

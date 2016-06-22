@@ -31,21 +31,36 @@ import UIKit
             targetViewController.view.frame = CGRectOffset(transitionContext.finalFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
         }
         
-        UIView.animateWithDuration(transitionDuration(transitionContext),
-                                   delay: 0,
-                                   usingSpringWithDamping: (isPresenting) ? 0.58 : 0.0,
-                                   initialSpringVelocity: 0,
-                                   options: [],
-                                   animations: {
+        animateWithContext(transitionContext, isPresenting: isPresenting, animations: {
                                     
                                     let finalFrame = transitionContext.finalFrameForViewController(targetViewController)
                                     let yOffset = isPresenting ? 0 : targetViewController.view.bounds.height
                                     
                                     targetViewController.view.frame = CGRectOffset(finalFrame, 0, yOffset)
-        },
+            },
                                    completion: {
                                     _ in
                                     transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         })
+    }
+    
+    private func animateWithContext(transitionContext: UIViewControllerContextTransitioning, isPresenting: Bool, animations: () -> Void, completion: (Bool) -> Void) {
+        
+        if (isPresenting) {
+            
+            UIView.animateWithDuration(transitionDuration(transitionContext),
+                                       delay: 0,
+                                       usingSpringWithDamping: 0.58,
+                                       initialSpringVelocity: 0,
+                                       options: [],
+                                       animations: animations,
+                                       completion: completion)
+            
+        } else {
+            
+            UIView.animateWithDuration(transitionDuration(transitionContext),
+                                       animations: animations,
+                                       completion: completion)
+        }
     }
 }

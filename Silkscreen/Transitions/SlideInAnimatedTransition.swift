@@ -11,7 +11,7 @@ import UIKit
 @objc class SlideInAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.25
+        return 0.5
     }
    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -28,10 +28,14 @@ import UIKit
         let targetViewController = (isPresenting) ? toViewController : fromViewController
         
         if isPresenting {
-            targetViewController.view.frame = CGRectOffset(transitionContext.initialFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
+            targetViewController.view.frame = CGRectOffset(transitionContext.finalFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
         }
         
         UIView.animateWithDuration(transitionDuration(transitionContext),
+                                   delay: 0,
+                                   usingSpringWithDamping: (isPresenting) ? 0.58 : 0.0,
+                                   initialSpringVelocity: 0,
+                                   options: [],
                                    animations: {
                                     
                                     let finalFrame = transitionContext.finalFrameForViewController(targetViewController)

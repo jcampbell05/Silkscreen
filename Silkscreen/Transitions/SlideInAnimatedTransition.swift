@@ -58,7 +58,8 @@ import UIKit
             
         } else {
             
-            UIView.animateWithDuration(transitionDuration(transitionContext),
+            // NOTE: We will use the new property animator in iOS 10 to reverse the presentation animation
+            UIView.animateWithDuration(transitionDuration(transitionContext) / 2,
                                        animations: animations,
                                        completion: completion)
         }

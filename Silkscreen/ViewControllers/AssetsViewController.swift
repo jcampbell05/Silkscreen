@@ -59,7 +59,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     
     @objc private func didPressAdd() {
 
-        let viewController = UIViewController()
+        let viewController = AddAssetViewController()
         viewController.editorContext = editorContext
         
         let navigationController = UINavigationController(rootViewController: viewController)

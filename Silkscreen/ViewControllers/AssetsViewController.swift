@@ -60,14 +60,13 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     @objc private func didPressAdd() {
 
         let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.redColor()
-      //  viewController.editorContext = editorContext
+        viewController.editorContext = editorContext
         
-//        let navigationController = UINavigationController(rootViewController: viewController)
-        viewController.transitioningDelegate = self
-        viewController.modalPresentationStyle = .Custom
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.transitioningDelegate = self
+        navigationController.modalPresentationStyle = .Custom
         
-        presentViewController(viewController, animated: true, completion: nil)
+        presentViewController(navigationController, animated: true, completion: nil)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

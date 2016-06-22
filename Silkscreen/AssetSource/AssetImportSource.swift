@@ -11,4 +11,6 @@ import Foundation
 protocol AssetImportSource {
     
     var name: String { get }
+    
+    var numberOfAlbums: Int { get }
 }

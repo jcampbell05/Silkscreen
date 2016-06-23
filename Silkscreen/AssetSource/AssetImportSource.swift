@@ -12,5 +12,9 @@ protocol AssetImportSource {
     
     var name: String { get }
     
+    // - Number Of Asset Groups
     var numberOfAlbums: Int { get }
+    
+    // - Assets for asset groups
+    // - Authenticate ()
 }

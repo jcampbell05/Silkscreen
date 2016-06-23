@@ -28,7 +28,11 @@ import UIKit
         let targetViewController = (isPresenting) ? toViewController : fromViewController
         
         if isPresenting {
-            targetViewController.view.frame = CGRectOffset(transitionContext.finalFrameForViewController(targetViewController), 0, targetViewController.view.bounds.height)
+            
+            var initialFrame = transitionContext.finalFrameForViewController(targetViewController)
+            initialFrame.origin.y = fromViewController.view.frame.height
+                
+            targetViewController.view.frame = initialFrame
         }
         
         animateWithContext(transitionContext, isPresenting: isPresenting, animations: {

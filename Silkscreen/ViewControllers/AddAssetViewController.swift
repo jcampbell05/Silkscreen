@@ -8,7 +8,7 @@
 
 import UIKit
 
-// - Fix crash in portrait
+// - Use view model for asset source :)
 class AddAssetViewController: DividableViewController {
 
     private let assetSourcePicker = UISplitViewController()
@@ -34,9 +34,15 @@ class AddAssetViewController: DividableViewController {
             PhotoLibraryAssetImportSource()
         ]
         
-        let assetGroupViewController = AssetGroupViewController(assetImportSource: PhotoLibraryAssetImportSource())
+        assetSourceViewController.selectedSourceDidChangeSignal.addSlot {
+            
+            if let selectedSource = $0.selectedSource {
+                let viewController = AssetGroupViewController(assetImportSource: selectedSource)
+                self.assetSourcePicker.showDetailViewController(viewController, sender: self)
+            }
+        }
         
-        assetSourcePicker.viewControllers = [assetSourceViewController, assetGroupViewController]
+        assetSourcePicker.viewControllers = [assetSourceViewController]
     }
     
     required init?(coder aDecoder: NSCoder) {

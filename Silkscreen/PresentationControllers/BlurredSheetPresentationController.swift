@@ -81,6 +81,10 @@ class BlurredSheetPresentationController: UIPresentationController {
     // - Move this into some kind of interactor object
     @objc private func panGestureStateDidUpdate() {
         
+        guard let containerView = containerView else {
+            return
+        }
+        
         let translation = panGesture.translationInView(panGesture.view)
         let progress = translation.y / (panGesture.view?.bounds.height ?? 1.0)
         

@@ -16,6 +16,8 @@ import UIKit
 // - Implement ReFlow
 // - iOS Drag And Drop System - Reimplement Dragon Drag And Drop (Or Tidy it up)
 // - Simplify Apple's transition system
+// - Consistent naming
+// - Multi render system, Metal?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

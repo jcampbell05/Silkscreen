@@ -16,6 +16,20 @@ class AssetSourceViewController: UITableViewController {
         }
     }
     
+    var selectedSource: AssetImportSource? {
+        didSet {
+            let index = 0
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            tableView?.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .None)
+            
+            selectedSourceDidChangeSignal.trigger()
+        }
+    }
+    
+    private(set) lazy var selectedSourceDidChangeSignal: Signal<AssetSourceViewController> = {
+        return Signal(sender: self)
+    }()
+    
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
@@ -23,6 +37,8 @@ class AssetSourceViewController: UITableViewController {
         if let navigationBarFrame = navigationController?.navigationBar.frame {
             tableView.contentInset = UIEdgeInsetsMake(navigationBarFrame.size.height, 0, 0, 0)
         }
+        
+        selectedSource = sources.first
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

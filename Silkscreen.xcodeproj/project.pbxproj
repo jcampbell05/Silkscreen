@@ -14,6 +14,7 @@
 		74461E991CD1E5230043A86F /* DragonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E981CD1E5230043A86F /* DragonCore.swift */; };
 		74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */; };
 		74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */; };
+		74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */; };
 		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
 		745521B91CCFEA900041C072 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B81CCFEA900041C072 /* Signal.swift */; };
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
@@ -60,6 +61,7 @@
 		74461E981CD1E5230043A86F /* DragonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCore.swift; sourceTree = "<group>"; };
 		74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssetViewController.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
+		74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		745521B81CCFEA900041C072 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 				74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */,
 			);
 			path = PresentationControllers;
+			sourceTree = "<group>";
+		};
+		74477BB31D1B1D8D0038E058 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
@@ -272,6 +282,7 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				74477BB31D1B1D8D0038E058 /* Cells */,
 				741119441CFF97FC009B56CF /* Transitions */,
 				7433DBE51CF8F40800529931 /* RenderEngine */,
 				74EBF2991CD3C7E30094F1DF /* AssetSource */,
@@ -467,6 +478,7 @@
 				74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */,
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
+				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,
 				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
 				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,

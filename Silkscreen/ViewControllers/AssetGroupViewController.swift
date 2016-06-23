@@ -20,7 +20,7 @@ class AssetGroupViewController: UICollectionViewController {
         super.init(collectionViewLayout: flowLayout)
         
         collectionView?.backgroundColor = UIColor.whiteColor()
-        collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier:"cell")
+        collectionView?.registerClass(AssetGroupCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetGroupCollectionViewCell))
         collectionView?.alwaysBounceVertical = true
     }
     
@@ -38,7 +38,7 @@ class AssetGroupViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetGroupCollectionViewCell), forIndexPath: indexPath)
         cell.backgroundColor = UIColor.redColor()
         
         return cell

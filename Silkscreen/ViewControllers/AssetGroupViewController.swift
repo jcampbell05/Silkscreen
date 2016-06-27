@@ -21,6 +21,9 @@ class AssetGroupViewController: UICollectionViewController {
         self.assetImportSource = assetImportSource
         
         let flowLayout = UICollectionViewFlowLayout()
+        
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        
         super.init(collectionViewLayout: flowLayout)
         
         collectionView?.backgroundColor = UIColor.whiteColor()

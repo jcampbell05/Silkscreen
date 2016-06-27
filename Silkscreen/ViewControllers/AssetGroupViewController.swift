@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import Photos
 
+// - UI for autenticiation
+// - UI for albums and assets
 class AssetGroupViewController: UICollectionViewController {
     
     let assetImportSource: AssetImportSource
@@ -39,7 +42,17 @@ class AssetGroupViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetGroupCollectionViewCell), forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.redColor()
+        let asset = assetImportSource.assetsForAssetGroup(atIndex: indexPath.row)?.firstObject as! PHAsset
+        let manager = PHImageManager.defaultManager()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.synchronous = true
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        
+        
+        cell.backgroundColor = UIColor(patternImage: thumbnail)
         
         return cell
     }

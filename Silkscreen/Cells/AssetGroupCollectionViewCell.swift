@@ -10,4 +10,5 @@ import UIKit
 
 class AssetGroupCollectionViewCell: UICollectionViewCell {
     
+    let imageView = UIImageView()
 }

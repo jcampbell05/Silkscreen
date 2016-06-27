@@ -17,4 +17,6 @@ protocol AssetImportSource {
     
     // - Assets for asset groups
     // - Authenticate ()
+    
+    func assetsForAssetGroup(atIndex index: Int) -> AnyObject?
 }

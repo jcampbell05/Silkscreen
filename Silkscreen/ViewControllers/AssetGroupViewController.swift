@@ -46,16 +46,7 @@ class AssetGroupViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetGroupCollectionViewCell), forIndexPath: indexPath) as! AssetGroupCollectionViewCell
-        
-        let asset = assetImportSource.assetsForAssetGroup(atIndex: indexPath.section)?.firstObject as! PHAsset
-        let manager = PHImageManager.defaultManager()
-        let option = PHImageRequestOptions()
-        var thumbnail = UIImage()
-        option.synchronous = true
-        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
-            thumbnail = result!
-        })
-        
+        let thumbnail = assetImportSource.thumbnailForAsset(forIndexPath: indexPath)
         
         cell.imageView.image = thumbnail
         
@@ -64,14 +55,7 @@ class AssetGroupViewController: UICollectionViewController {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let asset = assetImportSource.assetsForAssetGroup(atIndex: indexPath.section)?.firstObject as! PHAsset
-        let manager = PHImageManager.defaultManager()
-        let option = PHImageRequestOptions()
-        var thumbnail = UIImage()
-        option.synchronous = true
-        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
-            thumbnail = result!
-        })
+        let thumbnail = assetImportSource.thumbnailForAsset(forIndexPath: indexPath)
         
         return thumbnail.size
     }

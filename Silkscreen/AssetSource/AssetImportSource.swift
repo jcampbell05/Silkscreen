@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AssetImportSource {
     
@@ -18,5 +19,5 @@ protocol AssetImportSource {
     // - Assets for asset groups
     // - Authenticate ()
     
-    func assetsForAssetGroup(atIndex index: Int) -> AnyObject?
+    func thumbnailForAsset(forIndexPath indexPath: NSIndexPath) -> UIImage
 }

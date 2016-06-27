@@ -11,6 +11,7 @@ import Photos
 
 // - UI for autenticiation
 // - UI for albums and assets
+// - Swiftify the Cell API (Look online how others did it)
 class AssetGroupViewController: UICollectionViewController {
     
     let assetImportSource: AssetImportSource
@@ -41,7 +42,8 @@ class AssetGroupViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetGroupCollectionViewCell), forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetGroupCollectionViewCell), forIndexPath: indexPath) as! AssetGroupCollectionViewCell
+        
         let asset = assetImportSource.assetsForAssetGroup(atIndex: indexPath.row)?.firstObject as! PHAsset
         let manager = PHImageManager.defaultManager()
         let option = PHImageRequestOptions()
@@ -52,7 +54,7 @@ class AssetGroupViewController: UICollectionViewController {
         })
         
         
-        cell.backgroundColor = UIColor(patternImage: thumbnail)
+        cell.imageView.image = thumbnail
         
         return cell
     }

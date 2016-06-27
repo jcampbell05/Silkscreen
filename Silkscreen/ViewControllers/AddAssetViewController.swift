@@ -38,7 +38,12 @@ class AddAssetViewController: DividableViewController {
             
             if let selectedSource = $0.selectedSource {
                 let viewController = AssetGroupViewController(assetImportSource: selectedSource)
+                
                 self.assetSourcePicker.showDetailViewController(viewController, sender: self)
+                
+                // - In future move to UIViewControllerExtension
+                let topInset = self.navigationController?.navigationBar.frame.height ?? 0
+                viewController.collectionView?.contentInset = UIEdgeInsetsMake(topInset, 0, 0, 0)
             }
         }
         

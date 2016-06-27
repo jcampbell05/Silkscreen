@@ -36,18 +36,18 @@ class AssetGroupViewController: UICollectionViewController {
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return assetImportSource.numberOfAlbums
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int {
-        return assetImportSource.numberOfAlbums
+        return 1
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetGroupCollectionViewCell), forIndexPath: indexPath) as! AssetGroupCollectionViewCell
         
-        let asset = assetImportSource.assetsForAssetGroup(atIndex: indexPath.row)?.firstObject as! PHAsset
+        let asset = assetImportSource.assetsForAssetGroup(atIndex: indexPath.section)?.firstObject as! PHAsset
         let manager = PHImageManager.defaultManager()
         let option = PHImageRequestOptions()
         var thumbnail = UIImage()

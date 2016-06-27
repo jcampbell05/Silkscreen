@@ -9,6 +9,7 @@
 import UIKit
 
 // - Use view model for asset source :)
+// - Update AssetGroupViewController so it reloads so we get predictable inset.
 class AddAssetViewController: DividableViewController {
 
     private let assetSourcePicker = UISplitViewController()

@@ -19,13 +19,13 @@ import UIKit
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-
-        guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as? AssetGroupViewController else {
-            fatalError("This animation can only be used when transitioning to and from a AssetGroupViewController")
+        // - Methods for these which trap when nil
+        guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
+            return
         }
         
-        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? AssetGroupsViewController else {
-            fatalError("This animation can only be used when transitioning to and from a AssetGroupViewController")
+        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) else {
+            return
         }
         
         transitionContext.addViewForNextViewControllerIfNeeded(transitionContext.isPresenting)

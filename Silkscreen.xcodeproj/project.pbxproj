@@ -26,6 +26,7 @@
 		74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
+		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
 		74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */; };
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
@@ -76,6 +77,7 @@
 		74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewModel.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		74B8B39C1D22C81C004F54F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				74B8B3A01D22C964004F54F2 /* UIViewControllerContextTransitioning */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		74B8B3A01D22C964004F54F2 /* UIViewControllerContextTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */,
+			);
+			name = UIViewControllerContextTransitioning;
+			path = Extensions/UIViewControllerContextTransitioning;
+			sourceTree = "<group>";
+		};
 		74B8DC871CCBF31600B9E1ED /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +310,7 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				74B8B39C1D22C81C004F54F2 /* Extensions */,
 				74477BB31D1B1D8D0038E058 /* Cells */,
 				741119441CFF97FC009B56CF /* Transitions */,
 				7433DBE51CF8F40800529931 /* RenderEngine */,
@@ -496,6 +516,7 @@
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
 				74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */,
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
+				74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */,
 				741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */,
 				74F57E4B1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,

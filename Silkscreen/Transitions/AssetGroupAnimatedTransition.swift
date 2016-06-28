@@ -24,16 +24,19 @@ import UIKit
             return
         }
         
-        // - Make Built In
-        let isPresenting = (fromViewController.presentedViewController != nil) || (toViewController.navigationController?.topViewController == toViewController)
-        let targetViewController = (isPresenting) ? toViewController : fromViewController
+        let targetViewController = (transitionContext.isPresenting) ? toViewController : fromViewController
         
         // - Make Built In
         if toViewController.view.superview == nil {
-            transitionContext.containerView()?.addSubview(toViewController.view)
+            
+            if transitionContext.isPresenting {
+                transitionContext.containerView()?.addSubview(toViewController.view)
+            } else {
+                transitionContext.containerView()?.insertSubview(toViewController.view, belowSubview: fromViewController.view)
+            }
         }
         
-        if isPresenting {
+        if transitionContext.isPresenting {
             
             var initialFrame = transitionContext.finalFrameForViewController(targetViewController)
             initialFrame.origin.y = fromViewController.view.frame.height
@@ -41,10 +44,10 @@ import UIKit
             targetViewController.view.frame = initialFrame
         }
         
-        animateWithContext(transitionContext, isPresenting: isPresenting, animations: {
+        animateWithContext(transitionContext, animations: {
             
             let finalFrame = transitionContext.finalFrameForViewController(targetViewController)
-            let yOffset = isPresenting ? 0 : targetViewController.view.bounds.height
+            let yOffset = transitionContext.isPresenting ? 0 : targetViewController.view.bounds.height
             
             targetViewController.view.frame = CGRectOffset(finalFrame, 0, yOffset)
             },
@@ -54,9 +57,9 @@ import UIKit
         })
     }
     
-    private func animateWithContext(transitionContext: UIViewControllerContextTransitioning, isPresenting: Bool, animations: () -> Void, completion: (Bool) -> Void) {
+    private func animateWithContext(transitionContext: UIViewControllerContextTransitioning, animations: () -> Void, completion: (Bool) -> Void) {
         
-        if (isPresenting) {
+        if (transitionContext.isPresenting) {
             
             UIView.animateWithDuration(transitionDuration(transitionContext),
                                        delay: 0,

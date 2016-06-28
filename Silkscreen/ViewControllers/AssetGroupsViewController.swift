@@ -62,7 +62,7 @@ class AssetGroupsViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+
         let viewController = AssetGroupViewController(assetImportSource: assetImportSource)
         navigationController?.pushViewController(viewController, animated: true)
     }

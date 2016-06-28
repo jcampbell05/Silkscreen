@@ -14,7 +14,9 @@ import UIKit
 // - Use Diff
 // - UIDocumentInteractionController Support
 // - Zoom in and out
-class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate {
+// - Figure out transition convention
+// - Extension for these protocols
+class AssetsViewController: UICollectionViewController, DragonDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -63,6 +65,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         viewController.editorContext = editorContext
         
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.delegate = self
         navigationController.transitioningDelegate = self
         navigationController.modalPresentationStyle = .Custom
         

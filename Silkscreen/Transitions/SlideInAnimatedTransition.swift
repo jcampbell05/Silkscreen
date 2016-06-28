@@ -24,17 +24,9 @@ import UIKit
             return
         }
         
-        let targetViewController = (transitionContext.isPresenting) ? toViewController : fromViewController
+        transitionContext.addViewForNextViewControllerIfNeeded(transitionContext.isPresenting)
         
-        // - Make Built In
-        if toViewController.view.superview == nil {
-            
-            if transitionContext.isPresenting {
-                transitionContext.containerView()?.addSubview(toViewController.view)
-            } else {
-                transitionContext.containerView()?.insertSubview(toViewController.view, belowSubview: fromViewController.view)
-            }
-        }
+        let targetViewController = (transitionContext.isPresenting) ? toViewController : fromViewController
     
         // - Make Built In
         if transitionContext.isPresenting {

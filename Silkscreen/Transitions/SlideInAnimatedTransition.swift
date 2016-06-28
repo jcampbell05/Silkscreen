@@ -27,6 +27,12 @@ import UIKit
         let isPresenting = (fromViewController.presentedViewController != nil)
         let targetViewController = (isPresenting) ? toViewController : fromViewController
         
+        // - Make Built In
+        if toViewController.view.superview == nil {
+            transitionContext.containerView()?.addSubview(toViewController.view)
+        }
+        
+        // - Make Built In
         if isPresenting {
             
             var initialFrame = transitionContext.finalFrameForViewController(targetViewController)

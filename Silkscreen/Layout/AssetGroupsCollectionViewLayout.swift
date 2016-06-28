@@ -1,5 +1,5 @@
 //
-//  AssetGroupCollectionViewLayout.swift
+//  AssetGroupsCollectionViewLayout.swift
 //  Silkscreen
 //
 //  Created by James Campbell on 6/27/16.
@@ -8,5 +8,5 @@
 
 import UIKit
 
-class AssetGroupCollectionViewLayout: UICollectionViewLayout {
+class AssetGroupsCollectionViewLayout: UICollectionViewLayout {
 }

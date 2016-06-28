@@ -28,6 +28,7 @@
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
 		74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A61D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift */; };
+		74B8B3A91D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A81D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
 		74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */; };
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
@@ -51,7 +52,7 @@
 		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
 		74EBF29F1CD3CB4B0094F1DF /* AssetGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */; };
 		74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */; };
-		74F57E4B1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */; };
+		74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */; };
 		74F57E4D1D22761C00219535 /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */; };
 		FCCDF7D348C4DD63BA71010C /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
 		74B8B3A61D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift"; sourceTree = "<group>"; };
+		74B8B3A81D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsViewController.swift; sourceTree = "<group>"; };
 		74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewLayout.swift; sourceTree = "<group>"; };
+		74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
 		BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
 		EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +245,8 @@
 			children = (
 				74B8DC8F1CCD69FD00B9E1ED /* LayoutAttributes */,
 				74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */,
-				74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */,
+				74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */,
+				74B8B3A81D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B8B3A91D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift in Sources */,
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
 				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
 				74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */,
@@ -518,7 +522,7 @@
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
 				74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */,
 				741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */,
-				74F57E4B1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift in Sources */,
+				74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74565E611CFBA3A7005AC140 /* DevicePickerViewController.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,

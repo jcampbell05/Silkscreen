@@ -8,6 +8,8 @@
 
 import UIKit
 
+// - Rename AssetSourceGroupPickerViewController
+// - Multi Asset Picker
 class AssetGroupViewController: UICollectionViewController {
     
 }

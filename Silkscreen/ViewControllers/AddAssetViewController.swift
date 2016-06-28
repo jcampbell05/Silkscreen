@@ -38,11 +38,13 @@ class AddAssetViewController: DividableViewController {
         assetSourceViewController.selectedSourceDidChangeSignal.addSlot {
             
             if let selectedSource = $0.selectedSource {
+                
                 let viewController = AssetGroupsViewController(assetImportSource: selectedSource)
+                viewController.useLayoutToLayoutNavigationTransitions = true
                 
                 self.assetSourcePicker.showDetailViewController(viewController, sender: self)
                 
-                // - In future move to UIViewControllerExtension
+                // - In future move to UIViewControllerExtension / Fix the Navigation Controller insets.
                 let topInset = self.navigationController?.navigationBar.frame.height ?? 0
                 viewController.collectionView?.contentInset = UIEdgeInsetsMake(topInset, 0, 0, 0)
             }

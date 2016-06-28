@@ -12,6 +12,8 @@ import Photos
 // - UI for autenticiation
 // - UI for albums and assets
 // - Swiftify the Cell API (Look online how others did it)
+// - Rename AssetSourceGroupsPickerViewController
+// - Multi Asset Picker
 class AssetGroupsViewController: UICollectionViewController {
     
     let assetImportSource: AssetImportSource
@@ -21,7 +23,6 @@ class AssetGroupsViewController: UICollectionViewController {
         self.assetImportSource = assetImportSource
         
         let flowLayout = UICollectionViewFlowLayout()
-        
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         
         super.init(collectionViewLayout: flowLayout)

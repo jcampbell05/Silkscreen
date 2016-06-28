@@ -8,6 +8,7 @@
 
 import UIKit
 
+// - Rename to AssetImportSourcePickerViewController
 class AssetSourceViewController: UITableViewController {
     
     var sources: [AssetImportSource] = [] {

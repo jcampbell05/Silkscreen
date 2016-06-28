@@ -59,4 +59,10 @@ class AssetGroupsViewController: UICollectionViewController {
         
         return thumbnail.size
     }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let viewController = AssetGroupViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

@@ -114,11 +114,11 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     // - Who is in charge of the animation
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        if let fromVC = fromVC as? AddAssetViewController  {
+        if let fromVC = fromVC as? AddAssetViewController where (toVC as? AssetGroupViewController) != nil  {
             return fromVC.assetGroupsViewController.collectionViewTransition
         }
         
-        if let toVC = toVC as? AddAssetViewController  {
+        if let toVC = toVC as? AddAssetViewController where (fromVC as? AssetGroupViewController) != nil {
             return toVC.assetGroupsViewController.collectionViewTransition
         }
         

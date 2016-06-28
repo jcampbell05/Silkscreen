@@ -29,6 +29,7 @@
 		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
 		74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A61D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift */; };
 		74B8B3A91D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A81D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift */; };
+		74B8B3AB1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3AA1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
 		74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */; };
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
@@ -81,6 +82,7 @@
 		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
 		74B8B3A61D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift"; sourceTree = "<group>"; };
 		74B8B3A81D22D7D2004F54F2 /* AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsToAssetGroupCollectionViewTransitionLayout.swift; sourceTree = "<group>"; };
+		74B8B3AA1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadOutCollectionViewTransition.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */,
+				74B8B3AA1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
 				74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */,
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
+				74B8B3AB1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift in Sources */,
 				74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */,
 				741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */,
 				74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */,

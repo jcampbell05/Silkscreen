@@ -15,7 +15,7 @@ import UIKit
 // - UIDocumentInteractionController Support
 // - Zoom in and out
 // - Extension for these protocols
-class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate {
+class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -64,6 +64,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         viewController.editorContext = editorContext
         
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.delegate = self
         navigationController.transitioningDelegate = self
         navigationController.modalPresentationStyle = .Custom
         
@@ -108,6 +109,10 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
     }
     
     func beginDragOperation(info: DragonInfo, fromView: UIView) {

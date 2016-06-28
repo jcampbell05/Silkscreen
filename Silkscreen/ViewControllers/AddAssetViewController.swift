@@ -38,7 +38,7 @@ class AddAssetViewController: DividableViewController {
         assetSourceViewController.selectedSourceDidChangeSignal.addSlot {
             
             if let selectedSource = $0.selectedSource {
-                let viewController = AssetGroupViewController(assetImportSource: selectedSource)
+                let viewController = AssetGroupsViewController(assetImportSource: selectedSource)
                 
                 self.assetSourcePicker.showDetailViewController(viewController, sender: self)
                 

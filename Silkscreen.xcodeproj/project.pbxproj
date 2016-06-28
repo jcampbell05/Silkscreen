@@ -47,9 +47,10 @@
 		74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */; };
 		74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */; };
 		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
-		74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */; };
+		74EBF29F1CD3CB4B0094F1DF /* AssetGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */; };
 		74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */; };
 		74F57E4B1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */; };
+		74F57E4D1D22761C00219535 /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */; };
 		FCCDF7D348C4DD63BA71010C /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,9 +98,10 @@
 		74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetSourceViewController.swift; sourceTree = "<group>"; };
 		74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
-		74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
+		74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsViewController.swift; sourceTree = "<group>"; };
 		74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewLayout.swift; sourceTree = "<group>"; };
+		74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
 		BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
 		EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,9 +188,10 @@
 				74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */,
 				74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */,
 				74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */,
-				74EBF29E1CD3CB4B0094F1DF /* AssetGroupViewController.swift */,
+				74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */,
 				74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */,
 				74565E601CFBA3A7005AC140 /* DevicePickerViewController.swift */,
+				74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
+				74F57E4D1D22761C00219535 /* AssetGroupViewController.swift in Sources */,
 				74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,
 				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
@@ -493,7 +497,7 @@
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74565E611CFBA3A7005AC140 /* DevicePickerViewController.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
-				74EBF29F1CD3CB4B0094F1DF /* AssetGroupViewController.swift in Sources */,
+				74EBF29F1CD3CB4B0094F1DF /* AssetGroupsViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */,

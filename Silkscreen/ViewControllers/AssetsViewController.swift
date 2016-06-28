@@ -14,7 +14,6 @@ import UIKit
 // - Use Diff
 // - UIDocumentInteractionController Support
 // - Zoom in and out
-// - Figure out transition convention
 // - Extension for these protocols
 class AssetsViewController: UICollectionViewController, DragonDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
     
@@ -110,6 +109,16 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UINaviga
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        // - Find a convention as to who does this sort of stuff
+        if (toVC as? AssetGroupViewController) != nil || (fromVC as? AssetGroupViewController) != nil {
+            return AssetGroupAnimatedTransition()
+        }
+        
+        return nil
     }
     
     func beginDragOperation(info: DragonInfo, fromView: UIView) {

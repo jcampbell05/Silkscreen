@@ -53,7 +53,7 @@
 		74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */; };
 		74F57E4B1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */; };
 		74F57E4D1D22761C00219535 /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */; };
-		74F57E521D228B6600219535 /* AssetGroupAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E511D228B6600219535 /* AssetGroupAnimatedTransition.swift */; };
+		74F57E521D228B6600219535 /* CollectionViewAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E511D228B6600219535 /* CollectionViewAnimatedTransition.swift */; };
 		FCCDF7D348C4DD63BA71010C /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,7 @@
 		74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		74F57E4A1D21D64E00219535 /* AssetGroupCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewLayout.swift; sourceTree = "<group>"; };
 		74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
-		74F57E511D228B6600219535 /* AssetGroupAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupAnimatedTransition.swift; sourceTree = "<group>"; };
+		74F57E511D228B6600219535 /* CollectionViewAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewAnimatedTransition.swift; sourceTree = "<group>"; };
 		BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
 		EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */,
-				74F57E511D228B6600219535 /* AssetGroupAnimatedTransition.swift */,
+				74F57E511D228B6600219535 /* CollectionViewAnimatedTransition.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -497,7 +497,7 @@
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,
 				74565E591CFA1460005AC140 /* Node.swift in Sources */,
 				74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */,
-				74F57E521D228B6600219535 /* AssetGroupAnimatedTransition.swift in Sources */,
+				74F57E521D228B6600219535 /* CollectionViewAnimatedTransition.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,

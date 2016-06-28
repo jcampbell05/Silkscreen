@@ -1,5 +1,5 @@
 //
-//  AssetGroupAnimatedTransition.swift
+//  CollectionViewAnimatedTransition.swift
 //  Silkscreen
 //
 //  Created by James Campbell on 6/28/16.
@@ -8,7 +8,10 @@
 
 import UIKit
 
-@objc class AssetGroupAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
+@objc class CollectionViewAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    var fromCollectionView: UICollectionView?
+    var toCollectionView: UICollectionView?
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
@@ -16,12 +19,13 @@ import UIKit
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-        guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
-            return
+
+        guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as? AssetGroupViewController else {
+            fatalError("This animation can only be used when transitioning to and from a AssetGroupViewController")
         }
         
-        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) else {
-            return
+        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? AssetGroupsViewController else {
+            fatalError("This animation can only be used when transitioning to and from a AssetGroupViewController")
         }
         
         transitionContext.addViewForNextViewControllerIfNeeded(transitionContext.isPresenting)

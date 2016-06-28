@@ -24,7 +24,7 @@ import UIKit
             return
         }
         
-        let isPresenting = (fromViewController.presentedViewController != nil)
+        let isPresenting = (fromViewController.presentedViewController != nil) || (toViewController.navigationController?.topViewController == toViewController)
         let targetViewController = (isPresenting) ? toViewController : fromViewController
         
         // - Make Built In

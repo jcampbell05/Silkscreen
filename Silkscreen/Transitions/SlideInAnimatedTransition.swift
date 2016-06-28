@@ -16,6 +16,7 @@ import UIKit
    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
+        // - Methods for these which trap when nil
         guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
             return
         }

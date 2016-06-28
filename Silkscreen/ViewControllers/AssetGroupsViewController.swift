@@ -64,6 +64,7 @@ class AssetGroupsViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let viewController = AssetGroupViewController()
+        viewController.useLayoutToLayoutNavigationTransitions = true
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

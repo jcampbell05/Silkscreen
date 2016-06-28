@@ -40,8 +40,6 @@ class AddAssetViewController: DividableViewController {
             if let selectedSource = $0.selectedSource {
                 
                 let viewController = AssetGroupsViewController(assetImportSource: selectedSource)
-                viewController.useLayoutToLayoutNavigationTransitions = true
-                
                 self.assetSourcePicker.showDetailViewController(viewController, sender: self)
                 
                 // - In future move to UIViewControllerExtension / Fix the Navigation Controller insets.

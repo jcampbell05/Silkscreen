@@ -17,6 +17,7 @@ import Photos
 class AssetGroupsViewController: UICollectionViewController {
     
     let assetImportSource: AssetImportSource
+    let collectionViewTransition = SpreadOutCollectionViewTransition()
     
     init(assetImportSource: AssetImportSource) {
         

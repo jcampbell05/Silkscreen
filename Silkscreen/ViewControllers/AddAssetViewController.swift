@@ -14,12 +14,9 @@ class AddAssetViewController: DividableViewController {
 
     private let assetSourcePicker = UISplitViewController()
     private let assetSourceViewController = AssetSourceViewController()
+    let assetGroupsViewController = AssetGroupsViewController(assetImportSource: PhotoLibraryAssetImportSource())
     
-    var editorContext: EditorContext? = nil {
-        didSet {
-            
-        }
-    }
+    var editorContext: EditorContext? = nil
     
     init() {
         
@@ -39,6 +36,7 @@ class AddAssetViewController: DividableViewController {
             
             if let selectedSource = $0.selectedSource {
                 
+                // - Show Asset Groups View Controller
                 let viewController = AssetGroupsViewController(assetImportSource: selectedSource)
                 self.assetSourcePicker.showDetailViewController(viewController, sender: self)
                 

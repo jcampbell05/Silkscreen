@@ -111,7 +111,17 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
+    // - Who is in charge of the animation
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if let fromVC = fromVC as? AddAssetViewController  {
+            return fromVC.assetGroupsViewController.collectionViewTransition
+        }
+        
+        if let toVC = toVC as? AddAssetViewController  {
+            return toVC.assetGroupsViewController.collectionViewTransition
+        }
+        
         return nil
     }
     

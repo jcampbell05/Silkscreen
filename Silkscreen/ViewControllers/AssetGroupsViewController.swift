@@ -64,6 +64,7 @@ class AssetGroupsViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
+        // - Store enougth information in the animation to know what cells to animate
         let viewController = AssetGroupViewController(assetImportSource: assetImportSource)
         navigationController?.pushViewController(viewController, animated: true)
     }

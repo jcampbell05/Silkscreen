@@ -17,16 +17,15 @@ import Photos
 class AssetGroupsViewController: UICollectionViewController {
     
     let assetImportSource: AssetImportSource
+    
+    let assetsGroupLayout: UICollectionViewLayout = AssetGroupsCollectionViewLayout()
     let collectionViewTransition = SpreadOutCollectionViewTransition()
     
     init(assetImportSource: AssetImportSource) {
         
         self.assetImportSource = assetImportSource
         
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        
-        super.init(collectionViewLayout: flowLayout)
+        super.init(collectionViewLayout: assetsGroupLayout)
         
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.registerClass(AssetGroupCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetGroupCollectionViewCell))

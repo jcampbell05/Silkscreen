@@ -20,9 +20,11 @@ class AssetGroupsCollectionViewLayout: UICollectionViewLayout {
             let itemCount = collectionView?.numberOfItemsInSection(section) ?? 0
             let indexPath = NSIndexPath(forItem: 0, inSection: section)
           
-            let attributes = layoutAttributesForItemAtIndexPath(indexPath)
+            let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
         }
         
         // - Iterate rows and create a pile for each section
     }
+    
+    // - Method for Cell
 }

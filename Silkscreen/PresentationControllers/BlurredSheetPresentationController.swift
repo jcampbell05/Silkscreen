@@ -8,6 +8,7 @@
 
 import UIKit
 
+// - Fix blur view dissapearing when dismiss gesture is cancelled
 class BlurredSheetPresentationController: UIPresentationController {
     
     private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: nil)

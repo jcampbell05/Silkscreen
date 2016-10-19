@@ -11,7 +11,7 @@ import UIKit
 @objc class SlideInAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.5
+        return 0.2
     }
    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -53,22 +53,9 @@ import UIKit
     
     private func animateWithContext(transitionContext: UIViewControllerContextTransitioning, animations: () -> Void, completion: (Bool) -> Void) {
         
-        if (transitionContext.isPresenting) {
-            
-            UIView.animateWithDuration(transitionDuration(transitionContext),
-                                       delay: 0,
-                                       usingSpringWithDamping: 0.58,
-                                       initialSpringVelocity: 0,
-                                       options: [],
-                                       animations: animations,
-                                       completion: completion)
-            
-        } else {
-            
-            // NOTE: We will use the new property animator in iOS 10 to reverse the presentation animation
-            UIView.animateWithDuration(transitionDuration(transitionContext) / 2,
-                                       animations: animations,
-                                       completion: completion)
-        }
+        // NOTE: We will use the new property animator in iOS 10 to reverse the presentation animation
+        UIView.animateWithDuration(transitionDuration(transitionContext),
+                                   animations: animations,
+                                   completion: completion)
     }
 }

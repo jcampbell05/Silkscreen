@@ -23,9 +23,9 @@ extension UIViewControllerContextTransitioning {
         if toViewController.view.superview == nil {
             
             if aboveOtherViews {
-                containerView()?.addSubview(toViewController.view)
+                containerView().addSubview(toViewController.view)
             } else {
-                containerView()?.insertSubview(toViewController.view, belowSubview: fromViewController.view)
+                containerView().insertSubview(toViewController.view, belowSubview: fromViewController.view)
             }
         }
     }

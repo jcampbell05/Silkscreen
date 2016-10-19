@@ -10,9 +10,9 @@
 		740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */; };
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
 		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
+		74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74265F161DB7F0B0002267CA /* AssetsViewController.swift */; };
 		7433DBE41CF8F1B500529931 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE31CF8F1B500529931 /* Platform.swift */; };
 		74461E991CD1E5230043A86F /* DragonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E981CD1E5230043A86F /* DragonCore.swift */; };
-		74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */; };
 		74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */; };
 		74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */; };
 		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
@@ -22,15 +22,12 @@
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
 		74565E591CFA1460005AC140 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E581CFA1460005AC140 /* Node.swift */; };
 		74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E5A1CFA14CE005AC140 /* CameraNode.swift */; };
-		74565E611CFBA3A7005AC140 /* DevicePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E601CFBA3A7005AC140 /* DevicePickerViewController.swift */; };
 		74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
 		74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A61D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift */; };
-		74B8B3AB1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3AA1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift */; };
 		74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */; };
-		74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */; };
 		74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
 		74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */; };
 		74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */; };
@@ -47,13 +44,9 @@
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
 		74D638F11C4D941F00175740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */; };
-		74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */; };
 		74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */; };
 		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
-		74EBF29F1CD3CB4B0094F1DF /* AssetGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */; };
-		74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */; };
 		74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */; };
-		74F57E4D1D22761C00219535 /* AssetGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */; };
 		FCCDF7D348C4DD63BA71010C /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,9 +55,9 @@
 		740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlsView.swift; sourceTree = "<group>"; };
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
+		74265F161DB7F0B0002267CA /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		74461E981CD1E5230043A86F /* DragonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCore.swift; sourceTree = "<group>"; };
-		74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssetViewController.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
 		74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
@@ -74,15 +67,12 @@
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		74565E581CFA1460005AC140 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		74565E5A1CFA14CE005AC140 /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
-		74565E601CFBA3A7005AC140 /* DevicePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewController.swift; sourceTree = "<group>"; };
 		74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewModel.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
 		74B8B3A61D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift"; sourceTree = "<group>"; };
-		74B8B3AA1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadOutCollectionViewTransition.swift; sourceTree = "<group>"; };
 		74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
-		74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewLayout.swift; sourceTree = "<group>"; };
 		74B8DC8B1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineHeaderDecorationView.swift; sourceTree = "<group>"; };
@@ -101,13 +91,9 @@
 		74D638ED1C4D941F00175740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D638F01C4D941F00175740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D638F21C4D941F00175740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetSourceViewController.swift; sourceTree = "<group>"; };
 		74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
-		74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsViewController.swift; sourceTree = "<group>"; };
-		74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsCollectionViewLayout.swift; sourceTree = "<group>"; };
-		74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupViewController.swift; sourceTree = "<group>"; };
 		BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
 		EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */,
-				74B8B3AA1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -186,19 +171,13 @@
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				74265F161DB7F0B0002267CA /* AssetsViewController.swift */,
 				74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */,
 				74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */,
 				74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */,
-				74B8DC781CCAD72800B9E1ED /* AssetsViewController.swift */,
 				74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */,
 				74C815DC1CCEA924007B285D /* UtilitesViewController.swift */,
 				74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */,
-				74461E9A1CD1E6360043A86F /* AddAssetViewController.swift */,
-				74EBF2971CD3BEFF0094F1DF /* AssetSourceViewController.swift */,
-				74EBF29E1CD3CB4B0094F1DF /* AssetGroupsViewController.swift */,
-				74EBF2A31CD3D8750094F1DF /* CameraViewController.swift */,
-				74565E601CFBA3A7005AC140 /* DevicePickerViewController.swift */,
-				74F57E4C1D22761C00219535 /* AssetGroupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -501,32 +480,25 @@
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
-				74F57E4D1D22761C00219535 /* AssetGroupViewController.swift in Sources */,
 				74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,
 				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
 				7433DBE41CF8F1B500529931 /* Platform.swift in Sources */,
 				74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */,
-				74461E9B1CD1E6360043A86F /* AddAssetViewController.swift in Sources */,
-				74EBF2A41CD3D8750094F1DF /* CameraViewController.swift in Sources */,
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,
 				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
-				74B8DC791CCAD72800B9E1ED /* AssetsViewController.swift in Sources */,
+				74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */,
 				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
-				74EBF2981CD3BEFF0094F1DF /* AssetSourceViewController.swift in Sources */,
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
-				74B8B3AB1D230874004F54F2 /* SpreadOutCollectionViewTransition.swift in Sources */,
 				74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */,
 				741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */,
 				74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
-				74565E611CFBA3A7005AC140 /* DevicePickerViewController.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
-				74EBF29F1CD3CB4B0094F1DF /* AssetGroupsViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */,
@@ -641,10 +613,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Silkscreen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.forever-beta.sup";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -655,10 +628,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Silkscreen/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.forever-beta.sup";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

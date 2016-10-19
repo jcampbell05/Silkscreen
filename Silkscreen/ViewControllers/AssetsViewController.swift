@@ -15,7 +15,7 @@ import UIKit
 // - UIDocumentInteractionController Support
 // - Zoom in and out
 // - Extension for these protocols
-class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
+class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -60,15 +60,12 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     
     @objc private func didPressAdd() {
 
-        let viewController = AddAssetViewController()
-        viewController.editorContext = editorContext
+        let viewController = UIImagePickerController()
+        viewController.delegate = self
+        viewController.transitioningDelegate = self
+        viewController.modalPresentationStyle = .Custom
         
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.delegate = self
-        navigationController.transitioningDelegate = self
-        navigationController.modalPresentationStyle = .Custom
-        
-        presentViewController(navigationController, animated: true, completion: nil)
+        presentViewController(viewController, animated: true, completion: nil)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,8 +79,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         if let cell = cell as? AssetCollectionViewCell {
             cell.asset = editorContext?.assets[indexPath.row]
         }
-        
-        // - Fix bug with multiple windows in PR to CoreDragon
+
         // - Add ability to remove highlight.
         registerDragSource(cell, delegate:self)
         
@@ -106,26 +102,20 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         return presentationController?.interactiveDismissTransition
     }
     
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController?, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
-    // - Who is in charge of the animation
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        if let fromVC = fromVC as? AddAssetViewController where (toVC as? AssetGroupViewController) != nil  {
-            return fromVC.assetGroupsViewController.collectionViewTransition
-        }
-        
-        if let toVC = toVC as? AddAssetViewController where (fromVC as? AssetGroupViewController) != nil {
-            return toVC.assetGroupsViewController.collectionViewTransition
-        }
-        
-        return nil
-    }
-    
     func beginDragOperation(info: DragonInfo, fromView: UIView) {
         info.pasteboard.setValue("Hey", forPasteboardType:kUTTypePlainText as String)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }

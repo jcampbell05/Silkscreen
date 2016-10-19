@@ -26,8 +26,6 @@ class BlurredSheetPresentationController: UIPresentationController {
         return UIEdgeInsetsInsetRect(super.frameOfPresentedViewInContainerView(), insets)
     }
     
-    var animator: UIViewPropertyAnimator!
-    
     override func presentationTransitionWillBegin() {
         
         super.presentationTransitionWillBegin()
@@ -43,7 +41,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         containerView.addSubview(blurringView)        
         containerView.addSubview(presentedViewController.view)
         
-        animator = UIViewPropertyAnimator(duration: 0.2, curve: .EaseInOut) {
+        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .EaseInOut) {
             self.blurringView.effect = UIBlurEffect(style: .Dark)
         }
         
@@ -79,12 +77,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         }
     }
     
-    // - Move this into some kind of interactor object
     @objc private func panGestureStateDidUpdate() {
-        
-        guard let containerView = containerView else {
-            return
-        }
         
         let translation = panGesture.translationInView(panGesture.view)
         let progress = translation.y / (panGesture.view?.bounds.height ?? 1.0)

@@ -10,7 +10,7 @@ import UIKit
 
 class BlurredSheetPresentationController: UIPresentationController {
     
-    private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+    private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: nil)
     private lazy var tapGesture: UITapGestureRecognizer = {
        return UITapGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
     }()
@@ -26,6 +26,8 @@ class BlurredSheetPresentationController: UIPresentationController {
         return UIEdgeInsetsInsetRect(super.frameOfPresentedViewInContainerView(), insets)
     }
     
+    var animator: UIViewPropertyAnimator!
+    
     override func presentationTransitionWillBegin() {
         
         super.presentationTransitionWillBegin()
@@ -35,18 +37,17 @@ class BlurredSheetPresentationController: UIPresentationController {
         }
         
         blurringView.frame = containerView.bounds
-        blurringView.alpha = 0
         blurringView.addGestureRecognizer(tapGesture)
         
         containerView.addGestureRecognizer(panGesture)
         containerView.addSubview(blurringView)        
         containerView.addSubview(presentedViewController.view)
-
-        presentingViewController.transitionCoordinator()?.animateAlongsideTransition({ _ in
-            
-            self.blurringView.alpha = 1.0
-            
-        }, completion: nil)
+        
+        animator = UIViewPropertyAnimator(duration: 0.2, curve: .EaseInOut) {
+            self.blurringView.effect = UIBlurEffect(style: .Dark)
+        }
+        
+        animator.startAnimation()
     }
     
     override func presentationTransitionDidEnd(completed: Bool) {
@@ -62,11 +63,11 @@ class BlurredSheetPresentationController: UIPresentationController {
         
         super.dismissalTransitionWillBegin()
         
-        presentingViewController.transitionCoordinator()?.animateAlongsideTransition({ _ in
-            
-            self.blurringView.alpha = 0.0
-            
-        }, completion: nil)
+        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .EaseInOut) {
+            self.blurringView.effect = nil
+        }
+        
+        animator.startAnimation()
     }
     
     override func dismissalTransitionDidEnd(completed: Bool) {

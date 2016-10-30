@@ -8,8 +8,21 @@
 
 import UIKit
 
+class DraggingImageComponent {
+    
+    var key: String
+    var frame: CGRect = .zero
+    var contents: Any? = nil
+    
+    init() {
+        key = NSUUID().UUIDString
+    }
+}
+
 class DraggingItem {
     
+    var draggingFrame: CGRect = .zero
+    var imageComponents: [DraggingImageComponent]? = nil
 }
 
 class DraggingSession {

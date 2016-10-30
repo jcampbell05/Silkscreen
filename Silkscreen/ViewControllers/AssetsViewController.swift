@@ -109,8 +109,9 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
-    func beginDragOperation(info: DragonInfo, fromView: UIView) {
-        info.pasteboard.setValue("Hey", forPasteboardType:kUTTypePlainText as String)
+    
+    func beginDragOperation(drag: DragonInfo, fromView draggable: UIView) {
+        drag.pasteboard.setValue("Hey", forPasteboardType:kUTTypePlainText as String)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {

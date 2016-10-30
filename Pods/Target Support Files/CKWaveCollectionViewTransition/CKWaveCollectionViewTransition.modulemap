@@ -1,6 +1,0 @@
-framework module CKWaveCollectionViewTransition {
-  umbrella header "CKWaveCollectionViewTransition-umbrella.h"
-
-  export *
-  module * { export * }
-}

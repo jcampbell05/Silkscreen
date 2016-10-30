@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 
-#import "CerfingMeshPipe.h"
-#import "CerfingMeshPipeTransport.h"
-#import "MeshPipe.h"
+#import "../MeshPipe/CerfingMeshPipeTransport/CerfingMeshPipe.h"
+#import "../MeshPipe/CerfingMeshPipeTransport/CerfingMeshPipeTransport.h"
+#import "../MeshPipe/MeshPipe.h"
 
 FOUNDATION_EXPORT double MeshPipeVersionNumber;
 FOUNDATION_EXPORT const unsigned char MeshPipeVersionString[];

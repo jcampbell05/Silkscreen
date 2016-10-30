@@ -46,11 +46,11 @@
 		74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */; };
 		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
 		74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */; };
-		FCCDF7D348C4DD63BA71010C /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */; };
+		F54DFD164CBC66B743714182 /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20A0F24F2E770C6631C00547 /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
+		1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlsView.swift; sourceTree = "<group>"; };
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 		74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetImportSource.swift; sourceTree = "<group>"; };
 		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
 		74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsCollectionViewLayout.swift; sourceTree = "<group>"; };
-		BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
-		EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,18 +101,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCCDF7D348C4DD63BA71010C /* Pods_Silkscreen.framework in Frameworks */,
+				F54DFD164CBC66B743714182 /* Pods_Silkscreen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32BDDBE454DF2BAF383C98E8 /* Pods */ = {
+		3BD8AF2D65DE3FF6C857AD16 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				20A0F24F2E770C6631C00547 /* Pods-Silkscreen.debug.xcconfig */,
-				BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */,
+				1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */,
+				F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 			children = (
 				74D638E51C4D941F00175740 /* Silkscreen */,
 				74D638E41C4D941F00175740 /* Products */,
-				32BDDBE454DF2BAF383C98E8 /* Pods */,
-				AFB589BB3C76EAA9AA89FEDA /* Frameworks */,
+				3BD8AF2D65DE3FF6C857AD16 /* Pods */,
+				7712A18039E53095285ED295 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -319,10 +319,10 @@
 			path = AssetSource;
 			sourceTree = "<group>";
 		};
-		AFB589BB3C76EAA9AA89FEDA /* Frameworks */ = {
+		7712A18039E53095285ED295 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA4CCEFEE09CCEF34BB1398C /* Pods_Silkscreen.framework */,
+				E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,13 +334,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74D638F51C4D941F00175740 /* Build configuration list for PBXNativeTarget "Silkscreen" */;
 			buildPhases = (
-				6B411C4719427972092E6741 /* 📦 Check Pods Manifest.lock */,
+				D31D87AE2E7FDA01B8998AA3 /* [CP] Check Pods Manifest.lock */,
 				74D638DF1C4D941F00175740 /* Sources */,
 				74D638E01C4D941F00175740 /* Frameworks */,
 				74D638E11C4D941F00175740 /* Resources */,
-				21E3B5A61B17A937912EA4F7 /* 📦 Embed Pods Frameworks */,
-				CFB07DDE4549E5E91B20FB80 /* 📦 Copy Pods Resources */,
-				2E303D6DE30638BB6E1F98CE /* Embed Pods Frameworks */,
+				98CC1C1501183ABA2759CAF5 /* [CP] Embed Pods Frameworks */,
+				1AB6737F97FAF040C8D8F716 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,64 +397,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21E3B5A61B17A937912EA4F7 /* 📦 Embed Pods Frameworks */ = {
+		1AB6737F97FAF040C8D8F716 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E303D6DE30638BB6E1F98CE /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B411C4719427972092E6741 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CFB07DDE4549E5E91B20FB80 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98CC1C1501183ABA2759CAF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D31D87AE2E7FDA01B8998AA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -604,7 +588,7 @@
 		};
 		74D638F61C4D941F00175740 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20A0F24F2E770C6631C00547 /* Pods-Silkscreen.debug.xcconfig */;
+			baseConfigurationReference = 1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -619,7 +603,7 @@
 		};
 		74D638F71C4D941F00175740 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDB10776F2BDA8969D5D10C2 /* Pods-Silkscreen.release.xcconfig */;
+			baseConfigurationReference = F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -3,10 +3,10 @@
 #import "Cerfing.h"
 #import "CerfingConnection.h"
 #import "CerfingSerializer.h"
-#import "CerfingSimpleClient.h"
-#import "CerfingSimpleServer.h"
-#import "CerfingAsyncSocketTransport.h"
-#import "CerfingTransport.h"
+#import "Helpers/CerfingSimpleClient.h"
+#import "Helpers/CerfingSimpleServer.h"
+#import "Transports/AsyncSocket/CerfingAsyncSocketTransport.h"
+#import "Transports/CerfingTransport.h"
 
 FOUNDATION_EXPORT double CerfingVersionNumber;
 FOUNDATION_EXPORT const unsigned char CerfingVersionString[];

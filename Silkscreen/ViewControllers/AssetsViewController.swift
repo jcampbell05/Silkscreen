@@ -81,7 +81,8 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
             return
         }
         
-        view.beginDraggingSession(with: [], gestureRecognizer: gestureRecognizer, source: self)
+        let item = DraggingItem()
+        view.beginDraggingSession(with: [item], gestureRecognizer: gestureRecognizer, source: self)
     }
     
     @objc private func didPressAdd() {

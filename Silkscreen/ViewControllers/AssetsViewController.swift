@@ -35,7 +35,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         
         let layout = UICollectionViewLeftAlignedLayout()
         layout.minimumInteritemSpacing = 10
-        layout.itemSize = CGSizeMake(100, 100)
+        layout.itemSize = CGSizeMake(100, 200)
         layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
 
         super.init(collectionViewLayout: layout)

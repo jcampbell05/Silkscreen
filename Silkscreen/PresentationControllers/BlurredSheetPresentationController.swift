@@ -8,7 +8,6 @@
 
 import UIKit
 
-// - Fix blur view dissapearing when dismiss gesture is cancelled
 class BlurredSheetPresentationController: UIPresentationController {
     
     private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: nil)
@@ -17,6 +16,16 @@ class BlurredSheetPresentationController: UIPresentationController {
     }()
     
     private(set) var interactiveDismissTransition: UIPercentDrivenInteractiveTransition? = nil
+    private(set) lazy var blurringViewRadiusAnimator: UIViewPropertyAnimator = {
+        
+        guard let transitionCoordinator = self.presentedViewController.transitionCoordinator() else {
+            fatalError("blurringViewRadiusAnimator used outside of a transition")
+        }
+        
+        return UIViewPropertyAnimator(duration: transitionCoordinator.transitionDuration(), curve: transitionCoordinator.completionCurve()) {
+            self.blurringView.effect = UIBlurEffect(style: .Dark)
+        }
+    }()
     
     private lazy var panGesture: UIPanGestureRecognizer = {
         return UIPanGestureRecognizer(target: self, action: #selector(panGestureStateDidUpdate))
@@ -42,31 +51,18 @@ class BlurredSheetPresentationController: UIPresentationController {
         containerView.addSubview(blurringView)        
         containerView.addSubview(presentedViewController.view)
         
-        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .EaseInOut) {
-            self.blurringView.effect = UIBlurEffect(style: .Dark)
-        }
-        
-        animator.startAnimation()
+        blurringViewRadiusAnimator.startAnimation()
     }
     
     override func presentationTransitionDidEnd(completed: Bool) {
         
         super.presentationTransitionDidEnd(completed)
         
+        blurringViewRadiusAnimator.pauseAnimation()
+        
         if !completed {
             blurringView.removeFromSuperview()
         }
-    }
-
-    override func dismissalTransitionWillBegin() {
-        
-        super.dismissalTransitionWillBegin()
-        
-        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .EaseInOut) {
-            self.blurringView.effect = nil
-        }
-        
-        animator.startAnimation()
     }
     
     override func dismissalTransitionDidEnd(completed: Bool) {
@@ -75,6 +71,8 @@ class BlurredSheetPresentationController: UIPresentationController {
         
         if completed {
             blurringView.removeFromSuperview()
+        } else {
+            blurringViewRadiusAnimator.pauseAnimation()
         }
     }
     
@@ -91,15 +89,18 @@ class BlurredSheetPresentationController: UIPresentationController {
             
         case .Changed:
             interactiveDismissTransition?.updateInteractiveTransition(progress)
+            blurringViewRadiusAnimator.fractionComplete = 1 - progress
             break
             
         default:
             if (progress > 0.5) {
+                blurringViewRadiusAnimator.reversed = true
                 interactiveDismissTransition?.finishInteractiveTransition()
             } else {
                 interactiveDismissTransition?.cancelInteractiveTransition()
             }
             
+            blurringViewRadiusAnimator.startAnimation()
             interactiveDismissTransition = nil
             
             break

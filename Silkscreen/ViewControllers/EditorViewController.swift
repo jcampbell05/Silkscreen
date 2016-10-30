@@ -14,13 +14,17 @@ class EditorViewController: DividableViewController {
     let editorContext = EditorContext()
     
     lazy var contentAreaViewController: DividableViewController = {
-        let viewController = DividableViewController(arrangedSubviewControllers: [self.utilitesViewController, self.previewViewController])
+        let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsNavigationViewController, self.previewViewController])
         viewController.axis = .Horizontal
         return viewController
     }()
     
-    let utilitesViewController = UtilitesViewController()
+    let assetsViewController = AssetsViewController()
     let previewViewController = PreviewViewController()
+    
+    lazy var assetsNavigationViewController: UINavigationController = {
+        return UINavigationController(rootViewController: self.assetsViewController)
+    }()
     
     lazy var timelineNavigationController: UINavigationController = {
         return UINavigationController(rootViewController: self.timelineViewController)
@@ -30,12 +34,12 @@ class EditorViewController: DividableViewController {
     
     init() {
         super.init()
-
+        
         addArrangedChildViewController(contentAreaViewController)
         addArrangedChildViewController(timelineNavigationController)
         
         contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
-        utilitesViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
+        assetsNavigationViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,7 +50,7 @@ class EditorViewController: DividableViewController {
         
         super.viewDidLoad()
         
-        utilitesViewController.editorContext = editorContext
+        assetsViewController.editorContext = editorContext
         previewViewController.editorContext = editorContext
         timelineViewController.editorContext = editorContext
     }

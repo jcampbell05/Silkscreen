@@ -39,7 +39,6 @@
 		74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9B1CCE0B5700B9E1ED /* CollectionType.swift */; };
 		74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */; };
 		74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */; };
-		74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C815DC1CCEA924007B285D /* UtilitesViewController.swift */; };
 		74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */; };
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
@@ -84,7 +83,6 @@
 		74B8DC9B1CCE0B5700B9E1ED /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
 		74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackDecorationView.swift; sourceTree = "<group>"; };
 		74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackHeaderSupplementaryView.swift; sourceTree = "<group>"; };
-		74C815DC1CCEA924007B285D /* UtilitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitesViewController.swift; sourceTree = "<group>"; };
 		74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorViewController.swift; sourceTree = "<group>"; };
 		74D638E31C4D941F00175740 /* Silkscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D638E61C4D941F00175740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */,
 				74B8DC761CCAB1A900B9E1ED /* EditorViewController.swift */,
 				74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */,
-				74C815DC1CCEA924007B285D /* UtilitesViewController.swift */,
 				74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */,
 			);
 			path = ViewControllers;
@@ -492,7 +489,6 @@
 				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
 				74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */,
-				74C815DD1CCEA924007B285D /* UtilitesViewController.swift in Sources */,
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
 				74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */,
 				741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */,

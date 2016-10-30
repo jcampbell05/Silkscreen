@@ -67,8 +67,6 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
     
     @objc private func longPressToDragGestureDidUpdate(gestureRecognizer: UIGestureRecognizer) {
         
-        print(gestureRecognizer.state.rawValue)
-        
         guard gestureRecognizer.state == .Began else {
             return
         }

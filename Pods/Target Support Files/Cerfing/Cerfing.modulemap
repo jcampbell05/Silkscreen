@@ -1,6 +1,0 @@
-framework module Cerfing {
-  umbrella header "Cerfing-umbrella.h"
-
-  export *
-  module * { export * }
-}

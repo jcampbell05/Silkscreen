@@ -6,7 +6,6 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import CoreDragon
 import UIKit
 
 // - Swinject
@@ -36,10 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        if let window = window {
-            DragonController.sharedController().enableLongPressDraggingInWindow(window)
-        }
         
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()

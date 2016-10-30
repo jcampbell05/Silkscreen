@@ -11,8 +11,8 @@
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
 		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
 		74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74265F161DB7F0B0002267CA /* AssetsViewController.swift */; };
+		742C336F1DC6A9E000E07B97 /* UIView+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742C336E1DC6A9E000E07B97 /* UIView+Drag.swift */; };
 		7433DBE41CF8F1B500529931 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE31CF8F1B500529931 /* Platform.swift */; };
-		74461E991CD1E5230043A86F /* DragonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E981CD1E5230043A86F /* DragonCore.swift */; };
 		74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */; };
 		74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */; };
 		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
@@ -20,8 +20,6 @@
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
-		74565E591CFA1460005AC140 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E581CFA1460005AC140 /* Node.swift */; };
-		74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E5A1CFA14CE005AC140 /* CameraNode.swift */; };
 		74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
@@ -55,8 +53,8 @@
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		74265F161DB7F0B0002267CA /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		742C336E1DC6A9E000E07B97 /* UIView+Drag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Drag.swift"; path = "Extensions/UIView/UIView+Drag.swift"; sourceTree = "<group>"; };
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		74461E981CD1E5230043A86F /* DragonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCore.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
 		74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
@@ -64,8 +62,6 @@
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		74565E581CFA1460005AC140 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		74565E5A1CFA14CE005AC140 /* CameraNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
 		74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewModel.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -125,29 +121,12 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
-		7433DBE51CF8F40800529931 /* RenderEngine */ = {
+		742C336D1DC6A9B800E07B97 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				74565E581CFA1460005AC140 /* Node.swift */,
-				74565E5A1CFA14CE005AC140 /* CameraNode.swift */,
+				742C336E1DC6A9E000E07B97 /* UIView+Drag.swift */,
 			);
-			path = RenderEngine;
-			sourceTree = "<group>";
-		};
-		74461E961CD1E5070043A86F /* VendorExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				74461E971CD1E5150043A86F /* UIViewController */,
-			);
-			path = VendorExtensions;
-			sourceTree = "<group>";
-		};
-		74461E971CD1E5150043A86F /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				74461E981CD1E5230043A86F /* DragonCore.swift */,
-			);
-			path = UIViewController;
+			name = UIView;
 			sourceTree = "<group>";
 		};
 		74461E9C1CD1E6F70043A86F /* PresentationControllers */ = {
@@ -202,6 +181,7 @@
 		74B8B39C1D22C81C004F54F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				742C336D1DC6A9B800E07B97 /* UIView */,
 				74B8B3A01D22C964004F54F2 /* UIViewControllerContextTransitioning */,
 			);
 			name = Extensions;
@@ -292,10 +272,8 @@
 				74B8B39C1D22C81C004F54F2 /* Extensions */,
 				74477BB31D1B1D8D0038E058 /* Cells */,
 				741119441CFF97FC009B56CF /* Transitions */,
-				7433DBE51CF8F40800529931 /* RenderEngine */,
 				74EBF2991CD3C7E30094F1DF /* AssetSource */,
 				74461E9C1CD1E6F70043A86F /* PresentationControllers */,
-				74461E961CD1E5070043A86F /* VendorExtensions */,
 				74B8DC971CCE090100B9E1ED /* Types */,
 				74B8DC8A1CCBF69100B9E1ED /* View */,
 				74B8DC871CCBF31600B9E1ED /* Layout */,
@@ -439,7 +417,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -450,12 +428,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
+				742C336F1DC6A9E000E07B97 /* UIView+Drag.swift in Sources */,
 				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
 				74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */,
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
 				745521B71CCFE9D20041C072 /* Asset.swift in Sources */,
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,
-				74565E591CFA1460005AC140 /* Node.swift in Sources */,
 				74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
@@ -470,7 +448,6 @@
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,
-				74461E991CD1E5230043A86F /* DragonCore.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
 				74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */,
 				745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */,
@@ -481,7 +458,6 @@
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
-				74565E5B1CFA14CE005AC140 /* CameraNode.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,
 				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
 				745521BB1CCFEB160041C072 /* Slot.swift in Sources */,

@@ -6,7 +6,6 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import CoreDragon
 import MobileCoreServices
 import UICollectionViewLeftAlignedLayout
 import UIKit
@@ -16,7 +15,8 @@ import UIKit
 // - Zoom in and out
 // - Extension for these protocols
 // - Can Scrubbing Styled Asset View Controller Be Done In A UICollectionViewController ?
-class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// - Break up into folders
+class AssetsViewController: UICollectionViewController, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DraggingSource {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -29,6 +29,10 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     
     lazy var addButton: UIBarButtonItem = {
        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))
+    }()
+    
+    lazy var longPressToDragGestureRecognizer: UILongPressGestureRecognizer = {
+        return UILongPressGestureRecognizer(target: self, action: #selector(longPressToDragGestureDidUpdate))
     }()
     
     init() {
@@ -52,12 +56,34 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         title = NSLocalizedString("Assets", comment: "")
         navigationItem.leftBarButtonItem = addButton
         
+        collectionView?.addGestureRecognizer(longPressToDragGestureRecognizer)
         collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    @objc private func longPressToDragGestureDidUpdate(gestureRecognizer: UIGestureRecognizer) {
+        
+        print(gestureRecognizer.state.rawValue)
+        
+        guard gestureRecognizer.state == .Began else {
+            return
+        }
+        
+        let location = gestureRecognizer.locationInView(collectionView)
+        
+        guard let indexPath = collectionView?.indexPathForItemAtPoint(location) else {
+            return
+        }
+        
+        guard let cell = collectionView?.cellForItemAtIndexPath(indexPath) else {
+            return
+        }
+        
+        view.beginDraggingSession(with: [], gestureRecognizer: gestureRecognizer, source: self)
     }
     
     @objc private func didPressAdd() {
@@ -81,12 +107,11 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         if let cell = cell as? AssetCollectionViewCell {
             cell.asset = editorContext?.assets[indexPath.row]
         }
-
-        // - Add ability to remove highlight.
-        registerDragSource(cell, delegate:self)
         
         return cell
     }
+    
+    // - <UIViewControllerTransitioningDelegate>
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
@@ -109,10 +134,7 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
-    
-    func beginDragOperation(drag: DragonInfo, fromView draggable: UIView) {
-        drag.pasteboard.setValue("Hey", forPasteboardType:kUTTypePlainText as String)
-    }
+    // - <UIImagePickerControllerDelegate>
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -127,4 +149,6 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // - <DraggingSource>
 }

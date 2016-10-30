@@ -1,40 +1,12 @@
 PODS:
-  - Cerfing (2.0.4):
-    - CocoaAsyncSocket (= 7.4.3)
-  - CocoaAsyncSocket (7.4.3):
-    - CocoaAsyncSocket/All (= 7.4.3)
-  - CocoaAsyncSocket/All (7.4.3):
-    - CocoaAsyncSocket/GCD
-    - CocoaAsyncSocket/RunLoop
-  - CocoaAsyncSocket/GCD (7.4.3)
-  - CocoaAsyncSocket/RunLoop (7.4.3)
-  - CoreDragon (0.1.3):
-    - Cerfing (= 2.0.4)
-    - MeshPipe/CerfingMeshPipe (= 0.1.3)
-  - GPUImage (0.1.7)
-  - GZIP (1.1.1)
-  - MeshPipe/CerfingMeshPipe (0.1.3):
-    - Cerfing
-    - MeshPipe/Core
-  - MeshPipe/Core (0.1.3):
-    - CocoaAsyncSocket (~> 7.4)
-    - GZIP (~> 1.1)
   - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
-  - CoreDragon
-  - GPUImage
   - UICollectionViewLeftAlignedLayout
 
 SPEC CHECKSUMS:
-  Cerfing: 65c86fec3859f868c6aec2634ba7b68f598d7341
-  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
-  CoreDragon: a412d146c52f6ddc5700ec76de22e70621e8e714
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  GZIP: f8beb59597f651e6970a45b816508a9c6d700b77
-  MeshPipe: 1791a80fe51afbdaadffb889cb9641e400cf4758
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: 7474ee8c1123f4f8d9573ed1f70b0a431cbf54fd
+PODFILE CHECKSUM: 702846a1cfaffba2597c8cf2167bd13e2e131388
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

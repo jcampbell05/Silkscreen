@@ -6,12 +6,11 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import CoreDragon
 import MobileCoreServices
 import UIKit
 
 // - Manually Add Navigation Bar VC or in a super VC
-class TimelineViewController: UICollectionViewController, DragonDropDelegate {
+class TimelineViewController: UICollectionViewController {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -26,8 +25,6 @@ class TimelineViewController: UICollectionViewController, DragonDropDelegate {
         super.init(collectionViewLayout: layout)
         
         title = NSLocalizedString("Untitled Project", comment: "")
-        
-        registerDropTarget(collectionView!, delegate: self)
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.darkGrayColor()
@@ -60,14 +57,5 @@ class TimelineViewController: UICollectionViewController, DragonDropDelegate {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
-    }
-    
-    func dropTarget(droppable: UIView, canAcceptDrag drag: DragonInfo) -> Bool {
-        return true
-    }
-    
-    func dropTarget(droppable: UIView, acceptDrag drag: DragonInfo, atPoint p: CGPoint) {
-        collectionView?.backgroundColor = UIColor.darkGrayColor()
-        drag.pasteboard.valueForPasteboardType(kUTTypePlainText as String)
     }
 }

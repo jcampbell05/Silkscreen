@@ -1,6 +1,0 @@
-framework module MeshPipe {
-  umbrella header "MeshPipe-umbrella.h"
-
-  export *
-  module * { export * }
-}

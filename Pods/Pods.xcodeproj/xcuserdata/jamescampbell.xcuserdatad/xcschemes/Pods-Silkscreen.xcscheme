@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D2C66274F935CA1BBA53915298B9405"
+               BlueprintIdentifier = "A88094D66FDCE26F4A6E8AC23A50B85F"
                BuildableName = "Pods_Silkscreen.framework"
                BlueprintName = "Pods-Silkscreen"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D2C66274F935CA1BBA53915298B9405"
+            BlueprintIdentifier = "A88094D66FDCE26F4A6E8AC23A50B85F"
             BuildableName = "Pods_Silkscreen.framework"
             BlueprintName = "Pods-Silkscreen"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -113,6 +113,12 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
+        
+        guard let url = info[UIImagePickerControllerReferenceURL] as? NSURL else {
+            return
+        }
+        
+        editorContext?.addAsset(url)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){

@@ -81,7 +81,19 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
             return
         }
         
+        guard let asset = editorContext?.assets[indexPath.row] else {
+            return
+        }
+        
+        // - Implement NSPasteboardItem
+        let pasteboardItem = editorContext?.assets[indexPath.row]
+        
+        //- Constructor that takes item for Pasteboard
         let item = DraggingItem()
+        //- How to set contents?
+        // Reimplement draggingItem.setDraggingFrame(self.bounds, contents:snapshot())
+        item.draggingFrame = cell.bounds
+        
         view.beginDraggingSession(with: [item], gestureRecognizer: gestureRecognizer, source: self)
     }
     

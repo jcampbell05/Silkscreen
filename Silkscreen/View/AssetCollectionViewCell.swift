@@ -10,7 +10,7 @@ import Photos
 import UIKit
 
 // - Come up with way to load assets
-// - Come up with good Arch
+// - Come up with good Arch for asset loading
 class AssetCollectionViewCell: UICollectionViewCell {
     
     var asset: Asset? = nil {
@@ -49,6 +49,9 @@ class AssetCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         clipsToBounds = true
+        
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
         
         addSubview(imageView)
     }

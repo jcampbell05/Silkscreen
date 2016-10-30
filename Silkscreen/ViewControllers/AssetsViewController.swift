@@ -15,6 +15,7 @@ import UIKit
 // - UIDocumentInteractionController Support
 // - Zoom in and out
 // - Extension for these protocols
+// - Can Scrubbing Styled Asset View Controller Be Done In A UICollectionViewController ?
 class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var editorContext: EditorContext? = nil {
@@ -33,8 +34,9 @@ class AssetsViewController: UICollectionViewController, DragonDelegate, UIViewCo
     init() {
         
         let layout = UICollectionViewLeftAlignedLayout()
-        layout.minimumInteritemSpacing = 5
+        layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSizeMake(100, 100)
+        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
 
         super.init(collectionViewLayout: layout)
     }

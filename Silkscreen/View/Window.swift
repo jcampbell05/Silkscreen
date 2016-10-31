@@ -8,21 +8,30 @@
 
 import UIKit
 
-// - Allow view to swallow touches for current drag gesture.
+// - Implement Dragged Events for Drag Source and Drop Targets
 class Window: UIWindow, UIGestureRecognizerDelegate {
     
     private lazy var dragGestureRecognizer: UIPanGestureRecognizer = {
         return UIPanGestureRecognizer(target:self, action:#selector(dragGestureRecognizerDidUpdate))
     }()
     
+    private lazy var longPressRecognizer: UILongPressGestureRecognizer = {
+        return UILongPressGestureRecognizer(target:self, action:#selector(longPressRecognizerDidUpdate))
+    }()
+    
     private var compositeImageView: UIImageView?
     private var draggingSession: DraggingSession?
+    
+    private var activeTouches: [UITouch] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         dragGestureRecognizer.delegate = self
+        longPressRecognizer.delegate = self
+        
         addGestureRecognizer(dragGestureRecognizer)
+        addGestureRecognizer(longPressRecognizer)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,14 +56,40 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         
         compositeImageView = imageView
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        
+        activeTouches.appendContentsOf(touches)
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
+        
+        print("")
+    }
 
     @objc func dragGestureRecognizerDidUpdate(dragGestureRecognizer: UIPanGestureRecognizer) {
         let translation = dragGestureRecognizer.translationInView(self)
         compositeImageView?.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, translation.x, translation.y)
     
         // - Implement Animation back to original location
+        // - DRY
         if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
       
+            compositeImageView?.removeFromSuperview()
+            compositeImageView = nil
+            
+            draggingSession = nil
+        }
+    }
+    
+    @objc func longPressRecognizerDidUpdate(longPressRecognizer: UILongPressGestureRecognizer) {
+        
+        // - Implement Animation back to original location
+        // - DRY
+        if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
+            
             compositeImageView?.removeFromSuperview()
             compositeImageView = nil
             

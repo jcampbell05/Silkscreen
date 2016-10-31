@@ -85,16 +85,13 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
             return
         }
         
-        // - Implement NSPasteboardItem
-        let pasteboardItem = editorContext?.assets[indexPath.row]
+        guard let snapshot = cell.snapshotViewAfterScreenUpdates(false) else {
+            return
+        }
         
-        //- Constructor that takes item for Pasteboard
-        let item = DraggingItem()
-        //- How to set contents?
-        // Reimplement draggingItem.setDraggingFrame(self.bounds, contents:snapshot())
-        item.draggingFrame = cell.bounds
-        
-        view.beginDraggingSession(with: [item], gestureRecognizer: gestureRecognizer, source: self)
+        let draggingItem = DraggingItem(pasteboardWriter: asset)
+        draggingItem.setDraggingFrame(cell.bounds, contents: snapshot)
+        view.beginDraggingSession(with: [draggingItem], gestureRecognizer: gestureRecognizer, source: self)
     }
     
     @objc private func didPressAdd() {

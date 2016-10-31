@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Asset {
+struct Asset: PasteboardWriting {
     let path: NSURL
 }

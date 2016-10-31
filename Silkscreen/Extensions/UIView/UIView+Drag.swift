@@ -8,14 +8,18 @@
 
 import UIKit
 
+// Split these out into other areas.
+
+let DraggingImageComponentIconKey = "DraggingImageComponentIconKey"
+
 class DraggingImageComponent {
     
     var key: String
     var frame: CGRect = .zero
     var contents: Any? = nil
     
-    init() {
-        key = NSUUID().UUIDString
+    init(key: String) {
+        self.key = key
     }
 }
 
@@ -23,9 +27,29 @@ class DraggingItem {
     
     var draggingFrame: CGRect = .zero
     var imageComponents: [DraggingImageComponent]? = nil
+    
+    init(pasteboardWriter: PasteboardWriting){
+        
+    }
+    
+    func setDraggingFrame(draggingFrame: CGRect, contents: Any?) {
+        self.draggingFrame = draggingFrame
+        
+        let component = DraggingImageComponent(key: DraggingImageComponentIconKey)
+        component.contents = contents
+        component.frame = draggingFrame
+        
+        self.imageComponents = [
+            component
+        ]
+    }
 }
 
 class DraggingSession {
+}
+
+protocol PasteboardWriting {
+    
 }
 
 protocol DraggingSource {

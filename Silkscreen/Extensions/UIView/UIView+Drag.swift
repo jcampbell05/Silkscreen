@@ -8,7 +8,8 @@
 
 import UIKit
 
-// Split these out into other areas.
+// - Split these out into other areas.
+// - Build well built dragging system that simulates OS X system
 
 let DraggingImageComponentIconKey = "DraggingImageComponentIconKey"
 
@@ -45,7 +46,18 @@ class DraggingItem {
     }
 }
 
-class DraggingSession {
+@objc class DraggingSession: NSObject, UIGestureRecognizerDelegate {
+    
+    let offset: CGPoint
+    let compositeImageCache: UIImage
+    
+    private init(pasteBoard: UIPasteboard, image: UIImage, offset: CGPoint, source: DraggingSource) {
+        
+        compositeImageCache = image
+        self.offset = offset
+        
+        super.init()
+    }
 }
 
 protocol PasteboardWriting {
@@ -59,9 +71,22 @@ protocol DraggingSource {
 extension UIView {
     
     func beginDraggingSession(with items: [DraggingItem],
-                                   gestureRecognizer: UIGestureRecognizer,
+                                   location: CGPoint,
                                    source: DraggingSource) -> DraggingSession {
-        return DraggingSession()
+        
+        guard let window = window as? Window else {
+            fatalError("Dragging Session started with view without dragging compatable Window")
+        }
+        
+        guard let item = items.first, let image = item.imageComponents?.first?.contents as? UIImage else {
+            fatalError("Dragging Session started without valid components")
+        }
+        
+        let session = DraggingSession(pasteBoard: UIPasteboard.generalPasteboard(), image: image, offset: location, source: source)
+        
+        window.beginDraggingSession(session, forView:  self)
+        
+        return session
     }
     
     func register(forDraggedTypes: [String]) {

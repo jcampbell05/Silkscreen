@@ -21,6 +21,7 @@
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
 		74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */; };
+		74760F8C1DC75444008D1B27 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74760F8B1DC75444008D1B27 /* Window.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
@@ -63,6 +64,7 @@
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewModel.swift; sourceTree = "<group>"; };
+		74760F8B1DC75444008D1B27 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */,
 				745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */,
 				740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */,
+				74760F8B1DC75444008D1B27 /* Window.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,
+				74760F8C1DC75444008D1B27 /* Window.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
 				74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,

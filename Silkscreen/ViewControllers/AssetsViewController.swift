@@ -85,13 +85,15 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
             return
         }
         
-        guard let snapshot = cell.snapshotViewAfterScreenUpdates(false) else {
-            return
+        let renderer = UIGraphicsImageRenderer(size: cell.bounds.size)
+        
+        let image = renderer.imageWithActions { _ in
+            cell.drawViewHierarchyInRect(cell.bounds, afterScreenUpdates: false)
         }
         
         let draggingItem = DraggingItem(pasteboardWriter: asset)
-        draggingItem.setDraggingFrame(cell.bounds, contents: snapshot)
-        view.beginDraggingSession(with: [draggingItem], gestureRecognizer: gestureRecognizer, source: self)
+        draggingItem.setDraggingFrame(cell.bounds, contents: image)
+        cell.beginDraggingSession(with: [draggingItem], location: gestureRecognizer.locationInView(view), source: self)
     }
     
     @objc private func didPressAdd() {

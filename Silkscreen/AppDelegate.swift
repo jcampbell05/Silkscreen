@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
         let bounds = UIScreen.mainScreen().bounds
-        return UIWindow(frame: bounds)
+        return Window(frame: bounds)
     }()
     
     lazy var rootViewController: EditorViewController = {

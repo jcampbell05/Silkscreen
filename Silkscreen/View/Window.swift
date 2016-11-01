@@ -40,7 +40,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func beginDraggingSession(session: DraggingSession, forView: UIView) {
+    func beginDraggingSession(session: DraggingSession) {
         
         // - Implement Nice Beginning Animation.
         

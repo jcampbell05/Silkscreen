@@ -88,7 +88,7 @@ class AssetsViewController: UICollectionViewController, DraggingSource {
         
         let draggingItem = DraggingItem(pasteboardWriter: asset)
         draggingItem.setDraggingFrame(cell.bounds, contents: image)
-        cell.beginDraggingSession(with: [draggingItem], location: gestureRecognizer.locationInView(view), source: self)
+        beginDraggingSession(with: [draggingItem], location: gestureRecognizer.locationInView(view), source: self)
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

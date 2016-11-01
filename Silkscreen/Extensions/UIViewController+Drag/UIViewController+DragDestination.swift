@@ -13,6 +13,25 @@ private var DraggingAssociationKey: UInt8 = 0
 
 extension UIViewController {
     
+    func beginDraggingSession(with items: [DraggingItem],
+                                   location: CGPoint,
+                                   source: DraggingSource) -> DraggingSession {
+        
+        guard let window = view.window as? Window else {
+            fatalError("Dragging Session started with view without dragging compatable Window")
+        }
+        
+        guard let item = items.first, let image = item.imageComponents?.first?.contents as? UIImage else {
+            fatalError("Dragging Session started without valid components")
+        }
+        
+        let session = DraggingSession(pasteBoard: UIPasteboard.generalPasteboard(), image: image, offset: location, source: source)
+        
+        window.beginDraggingSession(session)
+        
+        return session
+    }
+    
     func findDraggingDestinationAtPoint(point: CGPoint) -> DraggingDestination? {
         
         let inside = view.pointInside(point, withEvent: nil)

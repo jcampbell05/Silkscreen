@@ -98,16 +98,15 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         
         let lastDestinationViewController = lastDraggingDestination as? UIViewController
         let draggingDestinationViewController = rootViewController?.findDraggingDestinationAtPoint(location) as? UIViewController
-        guard let localLocation = draggingDestinationViewController?.view.convertPoint(location, fromView: self) else {
-            return
-        }
+        
+        let info = DraggingInfo(draggingLocation: location, destinationWindow: self)
         
         if draggingDestinationViewController != lastDestinationViewController {
-            lastDraggingDestination?.draggingExited(nil)
-            draggingDestination?.draggingEntered(DraggingInfo(point: localLocation))
+            lastDraggingDestination?.draggingExited(info)
+            draggingDestination?.draggingEntered(info)
         }
         
-        draggingDestination?.draggingUpdated(DraggingInfo(point: localLocation))
+        draggingDestination?.draggingUpdated(info)
         
         lastDraggingDestination = draggingDestination
     }

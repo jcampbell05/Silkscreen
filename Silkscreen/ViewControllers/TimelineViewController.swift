@@ -93,9 +93,11 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     func draggingUpdated(sender: DraggingInfo) {
         
         var item = TimelineItem()
+        
+        let location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
 
-        item.trackId = layout.trackIdAtPoint(sender.point)
-        item.time = layout.timeIdAtPoint(sender.point)
+        item.trackId = layout.trackIdAtPoint(location)
+        item.time = layout.timeIdAtPoint(location)
         
         let attributes = layout.layoutAttributesForTimelineItem(item)
         

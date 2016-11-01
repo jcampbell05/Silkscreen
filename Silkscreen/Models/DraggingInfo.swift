@@ -9,9 +9,12 @@
 import UIKit
 
 class DraggingInfo {
-    let point: CGPoint
     
-    init(point: CGPoint) {
-        self.point = point
+    let draggingLocation: CGPoint
+    let destinationWindow: UIWindow
+    
+    init(draggingLocation: CGPoint, destinationWindow: UIWindow) {
+        self.draggingLocation = draggingLocation
+        self.destinationWindow = destinationWindow
     }
 }

@@ -10,4 +10,7 @@ import Foundation
 
 struct Track {
 
+    func addItem(asset: Asset, time: Int) {
+        
+    }
 }

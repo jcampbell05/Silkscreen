@@ -130,6 +130,11 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
             return
         }
         
-        // track.addItem(asset:asset, time: time)
+        guard let url = sender.draggingPasteboard.URL else {
+            return
+        }
+        
+        let asset = Asset(path: url)
+        track.addItem(asset, time: time)
     }
 }

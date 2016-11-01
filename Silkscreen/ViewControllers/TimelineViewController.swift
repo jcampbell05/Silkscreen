@@ -50,6 +50,15 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+    }
+    
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kind, forIndexPath: indexPath)

@@ -62,7 +62,9 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
         
         super.viewWillAppear(animated)
     
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor.blackColor()
     }
     
     override func prefersStatusBarHidden() -> Bool {

@@ -110,7 +110,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     func draggingUpdated(sender: DraggingInfo) {
     }
     
-    func draggingExited(sender: DraggingInfo?) {
+    func draggingExited(sender: DraggingInfo) {
     }
     
     func draggingEnded(sender: DraggingInfo) {

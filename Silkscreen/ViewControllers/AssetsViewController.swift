@@ -50,6 +50,7 @@ class AssetsViewController: UICollectionViewController, DraggingSource {
         
         super.viewDidLoad()
         
+        collectionView?.backgroundColor = UIColor.darkGrayColor()
         collectionView?.addGestureRecognizer(longPressToDragGestureRecognizer)
         collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
     }

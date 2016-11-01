@@ -9,9 +9,11 @@
 import MobileCoreServices
 import UIKit
 
-// - Manually Add Navigation Bar VC or in a super VC
 // - Add Timebar and playback / fullscreen options to the navigation bar.
+// - Implement
 class TimelineViewController: UICollectionViewController, DraggingDestination {
+    
+    var draggingCell: UICollectionViewCell? = nil
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -26,6 +28,15 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         super.init(collectionViewLayout: layout)
         
         register([])
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Play, target: nil, action: nil)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
+        label.text = "0:00:00"
+        label.textAlignment = .Center
+        
+        navigationItem.titleView = label
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .Plain, target: nil, action: nil)
         
         installsStandardGestureForInteractiveMovement = true
         
@@ -63,14 +74,27 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     }
     
     func draggingEntered(sender: DraggingInfo) {
-        collectionView?.backgroundColor = UIColor.redColor()
+        
+        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+        
+        guard let attributes = layout.layoutAttributesForItemAtIndexPath(indexPath) else {
+            return
+        }
+        
+        let cell = UICollectionViewCell(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        cell.backgroundColor = UIColor.redColor()
+        cell.applyLayoutAttributes(attributes)
+        
+        view.addSubview(cell)
+        draggingCell = cell
     }
     
     func draggingUpdated(sender: DraggingInfo) {
-        
+        // Update with attrs
     }
     
     func draggingExited(sender: DraggingInfo?) {
-        collectionView?.backgroundColor = UIColor.darkGrayColor()
+        draggingCell?.removeFromSuperview()
+        draggingCell = nil
     }
 }

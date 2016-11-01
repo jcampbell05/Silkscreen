@@ -11,13 +11,15 @@ import UIKit
 
 // - Add Timebar and playback / fullscreen options to the navigation bar.
 // - Implement
-class TimelineViewController: UICollectionViewController, DraggingDestination {
-    
-    var draggingCell: UICollectionViewCell? = nil
+class TimelineViewController: UICollectionViewController, DraggingDestination, TimelineCollectionViewLayoutDelegate {
     
     var editorContext: EditorContext? = nil {
         didSet {
             collectionView?.reloadData()
+            
+            editorContext?.trackItemsDidChangeSignal.addSlot { _ in
+                self.collectionView?.reloadData()
+            }
         }
     }
     
@@ -47,6 +49,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         collectionView?.backgroundColor = UIColor.darkGrayColor()
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
         collectionView?.registerClass(TimelineTrackHeaderSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withReuseIdentifier: TimelineElementKindTrackHeader)
+        collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,7 +85,18 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        
+        let track = editorContext?.tracks[section]
+        return track?.items.count ?? 0
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+     
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetCollectionViewCell), forIndexPath: indexPath) as! AssetCollectionViewCell
+        
+        cell.asset = editorContext!.tracks[indexPath.section].items[indexPath.row].0
+        
+        return cell
     }
     
     func shouldAllowDrag(draggingInfo: DraggingInfo) -> Bool {
@@ -91,39 +105,19 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     }
     
     func draggingEntered(sender: DraggingInfo) {
-
-        let cell = UICollectionViewCell()
-        
-        collectionView?.addSubview(cell)
-        draggingCell = cell
     }
     
     func draggingUpdated(sender: DraggingInfo) {
-        
-        let location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
-        var item = TimelineItem()
-        
-        item.trackId = layout.trackIdAtPoint(location)
-        item.time = layout.timeIdAtPoint(location)
-        
-        let attributes = layout.layoutAttributesForTimelineItem(item)
-
-        draggingCell?.frame = attributes.frame
-        draggingCell?.layer.zPosition = CGFloat(attributes.zIndex)
-        draggingCell?.backgroundColor = UIColor.redColor()
     }
     
     func draggingExited(sender: DraggingInfo?) {
-        draggingCell?.removeFromSuperview()
-        draggingCell = nil
     }
     
     func draggingEnded(sender: DraggingInfo) {
         
-        draggingCell?.removeFromSuperview()
-        draggingCell = nil
+        var location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
+        location.x -= sender.draggingImage.size.width / 2
         
-        let location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
         let time = layout.timeIdAtPoint(location)
         
         guard let track = editorContext?.tracks[layout.trackIdAtPoint(location)] else {
@@ -136,5 +130,11 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         
         let asset = Asset(path: url)
         track.addItem(asset, time: time)
+    }
+    
+    // - <TimelineCollectionViewLayoutDelegate>
+    
+    func timeForItem(indexPath: NSIndexPath) -> Int {
+        return editorContext!.tracks[indexPath.section].items[indexPath.row].1
     }
 }

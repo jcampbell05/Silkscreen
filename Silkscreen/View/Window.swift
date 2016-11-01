@@ -9,6 +9,7 @@
 import UIKit
 import ObjectiveC
 
+// - BDD
 class Window: UIWindow, UIGestureRecognizerDelegate {
     
     private lazy var dragGestureRecognizer: UIPanGestureRecognizer = {
@@ -66,10 +67,10 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
             let translation = dragGestureRecognizer.translationInView(self)
             draggingImageView?.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, translation.x, translation.y)
         
-            updateDraggingDestination(location, pasteboard: draggingSession.draggingPasteboard)
+            updateDraggingDestination(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             
             if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
-                endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard)
+                endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             }
         }
     }
@@ -79,17 +80,17 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         let location = longPressRecognizer.locationInView(rootViewController?.view)
         
         if let draggingSession = draggingSession {
-            updateDraggingDestination(location, pasteboard: draggingSession.draggingPasteboard)
+            updateDraggingDestination(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             
             if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
-                endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard)
+                endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             }
         }
     }
     
-    private func updateDraggingDestination(location: CGPoint, pasteboard: UIPasteboard) {
+    private func updateDraggingDestination(location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
         
-        let info = DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self)
+        let info = DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self, draggingImage: image)
         let draggingDestination = rootViewController?.findDraggingDestinationForDraggingInfo(info)
         
         let lastDestinationViewController = lastDraggingDestination as? UIViewController
@@ -106,9 +107,9 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         lastDraggingDestination = draggingDestination
     }
     
-    private func endDraggingSession(location: CGPoint, pasteboard: UIPasteboard) {
+    private func endDraggingSession(location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
         
-        lastDraggingDestination?.draggingEnded(DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self))
+        lastDraggingDestination?.draggingEnded(DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self, draggingImage: image))
         lastDraggingDestination = nil
         
         draggingImageView?.removeFromSuperview()

@@ -42,7 +42,14 @@ class EditorContext {
     private(set) var tracks = Frozen<[Track]>(value: [])
     
     func addTrack() {
-        tracks = tracks.append(Track())
+        
+        let track = Track()
+        
+        track.itemsDidChangeSignal.addSlot { _ in
+            self.trackItemsDidChangeSignal.trigger()
+        }
+        
+        tracks = tracks.append(track)
     }
     
     //MARK:- Assets
@@ -60,4 +67,10 @@ class EditorContext {
     func addAsset(path: NSURL) {
         assets = assets.append(Asset(path: path))
     }
+    
+    //MARK:- Items
+    
+    private(set) lazy var trackItemsDidChangeSignal: Signal<EditorContext> = {
+        return Signal(sender: self)
+    }()
 }

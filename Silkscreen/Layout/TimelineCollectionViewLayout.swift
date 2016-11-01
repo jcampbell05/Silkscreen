@@ -13,6 +13,11 @@ let TimelineElementKindTrackHeader = "TimelineElementKindTrackHeader"
 private let TimelineElementKindHeader = "TimelineElementKindHeader"
 private let TimelineElementKindTrack = "TimelineElementKindTrack"
 
+struct TimelineItem {
+    var trackId = 1
+    var time = 0
+}
+
 // - Implement Layout Attribute for time offset
 
 class TimelineCollectionViewLayout: UICollectionViewLayout {
@@ -98,7 +103,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
             
             let attribute = UICollectionViewLayoutAttributes(forDecorationViewOfKind: TimelineElementKindTrack, withIndexPath: NSIndexPath(forRow: 0, inSection: $0.element))
             
-            let y: CGFloat = CGFloat(($0.element * Int(TimelineTrackHeight))) + TimelineHeaderHeight
+            let y: CGFloat = yForTrackID($0.element)
             
             //Figure out how to calculate this.
             attribute.frame = CGRect(x: collectionView.contentOffset.x, y: y, width: rect.width, height:  TimelineTrackHeight)
@@ -147,15 +152,31 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
         
-        if let collectionView = collectionView {
-            
-            let attribute = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-            attribute.frame = CGRect(x: TimelineTrackHeaderWidth, y: TimelineHeaderHeight, width: 100, height: TimelineTrackHeight)
-            attribute.zIndex = 1
-            
-            return attribute
-        }
+        let attribute = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+        attribute.frame = CGRect(x: TimelineTrackHeaderWidth, y: TimelineHeaderHeight, width: 100, height: TimelineTrackHeight)
+        attribute.zIndex = 1
         
-        return nil
+        return attribute
+    }
+    
+    func layoutAttributesForTimelineItem(item: TimelineItem) -> UICollectionViewLayoutAttributes {
+        
+        let attribute = UICollectionViewLayoutAttributes()
+        attribute.frame = CGRect(x: TimelineTrackHeaderWidth + CGFloat(max(item.time, 0)), y: yForTrackID(item.trackId), width: 100, height: TimelineTrackHeight)
+        attribute.zIndex = 1
+        
+        return attribute
+    }
+    
+    func trackIdAtPoint(point: CGPoint) -> Int {
+        return min(Int((point.y - TimelineHeaderHeight) / TimelineTrackHeight), (collectionView?.numberOfSections() ?? 1) - 1)
+    }
+    
+    func timeIdAtPoint(point: CGPoint) -> Int {
+        return Int(point.x - TimelineTrackHeaderWidth)
+    }
+    
+    private func yForTrackID(trackID: Int) -> CGFloat {
+        return TimelineHeaderHeight + (CGFloat(trackID) * TimelineTrackHeight)
     }
 }

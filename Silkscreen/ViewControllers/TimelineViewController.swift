@@ -83,23 +83,26 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     }
     
     func draggingEntered(sender: DraggingInfo) {
-        
-        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
-        
-        guard let attributes = layout.layoutAttributesForItemAtIndexPath(indexPath) else {
-            return
-        }
-        
+
         let cell = UICollectionViewCell()
-        cell.frame = attributes.frame
-        cell.layer.zPosition = CGFloat(attributes.zIndex)
-        cell.backgroundColor = UIColor.redColor()
         
         collectionView?.addSubview(cell)
         draggingCell = cell
     }
     
     func draggingUpdated(sender: DraggingInfo) {
+        
+        var item = TimelineItem()
+
+        item.trackId = layout.trackIdAtPoint(sender.point)
+        item.time = layout.timeIdAtPoint(sender.point)
+        
+        let attributes = layout.layoutAttributesForTimelineItem(item)
+        
+        let cell = UICollectionViewCell()
+        draggingCell?.frame = attributes.frame
+        draggingCell?.layer.zPosition = CGFloat(attributes.zIndex)
+        draggingCell?.backgroundColor = UIColor.redColor()
         // Update with attrs
     }
     

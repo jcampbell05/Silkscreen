@@ -6,8 +6,12 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DraggingInfo {
+    let point: CGPoint
     
+    init(point: CGPoint) {
+        self.point = point
+    }
 }

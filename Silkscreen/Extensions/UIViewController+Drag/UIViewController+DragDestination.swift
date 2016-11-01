@@ -7,61 +7,49 @@
 //
 
 import UIKit
-import ObjectiveC
 
 private var DraggingAssociationKey: UInt8 = 0
 
 extension UIViewController {
     
-    func beginDraggingSession(with items: [DraggingItem],
-                                   location: CGPoint,
-                                   source: DraggingSource) -> DraggingSession {
+    func beginDraggingSession(with item: DraggingItem,
+                                   location: CGPoint) -> DraggingSession {
         
         guard let window = view.window as? Window else {
             fatalError("Dragging Session started with view without dragging compatable Window")
         }
         
-        guard let item = items.first else {
-            fatalError("Dragging Session started without any items")
+        guard let pasteboard = UIPasteboard(name: "com.silkscreen.drag-and-drop", create: true) else {
+            fatalError("Pastboard for Dragging Session failed to be created")
         }
         
-        let session = DraggingSession(pasteBoard: UIPasteboard.generalPasteboard(), image: item.image, offset: location, source: source)
+        item.item.writeToPasteboard(pasteboard)
         
+        let session = DraggingSession(pasteboard: pasteboard, image: item.image, offset: location)
         window.beginDraggingSession(session)
         
         return session
     }
     
-    func findDraggingDestinationAtPoint(point: CGPoint) -> DraggingDestination? {
+    func findDraggingDestinationForDraggingInfo(info: DraggingInfo) -> DraggingDestination? {
         
-        let inside = view.pointInside(point, withEvent: nil)
-        let draggable = (objc_getAssociatedObject(self, &DraggingAssociationKey) as? Bool) ?? false
+        let location = view.convertPoint(info.draggingLocation, fromView: info.destinationWindow)
+        let inside = view.pointInside(location, withEvent: nil)
+        let canAcceptDrag = (self as? DraggingDestination)?.shouldAllowDrag(info) ?? false
         
-        if (draggable && inside) {
+        if (inside && canAcceptDrag) {
             
             return self as? DraggingDestination
             
         } else {
             
             for viewController in childViewControllers {
-                
-                let location = view.convertPoint(point, toView: viewController.view)
-                
-                if let draggingDestination = viewController.findDraggingDestinationAtPoint(location) {
+                if let draggingDestination = viewController.findDraggingDestinationForDraggingInfo(info) {
                     return draggingDestination
                 }
             }
         }
         
         return nil
-    }
-    
-    func shouldAllowDrag(_ draggingInfo: DraggingInfo) -> Bool {
-        return false
-    }
-    
-    func register(forDraggedTypes: [String]) {
-        // - Implement Correctly
-        objc_setAssociatedObject(self, &DraggingAssociationKey, true, .OBJC_ASSOCIATION_RETAIN)
     }
 }

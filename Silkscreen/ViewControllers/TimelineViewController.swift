@@ -27,8 +27,6 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         
         super.init(collectionViewLayout: layout)
         
-        register([])
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Play, target: nil, action: nil)
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
@@ -87,6 +85,11 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         return 0
     }
     
+    func shouldAllowDrag(draggingInfo: DraggingInfo) -> Bool {
+        let pasteBoard = draggingInfo.draggingPasteboard
+        return pasteBoard.hasURLs
+    }
+    
     func draggingEntered(sender: DraggingInfo) {
 
         let cell = UICollectionViewCell()
@@ -97,16 +100,14 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     
     func draggingUpdated(sender: DraggingInfo) {
         
+        let location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
         var item = TimelineItem()
         
-        let location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
-
         item.trackId = layout.trackIdAtPoint(location)
         item.time = layout.timeIdAtPoint(location)
         
         let attributes = layout.layoutAttributesForTimelineItem(item)
-        
-        let cell = UICollectionViewCell()
+
         draggingCell?.frame = attributes.frame
         draggingCell?.layer.zPosition = CGFloat(attributes.zIndex)
         draggingCell?.backgroundColor = UIColor.redColor()
@@ -117,9 +118,18 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         draggingCell = nil
     }
     
-    // - Commit
     func draggingEnded(sender: DraggingInfo) {
+        
         draggingCell?.removeFromSuperview()
         draggingCell = nil
+        
+        let location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
+        let time = layout.timeIdAtPoint(location)
+        
+        guard let track = editorContext?.tracks[layout.trackIdAtPoint(location)] else {
+            return
+        }
+        
+        // track.addItem(asset:asset, time: time)
     }
 }

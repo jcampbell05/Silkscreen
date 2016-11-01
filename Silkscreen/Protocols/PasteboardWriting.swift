@@ -6,8 +6,8 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PasteboardWriting {
-    
+    func writeToPasteboard(pasteboard: UIPasteboard)
 }

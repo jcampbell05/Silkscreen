@@ -23,7 +23,6 @@
 		74740DBA1DC8B66600E9614D /* DraggingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB91DC8B66600E9614D /* DraggingItem.swift */; };
 		74740DBC1DC8B67600E9614D /* DraggingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DBB1DC8B67600E9614D /* DraggingSession.swift */; };
 		74740DBF1DC8B6AC00E9614D /* PasteboardWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DBE1DC8B6AC00E9614D /* PasteboardWriting.swift */; };
-		74740DC11DC8B6C500E9614D /* DraggingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC01DC8B6C500E9614D /* DraggingSource.swift */; };
 		74740DC31DC8B72B00E9614D /* DraggingDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC21DC8B72B00E9614D /* DraggingDestination.swift */; };
 		74740DC61DC8EB5800E9614D /* UIViewController+DragDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */; };
 		74760F8C1DC75444008D1B27 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74760F8B1DC75444008D1B27 /* Window.swift */; };
@@ -69,7 +68,6 @@
 		74740DB91DC8B66600E9614D /* DraggingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingItem.swift; sourceTree = "<group>"; };
 		74740DBB1DC8B67600E9614D /* DraggingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingSession.swift; sourceTree = "<group>"; };
 		74740DBE1DC8B6AC00E9614D /* PasteboardWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteboardWriting.swift; sourceTree = "<group>"; };
-		74740DC01DC8B6C500E9614D /* DraggingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingSource.swift; sourceTree = "<group>"; };
 		74740DC21DC8B72B00E9614D /* DraggingDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingDestination.swift; sourceTree = "<group>"; };
 		74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DragDestination.swift"; sourceTree = "<group>"; };
 		74760F8B1DC75444008D1B27 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				74740DBE1DC8B6AC00E9614D /* PasteboardWriting.swift */,
-				74740DC01DC8B6C500E9614D /* DraggingSource.swift */,
 				74740DC21DC8B72B00E9614D /* DraggingDestination.swift */,
 			);
 			path = Protocols;
@@ -452,7 +449,6 @@
 				74740DC61DC8EB5800E9614D /* UIViewController+DragDestination.swift in Sources */,
 				7433DBE41CF8F1B500529931 /* Platform.swift in Sources */,
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
-				74740DC11DC8B6C500E9614D /* DraggingSource.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,

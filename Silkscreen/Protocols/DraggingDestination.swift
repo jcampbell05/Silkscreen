@@ -10,6 +10,8 @@ import Foundation
 
 protocol DraggingDestination {
     
+    func shouldAllowDrag(draggingInfo: DraggingInfo) -> Bool
+    
     func draggingEntered(sender: DraggingInfo)
     func draggingUpdated(sender: DraggingInfo)
     func draggingEnded(sender: DraggingInfo)

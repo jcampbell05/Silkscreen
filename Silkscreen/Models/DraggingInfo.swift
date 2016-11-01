@@ -10,10 +10,12 @@ import UIKit
 
 class DraggingInfo {
     
+    let draggingPasteboard: UIPasteboard
     let draggingLocation: CGPoint
     let destinationWindow: UIWindow
     
-    init(draggingLocation: CGPoint, destinationWindow: UIWindow) {
+    init(draggingPasteboard: UIPasteboard, draggingLocation: CGPoint, destinationWindow: UIWindow) {
+        self.draggingPasteboard = draggingPasteboard
         self.draggingLocation = draggingLocation
         self.destinationWindow = destinationWindow
     }

@@ -10,13 +10,13 @@ import UIKit
 
 @objc class DraggingSession: NSObject {
     
+    let draggingPasteboard: UIPasteboard
     let offset: CGPoint
     let image: UIImage
     
-    init(pasteBoard: UIPasteboard, image: UIImage, offset: CGPoint, source: DraggingSource) {
+    init(pasteboard: UIPasteboard, image: UIImage, offset: CGPoint) {
         
-        // - Pasteboard Magic
-        
+        self.draggingPasteboard = pasteboard
         self.image = image
         self.offset = offset
         

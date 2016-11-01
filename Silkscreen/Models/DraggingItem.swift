@@ -10,11 +10,12 @@ import UIKit
 
 class DraggingItem {
     
+    let item: PasteboardWriting
     var draggingFrame: CGRect = .zero
     var image: UIImage = UIImage()
     
     init(pasteboardWriter: PasteboardWriting){
-        // - Write to pasteboard on drop
+        self.item = pasteboardWriter
     }
     
     func setDraggingFrame(draggingFrame: CGRect, image: UIImage) {

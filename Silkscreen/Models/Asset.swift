@@ -6,8 +6,13 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import Foundation
+import MobileCoreServices
+import UIKit
 
 struct Asset: PasteboardWriting {
     let path: NSURL
+    
+    func writeToPasteboard(pasteboard: UIPasteboard) {
+        pasteboard.setValue(path, forPasteboardType: kUTTypeURL as String)
+    }
 }

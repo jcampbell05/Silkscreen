@@ -9,8 +9,6 @@
 import UIKit
 import AVFoundation
 
-// - Figure out a basic demo context to test player
-// - Can we get rid of Frozen ?
 class EditorContext {
     
     init () {

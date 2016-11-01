@@ -16,7 +16,7 @@ import UIKit
 // - Extension for these protocols
 // - Can Scrubbing Styled Asset View Controller Be Done In A UICollectionViewController ?
 // - Break up into folders
-class AssetsViewController: UICollectionViewController, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DraggingSource {
+class AssetsViewController: UICollectionViewController, DraggingSource {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -27,10 +27,6 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
         }
     }
     
-    lazy var addButton: UIBarButtonItem = {
-       return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))
-    }()
-    
     lazy var longPressToDragGestureRecognizer: UILongPressGestureRecognizer = {
         return UILongPressGestureRecognizer(target: self, action: #selector(longPressToDragGestureDidUpdate))
     }()
@@ -39,7 +35,8 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
         
         let layout = UICollectionViewLeftAlignedLayout()
         layout.minimumInteritemSpacing = 10
-        layout.itemSize = CGSizeMake(200, 100)
+        layout.itemSize = CGSizeMake(100
+            , 50)
         layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
 
         super.init(collectionViewLayout: layout)
@@ -52,9 +49,6 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        title = NSLocalizedString("Assets", comment: "")
-        navigationItem.leftBarButtonItem = addButton
         
         collectionView?.addGestureRecognizer(longPressToDragGestureRecognizer)
         collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
@@ -96,16 +90,6 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
         cell.beginDraggingSession(with: [draggingItem], location: gestureRecognizer.locationInView(view), source: self)
     }
     
-    @objc private func didPressAdd() {
-
-        let viewController = UIImagePickerController()
-        viewController.delegate = self
-        viewController.transitioningDelegate = self
-        viewController.modalPresentationStyle = .Custom
-        
-        presentViewController(viewController, animated: true, completion: nil)
-    }
-    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return editorContext?.assets.count ?? 0
     }
@@ -120,45 +104,4 @@ class AssetsViewController: UICollectionViewController, UIViewControllerTransiti
         
         return cell
     }
-    
-    // - <UIViewControllerTransitioningDelegate>
-    
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        return SlideInAnimatedTransition()
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        return SlideInAnimatedTransition()
-    }
-    
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-
-        let presentationController = presentedViewController?.presentationController as? BlurredSheetPresentationController
-        return presentationController?.interactiveDismissTransition
-    }
-    
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController?, sourceViewController source: UIViewController) -> UIPresentationController? {
-        
-        return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
-    }
-    
-    // - <UIImagePickerControllerDelegate>
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-        
-        guard let url = info[UIImagePickerControllerReferenceURL] as? NSURL else {
-            return
-        }
-        
-        editorContext?.addAsset(url)
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        picker.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // - <DraggingSource>
 }

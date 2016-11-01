@@ -11,7 +11,6 @@
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
 		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
 		74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74265F161DB7F0B0002267CA /* AssetsViewController.swift */; };
-		742C336F1DC6A9E000E07B97 /* UIView+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742C336E1DC6A9E000E07B97 /* UIView+Drag.swift */; };
 		7433DBE41CF8F1B500529931 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE31CF8F1B500529931 /* Platform.swift */; };
 		74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */; };
 		74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */; };
@@ -20,8 +19,16 @@
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
-		74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */; };
+		74740DB61DC8B63000E9614D /* DraggingImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB51DC8B63000E9614D /* DraggingImageComponent.swift */; };
+		74740DB81DC8B64A00E9614D /* DraggingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB71DC8B64A00E9614D /* DraggingInfo.swift */; };
+		74740DBA1DC8B66600E9614D /* DraggingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB91DC8B66600E9614D /* DraggingItem.swift */; };
+		74740DBC1DC8B67600E9614D /* DraggingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DBB1DC8B67600E9614D /* DraggingSession.swift */; };
+		74740DBF1DC8B6AC00E9614D /* PasteboardWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DBE1DC8B6AC00E9614D /* PasteboardWriting.swift */; };
+		74740DC11DC8B6C500E9614D /* DraggingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC01DC8B6C500E9614D /* DraggingSource.swift */; };
+		74740DC31DC8B72B00E9614D /* DraggingDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC21DC8B72B00E9614D /* DraggingDestination.swift */; };
 		74760F8C1DC75444008D1B27 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74760F8B1DC75444008D1B27 /* Window.swift */; };
+		74B28F0F1DC7E1FC007BE743 /* UIViewController+DragDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B28F0E1DC7E1FC007BE743 /* UIViewController+DragDestination.swift */; };
+		74B28F111DC7E216007BE743 /* UIView+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B28F101DC7E216007BE743 /* UIView+Drag.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
@@ -42,8 +49,6 @@
 		74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D638E61C4D941F00175740 /* AppDelegate.swift */; };
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
 		74D638F11C4D941F00175740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */; };
-		74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */; };
-		74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */; };
 		74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */; };
 		F54DFD164CBC66B743714182 /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +59,6 @@
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		74265F161DB7F0B0002267CA /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
-		742C336E1DC6A9E000E07B97 /* UIView+Drag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Drag.swift"; path = "Extensions/UIView/UIView+Drag.swift"; sourceTree = "<group>"; };
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
 		74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -63,8 +67,16 @@
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePickerViewModel.swift; sourceTree = "<group>"; };
+		74740DB51DC8B63000E9614D /* DraggingImageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingImageComponent.swift; sourceTree = "<group>"; };
+		74740DB71DC8B64A00E9614D /* DraggingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingInfo.swift; sourceTree = "<group>"; };
+		74740DB91DC8B66600E9614D /* DraggingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingItem.swift; sourceTree = "<group>"; };
+		74740DBB1DC8B67600E9614D /* DraggingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingSession.swift; sourceTree = "<group>"; };
+		74740DBE1DC8B6AC00E9614D /* PasteboardWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteboardWriting.swift; sourceTree = "<group>"; };
+		74740DC01DC8B6C500E9614D /* DraggingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingSource.swift; sourceTree = "<group>"; };
+		74740DC21DC8B72B00E9614D /* DraggingDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingDestination.swift; sourceTree = "<group>"; };
 		74760F8B1DC75444008D1B27 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		74B28F0E1DC7E1FC007BE743 /* UIViewController+DragDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+DragDestination.swift"; path = "Extensions/Drag/UIViewController+DragDestination.swift"; sourceTree = "<group>"; };
+		74B28F101DC7E216007BE743 /* UIView+Drag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Drag.swift"; path = "Extensions/Drag/UIView+Drag.swift"; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
@@ -87,8 +99,6 @@
 		74D638ED1C4D941F00175740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D638F01C4D941F00175740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D638F21C4D941F00175740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetImportSource.swift; sourceTree = "<group>"; };
-		74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAssetImportSource.swift; sourceTree = "<group>"; };
 		74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,14 +133,6 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
-		742C336D1DC6A9B800E07B97 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				742C336E1DC6A9E000E07B97 /* UIView+Drag.swift */,
-			);
-			name = UIView;
-			sourceTree = "<group>";
-		};
 		74461E9C1CD1E6F70043A86F /* PresentationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +147,25 @@
 				74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		74740DBD1DC8B69F00E9614D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				74740DBE1DC8B6AC00E9614D /* PasteboardWriting.swift */,
+				74740DC01DC8B6C500E9614D /* DraggingSource.swift */,
+				74740DC21DC8B72B00E9614D /* DraggingDestination.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		74B28F0D1DC7E1E5007BE743 /* Drag */ = {
+			isa = PBXGroup;
+			children = (
+				74B28F101DC7E216007BE743 /* UIView+Drag.swift */,
+				74B28F0E1DC7E1FC007BE743 /* UIViewController+DragDestination.swift */,
+			);
+			name = Drag;
 			sourceTree = "<group>";
 		};
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
@@ -168,22 +189,18 @@
 				745521B61CCFE9D20041C072 /* Asset.swift */,
 				745521BE1CD00BEC0041C072 /* Project.swift */,
 				7433DBE31CF8F1B500529931 /* Platform.swift */,
+				74740DB51DC8B63000E9614D /* DraggingImageComponent.swift */,
+				74740DB71DC8B64A00E9614D /* DraggingInfo.swift */,
+				74740DB91DC8B66600E9614D /* DraggingItem.swift */,
+				74740DBB1DC8B67600E9614D /* DraggingSession.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		74B4FACF1CCAA54500AE26EC /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				74565E621CFBA910005AC140 /* DevicePickerViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		74B8B39C1D22C81C004F54F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				742C336D1DC6A9B800E07B97 /* UIView */,
+				74B28F0D1DC7E1E5007BE743 /* Drag */,
 				74B8B3A01D22C964004F54F2 /* UIViewControllerContextTransitioning */,
 			);
 			name = Extensions;
@@ -272,16 +289,15 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				74740DBD1DC8B69F00E9614D /* Protocols */,
 				74B8B39C1D22C81C004F54F2 /* Extensions */,
 				74477BB31D1B1D8D0038E058 /* Cells */,
 				741119441CFF97FC009B56CF /* Transitions */,
-				74EBF2991CD3C7E30094F1DF /* AssetSource */,
 				74461E9C1CD1E6F70043A86F /* PresentationControllers */,
 				74B8DC971CCE090100B9E1ED /* Types */,
 				74B8DC8A1CCBF69100B9E1ED /* View */,
 				74B8DC871CCBF31600B9E1ED /* Layout */,
 				74B4FACE1CCAA54500AE26EC /* Models */,
-				74B4FACF1CCAA54500AE26EC /* ViewModels */,
 				74B4FACB1CCAA52D00AE26EC /* ViewControllers */,
 				74D638E61C4D941F00175740 /* AppDelegate.swift */,
 				74D638ED1C4D941F00175740 /* Assets.xcassets */,
@@ -289,15 +305,6 @@
 				74D638F21C4D941F00175740 /* Info.plist */,
 			);
 			path = Silkscreen;
-			sourceTree = "<group>";
-		};
-		74EBF2991CD3C7E30094F1DF /* AssetSource */ = {
-			isa = PBXGroup;
-			children = (
-				74EBF29A1CD3C7EF0094F1DF /* AssetImportSource.swift */,
-				74EBF29C1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift */,
-			);
-			path = AssetSource;
 			sourceTree = "<group>";
 		};
 		7712A18039E53095285ED295 /* Frameworks */ = {
@@ -343,7 +350,6 @@
 				TargetAttributes = {
 					74D638E21C4D941F00175740 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = F7GK735YXN;
 					};
 				};
 			};
@@ -431,25 +437,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */,
-				742C336F1DC6A9E000E07B97 /* UIView+Drag.swift in Sources */,
 				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
 				74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */,
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
 				745521B71CCFE9D20041C072 /* Asset.swift in Sources */,
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,
-				74EBF29D1CD3C85D0094F1DF /* PhotoLibraryAssetImportSource.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
+				74740DB81DC8B64A00E9614D /* DraggingInfo.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,
 				74760F8C1DC75444008D1B27 /* Window.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
-				74EBF29B1CD3C7EF0094F1DF /* AssetImportSource.swift in Sources */,
+				74740DBF1DC8B6AC00E9614D /* PasteboardWriting.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,
 				74B8DC991CCE090900B9E1ED /* Frozen.swift in Sources */,
 				74D638E71C4D941F00175740 /* AppDelegate.swift in Sources */,
+				74740DBC1DC8B67600E9614D /* DraggingSession.swift in Sources */,
 				7433DBE41CF8F1B500529931 /* Platform.swift in Sources */,
-				74565E631CFBA910005AC140 /* DevicePickerViewModel.swift in Sources */,
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
+				74740DC11DC8B6C500E9614D /* DraggingSource.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
@@ -458,12 +464,17 @@
 				74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */,
 				741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */,
 				74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */,
+				74740DC31DC8B72B00E9614D /* DraggingDestination.swift in Sources */,
+				74B28F111DC7E216007BE743 /* UIView+Drag.swift in Sources */,
 				74B8DC951CCE083400B9E1ED /* Track.swift in Sources */,
 				74B8DC771CCAB1A900B9E1ED /* EditorViewController.swift in Sources */,
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,
+				74740DB61DC8B63000E9614D /* DraggingImageComponent.swift in Sources */,
+				74B28F0F1DC7E1FC007BE743 /* UIViewController+DragDestination.swift in Sources */,
 				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
+				74740DBA1DC8B66600E9614D /* DraggingItem.swift in Sources */,
 				745521BB1CCFEB160041C072 /* Slot.swift in Sources */,
 				745521BF1CD00BEC0041C072 /* Project.swift in Sources */,
 			);
@@ -572,6 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -587,6 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

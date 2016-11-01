@@ -10,7 +10,8 @@ import MobileCoreServices
 import UIKit
 
 // - Manually Add Navigation Bar VC or in a super VC
-class TimelineViewController: UICollectionViewController {
+// - Add Timebar and playback / fullscreen options to the navigation bar.
+class TimelineViewController: UICollectionViewController, DraggingDestination {
     
     var editorContext: EditorContext? = nil {
         didSet {
@@ -24,7 +25,9 @@ class TimelineViewController: UICollectionViewController {
         
         super.init(collectionViewLayout: layout)
         
-        title = NSLocalizedString("Untitled Project", comment: "")
+        register([])
+        
+        installsStandardGestureForInteractiveMovement = true
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.darkGrayColor()
@@ -57,5 +60,17 @@ class TimelineViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
+    }
+    
+    func draggingEntered(sender: DraggingInfo) {
+        collectionView?.backgroundColor = UIColor.redColor()
+    }
+    
+    func draggingUpdated(sender: DraggingInfo) {
+        
+    }
+    
+    func draggingExited(sender: DraggingInfo?) {
+        collectionView?.backgroundColor = UIColor.darkGrayColor()
     }
 }

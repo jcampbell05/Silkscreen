@@ -8,22 +8,16 @@
 
 import UIKit
 
-// - Swinject
-// - RxSwift when needed
-// - Render
-// - Remove need for Slot and Signal <-- OSS this ?
-// - Implement ReFlow
-// - iOS Drag And Drop System - Reimplement Dragon Drag And Drop (Or Tidy it up)
-// - Simplify Apple's transition system
-// - Consistent naming
-// - Multi render system, Metal?
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
         let bounds = UIScreen.mainScreen().bounds
         return Window(frame: bounds)
+    }()
+    
+    lazy var navigationController: UINavigationController = {
+        return UINavigationController(rootViewController: self.rootViewController)
     }()
     
     lazy var rootViewController: EditorViewController = {
@@ -36,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        window?.rootViewController = rootNavigationController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true

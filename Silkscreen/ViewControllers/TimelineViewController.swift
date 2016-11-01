@@ -42,8 +42,10 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         
         // Reenable when layout supports it
         collectionView?.prefetchingEnabled = false
-        
+        collectionView?.directionalLockEnabled = true
         collectionView?.alwaysBounceVertical = true
+        collectionView?.alwaysBounceHorizontal = true
+        
         collectionView?.backgroundColor = UIColor.darkGrayColor()
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
         collectionView?.registerClass(TimelineTrackHeaderSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withReuseIdentifier: TimelineElementKindTrackHeader)
@@ -111,6 +113,12 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
     }
     
     func draggingExited(sender: DraggingInfo?) {
+        draggingCell?.removeFromSuperview()
+        draggingCell = nil
+    }
+    
+    // - Commit
+    func draggingEnded(sender: DraggingInfo) {
         draggingCell?.removeFromSuperview()
         draggingCell = nil
     }

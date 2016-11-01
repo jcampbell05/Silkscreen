@@ -12,5 +12,6 @@ protocol DraggingDestination {
     
     func draggingEntered(sender: DraggingInfo)
     func draggingUpdated(sender: DraggingInfo)
+    func draggingEnded(sender: DraggingInfo)
     func draggingExited(sender: DraggingInfo?)
 }

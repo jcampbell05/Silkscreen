@@ -9,9 +9,6 @@
 import UIKit
 import ObjectiveC
 
-// - Implement Dragged Events for Drag Source and Drop Targets
-// - Can we re-engineer this stuff to be composite so we don't force user to use this subclass ?
-// - One day enable finger transfer
 class Window: UIWindow, UIGestureRecognizerDelegate {
     
     private lazy var dragGestureRecognizer: UIPanGestureRecognizer = {
@@ -22,7 +19,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         return UILongPressGestureRecognizer(target:self, action:#selector(longPressRecognizerDidUpdate))
     }()
     
-    private var compositeImageView: UIImageView?
+    private var draggingImageView: UIImageView?
     private var draggingSession: DraggingSession?
 
     private var lastDraggingDestination: DraggingDestination?
@@ -45,8 +42,6 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
     
     func beginDraggingSession(session: DraggingSession) {
         
-        // - Implement Nice Beginning Animation.
-        
         draggingSession = session
         
         let imageView = UIImageView(image: session.image)
@@ -59,39 +54,36 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         
         addSubview(imageView)
         
-        compositeImageView = imageView
+        draggingImageView = imageView
     }
 
     @objc func dragGestureRecognizerDidUpdate(dragGestureRecognizer: UIPanGestureRecognizer) {
         
-        // - Implement Animation back to original location
+        let location = dragGestureRecognizer.locationInView(rootViewController?.view)
         
         if draggingSession != nil {
         
             let translation = dragGestureRecognizer.translationInView(self)
-            compositeImageView?.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, translation.x, translation.y)
+            draggingImageView?.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, translation.x, translation.y)
         
-            let location = dragGestureRecognizer.locationInView(rootViewController?.view)
             updateDraggingDestination(location)
         }
         
         if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
-            endDraggingSession()
+            endDraggingSession(location)
         }
     }
     
     @objc func longPressRecognizerDidUpdate(longPressRecognizer: UILongPressGestureRecognizer) {
         
-        // - Implement Animation back to original location
+        let location = longPressRecognizer.locationInView(rootViewController?.view)
         
         if draggingSession != nil {
-            
-            let location = longPressRecognizer.locationInView(rootViewController?.view)
             updateDraggingDestination(location)
         }
         
         if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
-            endDraggingSession()
+            endDraggingSession(location)
         }
     }
     
@@ -114,13 +106,13 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         lastDraggingDestination = draggingDestination
     }
     
-    private func endDraggingSession() {
+    private func endDraggingSession(location: CGPoint) {
         
-        lastDraggingDestination?.draggingExited(nil)
+        lastDraggingDestination?.draggingEnded(DraggingInfo(draggingLocation: location, destinationWindow: self))
         lastDraggingDestination = nil
         
-        compositeImageView?.removeFromSuperview()
-        compositeImageView = nil
+        draggingImageView?.removeFromSuperview()
+        draggingImageView = nil
         
         draggingSession = nil
     }

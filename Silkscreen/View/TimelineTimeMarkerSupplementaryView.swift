@@ -27,6 +27,7 @@ class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
        
         textLabel.frame = bounds
         textLabel.text = "0:00"
+        textLabel.textColor = UIColor.lightGrayColor()
     }
     
     required init?(coder aDecoder: NSCoder) {

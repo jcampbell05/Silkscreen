@@ -14,7 +14,7 @@ class TimelineHeaderDecorationView: UICollectionReusableView {
         
         super.init(frame: frame)
         
-        backgroundColor = UIColor.grayColor()
+        backgroundColor = UIColor.darkGrayColor()
     }
     
     required init?(coder aDecoder: NSCoder) {

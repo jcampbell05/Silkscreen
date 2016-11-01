@@ -11,21 +11,14 @@ import UIKit
 class DraggingItem {
     
     var draggingFrame: CGRect = .zero
-    var imageComponents: [DraggingImageComponent]? = nil
+    var image: UIImage = UIImage()
     
     init(pasteboardWriter: PasteboardWriting){
         
     }
     
-    func setDraggingFrame(draggingFrame: CGRect, contents: Any?) {
+    func setDraggingFrame(draggingFrame: CGRect, image: UIImage) {
         self.draggingFrame = draggingFrame
-        
-        let component = DraggingImageComponent(key: DraggingImageComponentIconKey)
-        component.contents = contents
-        component.frame = draggingFrame
-        
-        self.imageComponents = [
-            component
-        ]
+        self.image = image
     }
 }

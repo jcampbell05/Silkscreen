@@ -21,11 +21,11 @@ extension UIViewController {
             fatalError("Dragging Session started with view without dragging compatable Window")
         }
         
-        guard let item = items.first, let image = item.imageComponents?.first?.contents as? UIImage else {
-            fatalError("Dragging Session started without valid components")
+        guard let item = items.first else {
+            fatalError("Dragging Session started without any items")
         }
         
-        let session = DraggingSession(pasteBoard: UIPasteboard.generalPasteboard(), image: image, offset: location, source: source)
+        let session = DraggingSession(pasteBoard: UIPasteboard.generalPasteboard(), image: item.image, offset: location, source: source)
         
         window.beginDraggingSession(session)
         

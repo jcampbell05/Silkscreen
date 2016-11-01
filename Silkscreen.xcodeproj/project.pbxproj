@@ -19,7 +19,6 @@
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
 		745521BF1CD00BEC0041C072 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BE1CD00BEC0041C072 /* Project.swift */; };
-		74740DB61DC8B63000E9614D /* DraggingImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB51DC8B63000E9614D /* DraggingImageComponent.swift */; };
 		74740DB81DC8B64A00E9614D /* DraggingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB71DC8B64A00E9614D /* DraggingInfo.swift */; };
 		74740DBA1DC8B66600E9614D /* DraggingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DB91DC8B66600E9614D /* DraggingItem.swift */; };
 		74740DBC1DC8B67600E9614D /* DraggingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DBB1DC8B67600E9614D /* DraggingSession.swift */; };
@@ -66,7 +65,6 @@
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
 		745521BE1CD00BEC0041C072 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		74740DB51DC8B63000E9614D /* DraggingImageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingImageComponent.swift; sourceTree = "<group>"; };
 		74740DB71DC8B64A00E9614D /* DraggingInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingInfo.swift; sourceTree = "<group>"; };
 		74740DB91DC8B66600E9614D /* DraggingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingItem.swift; sourceTree = "<group>"; };
 		74740DBB1DC8B67600E9614D /* DraggingSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingSession.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				745521B61CCFE9D20041C072 /* Asset.swift */,
 				745521BE1CD00BEC0041C072 /* Project.swift */,
 				7433DBE31CF8F1B500529931 /* Platform.swift */,
-				74740DB51DC8B63000E9614D /* DraggingImageComponent.swift */,
 				74740DB71DC8B64A00E9614D /* DraggingInfo.swift */,
 				74740DB91DC8B66600E9614D /* DraggingItem.swift */,
 				74740DBB1DC8B67600E9614D /* DraggingSession.swift */,
@@ -469,7 +466,6 @@
 				74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */,
 				74B8DC7B1CCAD74400B9E1ED /* PreviewViewController.swift in Sources */,
 				74B8DCA01CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift in Sources */,
-				74740DB61DC8B63000E9614D /* DraggingImageComponent.swift in Sources */,
 				74B8DC9E1CCE0B9900B9E1ED /* TimelineTrackDecorationView.swift in Sources */,
 				74740DBA1DC8B66600E9614D /* DraggingItem.swift in Sources */,
 				745521BB1CCFEB160041C072 /* Slot.swift in Sources */,

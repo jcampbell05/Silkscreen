@@ -105,7 +105,6 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         draggingCell?.frame = attributes.frame
         draggingCell?.layer.zPosition = CGFloat(attributes.zIndex)
         draggingCell?.backgroundColor = UIColor.redColor()
-        // Update with attrs
     }
     
     func draggingExited(sender: DraggingInfo?) {

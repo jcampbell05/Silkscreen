@@ -87,7 +87,7 @@ class AssetsViewController: UICollectionViewController, DraggingSource {
         }
         
         let draggingItem = DraggingItem(pasteboardWriter: asset)
-        draggingItem.setDraggingFrame(cell.bounds, contents: image)
+        draggingItem.setDraggingFrame(cell.bounds, image: image)
         beginDraggingSession(with: [draggingItem], location: gestureRecognizer.locationInView(view), source: self)
     }
     

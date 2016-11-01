@@ -11,11 +11,11 @@ import UIKit
 @objc class DraggingSession: NSObject {
     
     let offset: CGPoint
-    let compositeImageCache: UIImage
+    let image: UIImage
     
     init(pasteBoard: UIPasteboard, image: UIImage, offset: CGPoint, source: DraggingSource) {
         
-        compositeImageCache = image
+        self.image = image
         self.offset = offset
         
         super.init()

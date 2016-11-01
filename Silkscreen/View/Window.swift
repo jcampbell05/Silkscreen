@@ -46,7 +46,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         
         draggingSession = session
         
-        let imageView = UIImageView(image: session.compositeImageCache)
+        let imageView = UIImageView(image: session.image)
         
         imageView.frame = CGRectOffset(imageView.frame, session.offset.x - CGRectGetMidX(imageView.frame), session.offset.y + CGRectGetMidY(imageView.frame))
         imageView.layer.shadowRadius = 5

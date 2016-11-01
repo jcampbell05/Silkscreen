@@ -15,6 +15,8 @@ import UIKit
     
     init(pasteBoard: UIPasteboard, image: UIImage, offset: CGPoint, source: DraggingSource) {
         
+        // - Pasteboard Magic
+        
         self.image = image
         self.offset = offset
         

@@ -173,7 +173,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
     }
     
     func timeIdAtPoint(point: CGPoint) -> Int {
-        return Int(point.x - TimelineTrackHeaderWidth)
+        return Int((point.x - TimelineTrackHeaderWidth) + (collectionView?.contentOffset.x ?? 0))
     }
     
     private func yForTrackID(trackID: Int) -> CGFloat {

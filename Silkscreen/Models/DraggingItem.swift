@@ -14,7 +14,7 @@ class DraggingItem {
     var image: UIImage = UIImage()
     
     init(pasteboardWriter: PasteboardWriting){
-        
+        // - Write to pasteboard on drop
     }
     
     func setDraggingFrame(draggingFrame: CGRect, image: UIImage) {

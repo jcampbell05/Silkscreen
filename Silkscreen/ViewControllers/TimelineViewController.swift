@@ -40,6 +40,9 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         
         installsStandardGestureForInteractiveMovement = true
         
+        // Reenable when layout supports it
+        collectionView?.prefetchingEnabled = false
+        
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.darkGrayColor()
         collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)

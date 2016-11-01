@@ -11,6 +11,7 @@ import ObjectiveC
 
 // - Implement Dragged Events for Drag Source and Drop Targets
 // - Can we re-engineer this stuff to be composite so we don't force user to use this subclass ?
+// - One day enable finger transfer
 class Window: UIWindow, UIGestureRecognizerDelegate {
     
     private lazy var dragGestureRecognizer: UIPanGestureRecognizer = {
@@ -31,6 +32,8 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         
         dragGestureRecognizer.delegate = self
         longPressRecognizer.delegate = self
+        
+        dragGestureRecognizer.maximumNumberOfTouches = 1
         
         addGestureRecognizer(dragGestureRecognizer)
         addGestureRecognizer(longPressRecognizer)

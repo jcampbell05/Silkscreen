@@ -48,7 +48,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         
         let imageView = UIImageView(image: session.compositeImageCache)
         
-        imageView.frame = CGRectOffset(imageView.frame, session.offset.x - CGRectGetMidX(imageView.frame), session.offset.y - CGRectGetMidY(imageView.frame))
+        imageView.frame = CGRectOffset(imageView.frame, session.offset.x - CGRectGetMidX(imageView.frame), session.offset.y + CGRectGetMidY(imageView.frame))
         imageView.layer.shadowRadius = 5
         imageView.layer.shadowColor = UIColor.blackColor().CGColor
         imageView.layer.shadowOpacity = 0.8

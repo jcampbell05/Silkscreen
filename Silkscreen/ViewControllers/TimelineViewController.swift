@@ -55,8 +55,8 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barTintColor = UIColor.blackColor()
+        navigationController?.navigationBar.tintColor = UIColor.blackColor()
+        navigationController?.navigationBar.barTintColor = UIColor.lightGrayColor()
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -90,11 +90,12 @@ class TimelineViewController: UICollectionViewController, DraggingDestination {
             return
         }
         
-        let cell = UICollectionViewCell(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let cell = UICollectionViewCell()
+        cell.frame = attributes.frame
+        cell.layer.zPosition = CGFloat(attributes.zIndex)
         cell.backgroundColor = UIColor.redColor()
-        cell.applyLayoutAttributes(attributes)
         
-        view.addSubview(cell)
+        collectionView?.addSubview(cell)
         draggingCell = cell
     }
     

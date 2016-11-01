@@ -144,4 +144,18 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         
         return nil
     }
+    
+    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        
+        if let collectionView = collectionView {
+            
+            let attribute = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+            attribute.frame = CGRect(x: TimelineTrackHeaderWidth, y: TimelineHeaderHeight, width: 100, height: TimelineTrackHeight)
+            attribute.zIndex = 1
+            
+            return attribute
+        }
+        
+        return nil
+    }
 }

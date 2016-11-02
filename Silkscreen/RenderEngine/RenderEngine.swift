@@ -14,7 +14,7 @@ class RenderEngine: GPUImageFilter {
     
     func render(context: EditorContext) {
         
-        context.tracks.value.forEach { track in
+        context.tracks.value.reverse().forEach { track in
             
             let renderTrack = RenderTrack()
             

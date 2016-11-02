@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class EditorContext {
     
@@ -19,39 +18,13 @@ class EditorContext {
         }
     }
     
-    //MARK:- Media
-    
-    lazy var composition = AVMutableComposition()
-    
-    lazy var videoComposition: AVMutableVideoComposition = {
-        
-        let videoComposition = AVMutableVideoComposition()
-        
-        videoComposition.instructions = []
-        videoComposition.frameDuration = CMTimeMake(1, 30)
-        videoComposition.renderSize = CGSizeMake(500, 500)
-        
-        return videoComposition
-    }()
- 
-    lazy var playerItem: AVPlayerItem = {
-
-        let item = AVPlayerItem(asset: self.composition)
-        item.videoComposition = self.videoComposition
-        
-        return item
-    }()
-    
     //MARK:- Tracks
     
     private(set) var tracks = Frozen<[Track]>(value: [])
     
     func addTrack() {
         
-        let videoTrack = self.composition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
-        let audioTrack = self.composition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
-        
-        let track = Track(editorContext: self, videoTrack: videoTrack, audioTrack: audioTrack)
+        let track = Track()
         
         track.itemsDidChangeSignal.addSlot { _ in
             self.trackItemsDidChangeSignal.trigger()

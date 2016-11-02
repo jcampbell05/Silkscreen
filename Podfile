@@ -4,6 +4,7 @@
 use_frameworks!
 
 target 'Silkscreen' do
+    pod 'GPUImage'
     pod 'UICollectionViewLeftAlignedLayout'
 end
 

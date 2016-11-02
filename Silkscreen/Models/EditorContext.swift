@@ -19,20 +19,25 @@ class EditorContext {
         }
     }
     
-    //MARK- Player Item
+    //MARK:- Media
+    
+    lazy var composition = AVMutableComposition()
+    
+    lazy var videoComposition: AVMutableVideoComposition = {
+        
+        let videoComposition = AVMutableVideoComposition()
+        
+        videoComposition.instructions = []
+        videoComposition.frameDuration = CMTimeMake(1, 30)
+        videoComposition.renderSize = CGSizeMake(500, 500)
+        
+        return videoComposition
+    }()
  
     lazy var playerItem: AVPlayerItem = {
-        
-        let mutableComposition = AVMutableComposition()
-        let videoTrack = mutableComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
-        
-        let mutableVideoComposition = AVMutableVideoComposition()
-        mutableVideoComposition.instructions = []
-        mutableVideoComposition.frameDuration = CMTimeMake(1, 30)
-        mutableVideoComposition.renderSize = CGSizeMake(500, 500)
 
-        let item = AVPlayerItem(asset: mutableComposition)
-        item.videoComposition = mutableVideoComposition
+        let item = AVPlayerItem(asset: self.composition)
+        item.videoComposition = self.videoComposition
         
         return item
     }()
@@ -43,7 +48,10 @@ class EditorContext {
     
     func addTrack() {
         
-        let track = Track()
+        let videoTrack = self.composition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
+        let audioTrack = self.composition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
+        
+        let track = Track(editorContext: self, videoTrack: videoTrack, audioTrack: audioTrack)
         
         track.itemsDidChangeSignal.addSlot { _ in
             self.trackItemsDidChangeSignal.trigger()

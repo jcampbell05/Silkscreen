@@ -1,12 +1,15 @@
 PODS:
+  - GPUImage (0.1.7)
   - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
+  - GPUImage
   - UICollectionViewLeftAlignedLayout
 
 SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: 702846a1cfaffba2597c8cf2167bd13e2e131388
+PODFILE CHECKSUM: 4a68dde2d7ab1e155255d04a38d4216c03375e6f
 
 COCOAPODS: 1.1.1

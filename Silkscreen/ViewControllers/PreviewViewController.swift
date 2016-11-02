@@ -25,7 +25,7 @@ class PreviewViewController: AVPlayerViewController {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        showsPlaybackControls = false
+     //   showsPlaybackControls = false
     }
     
     required init?(coder aDecoder: NSCoder) {

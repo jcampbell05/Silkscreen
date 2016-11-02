@@ -8,23 +8,23 @@
 
 import UIKit
 import GPUImage
-import Photos
 
 // - Apple TV Support
 // - Fullscreen Support
 // - Picture In Picture ?
-// - Build Render Engine 
-// - With Asset Manager
 class PreviewViewController: UIViewController {
     
     let imageView = GPUImageView()
+    let renderEngine = RenderEngine()
 
     var editorContext: EditorContext? = nil {
         didSet {
-           // self.render()
+            if let editorContext = editorContext {
+               renderEngine.render(editorContext)
+            }
             
-            editorContext?.trackItemsDidChangeSignal.addSlot { _ in
-                self.render()
+            editorContext?.trackItemsDidChangeSignal.addSlot { editorContext in
+                self.renderEngine.render(editorContext)
             }
         }
     }
@@ -32,6 +32,8 @@ class PreviewViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        renderEngine.addTarget(imageView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,34 +42,5 @@ class PreviewViewController: UIViewController {
     
     override func loadView() {
         view = imageView
-    }
-    
-    func render() {
-        
-        guard let ast = editorContext?.tracks[0].items.value.first?.0 else {
-            return
-        }
-        
-        // - Can we move this elsewhere ? Also what does all this shit do ? its so verbose !!
-        let asset = PHAsset.fetchAssetsWithALAssetURLs([ast.path], options: nil).firstObject
-        
-        if let asset = asset as? PHAsset {
-            
-            let manager = PHImageManager.defaultManager()
-            let option = PHImageRequestOptions()
-            
-            option.synchronous = true
-            
-            manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
-                
-                guard let result = result else {
-                    return
-                }
-                
-                let pictureSource = GPUImagePicture(image: result)
-                pictureSource.addTarget(self.imageView)
-                pictureSource.processImage()
-            })
-        }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74066B2E1DCAAA0900BA086B /* RenderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74066B2D1DCAAA0900BA086B /* RenderTrack.swift */; };
 		740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */; };
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
 		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
@@ -26,6 +27,7 @@
 		74740DC31DC8B72B00E9614D /* DraggingDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC21DC8B72B00E9614D /* DraggingDestination.swift */; };
 		74740DC61DC8EB5800E9614D /* UIViewController+DragDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */; };
 		74760F8C1DC75444008D1B27 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74760F8B1DC75444008D1B27 /* Window.swift */; };
+		74A9CD0C1DCAA6900021D654 /* RenderEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9CD0B1DCAA6900021D654 /* RenderEngine.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
 		74B8B3A21D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */; };
@@ -52,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
+		74066B2D1DCAAA0900BA086B /* RenderTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTrack.swift; sourceTree = "<group>"; };
 		740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlsView.swift; sourceTree = "<group>"; };
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		74740DC21DC8B72B00E9614D /* DraggingDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingDestination.swift; sourceTree = "<group>"; };
 		74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DragDestination.swift"; sourceTree = "<group>"; };
 		74760F8B1DC75444008D1B27 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		74A9CD0B1DCAA6900021D654 /* RenderEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderEngine.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		74B8B3A11D22C964004F54F2 /* UIViewControllerContextTransitioning+isPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerContextTransitioning+isPresenting.swift"; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 			);
 			name = "UIViewController+Drag";
 			path = "Extensions/UIViewController+Drag";
+			sourceTree = "<group>";
+		};
+		74A9CD0A1DCAA6870021D654 /* RenderEngine */ = {
+			isa = PBXGroup;
+			children = (
+				74A9CD0B1DCAA6900021D654 /* RenderEngine.swift */,
+				74066B2D1DCAAA0900BA086B /* RenderTrack.swift */,
+			);
+			path = RenderEngine;
 			sourceTree = "<group>";
 		};
 		74B4FACB1CCAA52D00AE26EC /* ViewControllers */ = {
@@ -281,6 +294,7 @@
 		74D638E51C4D941F00175740 /* Silkscreen */ = {
 			isa = PBXGroup;
 			children = (
+				74A9CD0A1DCAA6870021D654 /* RenderEngine */,
 				74740DBD1DC8B69F00E9614D /* Protocols */,
 				74B8B39C1D22C81C004F54F2 /* Extensions */,
 				74477BB31D1B1D8D0038E058 /* Cells */,
@@ -440,6 +454,7 @@
 				74740DB81DC8B64A00E9614D /* DraggingInfo.swift in Sources */,
 				74B8DC9C1CCE0B5700B9E1ED /* CollectionType.swift in Sources */,
 				74760F8C1DC75444008D1B27 /* Window.swift in Sources */,
+				74066B2E1DCAAA0900BA086B /* RenderTrack.swift in Sources */,
 				74B8DC8E1CCD593600B9E1ED /* TimelineTimeMarkerSupplementaryView.swift in Sources */,
 				74740DBF1DC8B6AC00E9614D /* PasteboardWriting.swift in Sources */,
 				74B8DC931CCD712100B9E1ED /* EditorContext.swift in Sources */,
@@ -448,6 +463,7 @@
 				74740DBC1DC8B67600E9614D /* DraggingSession.swift in Sources */,
 				74740DC61DC8EB5800E9614D /* UIViewController+DragDestination.swift in Sources */,
 				7433DBE41CF8F1B500529931 /* Platform.swift in Sources */,
+				74A9CD0C1DCAA6900021D654 /* RenderEngine.swift in Sources */,
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,

@@ -9,7 +9,8 @@
 import UIKit
 
 // - Tweak Colors and Designs to feel "pro"
-class EditorViewController: DividableViewController, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// - TODO: Extensions for protocols
+class EditorViewController: DividableViewController, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let editorContext = EditorContext()
     
@@ -34,6 +35,8 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
   
     private lazy var titleField: UITextField = {
       let titleField = UITextField(frame: CGRect(x:0, y:0, width:100, height:40))
+      titleField.returnKeyType = .Done
+      titleField.delegate = self
       
       return titleField
     }()
@@ -126,5 +129,14 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+  
+    // - <UITextFieldDelegate>
+  
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    
+      textField.endEditing(false)
+    
+      return false
     }
 }

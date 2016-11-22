@@ -13,30 +13,37 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
     
     let editorContext = EditorContext()
     
-    lazy var addButton: UIBarButtonItem = {
+    private lazy var addButton: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))
     }()
     
-    lazy var contentAreaViewController: DividableViewController = {
+    private lazy var contentAreaViewController: DividableViewController = {
         let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsViewController, self.previewViewController])
         viewController.axis = .Horizontal
         return viewController
     }()
     
-    let assetsViewController = AssetsViewController()
-    let previewViewController = PreviewViewController()
+    private let assetsViewController = AssetsViewController()
+    private let previewViewController = PreviewViewController()
     
-    lazy var timelineNavigationController: UINavigationController = {
+    private lazy var timelineNavigationController: UINavigationController = {
         return UINavigationController(rootViewController: self.timelineViewController)
     }()
     
-    let timelineViewController = TimelineViewController()
-    
+    private let timelineViewController = TimelineViewController()
+  
+    private lazy var titleField: UITextField = {
+      let titleField = UITextField(frame: CGRect(x:0, y:0, width:100, height:40))
+      
+      return titleField
+    }()
+  
     init() {
         super.init()
-        
+      
+        navigationItem.titleView = titleField
         navigationItem.leftBarButtonItem = addButton
-        title = NSLocalizedString("Untitled Project", comment: "")
+        titleField.text = NSLocalizedString("Untitled Project", comment: "")
         
         addArrangedChildViewController(contentAreaViewController)
         addArrangedChildViewController(timelineNavigationController)

@@ -129,6 +129,8 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
       assets.forEach { asset in
         editorContext.addAsset(asset)
       }
+      
+      picker.dismissViewControllerAnimated(true, completion: nil)
     }
   
     // - <UITextFieldDelegate>

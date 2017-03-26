@@ -1,0 +1,1 @@
+../../../UXKit/UXKit/Headers/NSAccessibilityStaticText-Protocol.h

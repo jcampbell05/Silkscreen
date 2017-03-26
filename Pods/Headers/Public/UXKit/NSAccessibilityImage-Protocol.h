@@ -1,0 +1,1 @@
+../../../UXKit/UXKit/Headers/NSAccessibilityImage-Protocol.h

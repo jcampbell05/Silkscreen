@@ -1,0 +1,1 @@
+../../../UXKit/UXKit/Headers/UXCollectionViewLayoutInvalidationContext.h

@@ -102,7 +102,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     
     func shouldAllowDrag(draggingInfo: DraggingInfo) -> Bool {
         let pasteBoard = draggingInfo.draggingPasteboard
-        return pasteBoard.hasURLs
+        return pasteBoard.hasStrings
     }
     
     func draggingEntered(sender: DraggingInfo) {

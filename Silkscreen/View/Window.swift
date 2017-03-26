@@ -96,7 +96,6 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         let lastDestinationViewController = lastDraggingDestination as? UIViewController
         let draggingDestinationViewController = draggingDestination as? UIViewController
         
-        
         if draggingDestinationViewController != lastDestinationViewController {
             lastDraggingDestination?.draggingExited(info)
             draggingDestination?.draggingEntered(info)

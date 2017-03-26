@@ -8,6 +8,7 @@
 
 import MobileCoreServices
 import UIKit
+import Photos
 
 // - Add Timebar and playback / fullscreen options to the navigation bar.
 // - Implement
@@ -124,12 +125,15 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
             return
         }
         
-        guard let url = sender.draggingPasteboard.URL else {
+        guard let localIdentifier = sender.draggingPasteboard.string else {
             return
         }
         
-        let asset = Asset(path: url)
-        track.addItem(asset, time: time)
+        let fetchResult = PHAsset.fetchAssetsWithLocalIdentifiers([localIdentifier], options: nil)
+      
+        if let asset = fetchResult.firstObject as? PHAsset {
+          track.addItem(asset, time: time)
+        }
     }
     
     // - <TimelineCollectionViewLayoutDelegate>

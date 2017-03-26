@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class EditorContext {
     
@@ -35,7 +36,7 @@ class EditorContext {
     
     //MARK:- Assets
     
-    private(set) var assets = Frozen<[Asset]>(value: []) {
+    private(set) var assets = Frozen<[PHAsset]>(value: []) {
         didSet {
             assetsDidChangeSignal.trigger()
         }
@@ -45,8 +46,8 @@ class EditorContext {
         return Signal(sender: self)
     }()
     
-    func addAsset(path: NSURL) {
-        assets = assets.append(Asset(path: path))
+    func addAsset(asset: PHAsset) {
+        assets = assets.append(asset)
     }
     
     //MARK:- Items

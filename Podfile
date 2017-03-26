@@ -3,8 +3,9 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'Silkscreen' do
+target 'Silkscreen iPad' do
     pod 'GPUImage'
+    pod 'GMImagePicker'
     pod 'UICollectionViewLeftAlignedLayout'
 end
 

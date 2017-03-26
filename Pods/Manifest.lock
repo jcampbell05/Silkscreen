@@ -1,15 +1,18 @@
 PODS:
+  - GMImagePicker (0.0.2)
   - GPUImage (0.1.7)
   - UICollectionViewLeftAlignedLayout (1.0.2)
 
 DEPENDENCIES:
+  - GMImagePicker
   - GPUImage
   - UICollectionViewLeftAlignedLayout
 
 SPEC CHECKSUMS:
+  GMImagePicker: 6438a6764d6280b1dbf19b59140313f5a73daeeb
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   UICollectionViewLeftAlignedLayout: 830bf6fa5bab9f9b464f62e3384f9d2e00b3c0f6
 
-PODFILE CHECKSUM: 4a68dde2d7ab1e155255d04a38d4216c03375e6f
+PODFILE CHECKSUM: ddab839c27983d6d9b8e2eb3e5a2cfce15c8b4a5
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

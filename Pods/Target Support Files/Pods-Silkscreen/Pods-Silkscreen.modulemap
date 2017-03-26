@@ -1,6 +1,0 @@
-framework module Pods_Silkscreen {
-  umbrella header "Pods-Silkscreen-umbrella.h"
-
-  export *
-  module * { export * }
-}

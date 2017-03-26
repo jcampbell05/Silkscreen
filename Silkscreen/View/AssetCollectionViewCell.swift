@@ -13,30 +13,25 @@ import UIKit
 // - Come up with good Arch for asset loading
 class AssetCollectionViewCell: UICollectionViewCell {
     
-    var asset: Asset? = nil {
+    var asset: PHAsset? = nil {
         didSet {
-            if let path = asset?.path {
+            if let asset = asset {
+            
+                let manager = PHImageManager.defaultManager()
+                let option = PHImageRequestOptions()
                 
-                let asset = PHAsset.fetchAssetsWithALAssetURLs([path], options: nil).firstObject
+                option.synchronous = true
                 
-                if let asset = asset as? PHAsset {
-                
-                    let manager = PHImageManager.defaultManager()
-                    let option = PHImageRequestOptions()
+                manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+                   
+                    guard let result = result else {
+                        return
+                    }
                     
-                    option.synchronous = true
-                    
-                    manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
-                       
-                        guard let result = result else {
-                            return
-                        }
-                        
-                        self.imageView.contentMode = .ScaleAspectFill
-                        self.imageView.image = result
-                        self.setNeedsLayout()
-                    })
-                }
+                    self.imageView.contentMode = .ScaleAspectFill
+                    self.imageView.image = result
+                    self.setNeedsLayout()
+                })
             }
         }
     }

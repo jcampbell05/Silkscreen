@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import GMImagePicker
 
 // - Tweak Colors and Designs to feel "pro"
 // - TODO: Extensions for protocols
-class EditorViewController: DividableViewController, UIViewControllerTransitioningDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EditorViewController: DividableViewController, UIViewControllerTransitioningDelegate, GMImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let editorContext = EditorContext()
     
@@ -84,7 +85,7 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
     
     @objc private func didPressAdd() {
         
-        let viewController = UIImagePickerController()
+        let viewController = GMImagePickerController()
         viewController.delegate = self
         viewController.transitioningDelegate = self
         viewController.modalPresentationStyle = .Custom
@@ -115,20 +116,19 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
         return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
-    // - <UIImagePickerControllerDelegate>
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
-        
-        guard let url = info[UIImagePickerControllerReferenceURL] as? NSURL else {
-            return
-        }
-        
-        editorContext.addAsset(url)
+    // - <GMImagePickerControllerDelegate>
+  
+    func assetsPickerControllerDidCancel(picker: GMImagePickerController!) {
+      picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        picker.dismissViewControllerAnimated(true, completion: nil)
+  
+    func assetsPickerController(picker: GMImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
+      
+      let assets = assets as! [PHAsset]
+      
+      assets.forEach { asset in
+        editorContext.addAsset(asset)
+      }
     }
   
     // - <UITextFieldDelegate>

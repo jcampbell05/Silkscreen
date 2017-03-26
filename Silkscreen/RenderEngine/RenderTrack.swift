@@ -13,31 +13,27 @@ import Photos
 class RenderTrack: GPUImageFilter {
     
     func render(track: Track) {
-        
-        guard let ast = track.items.value.first?.0 else {
+      
+        //TODO: Fix this train
+        guard let asset = track.items.value.first?.0 else {
             return
         }
+            
+        let manager = PHImageManager.defaultManager()
+        let option = PHImageRequestOptions()
         
-        // - Can we move this elsewhere ? Also what does all this shit do ? its so verbose !!
-        let asset = PHAsset.fetchAssetsWithALAssetURLs([ast.path], options: nil).firstObject
-        
-        if let asset = asset as? PHAsset {
+        option.synchronous = true
+      
+        //TODO: Move into extension for PHAsset
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
             
-            let manager = PHImageManager.defaultManager()
-            let option = PHImageRequestOptions()
+            guard let result = result else {
+                return
+            }
             
-            option.synchronous = true
-            
-            manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
-                
-                guard let result = result else {
-                    return
-                }
-                
-                let pictureSource = GPUImagePicture(image: result)
-                pictureSource.addTarget(self)
-                pictureSource.processImage()
-            })
-        }
+            let pictureSource = GPUImagePicture(image: result)
+            pictureSource.addTarget(self)
+            pictureSource.processImage()
+        })
     }
 }

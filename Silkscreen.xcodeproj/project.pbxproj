@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		74066B2E1DCAAA0900BA086B /* RenderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74066B2D1DCAAA0900BA086B /* RenderTrack.swift */; };
 		740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */; };
+		740E54A91E88713300B97CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E54A81E88713300B97CEC /* AppDelegate.swift */; };
+		740E54AB1E88713300B97CEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740E54AA1E88713300B97CEC /* Assets.xcassets */; };
+		740E54AE1E88713300B97CEC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740E54AC1E88713300B97CEC /* MainMenu.xib */; };
+		740E54B51E88790900B97CEC /* PHAsset+PasteboardWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E54B41E88790900B97CEC /* PHAsset+PasteboardWriting.swift */; };
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
 		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
 		74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74265F161DB7F0B0002267CA /* AssetsViewController.swift */; };
 		7433DBE41CF8F1B500529931 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433DBE31CF8F1B500529931 /* Platform.swift */; };
 		74461E9E1CD1E7160043A86F /* BlurredSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */; };
 		74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */; };
-		745521B71CCFE9D20041C072 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B61CCFE9D20041C072 /* Asset.swift */; };
 		745521B91CCFEA900041C072 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521B81CCFEA900041C072 /* Signal.swift */; };
 		745521BB1CCFEB160041C072 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BA1CCFEB160041C072 /* Slot.swift */; };
 		745521BD1CCFFECD0041C072 /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
@@ -49,6 +52,7 @@
 		74D638EE1C4D941F00175740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D638ED1C4D941F00175740 /* Assets.xcassets */; };
 		74D638F11C4D941F00175740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */; };
 		74F57E4B1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */; };
+		97F60FEC50957EAFED56C0BD /* Pods_Silkscreen_iPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92955942129A30D9844EED45 /* Pods_Silkscreen_iPad.framework */; };
 		F54DFD164CBC66B743714182 /* Pods_Silkscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,13 +60,18 @@
 		1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		74066B2D1DCAAA0900BA086B /* RenderTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTrack.swift; sourceTree = "<group>"; };
 		740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlsView.swift; sourceTree = "<group>"; };
+		740E54A61E88713300B97CEC /* Silkscreen MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silkscreen MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		740E54A81E88713300B97CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		740E54AA1E88713300B97CEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		740E54AD1E88713300B97CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		740E54AF1E88713300B97CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		740E54B41E88790900B97CEC /* PHAsset+PasteboardWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset+PasteboardWriting.swift"; sourceTree = "<group>"; };
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		74265F161DB7F0B0002267CA /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
 		74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewCell.swift; sourceTree = "<group>"; };
-		745521B61CCFE9D20041C072 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		745521B81CCFEA900041C072 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -92,22 +101,33 @@
 		74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackDecorationView.swift; sourceTree = "<group>"; };
 		74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTrackHeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorViewController.swift; sourceTree = "<group>"; };
-		74D638E31C4D941F00175740 /* Silkscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silkscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D638E31C4D941F00175740 /* Silkscreen iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silkscreen iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D638E61C4D941F00175740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D638ED1C4D941F00175740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D638F01C4D941F00175740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D638F21C4D941F00175740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74F57E4A1D21D64E00219535 /* AssetGroupsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		92955942129A30D9844EED45 /* Pods_Silkscreen_iPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen_iPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silkscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85EE2033255CFB72DF2A724 /* Pods-Silkscreen iPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen iPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad.release.xcconfig"; sourceTree = "<group>"; };
 		F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.release.xcconfig"; sourceTree = "<group>"; };
+		FDA315F3DEF18C13824CE103 /* Pods-Silkscreen iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen iPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		740E54A31E88713300B97CEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74D638E01C4D941F00175740 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F54DFD164CBC66B743714182 /* Pods_Silkscreen.framework in Frameworks */,
+				97F60FEC50957EAFED56C0BD /* Pods_Silkscreen_iPad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +139,30 @@
 			children = (
 				1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */,
 				F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */,
+				FDA315F3DEF18C13824CE103 /* Pods-Silkscreen iPad.debug.xcconfig */,
+				E85EE2033255CFB72DF2A724 /* Pods-Silkscreen iPad.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		740E54A71E88713300B97CEC /* Silkscreen MacOS */ = {
+			isa = PBXGroup;
+			children = (
+				740E54A81E88713300B97CEC /* AppDelegate.swift */,
+				740E54AA1E88713300B97CEC /* Assets.xcassets */,
+				740E54AC1E88713300B97CEC /* MainMenu.xib */,
+				740E54AF1E88713300B97CEC /* Info.plist */,
+			);
+			path = "Silkscreen MacOS";
+			sourceTree = "<group>";
+		};
+		740E54B31E8878F800B97CEC /* PHAsset+PasteboardWriting */ = {
+			isa = PBXGroup;
+			children = (
+				740E54B41E88790900B97CEC /* PHAsset+PasteboardWriting.swift */,
+			);
+			name = "PHAsset+PasteboardWriting";
+			path = "Extensions/PHAsset+PasteboardWriting";
 			sourceTree = "<group>";
 		};
 		741119441CFF97FC009B56CF /* Transitions */ = {
@@ -192,7 +234,6 @@
 			children = (
 				74B8DC921CCD712100B9E1ED /* EditorContext.swift */,
 				74B8DC941CCE083400B9E1ED /* Track.swift */,
-				745521B61CCFE9D20041C072 /* Asset.swift */,
 				745521BE1CD00BEC0041C072 /* Project.swift */,
 				7433DBE31CF8F1B500529931 /* Platform.swift */,
 				74740DB71DC8B64A00E9614D /* DraggingInfo.swift */,
@@ -205,6 +246,7 @@
 		74B8B39C1D22C81C004F54F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				740E54B31E8878F800B97CEC /* PHAsset+PasteboardWriting */,
 				74740DC41DC8EB5800E9614D /* UIViewController+Drag */,
 				74B8B3A01D22C964004F54F2 /* UIViewControllerContextTransitioning */,
 			);
@@ -277,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				74D638E51C4D941F00175740 /* Silkscreen */,
+				740E54A71E88713300B97CEC /* Silkscreen MacOS */,
 				74D638E41C4D941F00175740 /* Products */,
 				3BD8AF2D65DE3FF6C857AD16 /* Pods */,
 				7712A18039E53095285ED295 /* Frameworks */,
@@ -286,7 +329,8 @@
 		74D638E41C4D941F00175740 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74D638E31C4D941F00175740 /* Silkscreen.app */,
+				74D638E31C4D941F00175740 /* Silkscreen iPad.app */,
+				740E54A61E88713300B97CEC /* Silkscreen MacOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				E18C036D61EB95258D5B838A /* Pods_Silkscreen.framework */,
+				92955942129A30D9844EED45 /* Pods_Silkscreen_iPad.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,9 +369,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74D638E21C4D941F00175740 /* Silkscreen */ = {
+		740E54A51E88713300B97CEC /* Silkscreen MacOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74D638F51C4D941F00175740 /* Build configuration list for PBXNativeTarget "Silkscreen" */;
+			buildConfigurationList = 740E54B21E88713300B97CEC /* Build configuration list for PBXNativeTarget "Silkscreen MacOS" */;
+			buildPhases = (
+				740E54A21E88713300B97CEC /* Sources */,
+				740E54A31E88713300B97CEC /* Frameworks */,
+				740E54A41E88713300B97CEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Silkscreen MacOS";
+			productName = "Silkscreen MacOS";
+			productReference = 740E54A61E88713300B97CEC /* Silkscreen MacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74D638E21C4D941F00175740 /* Silkscreen iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74D638F51C4D941F00175740 /* Build configuration list for PBXNativeTarget "Silkscreen iPad" */;
 			buildPhases = (
 				D31D87AE2E7FDA01B8998AA3 /* [CP] Check Pods Manifest.lock */,
 				74D638DF1C4D941F00175740 /* Sources */,
@@ -339,9 +401,9 @@
 			);
 			dependencies = (
 			);
-			name = Silkscreen;
+			name = "Silkscreen iPad";
 			productName = Silkscreen;
-			productReference = 74D638E31C4D941F00175740 /* Silkscreen.app */;
+			productReference = 74D638E31C4D941F00175740 /* Silkscreen iPad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -350,10 +412,14 @@
 		74D638DB1C4D941F00175740 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = SK;
 				TargetAttributes = {
+					740E54A51E88713300B97CEC = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
 					74D638E21C4D941F00175740 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = NVCGF729Q5;
@@ -373,12 +439,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74D638E21C4D941F00175740 /* Silkscreen */,
+				74D638E21C4D941F00175740 /* Silkscreen iPad */,
+				740E54A51E88713300B97CEC /* Silkscreen MacOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		740E54A41E88713300B97CEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740E54AB1E88713300B97CEC /* Assets.xcassets in Resources */,
+				740E54AE1E88713300B97CEC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74D638E11C4D941F00175740 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		98CC1C1501183ABA2759CAF5 /* [CP] Embed Pods Frameworks */ = {
@@ -418,7 +494,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D31D87AE2E7FDA01B8998AA3 /* [CP] Check Pods Manifest.lock */ = {
@@ -439,6 +515,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		740E54A21E88713300B97CEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740E54A91E88713300B97CEC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74D638DF1C4D941F00175740 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,7 +531,6 @@
 				745521B91CCFEA900041C072 /* Signal.swift in Sources */,
 				74B8B3A71D22CB32004F54F2 /* UIViewControllerContextTransitioning+addViewForNextViewControllerIfNeeded.swift in Sources */,
 				74B8DC891CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift in Sources */,
-				745521B71CCFE9D20041C072 /* Asset.swift in Sources */,
 				74B8DC911CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift in Sources */,
 				74B8DC8C1CCBF6A200B9E1ED /* TimelineHeaderDecorationView.swift in Sources */,
 				74C815DF1CCEAB1A007B285D /* InspectorViewController.swift in Sources */,
@@ -466,6 +549,7 @@
 				74A9CD0C1DCAA6900021D654 /* RenderEngine.swift in Sources */,
 				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
+				740E54B51E88790900B97CEC /* PHAsset+PasteboardWriting.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,
 				741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */,
 				74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */,
@@ -489,6 +573,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		740E54AC1E88713300B97CEC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740E54AD1E88713300B97CEC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		74D638EF1C4D941F00175740 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -500,6 +592,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		740E54B01E88713300B97CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Silkscreen MacOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Silkscreen-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		740E54B11E88713300B97CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Silkscreen MacOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Silkscreen-MacOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		74D638F31C4D941F00175740 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -585,7 +719,7 @@
 		};
 		74D638F61C4D941F00175740 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */;
+			baseConfigurationReference = FDA315F3DEF18C13824CE103 /* Pods-Silkscreen iPad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -593,7 +727,7 @@
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wenow.oneaday;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silkscreen.silkscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -602,7 +736,7 @@
 		};
 		74D638F71C4D941F00175740 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */;
+			baseConfigurationReference = E85EE2033255CFB72DF2A724 /* Pods-Silkscreen iPad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -610,7 +744,7 @@
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wenow.oneaday;
+				PRODUCT_BUNDLE_IDENTIFIER = com.silkscreen.silkscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -620,6 +754,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		740E54B21E88713300B97CEC /* Build configuration list for PBXNativeTarget "Silkscreen MacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740E54B01E88713300B97CEC /* Debug */,
+				740E54B11E88713300B97CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		74D638DE1C4D941F00175740 /* Build configuration list for PBXProject "Silkscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -629,7 +772,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74D638F51C4D941F00175740 /* Build configuration list for PBXNativeTarget "Silkscreen" */ = {
+		74D638F51C4D941F00175740 /* Build configuration list for PBXNativeTarget "Silkscreen iPad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74D638F61C4D941F00175740 /* Debug */,

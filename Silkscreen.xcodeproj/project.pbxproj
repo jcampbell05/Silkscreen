@@ -53,7 +53,6 @@
 		740E54E31E88820100B97CEC /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC7A1CCAD74400B9E1ED /* PreviewViewController.swift */; };
 		740E54E41E88820100B97CEC /* InspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C815DE1CCEAB1A007B285D /* InspectorViewController.swift */; };
 		740E54E61E88823100B97CEC /* UIKit+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E54E51E88823100B97CEC /* UIKit+Aliases.swift */; };
-		740E54E71E88828E00B97CEC /* UXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740E54BC1E88812D00B97CEC /* UXKit.framework */; };
 		741119461CFF9818009B56CF /* SlideInAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */; };
 		741CEC5B1D0A2E99008CDA50 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */; };
 		74265F171DB7F0B0002267CA /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74265F161DB7F0B0002267CA /* AssetsViewController.swift */; };
@@ -109,8 +108,8 @@
 		740E54AD1E88713300B97CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		740E54AF1E88713300B97CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		740E54B41E88790900B97CEC /* PHAsset+PasteboardWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset+PasteboardWriting.swift"; sourceTree = "<group>"; };
-		740E54BC1E88812D00B97CEC /* UXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UXKit.framework; sourceTree = "<group>"; };
 		740E54E51E88823100B97CEC /* UIKit+Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Aliases.swift"; sourceTree = "<group>"; };
+		740E54E81E88837D00B97CEC /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		741119451CFF9818009B56CF /* SlideInAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimatedTransition.swift; sourceTree = "<group>"; };
 		741CEC5A1D0A2E99008CDA50 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		74265F161DB7F0B0002267CA /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +165,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740E54E71E88828E00B97CEC /* UXKit.framework in Frameworks */,
 				E784EE6919EC65851B317A99 /* Pods_Silkscreen_MacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,12 +197,12 @@
 		740E54A71E88713300B97CEC /* Silkscreen MacOS */ = {
 			isa = PBXGroup;
 			children = (
-				740E54B91E8880D900B97CEC /* Vendor */,
 				740E54A81E88713300B97CEC /* AppDelegate.swift */,
 				740E54AA1E88713300B97CEC /* Assets.xcassets */,
 				740E54AC1E88713300B97CEC /* MainMenu.xib */,
 				740E54AF1E88713300B97CEC /* Info.plist */,
 				740E54E51E88823100B97CEC /* UIKit+Aliases.swift */,
+				740E54E81E88837D00B97CEC /* Bridge.h */,
 			);
 			path = "Silkscreen MacOS";
 			sourceTree = "<group>";
@@ -216,14 +214,6 @@
 			);
 			name = "PHAsset+PasteboardWriting";
 			path = "Extensions/PHAsset+PasteboardWriting";
-			sourceTree = "<group>";
-		};
-		740E54B91E8880D900B97CEC /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				740E54BC1E88812D00B97CEC /* UXKit.framework */,
-			);
-			path = Vendor;
 			sourceTree = "<group>";
 		};
 		741119441CFF97FC009B56CF /* Transitions */ = {
@@ -766,6 +756,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = Bridge.h;
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -793,6 +784,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Silkscreen-MacOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = Bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
 			};

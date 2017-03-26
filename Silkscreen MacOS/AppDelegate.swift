@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import UXKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

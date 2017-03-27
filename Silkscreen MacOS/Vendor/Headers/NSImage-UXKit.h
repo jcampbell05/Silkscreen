@@ -10,4 +10,3 @@
 - (id)resizableImageWithCapInsets:(struct NSEdgeInsets)arg1 resizingMode:(long long)arg2;
 - (id)resizableImageWithCapInsets:(struct NSEdgeInsets)arg1;
 @end
-

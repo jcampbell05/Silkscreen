@@ -1,1 +1,0 @@
-../../../UXKit/UXKit/Headers/UXPinchEventTracker.h

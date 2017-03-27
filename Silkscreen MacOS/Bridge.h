@@ -9,6 +9,5 @@
 #ifndef Bridge_h
 #define Bridge_h
 
-#import <UXKit.h>
 
 #endif /* Bridge_h */

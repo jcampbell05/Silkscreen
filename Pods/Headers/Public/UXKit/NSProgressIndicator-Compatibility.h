@@ -1,1 +1,0 @@
-../../../UXKit/UXKit/Headers/NSProgressIndicator-Compatibility.h

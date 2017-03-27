@@ -29,7 +29,6 @@
 #import "UITextInputTraits-Protocol.h"
 #import "UXIdentityTransitionController.h"
 #import "UXZoomingCrossfadeTransitionController.h"
-#import "NSCoding-Protocol.h"
 #import "UXAccessoryBarContainerProtocol.h"
 #import "UXImageView.h"
 #import "_UXBarItemsContainer-Protocol.h"

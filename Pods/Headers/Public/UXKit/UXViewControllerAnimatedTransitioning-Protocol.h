@@ -1,1 +1,0 @@
-../../../UXKit/UXKit/Headers/UXViewControllerAnimatedTransitioning-Protocol.h

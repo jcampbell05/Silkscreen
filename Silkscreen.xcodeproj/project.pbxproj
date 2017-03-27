@@ -70,6 +70,7 @@
 		74740DC31DC8B72B00E9614D /* DraggingDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC21DC8B72B00E9614D /* DraggingDestination.swift */; };
 		74740DC61DC8EB5800E9614D /* UIViewController+DragDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */; };
 		74760F8C1DC75444008D1B27 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74760F8B1DC75444008D1B27 /* Window.swift */; };
+		7498D2651E89A54900E1FF71 /* UXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7498D2641E89A54900E1FF71 /* UXKit.framework */; };
 		74A9CD0C1DCAA6900021D654 /* RenderEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9CD0B1DCAA6900021D654 /* RenderEngine.swift */; };
 		74B4FACD1CCAA52D00AE26EC /* DividableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */; };
 		74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */; };
@@ -127,6 +128,7 @@
 		74740DC21DC8B72B00E9614D /* DraggingDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggingDestination.swift; sourceTree = "<group>"; };
 		74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DragDestination.swift"; sourceTree = "<group>"; };
 		74760F8B1DC75444008D1B27 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		7498D2641E89A54900E1FF71 /* UXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UXKit.framework; sourceTree = "<group>"; };
 		74A9CD0B1DCAA6900021D654 /* RenderEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderEngine.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7498D2651E89A54900E1FF71 /* UXKit.framework in Frameworks */,
 				E784EE6919EC65851B317A99 /* Pods_Silkscreen_MacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +200,7 @@
 		740E54A71E88713300B97CEC /* Silkscreen MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				7498D2631E89A54900E1FF71 /* Vendor */,
 				740E54A81E88713300B97CEC /* AppDelegate.swift */,
 				740E54AA1E88713300B97CEC /* Assets.xcassets */,
 				740E54AC1E88713300B97CEC /* MainMenu.xib */,
@@ -256,6 +260,14 @@
 			);
 			name = "UIViewController+Drag";
 			path = "Extensions/UIViewController+Drag";
+			sourceTree = "<group>";
+		};
+		7498D2631E89A54900E1FF71 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7498D2641E89A54900E1FF71 /* UXKit.framework */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		74A9CD0A1DCAA6870021D654 /* RenderEngine */ = {
@@ -748,6 +760,7 @@
 					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
 					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
 					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
+					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
 				);
 				INFOPLIST_FILE = "Silkscreen MacOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -774,6 +787,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
 					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
 					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",
 					"$(PROJECT_DIR)/Silkscreen\\ MacOS/Vendor",

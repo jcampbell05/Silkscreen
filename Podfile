@@ -12,5 +12,4 @@ target 'Silkscreen MacOS' do
   pod 'GPUImage'
   #pod 'GMImagePicker' - How will this work on a Mac ?
   #pod 'UICollectionViewLeftAlignedLayout' - How will this work on a Mac ?
-  pod 'UXKit'
 end

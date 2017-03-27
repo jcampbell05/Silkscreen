@@ -42,7 +42,7 @@ func UIEdgeInsetsMake(top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right:
   return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
 }
 
-func UIEdgeInsetsInsetRect(rect: CGRect, insets: UIEdgeInsets) -> CGRect {
+func UIEdgeInsetsInsetRect(rect: CGRect, _ insets: UIEdgeInsets) -> CGRect {
   var rect = rect
   rect.origin.x	+= insets.left;
   rect.origin.y	+= insets.top;

@@ -10,11 +10,16 @@
 #define Bridge_h
 
 #import "CDStructures.h"
+#import "UXBarButtonItem.h"
 #import "UXCollectionView.h"
 #import "UXCollectionViewCell.h"
 #import "UXCollectionViewController.h"
 #import "UXCollectionViewLayout.h"
+#import "UXCollectionViewLayoutAttributes.h"
 #import "UXCollectionReusableView.h"
+#import "UXImageView.h"
+#import "UXLabel.h"
+#import "UXNavigationControllerDelegate-Protocol.h"
 #import "UXView.h"
 #import "UXViewControllerContextTransitioning-Protocol.h"
 

@@ -18,6 +18,7 @@ class AssetGroupsCollectionViewLayout: UICollectionViewLayout {
         
         let numberOfSections = collectionView?.numberOfSections() ?? 0
 
+        #if os(iOS) || os(watchOS) || os(tvOS)
         for (section, _) in (0..<numberOfSections).enumerate() {
             
             let itemCount = collectionView?.numberOfItemsInSection(section) ?? 0
@@ -25,6 +26,7 @@ class AssetGroupsCollectionViewLayout: UICollectionViewLayout {
           
             let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
         }
+        #endif
         
         // - Iterate rows and create a pile for each section
     }

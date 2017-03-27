@@ -35,6 +35,7 @@ extension UIViewController {
     
     func findDraggingDestinationForDraggingInfo(info: DraggingInfo) -> DraggingDestination? {
       
+        #if os(iOS) || os(watchOS) || os(tvOS)
         let location = view.convertPoint(info.draggingLocation, fromView: info.destinationWindow)
         let inside = view.pointInside(location, withEvent: nil)
         let canAcceptDrag = (self as? DraggingDestination)?.shouldAllowDrag(info) ?? false
@@ -51,6 +52,7 @@ extension UIViewController {
                 }
             }
         }
+        #endif
         
         return nil
     }

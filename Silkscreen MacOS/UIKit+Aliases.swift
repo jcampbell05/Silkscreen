@@ -249,7 +249,7 @@ extension UXViewController {
     
   }
   
-  func endAppearanceTransition(begin: Bool, animated: Bool) {
+  func endAppearanceTransition() {
     
   }
 }

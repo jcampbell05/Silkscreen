@@ -12,12 +12,6 @@
   import UIKit
 #endif
 
-// - Use Diff
-// - UIDocumentInteractionController Support
-// - Zoom in and out
-// - Extension for these protocols
-// - Can Scrubbing Styled Asset View Controller Be Done In A UICollectionViewController ?
-// - Break up into folders
 class AssetsViewController: UICollectionViewController {
     
     var editorContext: EditorContext? = nil {
@@ -86,12 +80,19 @@ class AssetsViewController: UICollectionViewController {
         guard let asset = editorContext?.assets[indexPath.row] else {
             return
         }
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let renderer = UIGraphicsImageRenderer(size: cell.bounds.size)
         
         let image = renderer.imageWithActions { _ in
             cell.drawViewHierarchyInRect(cell.bounds, afterScreenUpdates: false)
         }
+        
+      #else
+      
+        let image = UIImage()
+      
+      #endif
         
         let draggingItem = DraggingItem(pasteboardWriter: asset)
         draggingItem.setDraggingFrame(cell.bounds, image: image)

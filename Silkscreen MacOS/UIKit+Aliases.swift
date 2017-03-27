@@ -252,3 +252,9 @@ extension UXViewController {
     
   }
 }
+
+extension NSView {
+  func setNeedsLayout() {
+    
+  }
+}

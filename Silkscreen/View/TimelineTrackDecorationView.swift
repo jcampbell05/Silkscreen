@@ -14,10 +14,14 @@ class TimelineTrackDecorationView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         
         backgroundColor = UIColor.lightGrayColor()
         layer.borderColor = UIColor.whiteColor().CGColor
         layer.borderWidth = 1
+      
+      #endif
     }
     
     required init?(coder aDecoder: NSCoder) {

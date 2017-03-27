@@ -58,7 +58,10 @@ class AssetsViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+      #endif
     }
     
     @objc private func longPressToDragGestureDidUpdate(gestureRecognizer: UIGestureRecognizer) {
@@ -76,28 +79,27 @@ class AssetsViewController: UICollectionViewController {
         guard let cell = collectionView?.cellForItemAtIndexPath(indexPath) else {
             return
         }
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         
         guard let asset = editorContext?.assets[indexPath.row] else {
             return
         }
       
-      #if os(iOS) || os(watchOS) || os(tvOS)
         let renderer = UIGraphicsImageRenderer(size: cell.bounds.size)
         
         let image = renderer.imageWithActions { _ in
             cell.drawViewHierarchyInRect(cell.bounds, afterScreenUpdates: false)
         }
         
-      #else
-      
-        let image = UIImage()
-      
-      #endif
-        
         let draggingItem = DraggingItem(pasteboardWriter: asset)
         draggingItem.setDraggingFrame(cell.bounds, image: image)
         beginDraggingSession(with: draggingItem, location: gestureRecognizer.locationInView(view))
+      
+      #endif
     }
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return editorContext?.assets.count ?? 0
@@ -113,4 +115,6 @@ class AssetsViewController: UICollectionViewController {
         
         return cell
     }
+  
+  #endif
 }

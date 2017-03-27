@@ -29,9 +29,11 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     
     let layout = TimelineCollectionViewLayout()
     
-    init() {
+    override init() {
         
         super.init(collectionViewLayout: layout)
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Play, target: nil, action: nil)
         
@@ -43,6 +45,8 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .Plain, target: nil, action: nil)
         
         installsStandardGestureForInteractiveMovement = true
+        
+      #endif
         
         // Re-enable when layout supports it
         collectionView?.prefetchingEnabled = false
@@ -63,10 +67,12 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         navigationController?.navigationBar.translucent = false
         navigationController?.navigationBar.tintColor = UIColor.blackColor()
         navigationController?.navigationBar.barTintColor = UIColor.lightGrayColor()
+      #endif
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
@@ -83,6 +89,8 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
         
         return view
     }
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return editorContext?.tracks.count ?? 0
@@ -102,6 +110,8 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
         
         return cell
     }
+  
+  #endif
     
     func shouldAllowDrag(draggingInfo: DraggingInfo) -> Bool {
         let pasteBoard = draggingInfo.draggingPasteboard
@@ -118,7 +128,9 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     }
     
     func draggingEnded(sender: DraggingInfo) {
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
+      
         var location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
         location.x -= sender.draggingImage.size.width / 2
         
@@ -137,6 +149,8 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
         if let asset = fetchResult.firstObject as? PHAsset {
           track.addItem(asset, time: time)
         }
+      
+      #endif
     }
     
     // - <TimelineCollectionViewLayoutDelegate>

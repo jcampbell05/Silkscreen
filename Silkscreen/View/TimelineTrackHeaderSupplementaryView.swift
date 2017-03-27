@@ -25,8 +25,10 @@ class TimelineTrackHeaderSupplementaryView: UICollectionReusableView {
         super.init(frame: frame)
         
         addSubview(textLabel)
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         backgroundColor = UIColor.grayColor()
+      #endif
         
         textLabel.frame = bounds
         textLabel.textAlignment = .Center

@@ -53,6 +53,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         let numberOfTracks = CGFloat(collectionView?.numberOfSections() ?? 0)
         return CGSize(width: CGFloat.max, height: TimelineTrackHeight * numberOfTracks)
     }
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
@@ -83,6 +85,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         
         return items
     }
+  
+  #endif
     
     private func layoutAttributesForTimeMarkersInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
         
@@ -153,6 +157,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         
         return attributes
     }
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     
     override func layoutAttributesForDecorationViewOfKind(elementKind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
         
@@ -178,6 +184,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         
         return attribute
     }
+  
+  #endif
     
     func layoutAttributesForTimelineItem(trackId: Int, time: Int) -> UICollectionViewLayoutAttributes {
         
@@ -192,7 +200,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         return min(Int((point.y - TimelineHeaderHeight) / TimelineTrackHeight), (collectionView?.numberOfSections() ?? 1) - 1)
     }
     
-    func timeIdAtPoint(point: CGPoint) -> Int { collectionView.contentOffset()
+    func timeIdAtPoint(point: CGPoint) -> Int {
         return Int((point.x - TimelineTrackHeaderWidth) + (collectionView?.contentOffset.x ?? 0))
     }
     

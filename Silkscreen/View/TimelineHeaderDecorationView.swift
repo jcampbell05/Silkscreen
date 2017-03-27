@@ -15,8 +15,10 @@ class TimelineHeaderDecorationView: UICollectionReusableView {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         backgroundColor = UIColor.darkGrayColor()
+      #endif
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -333,7 +333,6 @@
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
 - (id)description;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)updateDraggingItemsForDrag:(id)arg1;

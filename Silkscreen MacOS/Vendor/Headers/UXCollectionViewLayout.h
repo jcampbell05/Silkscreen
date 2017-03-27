@@ -85,7 +85,6 @@
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)_animateView:(id)arg1 withAction:(long long)arg2 fromLayoutAttributes:(id)arg3 toLayoutAttributes:(id)arg4 fromLayout:(id)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
 - (void)_invalidateLayoutUsingContext:(id)arg1;

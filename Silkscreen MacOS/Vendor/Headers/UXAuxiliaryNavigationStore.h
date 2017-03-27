@@ -23,7 +23,6 @@
 - (void)cxx_destruct;
 - (id)_dictionaryForNamespace:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)_allowedClassesForNSCoding;
 - (id)nextActionForNamespace:(id)arg1;
 - (void)setNextAction:(id)arg1 forNamespace:(id)arg2;

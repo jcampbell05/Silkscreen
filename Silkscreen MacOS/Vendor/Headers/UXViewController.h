@@ -83,7 +83,6 @@
 - (void)_loadViewIfNotLoaded;
 - (void)_setupResponderChainIfNecessary;
 - (void)_prepareForAnimationInContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;
 @property(nonatomic) BOOL hidesBottomBarWhenPushed;

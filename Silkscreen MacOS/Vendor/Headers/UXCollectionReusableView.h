@@ -6,6 +6,8 @@
 
 @import AppKit;
 
+#import "UXCollectionViewLayoutAttributes.h"
+
 @class NSString, UXCollectionView, UXCollectionViewLayoutAttributes;
 
 @interface UXCollectionReusableView : NSView
@@ -34,12 +36,11 @@
 - (void)_setBaseLayoutAttributes:(id)arg1;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
-- (void)applyLayoutAttributes:(id)arg1;
+- (void)applyLayoutAttributes:(UXCollectionViewLayoutAttributes *)arg1;
 - (void)prepareForReuse;
 - (BOOL)wantsUpdateLayer;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_layoutSectionAccessibility;
 - (id)_accessibilityIndexPath;

@@ -84,7 +84,6 @@
 - (BOOL)wantsUpdateLayer;
 - (id)makeBackingLayer;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_disableBlur;
 - (void)_enableBlur;

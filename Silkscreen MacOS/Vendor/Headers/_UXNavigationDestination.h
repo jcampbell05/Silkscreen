@@ -25,7 +25,6 @@
 @property(retain, nonatomic) NSString *destinationType; // @synthesize destinationType=_destinationType;
 - (void)cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -100,7 +100,6 @@
 - (BOOL)overdrawEnabled;
 - (void)setOverdrawEnabled:(BOOL)arg1;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;

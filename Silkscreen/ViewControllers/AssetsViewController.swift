@@ -33,9 +33,14 @@ class AssetsViewController: UICollectionViewController {
         return UILongPressGestureRecognizer(target: self, action: #selector(longPressToDragGestureDidUpdate))
     }()
     
-    init() {
-        
+    override init() {
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let layout = UICollectionViewLeftAlignedLayout()
+      #else
+        let layout = UICollectionViewFlowLayout()
+      #endif
+        
         layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSizeMake(100
             , 50)

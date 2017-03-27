@@ -14,6 +14,7 @@
 #import "UXCollectionView.h"
 #import "UXCollectionViewCell.h"
 #import "UXCollectionViewController.h"
+#import "UXCollectionViewFlowLayout.h"
 #import "UXCollectionViewLayout.h"
 #import "UXCollectionViewLayoutAttributes.h"
 #import "UXCollectionReusableView.h"

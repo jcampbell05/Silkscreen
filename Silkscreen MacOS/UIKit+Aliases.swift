@@ -38,7 +38,7 @@ typealias UIViewPropertyAnimator = ViewPropertyAnimator
 typealias UIVisualEffectView = NSVisualEffectView
 typealias UIWindow = NSWindow
 
-func UIEdgeInsetsMake(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat) -> UIEdgeInsets {
+func UIEdgeInsetsMake(top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> UIEdgeInsets {
   return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
 }
 

@@ -23,7 +23,8 @@ class BlurredSheetPresentationController: UIPresentationController {
         guard let transitionCoordinator = self.presentedViewController.transitionCoordinator() else {
             fatalError("blurringViewRadiusAnimator used outside of a transition")
         }
-        
+      
+      
         return UIViewPropertyAnimator(duration: transitionCoordinator.transitionDuration(), curve: transitionCoordinator.completionCurve()) {
             self.blurringView.effect = UIBlurEffect(style: .Dark)
         }

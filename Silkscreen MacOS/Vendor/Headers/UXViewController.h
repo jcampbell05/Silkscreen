@@ -8,6 +8,7 @@
 
 #import "UXLayoutSupport-Protocol.h"
 #import "CDStructures.h"
+#import "UXViewControllerTransitionCoordinatorContext-Protocol.h"
 
 @class NSArray, NSResponder, NSString, UXNavigationController, UXNavigationItem, UXSourceController, UXTabBarItem, UXView;
 
@@ -51,7 +52,7 @@
 - (BOOL)_requiresWindowForTransitionPreparation;
 - (id)_ancestorViewControllerOfClass:(Class)arg1;
 - (void)_animateView:(id)arg1 fromFrame:(struct CGRect)arg2 toFrame:(struct CGRect)arg3;
-- (id)transitionCoordinator;
+- (id<UXViewControllerTransitionCoordinatorContext>)transitionCoordinator;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

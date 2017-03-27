@@ -10,6 +10,4 @@ end
 target 'Silkscreen MacOS' do
   platform :osx, '10.12'
   pod 'GPUImage'
-  #pod 'GMImagePicker' - How will this work on a Mac ?
-  #pod 'UICollectionViewLeftAlignedLayout' - How will this work on a Mac ?
 end

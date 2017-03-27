@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D450F76FAD56DB26724EE0E96B367B3A'
-               BlueprintName = 'UICollectionViewLeftAlignedLayout'
+               BlueprintIdentifier = '55FC19530FC71B19BE478FAF1351E054'
+               BlueprintName = 'GPUImage'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'UICollectionViewLeftAlignedLayout.framework'>
+               BuildableName = 'GPUImage.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -24,6 +24,7 @@ typealias UIBarButtonItem = UXBarButtonItem
 typealias UIEdgeInsets = NSEdgeInsets
 typealias UIImage = NSImage
 typealias UIImageView = UXImageView
+typealias UIGestureRecognizer = NSGestureRecognizer
 typealias UIGestureRecognizerDelegate = AppKit.NSGestureRecognizerDelegate
 typealias UILayoutConstraintAxis = NSLayoutConstraintOrientation
 typealias UIPasteboard = NSPasteboard

@@ -260,11 +260,13 @@
 - (void)scrollWheel:(id)arg1;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
 - (void)setContentOffset:(struct CGPoint)arg1;
+
 @property(nonatomic) struct CGSize contentSize;
+@property(nonatomic) struct CGPoint contentOffset;
+
 - (void)setDocumentBounds:(struct CGRect)arg1;
 - (struct CGRect)documentBounds;
 - (struct CGSize)documentSize;
-- (struct CGPoint)contentOffset;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isOpaque;
 - (void)viewWillMoveToSuperview:(id)arg1;

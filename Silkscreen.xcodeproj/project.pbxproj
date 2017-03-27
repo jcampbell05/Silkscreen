@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		74066B2E1DCAAA0900BA086B /* RenderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74066B2D1DCAAA0900BA086B /* RenderTrack.swift */; };
-		740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */; };
 		740E54A91E88713300B97CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E54A81E88713300B97CEC /* AppDelegate.swift */; };
 		740E54AB1E88713300B97CEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740E54AA1E88713300B97CEC /* Assets.xcassets */; };
 		740E54AE1E88713300B97CEC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740E54AC1E88713300B97CEC /* MainMenu.xib */; };
@@ -34,7 +33,6 @@
 		740E54D01E8881F100B97CEC /* TimelineTrackDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */; };
 		740E54D11E8881F100B97CEC /* TimelineTrackHeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */; };
 		740E54D21E8881F100B97CEC /* AssetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */; };
-		740E54D31E8881F100B97CEC /* CameraControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */; };
 		740E54D41E8881F100B97CEC /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74760F8B1DC75444008D1B27 /* Window.swift */; };
 		740E54D51E8881F600B97CEC /* TimelineCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC901CCD6A1100B9E1ED /* TimelineCollectionViewLayoutAttributes.swift */; };
 		740E54D61E8881F600B97CEC /* TimelineCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8DC881CCBF32D00B9E1ED /* TimelineCollectionViewLayout.swift */; };
@@ -100,7 +98,6 @@
 		1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		4004C309487E746894E05C9F /* Pods-Silkscreen MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen MacOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen MacOS/Pods-Silkscreen MacOS.debug.xcconfig"; sourceTree = "<group>"; };
 		74066B2D1DCAAA0900BA086B /* RenderTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTrack.swift; sourceTree = "<group>"; };
-		740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraControlsView.swift; sourceTree = "<group>"; };
 		740E54A61E88713300B97CEC /* Silkscreen MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silkscreen MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		740E54A81E88713300B97CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		740E54AA1E88713300B97CEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -640,7 +637,6 @@
 				74B8DC9D1CCE0B9800B9E1ED /* TimelineTrackDecorationView.swift */,
 				74B8DC9F1CCE0C1400B9E1ED /* TimelineTrackHeaderSupplementaryView.swift */,
 				745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */,
-				740CA6AD1D0098D200DF0102 /* CameraControlsView.swift */,
 				74760F8B1DC75444008D1B27 /* Window.swift */,
 			);
 			path = View;
@@ -891,7 +887,6 @@
 				740E54C31E8881D300B97CEC /* UIViewController+DragDestination.swift in Sources */,
 				740E54C61E8881DD00B97CEC /* AssetGroupCollectionViewCell.swift in Sources */,
 				740E54E31E88820100B97CEC /* PreviewViewController.swift in Sources */,
-				740E54D31E8881F100B97CEC /* CameraControlsView.swift in Sources */,
 				740E54E01E88820100B97CEC /* DividableViewController.swift in Sources */,
 				740E54CD1E8881EB00B97CEC /* Optional+Unwrap.swift in Sources */,
 				740E54C21E8881CE00B97CEC /* PHAsset+PasteboardWriting.swift in Sources */,
@@ -947,7 +942,6 @@
 				74740DC61DC8EB5800E9614D /* UIViewController+DragDestination.swift in Sources */,
 				7433DBE41CF8F1B500529931 /* Platform.swift in Sources */,
 				74A9CD0C1DCAA6900021D654 /* RenderEngine.swift in Sources */,
-				740CA6AE1D0098D200DF0102 /* CameraControlsView.swift in Sources */,
 				74B4FAD11CCAA55600AE26EC /* TimelineViewController.swift in Sources */,
 				740E54B51E88790900B97CEC /* PHAsset+PasteboardWriting.swift in Sources */,
 				74477BB51D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift in Sources */,

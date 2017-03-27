@@ -24,6 +24,7 @@ typealias UIEdgeInsets = NSEdgeInsets
 typealias UIImage = NSImage
 typealias UIImageView = UXImageView
 typealias UIGestureRecognizerDelegate = AppKit.NSGestureRecognizerDelegate
+typealias UILayoutConstraintAxis = NSLayoutConstraintOrientation
 typealias UIPasteboard = NSPasteboard
 typealias UIPercentDrivenInteractiveTransition = PercentDrivenInteractiveTransition
 typealias UIPresentationController = PresentationController
@@ -64,6 +65,8 @@ enum ViewAnimationCurve : Int {
 }
 
 class Asset {
+  
+  let localIdentifier: String = ""
   
   static func fetchAssetsWithLocalIdentifiers(identifiers:[String], options: AnyObject?) -> FetchResult {
     return FetchResult()

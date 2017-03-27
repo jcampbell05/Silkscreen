@@ -21,6 +21,7 @@
 #import "UXLabel.h"
 #import "UXNavigationControllerDelegate-Protocol.h"
 #import "UXView.h"
+#import "UXViewController.h"
 #import "UXViewControllerContextTransitioning-Protocol.h"
 
 #endif /* Bridge_h */

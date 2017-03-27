@@ -192,7 +192,7 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         return min(Int((point.y - TimelineHeaderHeight) / TimelineTrackHeight), (collectionView?.numberOfSections() ?? 1) - 1)
     }
     
-    func timeIdAtPoint(point: CGPoint) -> Int {
+    func timeIdAtPoint(point: CGPoint) -> Int { collectionView.contentOffset()
         return Int((point.x - TimelineTrackHeaderWidth) + (collectionView?.contentOffset.x ?? 0))
     }
     

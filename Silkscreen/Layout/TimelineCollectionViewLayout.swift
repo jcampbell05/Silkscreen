@@ -97,7 +97,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         let timeMarkersPerScreen = Int(rect.width / TimelineTimeMarkerWidth)
         let screenNumber = Int((collectionView.contentOffset.x - TimelineTrackHeaderWidth) / rect.width)
         let offset = (screenNumber * Int(rect.width))
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let attributes: [UICollectionViewLayoutAttributes] = (0...(timeMarkersPerScreen * 2)).enumerate().map {
             
             let attribute = TimelineCollectionViewLayoutAttributes(forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withIndexPath: NSIndexPath(forRow: $0.index, inSection: 0))
@@ -113,6 +114,10 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         }
             
         return attributes
+      
+      #else
+        return []
+      #endif
     }
     
     private func layoutAttributesForTracksInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
@@ -120,6 +125,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         guard let collectionView = collectionView else {
             return []
         }
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         
         let attributes: [UICollectionViewLayoutAttributes] = (0...(collectionView.numberOfSections() - 1)).enumerate().map {
             
@@ -134,6 +141,12 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         }
         
         return attributes
+      
+      #else
+      
+        return []
+      
+      #endif
     }
     
     private func layoutAttributesForTrackHeadersInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes] {
@@ -141,6 +154,8 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         guard let collectionView = collectionView else {
             return []
         }
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         
         let attributes: [UICollectionViewLayoutAttributes] = (0...(collectionView.numberOfSections() - 1)).enumerate().map {
             
@@ -156,6 +171,12 @@ class TimelineCollectionViewLayout: UICollectionViewLayout {
         }
         
         return attributes
+      
+      #else
+        
+        return []
+      
+      #endif
     }
   
   #if os(iOS) || os(watchOS) || os(tvOS)

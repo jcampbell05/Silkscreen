@@ -11,8 +11,13 @@ import UIKit
 #endif
 
 class DividableViewController: UIViewController {
-    
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     private let stackView = UIStackView(arrangedSubviews: [])
+  #else
+    private let stackView = UIStackView(views: [])
+  #endif
+  
     private let arrangedSubviewControllers: [UIViewController]
     
     var axis: UILayoutConstraintAxis = .Vertical {
@@ -53,9 +58,11 @@ class DividableViewController: UIViewController {
     }
     
     private func updateStackViewProperties() {
-        
+      
+        #if os(iOS) || os(watchOS) || os(tvOS)
         stackView.axis = axis
         stackView.distribution = .Fill
         stackView.alignment = .Fill
+        #endif
     }
 }

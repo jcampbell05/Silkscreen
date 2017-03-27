@@ -30,6 +30,8 @@ class PreviewViewController: UIViewController {
             }
         }
     }
+  
+    #if os(iOS) || os(watchOS) || os(tvOS)
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         
@@ -37,6 +39,8 @@ class PreviewViewController: UIViewController {
         
         renderEngine.addTarget(imageView)
     }
+  
+    #endif
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

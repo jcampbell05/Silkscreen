@@ -15,6 +15,7 @@ typealias UIBlurEffectStyle = BlurEffectStyle
 typealias UIColor = NSColor
 typealias UICollectionReusableView = UXCollectionReusableView
 typealias UICollectionView = UXCollectionView
+typealias UICollectionViewLayout = UXCollectionViewLayout
 typealias UICollectionViewCell = UXCollectionViewCell
 typealias UICollectionViewController = UXCollectionViewController
 typealias UICollectionViewLayoutAttributes = UXCollectionViewLayoutAttributes
@@ -192,6 +193,49 @@ extension NSVisualEffectView {
     
     self.effect = effect
   }
+}
+
+extension UXCollectionView {
+  var prefetchingEnabled: Bool {
+    set {
+      
+    }
+    
+    get {
+      return false
+    }
+  }
+  
+  var directionalLockEnabled: Bool {
+    set {
+      
+    }
+    
+    get {
+      return false
+    }
+  }
+  
+  var alwaysBounceVertical: Bool {
+    set {
+      
+    }
+    
+    get {
+      return false
+    }
+  }
+  
+  var alwaysBounceHorizontal: Bool {
+    set {
+      
+    }
+    
+    get {
+      return false
+    }
+  }
+  
 }
 
 extension UXViewController {

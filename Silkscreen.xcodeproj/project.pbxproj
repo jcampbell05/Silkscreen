@@ -129,6 +129,154 @@
 		74740DC51DC8EB5800E9614D /* UIViewController+DragDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DragDestination.swift"; sourceTree = "<group>"; };
 		74760F8B1DC75444008D1B27 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		7498D2641E89A54900E1FF71 /* UXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UXKit.framework; sourceTree = "<group>"; };
+		7498D2671E89B42600E1FF71 /* _UXBarItemsContainer-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "_UXBarItemsContainer-Protocol.h"; sourceTree = "<group>"; };
+		7498D2681E89B42600E1FF71 /* _UXButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXButton.h; sourceTree = "<group>"; };
+		7498D2691E89B42600E1FF71 /* _UXButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXButtonCell.h; sourceTree = "<group>"; };
+		7498D26A1E89B42600E1FF71 /* _UXCollectionDocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionDocumentView.h; sourceTree = "<group>"; };
+		7498D26B1E89B42600E1FF71 /* _UXCollectionSnapshotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionSnapshotView.h; sourceTree = "<group>"; };
+		7498D26C1E89B42600E1FF71 /* _UXCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionView.h; sourceTree = "<group>"; };
+		7498D26D1E89B42600E1FF71 /* _UXCollectionViewItemKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionViewItemKey.h; sourceTree = "<group>"; };
+		7498D26E1E89B42600E1FF71 /* _UXCollectionViewLayoutProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionViewLayoutProxy.h; sourceTree = "<group>"; };
+		7498D26F1E89B42600E1FF71 /* _UXCollectionViewOverdraw-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "_UXCollectionViewOverdraw-Protocol.h"; sourceTree = "<group>"; };
+		7498D2701E89B42600E1FF71 /* _UXCollectionViewRearrangingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionViewRearrangingCoordinator.h; sourceTree = "<group>"; };
+		7498D2711E89B42600E1FF71 /* _UXCollectionViewSectionItemIndexes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXCollectionViewSectionItemIndexes.h; sourceTree = "<group>"; };
+		7498D2721E89B42600E1FF71 /* _UXContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXContainerView.h; sourceTree = "<group>"; };
+		7498D2731E89B42600E1FF71 /* _UXFlowLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXFlowLayoutInfo.h; sourceTree = "<group>"; };
+		7498D2741E89B42600E1FF71 /* _UXFlowLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXFlowLayoutItem.h; sourceTree = "<group>"; };
+		7498D2751E89B42600E1FF71 /* _UXFlowLayoutRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXFlowLayoutRow.h; sourceTree = "<group>"; };
+		7498D2761E89B42600E1FF71 /* _UXFlowLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXFlowLayoutSection.h; sourceTree = "<group>"; };
+		7498D2771E89B42600E1FF71 /* _UXLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXLayoutGuide.h; sourceTree = "<group>"; };
+		7498D2781E89B42600E1FF71 /* _UXNavigationDestination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXNavigationDestination.h; sourceTree = "<group>"; };
+		7498D2791E89B42600E1FF71 /* _UXNavigationItemContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXNavigationItemContainerView.h; sourceTree = "<group>"; };
+		7498D27A1E89B42600E1FF71 /* _UXResizableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXResizableImage.h; sourceTree = "<group>"; };
+		7498D27B1E89B42600E1FF71 /* _UXSinglePixelLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXSinglePixelLine.h; sourceTree = "<group>"; };
+		7498D27C1E89B42600E1FF71 /* _UXSourceSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXSourceSplitView.h; sourceTree = "<group>"; };
+		7498D27D1E89B42600E1FF71 /* _UXSourceSplitViewDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "_UXSourceSplitViewDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D27E1E89B42600E1FF71 /* _UXSourceUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXSourceUtilities.h; sourceTree = "<group>"; };
+		7498D27F1E89B42600E1FF71 /* _UXTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXTableHeaderView.h; sourceTree = "<group>"; };
+		7498D2801E89B42600E1FF71 /* _UXToolbarItemsContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXToolbarItemsContainer.h; sourceTree = "<group>"; };
+		7498D2811E89B42600E1FF71 /* _UXViewControllerOneToOneTransitionContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXViewControllerOneToOneTransitionContext.h; sourceTree = "<group>"; };
+		7498D2821E89B42600E1FF71 /* _UXViewControllerTransitionContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXViewControllerTransitionContext.h; sourceTree = "<group>"; };
+		7498D2831E89B42600E1FF71 /* _UXViewControllerTransitionCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXViewControllerTransitionCoordinator.h; sourceTree = "<group>"; };
+		7498D2841E89B42600E1FF71 /* _UXWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UXWindow.h; sourceTree = "<group>"; };
+		7498D2851E89B42600E1FF71 /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
+		7498D2861E89B42600E1FF71 /* MissingTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissingTypes.h; sourceTree = "<group>"; };
+		7498D2871E89B42600E1FF71 /* NSAccessibilityElement-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAccessibilityElement-Protocol.h"; sourceTree = "<group>"; };
+		7498D2881E89B42600E1FF71 /* NSAccessibilityGroup-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAccessibilityGroup-Protocol.h"; sourceTree = "<group>"; };
+		7498D2891E89B42600E1FF71 /* NSAccessibilityImage-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAccessibilityImage-Protocol.h"; sourceTree = "<group>"; };
+		7498D28A1E89B42600E1FF71 /* NSAccessibilityStaticText-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAccessibilityStaticText-Protocol.h"; sourceTree = "<group>"; };
+		7498D28C1E89B42600E1FF71 /* NSColor-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor-Compatibility.h"; sourceTree = "<group>"; };
+		7498D28D1E89B42600E1FF71 /* NSControl-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSControl-Compatibility.h"; sourceTree = "<group>"; };
+		7498D28F1E89B42600E1FF71 /* NSDraggingDestination-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDraggingDestination-Protocol.h"; sourceTree = "<group>"; };
+		7498D2901E89B42600E1FF71 /* NSDraggingSource-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDraggingSource-Protocol.h"; sourceTree = "<group>"; };
+		7498D2911E89B42600E1FF71 /* NSEvent-UXCollectionViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEvent-UXCollectionViewAdditions.h"; sourceTree = "<group>"; };
+		7498D2921E89B42600E1FF71 /* NSGestureRecognizer-UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGestureRecognizer-UXKit.h"; sourceTree = "<group>"; };
+		7498D2931E89B42600E1FF71 /* NSGestureRecognizerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSGestureRecognizerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2941E89B42600E1FF71 /* NSImage-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-Compatibility.h"; sourceTree = "<group>"; };
+		7498D2951E89B42600E1FF71 /* NSImage-UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-UXKit.h"; sourceTree = "<group>"; };
+		7498D2961E89B42600E1FF71 /* NSIndexPath-UXCollectionViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath-UXCollectionViewAdditions.h"; sourceTree = "<group>"; };
+		7498D2971E89B42600E1FF71 /* NSIndexPath-UXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath-UXTableView.h"; sourceTree = "<group>"; };
+		7498D2981E89B42600E1FF71 /* NSMenuItem-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMenuItem-Compatibility.h"; sourceTree = "<group>"; };
+		7498D2991E89B42600E1FF71 /* NSMutableCopying-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableCopying-Protocol.h"; sourceTree = "<group>"; };
+		7498D29A1E89B42600E1FF71 /* NSNull-NSAccessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull-NSAccessibility.h"; sourceTree = "<group>"; };
+		7498D29C1E89B42600E1FF71 /* NSObject-UXCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-UXCollectionView.h"; sourceTree = "<group>"; };
+		7498D29D1E89B42600E1FF71 /* NSPopoverDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPopoverDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D29E1E89B42600E1FF71 /* NSProgressIndicator-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSProgressIndicator-Compatibility.h"; sourceTree = "<group>"; };
+		7498D29F1E89B42600E1FF71 /* NSResponder-UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSResponder-UXKit.h"; sourceTree = "<group>"; };
+		7498D2A01E89B42600E1FF71 /* NSScreen-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScreen-Compatibility.h"; sourceTree = "<group>"; };
+		7498D2A11E89B42600E1FF71 /* NSScrollView-UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScrollView-UXKit.h"; sourceTree = "<group>"; };
+		7498D2A21E89B42600E1FF71 /* NSSecureCoding-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSecureCoding-Protocol.h"; sourceTree = "<group>"; };
+		7498D2A31E89B42600E1FF71 /* NSTextField-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField-Compatibility.h"; sourceTree = "<group>"; };
+		7498D2A41E89B42600E1FF71 /* NSTextFieldCell-UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextFieldCell-UXKit.h"; sourceTree = "<group>"; };
+		7498D2A51E89B42600E1FF71 /* NSTextView-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView-Compatibility.h"; sourceTree = "<group>"; };
+		7498D2A61E89B42600E1FF71 /* NSToolbarDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSToolbarDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2A71E89B42600E1FF71 /* NSView-Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView-Compatibility.h"; sourceTree = "<group>"; };
+		7498D2A81E89B42600E1FF71 /* NSView-UXCollectionViewRearrangingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView-UXCollectionViewRearrangingCoordinator.h"; sourceTree = "<group>"; };
+		7498D2A91E89B42600E1FF71 /* NSView-UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView-UXKit.h"; sourceTree = "<group>"; };
+		7498D2AA1E89B42600E1FF71 /* NSView-UXKitAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView-UXKitAppearance.h"; sourceTree = "<group>"; };
+		7498D2AB1E89B42600E1FF71 /* NSViewAnimationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSViewAnimationContext.h; sourceTree = "<group>"; };
+		7498D2AC1E89B42600E1FF71 /* NSViewController-UXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSViewController-UXViewController.h"; sourceTree = "<group>"; };
+		7498D2AD1E89B42600E1FF71 /* NSWindow-UXKitAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow-UXKitAppearance.h"; sourceTree = "<group>"; };
+		7498D2AE1E89B42600E1FF71 /* NSWindowDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindowDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2AF1E89B42600E1FF71 /* UIMutableIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMutableIndexPath.h; sourceTree = "<group>"; };
+		7498D2B01E89B42600E1FF71 /* UITextInputTraits-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextInputTraits-Protocol.h"; sourceTree = "<group>"; };
+		7498D2B11E89B42600E1FF71 /* UXAccessoryBarContainerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXAccessoryBarContainerProtocol.h; sourceTree = "<group>"; };
+		7498D2B21E89B42600E1FF71 /* UXAuxiliaryNavigationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXAuxiliaryNavigationStore.h; sourceTree = "<group>"; };
+		7498D2B31E89B42600E1FF71 /* UXBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXBackButton.h; sourceTree = "<group>"; };
+		7498D2B41E89B42600E1FF71 /* UXBackButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXBackButtonCell.h; sourceTree = "<group>"; };
+		7498D2B51E89B42600E1FF71 /* UXBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXBar.h; sourceTree = "<group>"; };
+		7498D2B61E89B42600E1FF71 /* UXBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXBarButtonItem.h; sourceTree = "<group>"; };
+		7498D2B71E89B42600E1FF71 /* UXBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXBarItem.h; sourceTree = "<group>"; };
+		7498D2B81E89B42600E1FF71 /* UXBarPositioning-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXBarPositioning-Protocol.h"; sourceTree = "<group>"; };
+		7498D2B91E89B42600E1FF71 /* UXBarPositioningDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXBarPositioningDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2BA1E89B42600E1FF71 /* UXClickEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXClickEventTracker.h; sourceTree = "<group>"; };
+		7498D2BB1E89B42600E1FF71 /* UXCollectionClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionClipView.h; sourceTree = "<group>"; };
+		7498D2BC1E89B42600E1FF71 /* UXCollectionDocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionDocumentView.h; sourceTree = "<group>"; };
+		7498D2BD1E89B42600E1FF71 /* UXCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionReusableView.h; sourceTree = "<group>"; };
+		7498D2BE1E89B42600E1FF71 /* UXCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionView.h; sourceTree = "<group>"; };
+		7498D2BF1E89B42600E1FF71 /* UXCollectionViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewAnimation.h; sourceTree = "<group>"; };
+		7498D2C01E89B42600E1FF71 /* UXCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewCell.h; sourceTree = "<group>"; };
+		7498D2C11E89B42600E1FF71 /* UXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewController.h; sourceTree = "<group>"; };
+		7498D2C21E89B42600E1FF71 /* UXCollectionViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewData.h; sourceTree = "<group>"; };
+		7498D2C31E89B42600E1FF71 /* UXCollectionViewDataSource-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXCollectionViewDataSource-Protocol.h"; sourceTree = "<group>"; };
+		7498D2C41E89B42600E1FF71 /* UXCollectionViewDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXCollectionViewDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2C51E89B42600E1FF71 /* UXCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		7498D2C61E89B42600E1FF71 /* UXCollectionViewFlowLayoutInvalidationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewFlowLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		7498D2C71E89B42600E1FF71 /* UXCollectionViewIndexPathsSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewIndexPathsSet.h; sourceTree = "<group>"; };
+		7498D2C81E89B42600E1FF71 /* UXCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewLayout.h; sourceTree = "<group>"; };
+		7498D2C91E89B42600E1FF71 /* UXCollectionViewLayoutAccessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewLayoutAccessibility.h; sourceTree = "<group>"; };
+		7498D2CA1E89B42600E1FF71 /* UXCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		7498D2CB1E89B42600E1FF71 /* UXCollectionViewLayoutInvalidationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		7498D2CC1E89B42600E1FF71 /* UXCollectionViewLayoutProxyDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXCollectionViewLayoutProxyDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2CD1E89B42600E1FF71 /* UXCollectionViewLayoutSectionAccessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewLayoutSectionAccessibility.h; sourceTree = "<group>"; };
+		7498D2CE1E89B42600E1FF71 /* UXCollectionViewMutableIndexPathsSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewMutableIndexPathsSet.h; sourceTree = "<group>"; };
+		7498D2CF1E89B42600E1FF71 /* UXCollectionViewRearrangingCoordinatorDragRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewRearrangingCoordinatorDragRecognizer.h; sourceTree = "<group>"; };
+		7498D2D01E89B42600E1FF71 /* UXCollectionViewUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewUpdate.h; sourceTree = "<group>"; };
+		7498D2D11E89B42600E1FF71 /* UXCollectionViewUpdateGap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewUpdateGap.h; sourceTree = "<group>"; };
+		7498D2D21E89B42600E1FF71 /* UXCollectionViewUpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXCollectionViewUpdateItem.h; sourceTree = "<group>"; };
+		7498D2D31E89B42600E1FF71 /* UXControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXControl.h; sourceTree = "<group>"; };
+		7498D2D41E89B42600E1FF71 /* UXDragEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXDragEventTracker.h; sourceTree = "<group>"; };
+		7498D2D51E89B42600E1FF71 /* UXEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXEventTracker.h; sourceTree = "<group>"; };
+		7498D2D61E89B42600E1FF71 /* UXIdentityTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXIdentityTransitionController.h; sourceTree = "<group>"; };
+		7498D2D71E89B42600E1FF71 /* UXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXImageView.h; sourceTree = "<group>"; };
+		7498D2D81E89B42600E1FF71 /* UXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXKit.h; sourceTree = "<group>"; };
+		7498D2D91E89B42600E1FF71 /* UXKitAppearance-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXKitAppearance-Protocol.h"; sourceTree = "<group>"; };
+		7498D2DA1E89B42600E1FF71 /* UXLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXLabel.h; sourceTree = "<group>"; };
+		7498D2DB1E89B42600E1FF71 /* UXLayoutSupport-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXLayoutSupport-Protocol.h"; sourceTree = "<group>"; };
+		7498D2DC1E89B42600E1FF71 /* UXLongClickEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXLongClickEventTracker.h; sourceTree = "<group>"; };
+		7498D2DD1E89B42600E1FF71 /* UXNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXNavigationBar.h; sourceTree = "<group>"; };
+		7498D2DE1E89B42600E1FF71 /* UXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXNavigationController.h; sourceTree = "<group>"; };
+		7498D2DF1E89B42600E1FF71 /* UXNavigationControllerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXNavigationControllerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2E01E89B42600E1FF71 /* UXNavigationDestination-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXNavigationDestination-Protocol.h"; sourceTree = "<group>"; };
+		7498D2E11E89B42600E1FF71 /* UXNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXNavigationItem.h; sourceTree = "<group>"; };
+		7498D2E21E89B42600E1FF71 /* UXNavigationRoot-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXNavigationRoot-Protocol.h"; sourceTree = "<group>"; };
+		7498D2E31E89B42600E1FF71 /* UXParallaxTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXParallaxTransitionController.h; sourceTree = "<group>"; };
+		7498D2E41E89B42600E1FF71 /* UXPinchEventTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXPinchEventTracker.h; sourceTree = "<group>"; };
+		7498D2E51E89B42600E1FF71 /* UXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXPopover.h; sourceTree = "<group>"; };
+		7498D2E61E89B42600E1FF71 /* UXPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXPopoverController.h; sourceTree = "<group>"; };
+		7498D2E71E89B42600E1FF71 /* UXProxyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXProxyViewController.h; sourceTree = "<group>"; };
+		7498D2E81E89B42600E1FF71 /* UXSlideTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXSlideTransitionController.h; sourceTree = "<group>"; };
+		7498D2E91E89B42600E1FF71 /* UXSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXSourceController.h; sourceTree = "<group>"; };
+		7498D2EA1E89B42600E1FF71 /* UXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTabBarController.h; sourceTree = "<group>"; };
+		7498D2EB1E89B42600E1FF71 /* UXTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTabBarItem.h; sourceTree = "<group>"; };
+		7498D2EC1E89B42600E1FF71 /* UXTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTableLayout.h; sourceTree = "<group>"; };
+		7498D2ED1E89B42600E1FF71 /* UXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTableView.h; sourceTree = "<group>"; };
+		7498D2EE1E89B42600E1FF71 /* UXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTableViewCell.h; sourceTree = "<group>"; };
+		7498D2EF1E89B42600E1FF71 /* UXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTableViewController.h; sourceTree = "<group>"; };
+		7498D2F01E89B42600E1FF71 /* UXToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXToolbar.h; sourceTree = "<group>"; };
+		7498D2F11E89B42600E1FF71 /* UXToolbarDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXToolbarDelegate-Protocol.h"; sourceTree = "<group>"; };
+		7498D2F21E89B42600E1FF71 /* UXTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXTransitionController.h; sourceTree = "<group>"; };
+		7498D2F31E89B42600E1FF71 /* UXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXView.h; sourceTree = "<group>"; };
+		7498D2F41E89B42600E1FF71 /* UXViewAnimationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXViewAnimationContext.h; sourceTree = "<group>"; };
+		7498D2F51E89B42600E1FF71 /* UXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXViewController.h; sourceTree = "<group>"; };
+		7498D2F61E89B42600E1FF71 /* UXViewControllerAnimatedTransitioning-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXViewControllerAnimatedTransitioning-Protocol.h"; sourceTree = "<group>"; };
+		7498D2F71E89B42600E1FF71 /* UXViewControllerContextTransitioning-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXViewControllerContextTransitioning-Protocol.h"; sourceTree = "<group>"; };
+		7498D2F81E89B42600E1FF71 /* UXViewControllerInteractiveTransitioning-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXViewControllerInteractiveTransitioning-Protocol.h"; sourceTree = "<group>"; };
+		7498D2F91E89B42600E1FF71 /* UXViewControllerTransitionCoordinator-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXViewControllerTransitionCoordinator-Protocol.h"; sourceTree = "<group>"; };
+		7498D2FA1E89B42600E1FF71 /* UXViewControllerTransitionCoordinatorContext-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UXViewControllerTransitionCoordinatorContext-Protocol.h"; sourceTree = "<group>"; };
+		7498D2FB1E89B42600E1FF71 /* UXViewControllerWindowTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXViewControllerWindowTransition.h; sourceTree = "<group>"; };
+		7498D2FC1E89B42600E1FF71 /* UXWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXWindowController.h; sourceTree = "<group>"; };
+		7498D2FD1E89B42600E1FF71 /* UXZoomingCrossfadeTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXZoomingCrossfadeTransitionController.h; sourceTree = "<group>"; };
 		74A9CD0B1DCAA6900021D654 /* RenderEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderEngine.swift; sourceTree = "<group>"; };
 		74B4FACC1CCAA52D00AE26EC /* DividableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividableViewController.swift; sourceTree = "<group>"; };
 		74B4FAD01CCAA55600AE26EC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -265,9 +413,165 @@
 		7498D2631E89A54900E1FF71 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				7498D2661E89B42600E1FF71 /* Headers */,
 				7498D2641E89A54900E1FF71 /* UXKit.framework */,
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		7498D2661E89B42600E1FF71 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7498D2671E89B42600E1FF71 /* _UXBarItemsContainer-Protocol.h */,
+				7498D2681E89B42600E1FF71 /* _UXButton.h */,
+				7498D2691E89B42600E1FF71 /* _UXButtonCell.h */,
+				7498D26A1E89B42600E1FF71 /* _UXCollectionDocumentView.h */,
+				7498D26B1E89B42600E1FF71 /* _UXCollectionSnapshotView.h */,
+				7498D26C1E89B42600E1FF71 /* _UXCollectionView.h */,
+				7498D26D1E89B42600E1FF71 /* _UXCollectionViewItemKey.h */,
+				7498D26E1E89B42600E1FF71 /* _UXCollectionViewLayoutProxy.h */,
+				7498D26F1E89B42600E1FF71 /* _UXCollectionViewOverdraw-Protocol.h */,
+				7498D2701E89B42600E1FF71 /* _UXCollectionViewRearrangingCoordinator.h */,
+				7498D2711E89B42600E1FF71 /* _UXCollectionViewSectionItemIndexes.h */,
+				7498D2721E89B42600E1FF71 /* _UXContainerView.h */,
+				7498D2731E89B42600E1FF71 /* _UXFlowLayoutInfo.h */,
+				7498D2741E89B42600E1FF71 /* _UXFlowLayoutItem.h */,
+				7498D2751E89B42600E1FF71 /* _UXFlowLayoutRow.h */,
+				7498D2761E89B42600E1FF71 /* _UXFlowLayoutSection.h */,
+				7498D2771E89B42600E1FF71 /* _UXLayoutGuide.h */,
+				7498D2781E89B42600E1FF71 /* _UXNavigationDestination.h */,
+				7498D2791E89B42600E1FF71 /* _UXNavigationItemContainerView.h */,
+				7498D27A1E89B42600E1FF71 /* _UXResizableImage.h */,
+				7498D27B1E89B42600E1FF71 /* _UXSinglePixelLine.h */,
+				7498D27C1E89B42600E1FF71 /* _UXSourceSplitView.h */,
+				7498D27D1E89B42600E1FF71 /* _UXSourceSplitViewDelegate-Protocol.h */,
+				7498D27E1E89B42600E1FF71 /* _UXSourceUtilities.h */,
+				7498D27F1E89B42600E1FF71 /* _UXTableHeaderView.h */,
+				7498D2801E89B42600E1FF71 /* _UXToolbarItemsContainer.h */,
+				7498D2811E89B42600E1FF71 /* _UXViewControllerOneToOneTransitionContext.h */,
+				7498D2821E89B42600E1FF71 /* _UXViewControllerTransitionContext.h */,
+				7498D2831E89B42600E1FF71 /* _UXViewControllerTransitionCoordinator.h */,
+				7498D2841E89B42600E1FF71 /* _UXWindow.h */,
+				7498D2851E89B42600E1FF71 /* CDStructures.h */,
+				7498D2861E89B42600E1FF71 /* MissingTypes.h */,
+				7498D2871E89B42600E1FF71 /* NSAccessibilityElement-Protocol.h */,
+				7498D2881E89B42600E1FF71 /* NSAccessibilityGroup-Protocol.h */,
+				7498D2891E89B42600E1FF71 /* NSAccessibilityImage-Protocol.h */,
+				7498D28A1E89B42600E1FF71 /* NSAccessibilityStaticText-Protocol.h */,
+				7498D28C1E89B42600E1FF71 /* NSColor-Compatibility.h */,
+				7498D28D1E89B42600E1FF71 /* NSControl-Compatibility.h */,
+				7498D28F1E89B42600E1FF71 /* NSDraggingDestination-Protocol.h */,
+				7498D2901E89B42600E1FF71 /* NSDraggingSource-Protocol.h */,
+				7498D2911E89B42600E1FF71 /* NSEvent-UXCollectionViewAdditions.h */,
+				7498D2921E89B42600E1FF71 /* NSGestureRecognizer-UXKit.h */,
+				7498D2931E89B42600E1FF71 /* NSGestureRecognizerDelegate-Protocol.h */,
+				7498D2941E89B42600E1FF71 /* NSImage-Compatibility.h */,
+				7498D2951E89B42600E1FF71 /* NSImage-UXKit.h */,
+				7498D2961E89B42600E1FF71 /* NSIndexPath-UXCollectionViewAdditions.h */,
+				7498D2971E89B42600E1FF71 /* NSIndexPath-UXTableView.h */,
+				7498D2981E89B42600E1FF71 /* NSMenuItem-Compatibility.h */,
+				7498D2991E89B42600E1FF71 /* NSMutableCopying-Protocol.h */,
+				7498D29A1E89B42600E1FF71 /* NSNull-NSAccessibility.h */,
+				7498D29C1E89B42600E1FF71 /* NSObject-UXCollectionView.h */,
+				7498D29D1E89B42600E1FF71 /* NSPopoverDelegate-Protocol.h */,
+				7498D29E1E89B42600E1FF71 /* NSProgressIndicator-Compatibility.h */,
+				7498D29F1E89B42600E1FF71 /* NSResponder-UXKit.h */,
+				7498D2A01E89B42600E1FF71 /* NSScreen-Compatibility.h */,
+				7498D2A11E89B42600E1FF71 /* NSScrollView-UXKit.h */,
+				7498D2A21E89B42600E1FF71 /* NSSecureCoding-Protocol.h */,
+				7498D2A31E89B42600E1FF71 /* NSTextField-Compatibility.h */,
+				7498D2A41E89B42600E1FF71 /* NSTextFieldCell-UXKit.h */,
+				7498D2A51E89B42600E1FF71 /* NSTextView-Compatibility.h */,
+				7498D2A61E89B42600E1FF71 /* NSToolbarDelegate-Protocol.h */,
+				7498D2A71E89B42600E1FF71 /* NSView-Compatibility.h */,
+				7498D2A81E89B42600E1FF71 /* NSView-UXCollectionViewRearrangingCoordinator.h */,
+				7498D2A91E89B42600E1FF71 /* NSView-UXKit.h */,
+				7498D2AA1E89B42600E1FF71 /* NSView-UXKitAppearance.h */,
+				7498D2AB1E89B42600E1FF71 /* NSViewAnimationContext.h */,
+				7498D2AC1E89B42600E1FF71 /* NSViewController-UXViewController.h */,
+				7498D2AD1E89B42600E1FF71 /* NSWindow-UXKitAppearance.h */,
+				7498D2AE1E89B42600E1FF71 /* NSWindowDelegate-Protocol.h */,
+				7498D2AF1E89B42600E1FF71 /* UIMutableIndexPath.h */,
+				7498D2B01E89B42600E1FF71 /* UITextInputTraits-Protocol.h */,
+				7498D2B11E89B42600E1FF71 /* UXAccessoryBarContainerProtocol.h */,
+				7498D2B21E89B42600E1FF71 /* UXAuxiliaryNavigationStore.h */,
+				7498D2B31E89B42600E1FF71 /* UXBackButton.h */,
+				7498D2B41E89B42600E1FF71 /* UXBackButtonCell.h */,
+				7498D2B51E89B42600E1FF71 /* UXBar.h */,
+				7498D2B61E89B42600E1FF71 /* UXBarButtonItem.h */,
+				7498D2B71E89B42600E1FF71 /* UXBarItem.h */,
+				7498D2B81E89B42600E1FF71 /* UXBarPositioning-Protocol.h */,
+				7498D2B91E89B42600E1FF71 /* UXBarPositioningDelegate-Protocol.h */,
+				7498D2BA1E89B42600E1FF71 /* UXClickEventTracker.h */,
+				7498D2BB1E89B42600E1FF71 /* UXCollectionClipView.h */,
+				7498D2BC1E89B42600E1FF71 /* UXCollectionDocumentView.h */,
+				7498D2BD1E89B42600E1FF71 /* UXCollectionReusableView.h */,
+				7498D2BE1E89B42600E1FF71 /* UXCollectionView.h */,
+				7498D2BF1E89B42600E1FF71 /* UXCollectionViewAnimation.h */,
+				7498D2C01E89B42600E1FF71 /* UXCollectionViewCell.h */,
+				7498D2C11E89B42600E1FF71 /* UXCollectionViewController.h */,
+				7498D2C21E89B42600E1FF71 /* UXCollectionViewData.h */,
+				7498D2C31E89B42600E1FF71 /* UXCollectionViewDataSource-Protocol.h */,
+				7498D2C41E89B42600E1FF71 /* UXCollectionViewDelegate-Protocol.h */,
+				7498D2C51E89B42600E1FF71 /* UXCollectionViewFlowLayout.h */,
+				7498D2C61E89B42600E1FF71 /* UXCollectionViewFlowLayoutInvalidationContext.h */,
+				7498D2C71E89B42600E1FF71 /* UXCollectionViewIndexPathsSet.h */,
+				7498D2C81E89B42600E1FF71 /* UXCollectionViewLayout.h */,
+				7498D2C91E89B42600E1FF71 /* UXCollectionViewLayoutAccessibility.h */,
+				7498D2CA1E89B42600E1FF71 /* UXCollectionViewLayoutAttributes.h */,
+				7498D2CB1E89B42600E1FF71 /* UXCollectionViewLayoutInvalidationContext.h */,
+				7498D2CC1E89B42600E1FF71 /* UXCollectionViewLayoutProxyDelegate-Protocol.h */,
+				7498D2CD1E89B42600E1FF71 /* UXCollectionViewLayoutSectionAccessibility.h */,
+				7498D2CE1E89B42600E1FF71 /* UXCollectionViewMutableIndexPathsSet.h */,
+				7498D2CF1E89B42600E1FF71 /* UXCollectionViewRearrangingCoordinatorDragRecognizer.h */,
+				7498D2D01E89B42600E1FF71 /* UXCollectionViewUpdate.h */,
+				7498D2D11E89B42600E1FF71 /* UXCollectionViewUpdateGap.h */,
+				7498D2D21E89B42600E1FF71 /* UXCollectionViewUpdateItem.h */,
+				7498D2D31E89B42600E1FF71 /* UXControl.h */,
+				7498D2D41E89B42600E1FF71 /* UXDragEventTracker.h */,
+				7498D2D51E89B42600E1FF71 /* UXEventTracker.h */,
+				7498D2D61E89B42600E1FF71 /* UXIdentityTransitionController.h */,
+				7498D2D71E89B42600E1FF71 /* UXImageView.h */,
+				7498D2D81E89B42600E1FF71 /* UXKit.h */,
+				7498D2D91E89B42600E1FF71 /* UXKitAppearance-Protocol.h */,
+				7498D2DA1E89B42600E1FF71 /* UXLabel.h */,
+				7498D2DB1E89B42600E1FF71 /* UXLayoutSupport-Protocol.h */,
+				7498D2DC1E89B42600E1FF71 /* UXLongClickEventTracker.h */,
+				7498D2DD1E89B42600E1FF71 /* UXNavigationBar.h */,
+				7498D2DE1E89B42600E1FF71 /* UXNavigationController.h */,
+				7498D2DF1E89B42600E1FF71 /* UXNavigationControllerDelegate-Protocol.h */,
+				7498D2E01E89B42600E1FF71 /* UXNavigationDestination-Protocol.h */,
+				7498D2E11E89B42600E1FF71 /* UXNavigationItem.h */,
+				7498D2E21E89B42600E1FF71 /* UXNavigationRoot-Protocol.h */,
+				7498D2E31E89B42600E1FF71 /* UXParallaxTransitionController.h */,
+				7498D2E41E89B42600E1FF71 /* UXPinchEventTracker.h */,
+				7498D2E51E89B42600E1FF71 /* UXPopover.h */,
+				7498D2E61E89B42600E1FF71 /* UXPopoverController.h */,
+				7498D2E71E89B42600E1FF71 /* UXProxyViewController.h */,
+				7498D2E81E89B42600E1FF71 /* UXSlideTransitionController.h */,
+				7498D2E91E89B42600E1FF71 /* UXSourceController.h */,
+				7498D2EA1E89B42600E1FF71 /* UXTabBarController.h */,
+				7498D2EB1E89B42600E1FF71 /* UXTabBarItem.h */,
+				7498D2EC1E89B42600E1FF71 /* UXTableLayout.h */,
+				7498D2ED1E89B42600E1FF71 /* UXTableView.h */,
+				7498D2EE1E89B42600E1FF71 /* UXTableViewCell.h */,
+				7498D2EF1E89B42600E1FF71 /* UXTableViewController.h */,
+				7498D2F01E89B42600E1FF71 /* UXToolbar.h */,
+				7498D2F11E89B42600E1FF71 /* UXToolbarDelegate-Protocol.h */,
+				7498D2F21E89B42600E1FF71 /* UXTransitionController.h */,
+				7498D2F31E89B42600E1FF71 /* UXView.h */,
+				7498D2F41E89B42600E1FF71 /* UXViewAnimationContext.h */,
+				7498D2F51E89B42600E1FF71 /* UXViewController.h */,
+				7498D2F61E89B42600E1FF71 /* UXViewControllerAnimatedTransitioning-Protocol.h */,
+				7498D2F71E89B42600E1FF71 /* UXViewControllerContextTransitioning-Protocol.h */,
+				7498D2F81E89B42600E1FF71 /* UXViewControllerInteractiveTransitioning-Protocol.h */,
+				7498D2F91E89B42600E1FF71 /* UXViewControllerTransitionCoordinator-Protocol.h */,
+				7498D2FA1E89B42600E1FF71 /* UXViewControllerTransitionCoordinatorContext-Protocol.h */,
+				7498D2FB1E89B42600E1FF71 /* UXViewControllerWindowTransition.h */,
+				7498D2FC1E89B42600E1FF71 /* UXWindowController.h */,
+				7498D2FD1E89B42600E1FF71 /* UXZoomingCrossfadeTransitionController.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		74A9CD0A1DCAA6870021D654 /* RenderEngine */ = {

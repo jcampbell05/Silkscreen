@@ -37,8 +37,17 @@ typealias UIViewPropertyAnimator = ViewPropertyAnimator
 typealias UIVisualEffectView = NSVisualEffectView
 typealias UIWindow = NSWindow
 
-func UIEdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> UIEdgeInsets {
+func UIEdgeInsetsMake(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat) -> UIEdgeInsets {
   return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+}
+
+func UIEdgeInsetsInsetRect(rect: CGRect, insets: UIEdgeInsets) -> CGRect {
+  var rect = rect
+  rect.origin.x	+= insets.left;
+  rect.origin.y	+= insets.top;
+  rect.size.width  -= (insets.left + insets.right);
+  rect.size.height -= (insets.top  + insets.bottom);
+  return rect;
 }
 
 enum ViewAnimationCurve : Int {

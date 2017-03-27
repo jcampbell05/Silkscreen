@@ -6,8 +6,10 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import UIKit
-import GMImagePicker
+#if os(iOS) || os(watchOS) || os(tvOS)
+  import UIKit
+  import GMImagePicker
+#endif
 
 // - Tweak Colors and Designs to feel "pro"
 // - TODO: Extensions for protocols

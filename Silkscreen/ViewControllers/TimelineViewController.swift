@@ -6,8 +6,11 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import MobileCoreServices
-import UIKit
+#if os(iOS) || os(watchOS) || os(tvOS)
+  import MobileCoreServices
+  import UIKit
+#endif
+
 import Photos
 
 // - Add Timebar and playback / fullscreen options to the navigation bar.
@@ -41,7 +44,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
         
         installsStandardGestureForInteractiveMovement = true
         
-        // Reenable when layout supports it
+        // Re-enable when layout supports it
         collectionView?.prefetchingEnabled = false
         collectionView?.directionalLockEnabled = true
         collectionView?.alwaysBounceVertical = true

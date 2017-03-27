@@ -1,10 +1,10 @@
 use_frameworks!
 
 target 'Silkscreen iPad' do
-    platform :ios, '10.0'
-    pod 'GPUImage'
-    pod 'GMImagePicker'
-    pod 'UICollectionViewLeftAlignedLayout'
+  platform :ios, '10.0'
+  pod 'GPUImage'
+  pod 'GMImagePicker'
+  pod 'UICollectionViewLeftAlignedLayout'
 end
 
 target 'Silkscreen MacOS' do

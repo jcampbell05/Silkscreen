@@ -6,7 +6,9 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
+#if os(iOS) || os(watchOS) || os(tvOS)
 import UIKit
+#endif
 
 private var DraggingAssociationKey: UInt8 = 0
 
@@ -32,7 +34,7 @@ extension UIViewController {
     }
     
     func findDraggingDestinationForDraggingInfo(info: DraggingInfo) -> DraggingDestination? {
-        
+      
         let location = view.convertPoint(info.draggingLocation, fromView: info.destinationWindow)
         let inside = view.pointInside(location, withEvent: nil)
         let canAcceptDrag = (self as? DraggingDestination)?.shouldAllowDrag(info) ?? false

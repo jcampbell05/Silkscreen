@@ -6,7 +6,9 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
+#if os(iOS) || os(watchOS) || os(tvOS)
 import UIKit
+#endif
 import GPUImage
 
 // - Apple TV Support
@@ -39,7 +41,7 @@ class PreviewViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func loadView() {
         view = imageView
     }

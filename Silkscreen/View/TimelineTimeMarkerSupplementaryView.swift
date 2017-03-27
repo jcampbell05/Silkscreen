@@ -6,7 +6,9 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
+#if os(iOS) || os(watchOS) || os(tvOS)
 import UIKit
+#endif
 import Darwin
 
 class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
@@ -33,7 +35,7 @@ class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+  
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         
         super.applyLayoutAttributes(layoutAttributes)

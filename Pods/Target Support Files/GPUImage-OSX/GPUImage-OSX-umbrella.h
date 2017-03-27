@@ -164,6 +164,12 @@
 #import "GPUImageWhiteBalanceFilter.h"
 #import "GPUImageXYDerivativeFilter.h"
 #import "GPUImageZoomBlurFilter.h"
+#import "GPUImage.h"
+#import "GPUImageAVCamera.h"
+#import "GPUImageContext.h"
+#import "GPUImageMovieWriter.h"
+#import "GPUImagePicture.h"
+#import "GPUImageView.h"
 
 FOUNDATION_EXPORT double GPUImageVersionNumber;
 FOUNDATION_EXPORT const unsigned char GPUImageVersionString[];

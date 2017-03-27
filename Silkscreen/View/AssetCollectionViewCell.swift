@@ -7,7 +7,9 @@
 //
 
 import Photos
+#if os(iOS) || os(watchOS) || os(tvOS)
 import UIKit
+#endif
 
 // - Come up with way to load assets
 // - Come up with good Arch for asset loading

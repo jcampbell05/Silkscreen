@@ -6,7 +6,9 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS) || os(tvOS)
+    import UIKit
+#endif
 
 @objc class DraggingSession: NSObject {
     

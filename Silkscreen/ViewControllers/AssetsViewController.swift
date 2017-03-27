@@ -6,9 +6,11 @@
 //  Copyright © 2016 SK. All rights reserved.
 //
 
-import MobileCoreServices
-import UICollectionViewLeftAlignedLayout
-import UIKit
+#if os(iOS) || os(watchOS) || os(tvOS)
+  import MobileCoreServices
+  import UICollectionViewLeftAlignedLayout
+  import UIKit
+#endif
 
 // - Use Diff
 // - UIDocumentInteractionController Support

@@ -95,12 +95,20 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return editorContext?.tracks.count ?? 0
     }
+  
+  #endif
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         let track = editorContext?.tracks[section]
         return track?.items.count ?? 0
     }
+  
+  #endif
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
      

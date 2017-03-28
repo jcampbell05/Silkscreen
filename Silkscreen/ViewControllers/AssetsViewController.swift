@@ -104,7 +104,11 @@ class AssetsViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return editorContext?.assets.count ?? 0
     }
-    
+  
+  #endif
+  
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetCollectionViewCell), forIndexPath: indexPath)
@@ -115,6 +119,5 @@ class AssetsViewController: UICollectionViewController {
         
         return cell
     }
-  
   #endif
 }

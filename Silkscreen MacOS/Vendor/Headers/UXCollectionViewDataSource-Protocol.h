@@ -9,7 +9,7 @@
 @class NSIndexPath, NSString, UXCollectionReusableView, UXCollectionView, UXCollectionViewCell;
 
 @protocol UXCollectionViewDataSource <NSObject>
-- (UXCollectionViewCell *)collectionView:(UXCollectionView *)arg1 cellForItemAtIndexPath:(NSIndexPath *)arg2;
+- (UXCollectionViewCell *)collectionView:(UXCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 - (long long)collectionView:(UXCollectionView *)arg1 numberOfItemsInSection:(long long)arg2;
 
 @optional

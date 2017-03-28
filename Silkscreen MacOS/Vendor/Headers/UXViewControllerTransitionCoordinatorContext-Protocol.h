@@ -11,7 +11,7 @@
 @protocol UXViewControllerTransitionCoordinatorContext <NSObject>
 - (UXView *)containerView;
 - (UXViewController *)viewControllerForKey:(NSString *)arg1;
-- (long long)completionCurve;
+- (UXViewAnimationCurve)completionCurve;
 - (double)completionVelocity;
 - (double)percentComplete;
 - (double)transitionDuration;

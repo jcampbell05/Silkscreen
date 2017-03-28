@@ -55,18 +55,6 @@ func UIEdgeInsetsInsetRect(rect: CGRect, _ insets: UIEdgeInsets) -> CGRect {
   return rect;
 }
 
-enum ViewAnimationCurve : Int {
-  
-  
-  case easeInOut // slow at beginning and end
-  
-  case easeIn // slow at beginning
-  
-  case easeOut // slow at end
-  
-  case linear
-}
-
 class Asset {
   
   let localIdentifier: String = ""
@@ -119,7 +107,7 @@ class ViewPropertyAnimator {
   var fractionComplete: CGFloat = 0.0
   var reversed: Bool = false
   
-  init(duration: Double, curve: ViewAnimationCurve, animations: (() -> Swift.Void)? = nil) {
+  init(duration: Double, curve: UXViewAnimationCurve, animations: (() -> Swift.Void)? = nil) {
     
   }
   
@@ -135,18 +123,18 @@ class ViewPropertyAnimator {
 public enum BlurEffectStyle : Int {
   
   
-  case extraLight
+  case ExtraLight
   
-  case light
+  case Light
   
-  case dark
+  case Dark
   
-  
-  @available(iOS 10.0, *)
-  case regular // Adapts to user interface style
   
   @available(iOS 10.0, *)
-  case prominent // Adapts to user interface style
+  case Regular // Adapts to user interface style
+  
+  @available(iOS 10.0, *)
+  case Prominent // Adapts to user interface style
 }
 
 class VisualEffect {

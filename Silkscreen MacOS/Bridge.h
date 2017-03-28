@@ -10,6 +10,7 @@
 #define Bridge_h
 
 #import "CDStructures.h"
+#import "UXViewAnimationCurve.h"
 #import "NSIndexPath-UXCollectionViewAdditions.h"
 #import "NSIndexPath-UXTableView.h"
 #import "UXBarButtonItem.h"

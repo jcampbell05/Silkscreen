@@ -112,6 +112,7 @@
 		7433DBE31CF8F1B500529931 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		74461E9D1CD1E7160043A86F /* BlurredSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredSheetPresentationController.swift; sourceTree = "<group>"; };
 		74477BB41D1B1DBF0038E058 /* AssetGroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetGroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		744CDF401E8A62C700B15522 /* UXViewAnimationCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UXViewAnimationCurve.h; sourceTree = "<group>"; };
 		745521B81CCFEA900041C072 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		745521BA1CCFEB160041C072 /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
 		745521BC1CCFFECD0041C072 /* AssetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -559,6 +560,7 @@
 				7498D2FB1E89B42600E1FF71 /* UXViewControllerWindowTransition.h */,
 				7498D2FC1E89B42600E1FF71 /* UXWindowController.h */,
 				7498D2FD1E89B42600E1FF71 /* UXZoomingCrossfadeTransitionController.h */,
+				744CDF401E8A62C700B15522 /* UXViewAnimationCurve.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";

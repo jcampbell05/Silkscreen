@@ -14,7 +14,7 @@
 #import "UXCollectionViewDataSource-Protocol.h"
 #import "UXCollectionDocumentView.h"
 #import "UXCollectionViewMutableIndexPathsSet.h"
-
+#import "UXCollectionReusableView.h"
 
 @class CALayer, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, UXCollectionDocumentView, UXCollectionViewData, UXCollectionViewIndexPathsSet, UXCollectionViewLayout, UXCollectionViewMutableIndexPathsSet, UXCollectionViewUpdate, _UXCollectionViewRearrangingCoordinator;
 
@@ -236,7 +236,7 @@
 - (void)_reuseCell:(id)arg1;
 - (long long)_maxNumberOfReusedViews;
 - (long long)_numberOfReusedViewsForIdentifier:(id)arg1;
-- (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
+- (UXCollectionReusableView *)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3 viewCategory:(unsigned long long)arg4;
 - (void)registerNib:(id)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;

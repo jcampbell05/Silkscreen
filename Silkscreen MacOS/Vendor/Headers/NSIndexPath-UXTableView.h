@@ -7,10 +7,11 @@
 @import  AppKit;
 
 @interface NSIndexPath (UXTableView)
-+ (id)indexPathForRow:(long long)arg1 inSection:(long long)arg2;
-@property(readonly, nonatomic) long long row;
 
-// Remaining properties
-@property(readonly, nonatomic) long long section;
+@property(readonly, nonatomic) NSInteger row;
+@property(readonly, nonatomic) NSInteger section;
+
++ (id)indexPathForRow:(NSInteger)row inSection:(NSInteger)section;
+
 @end
 

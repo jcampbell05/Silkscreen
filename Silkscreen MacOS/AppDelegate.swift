@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     rootViewController = EditorViewController()
     windowController = UXWindowController(rootViewController: rootViewController)
     
+    //TODO: Look into NSLayout Crash
     windowController.window?.setContentSize(NSSize(width:1000, height:700))
     windowController.showWindow(self)
   }

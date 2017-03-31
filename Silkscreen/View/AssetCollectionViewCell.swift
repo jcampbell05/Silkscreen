@@ -17,6 +17,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
     
     var asset: PHAsset? = nil {
         didSet {
+          #if os(iOS) || os(watchOS) || os(tvOS)
             if let asset = asset {
             
                 let manager = PHImageManager.defaultManager()
@@ -35,6 +36,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
                     self.setNeedsLayout()
                 })
             }
+          #endif
         }
     }
     
@@ -44,13 +46,15 @@ class AssetCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         clipsToBounds = true
         
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         
         addSubview(imageView)
+      #endif
     }
     
     required init?(coder aDecoder: NSCoder) {

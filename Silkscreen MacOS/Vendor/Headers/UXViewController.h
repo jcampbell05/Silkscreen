@@ -83,7 +83,7 @@
 - (void)_loadViewIfNotLoaded;
 - (void)_setupResponderChainIfNecessary;
 - (void)_prepareForAnimationInContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(nullable NSString *)name bundle:(nullable NSBundle *)bundle;
 - (id)init;
 @property(nonatomic) BOOL hidesBottomBarWhenPushed;
 - (long long)preferredToolbarPosition;

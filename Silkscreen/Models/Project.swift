@@ -11,6 +11,12 @@ import UIKit
 #endif
 
 // - Implement Document System From Suture
+#if os(iOS) || os(watchOS) || os(tvOS)
 class Project: UIDocument {
     
 }
+#else
+  class Project {
+    
+}
+#endif

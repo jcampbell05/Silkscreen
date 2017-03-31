@@ -26,7 +26,8 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
     private var draggingSession: DraggingSession?
 
     private var lastDraggingDestination: DraggingDestination?
-    
+  
+  #if os(iOS) || os(watchOS) || os(tvOS)
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,13 +43,16 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+  
+  #endif
     
     func beginDraggingSession(session: DraggingSession) {
         
         draggingSession = session
         
         let imageView = UIImageView(image: session.image)
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         imageView.frame = CGRectOffset(imageView.frame, session.offset.x - CGRectGetMidX(imageView.frame), session.offset.y + CGRectGetMidY(imageView.frame))
         imageView.layer.shadowRadius = 5
         imageView.layer.shadowColor = UIColor.blackColor().CGColor
@@ -56,12 +60,13 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         imageView.layer.shadowOffset = CGSizeMake(0, 3)
         
         addSubview(imageView)
-        
+        #endif
         draggingImageView = imageView
     }
 
     @objc func dragGestureRecognizerDidUpdate(dragGestureRecognizer: UIPanGestureRecognizer) {
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let location = dragGestureRecognizer.locationInView(rootViewController?.view)
         
         if let draggingSession = draggingSession {
@@ -75,10 +80,12 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
                 endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             }
         }
+      #endif
     }
     
     @objc func longPressRecognizerDidUpdate(longPressRecognizer: UILongPressGestureRecognizer) {
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let location = longPressRecognizer.locationInView(rootViewController?.view)
         
         if let draggingSession = draggingSession {
@@ -88,10 +95,12 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
                 endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             }
         }
+      #endif
     }
     
     private func updateDraggingDestination(location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let info = DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self, draggingImage: image)
         let draggingDestination = rootViewController?.findDraggingDestinationForDraggingInfo(info)
         
@@ -106,6 +115,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
         draggingDestination?.draggingUpdated(info)
         
         lastDraggingDestination = draggingDestination
+      #endif
     }
     
     private func endDraggingSession(location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {

@@ -17,7 +17,7 @@
     NSToolbarItem *_navigationBarToolbarItem;
 }
 
-+ (id)defaultWindow;
++ (_UXWindow *)defaultWindow;
 @property __weak NSToolbarItem *navigationBarToolbarItem; // @synthesize navigationBarToolbarItem=_navigationBarToolbarItem;
 - (void)cxx_destruct;
 - (void)windowDidBecomeFirstResponder:(id)arg1;

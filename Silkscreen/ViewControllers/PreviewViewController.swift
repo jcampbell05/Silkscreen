@@ -31,22 +31,22 @@ class PreviewViewController: UIViewController {
         }
     }
   
-    #if os(iOS) || os(watchOS) || os(tvOS)
+    override init() {
+        super.init()
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        renderEngine.addTarget(imageView)
+       // renderEngine.addTarget(imageView)
     }
-  
-    #endif
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func loadView() {
-        view = imageView
-    }
+//    override func loadView() {
+//        //view = imageView
+//    }
 }

@@ -5,22 +5,26 @@
 //  Created by James Campbell on 3/26/17.
 //  Copyright © 2017 SK. All rights reserved.
 //
+// TODO: Embed UXKit
 
 import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+  
+  var rootViewController: EditorViewController!
+  var windowController: UXWindowController!
 
-  @IBOutlet weak var window: NSWindow!
-
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
+  func applicationDidFinishLaunching(notification: NSNotification) {
     
-    let controller = UXWindowController()
+    rootViewController = EditorViewController()
+    windowController = UXWindowController(rootViewController: rootViewController)
     
-    // Insert code here to initialize your application
+    windowController.window?.setContentSize(NSSize(width:1000, height:700))
+    windowController.showWindow(self)
   }
 
-  func applicationWillTerminate(_ aNotification: Notification) {
+  func applicationWillTerminate(notification: NSNotification) {
     // Insert code here to tear down your application
   }
 

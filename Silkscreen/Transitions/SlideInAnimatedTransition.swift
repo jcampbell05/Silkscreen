@@ -17,7 +17,8 @@ import UIKit
     }
    
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         // - Methods for these which trap when nil
         guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
             return
@@ -51,13 +52,16 @@ import UIKit
                                     _ in
                                     transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         })
+      #endif
     }
     
     private func animateWithContext(transitionContext: UIViewControllerContextTransitioning, animations: () -> Void, completion: (Bool) -> Void) {
-        
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         // NOTE: We will use the new property animator in iOS 10 to reverse the presentation animation
         UIView.animateWithDuration(transitionDuration(transitionContext),
                                    animations: animations,
                                    completion: completion)
+      #endif
     }
 }

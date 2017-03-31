@@ -18,7 +18,8 @@ class RenderTrack: GPUImageFilter {
         guard let asset = track.items.value.first?.0 else {
             return
         }
-            
+      
+      #if os(iOS) || os(watchOS) || os(tvOS)
         let manager = PHImageManager.defaultManager()
         let option = PHImageRequestOptions()
         
@@ -35,5 +36,6 @@ class RenderTrack: GPUImageFilter {
             pictureSource.addTarget(self)
             pictureSource.processImage()
         })
+      #endif
     }
 }

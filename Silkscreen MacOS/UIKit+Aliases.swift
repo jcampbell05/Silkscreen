@@ -31,8 +31,10 @@ typealias UIPasteboard = NSPasteboard
 typealias UIPercentDrivenInteractiveTransition = PercentDrivenInteractiveTransition
 typealias UIPresentationController = PresentationController
 typealias UIPanGestureRecognizer = NSPanGestureRecognizer
+typealias UINavigationController = UXNavigationController
 typealias UINavigationControllerDelegate = UXNavigationControllerDelegate
 typealias UITapGestureRecognizer = NSClickGestureRecognizer
+typealias UITextField = NSTextField
 typealias UILabel = UXLabel
 typealias UILongPressGestureRecognizer = NSClickGestureRecognizer
 typealias UIStackView = NSStackView
@@ -246,4 +248,25 @@ extension NSView {
   func setNeedsLayout() {
     
   }
+}
+
+protocol UITextFieldDelegate {
+  
+}
+
+class Notification {
+  
+}
+
+protocol UIViewControllerAnimatedTransitioning {
+  
+}
+
+protocol GMImagePickerControllerDelegate {
+  
+}
+
+
+protocol UIViewControllerTransitioningDelegate {
+  
 }

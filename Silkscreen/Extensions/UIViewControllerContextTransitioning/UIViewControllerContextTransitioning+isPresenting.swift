@@ -13,7 +13,7 @@ import UIKit
 extension UIViewControllerContextTransitioning {
     
     var isPresenting: Bool {
-        
+        #if os(iOS) || os(watchOS) || os(tvOS)
         guard let toViewController = viewControllerForKey(UITransitionContextToViewControllerKey) else {
             return false
         }
@@ -26,5 +26,8 @@ extension UIViewControllerContextTransitioning {
         let isPushingViewController = (toViewController.navigationController?.viewControllers.contains(fromViewController) ?? false)
         
         return (isPresentingViewController || isPushingViewController)
+        #else
+          return true
+      #endif
     }
 }

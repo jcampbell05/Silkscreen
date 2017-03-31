@@ -12,6 +12,7 @@ import UIKit
 
 class DividableViewController: UIViewController {
   
+  //TODO: Alias to remove need
   #if os(iOS) || os(watchOS) || os(tvOS)
     private let stackView = UIStackView(arrangedSubviews: [])
   #else
@@ -42,7 +43,7 @@ class DividableViewController: UIViewController {
         updateStackViewProperties()
         view = stackView
     }
-    
+  
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         view.setNeedsLayout()
@@ -59,10 +60,9 @@ class DividableViewController: UIViewController {
     
     private func updateStackViewProperties() {
       
-        #if os(iOS) || os(watchOS) || os(tvOS)
-        stackView.axis = axis
+      //TODO: Export this properties to be compatiable with UI notation
+        // stackView.axis = axis
         stackView.distribution = .Fill
-        stackView.alignment = .Fill
-        #endif
+       // stackView.alignment = .Fill
     }
 }

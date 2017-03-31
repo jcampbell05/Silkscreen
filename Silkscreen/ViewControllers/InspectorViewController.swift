@@ -11,8 +11,8 @@ import UIKit
 #endif
 
 class InspectorViewController: UIViewController {
-    
-    init() {
+  
+    override init() {
         super.init(nibName: nil, bundle: nil)
         
         title = NSLocalizedString("Inspector", comment: "")

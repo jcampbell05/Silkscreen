@@ -9,7 +9,7 @@
 import Photos
 
 extension PHAsset: PasteboardWriting {
-  func writeToPasteboard(pasteboard: UIPasteboard) {
+  func writeToPasteboard(_ pasteboard: UIPasteboard) {
     pasteboard.string = self.localIdentifier
   }
 }

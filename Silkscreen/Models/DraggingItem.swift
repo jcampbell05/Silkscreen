@@ -20,7 +20,7 @@ class DraggingItem {
         self.item = pasteboardWriter
     }
     
-    func setDraggingFrame(draggingFrame: CGRect, image: UIImage) {
+    func setDraggingFrame(_ draggingFrame: CGRect, image: UIImage) {
         self.draggingFrame = draggingFrame
         self.image = image
     }

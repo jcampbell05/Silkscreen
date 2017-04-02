@@ -14,17 +14,16 @@ import UIKit
 // - Profit :)
 class AssetGroupsCollectionViewLayout: UICollectionViewLayout {
     
-    override func prepareLayout() {
+    override func prepare() {
         
-        let numberOfSections = collectionView?.numberOfSections() ?? 0
+        let numberOfSections = collectionView?.numberOfSections ?? 0
 
         #if os(iOS) || os(watchOS) || os(tvOS)
-        for (section, _) in (0..<numberOfSections).enumerate() {
+        for (section, _) in (0..<numberOfSections).enumerated() {
             
-            let itemCount = collectionView?.numberOfItemsInSection(section) ?? 0
-            let indexPath = NSIndexPath(forItem: 0, inSection: section)
-          
-            let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+            let itemCount = collectionView?.numberOfItems(inSection: section) ?? 0
+            let indexPath = NSIndexPath(item: 0, section: section)
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
         }
         #endif
         

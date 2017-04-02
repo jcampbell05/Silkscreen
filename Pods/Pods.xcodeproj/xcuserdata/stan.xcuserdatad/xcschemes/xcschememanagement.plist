@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>GMImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>GPUImage-OSX.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>GPUImage-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-Silkscreen MacOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-Silkscreen iPad.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>UICollectionViewLeftAlignedLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>241F21001BBC23864B56931E5E8EBC35</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41EF9168C89CD3EF8C082398E9438C23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E8B885C7A1E4C5B7658C809703BB976</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90C729AE7A6587932D6B943EBB546645</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE09193F4D9949768840E6F7F91A5CF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D450F76FAD56DB26724EE0E96B367B3A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -12,7 +12,7 @@ import UIKit
 
 class TimelineTrackHeaderSupplementaryView: UICollectionReusableView {
     
-    private let textLabel = UILabel()
+    fileprivate let textLabel = UILabel()
     
     var trackID: Int = 0 {
         didSet {
@@ -27,11 +27,11 @@ class TimelineTrackHeaderSupplementaryView: UICollectionReusableView {
         addSubview(textLabel)
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        backgroundColor = UIColor.grayColor()
+        backgroundColor = UIColor.gray
       #endif
         
         textLabel.frame = bounds
-        textLabel.textAlignment = .Center
+        textLabel.textAlignment = .center
     }
     
     required init?(coder aDecoder: NSCoder) {

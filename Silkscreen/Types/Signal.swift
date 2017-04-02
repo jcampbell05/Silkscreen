@@ -12,7 +12,7 @@ import Foundation
 class Signal<T> {
     
     let sender: T
-    private var slots = Frozen<[Slot<T>]>(value: [])
+    fileprivate var slots = Frozen<[Slot<T>]>(value: [])
     
     init(sender: T) {
         self.sender = sender
@@ -20,20 +20,20 @@ class Signal<T> {
     
     func trigger() {
         slots.value.forEach {
-            $0.callback?(sender: sender)
+            $0.callback?(sender)
         }
     }
     
-    func addSlot(callback: (sender: T) -> Void) -> Slot<T> {
+    func addSlot(_ callback: @escaping (_ sender: T) -> Void) -> Slot<T> {
         let slot = Slot(signal: self)
         slot.callback = callback
-        slot.callback?(sender: sender)
+        slot.callback?(sender)
     
         slots = slots.append(slot)
         return slot
     }
     
-    func removeSlot(slot: Slot<T>) {
+    func removeSlot(_ slot: Slot<T>) {
         
         let newSlots = slots.value.filter {
             $0.signalID != slot.signalID

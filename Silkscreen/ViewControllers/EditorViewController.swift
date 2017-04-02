@@ -14,35 +14,50 @@
 // - Tweak Colors and Designs to feel "pro"
 // - TODO: Extensions for protocols
 class EditorViewController: DividableViewController, UIViewControllerTransitioningDelegate, GMImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+    /**
+     *  Tells the delegate that the user finish picking photos or videos.
+     *  @param picker The controller object managing the assets picker interface.
+     *  @param assets An array containing picked PHAssets objects.
+     */
+    func assetsPickerController(_ picker: GMImagePickerController!, didFinishPickingAssets assets: [Any]!) {
+        let assets = assets as! [PHAsset]
+        
+        assets.forEach { asset in
+            editorContext.addAsset(asset)
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+
 
     let editorContext = EditorContext()
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     private lazy var addButton: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(didPressAdd))
+        return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didPressAdd))
     }()
   #endif
   
-    private lazy var contentAreaViewController: DividableViewController = {
+    fileprivate lazy var contentAreaViewController: DividableViewController = {
         let viewController = DividableViewController(arrangedSubviewControllers: [self.assetsViewController, self.previewViewController])
-        viewController.axis = .Horizontal
+        viewController.axis = .horizontal
         return viewController
     }()
   
-    private let assetsViewController = AssetsViewController()
-    private let previewViewController = PreviewViewController()
+    fileprivate let assetsViewController = AssetsViewController()
+    fileprivate let previewViewController = PreviewViewController()
     
-    private lazy var timelineNavigationController: UINavigationController = {
+    fileprivate lazy var timelineNavigationController: UINavigationController = {
         return UINavigationController(rootViewController: self.timelineViewController)
     }()
     
-    private let timelineViewController = TimelineViewController()
+    fileprivate let timelineViewController = TimelineViewController()
   
-    private lazy var titleField: UITextField = {
+    fileprivate lazy var titleField: UITextField = {
       let titleField = UITextField(frame: CGRect(x:0, y:0, width:100, height:40))
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-      titleField.returnKeyType = .Done
+      titleField.returnKeyType = .done
       titleField.delegate = self
         #endif
       
@@ -57,12 +72,12 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
         #endif
         titleField.text = NSLocalizedString("Untitled Project", comment: "")
       
-//      
-//        addArrangedChildViewController(contentAreaViewController)
-//        addArrangedChildViewController(timelineNavigationController)
-//        
-//        contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
-//        assetsViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
+      
+        addArrangedChildViewController(contentAreaViewController)
+        addArrangedChildViewController(timelineNavigationController)
+        
+        contentAreaViewController.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45, constant: 0.0).isActive = true
+        assetsViewController.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5, constant: 0.0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,33 +94,33 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
         timelineViewController.editorContext = editorContext
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
     #if os(iOS) || os(watchOS) || os(tvOS)
-        navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.tintColor = UIColor.blackColor()
-        navigationController?.navigationBar.barTintColor = UIColor.lightGrayColor()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = UIColor.lightGray
       #endif
     }
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+//    func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
   
   #endif
     
     
-    @objc private func didPressAdd() {
+    @objc fileprivate func didPressAdd() {
        #if os(iOS) || os(watchOS) || os(tvOS)
         let viewController = GMImagePickerController()
         viewController.delegate = self
         viewController.transitioningDelegate = self
-        viewController.modalPresentationStyle = .Custom
+        viewController.modalPresentationStyle = .custom
         
-        presentViewController(viewController, animated: true, completion: nil)
+        present(viewController, animated: true, completion: nil)
       #endif
     }
     
@@ -121,7 +136,7 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
         return SlideInAnimatedTransition()
     }
     
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         
         let presentationController = presentedViewController?.presentationController as? BlurredSheetPresentationController
         return presentationController?.interactiveDismissTransition
@@ -129,31 +144,31 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController?, sourceViewController source: UIViewController) -> UIPresentationController? {
         
-        return BlurredSheetPresentationController(presentedViewController: presented, presentingViewController: presenting)
+        return BlurredSheetPresentationController(presentedViewController: presented, presenting: presenting)
     }
   
 
     // - <GMImagePickerControllerDelegate>
   
-    func assetsPickerControllerDidCancel(picker: GMImagePickerController!) {
-      picker.dismissViewControllerAnimated(true, completion: nil)
+    func assetsPickerControllerDidCancel(_ picker: GMImagePickerController!) {
+      picker.dismiss(animated: true, completion: nil)
     }
   
-    func assetsPickerController(picker: GMImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
-      
-      let assets = assets as! [PHAsset]
-      
-      assets.forEach { asset in
-        editorContext.addAsset(asset)
-      }
-      
-      picker.dismissViewControllerAnimated(true, completion: nil)
-    }
+//    func assetsPickerController(picker: GMImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
+//      
+//      let assets = assets as! [PHAsset]
+//      
+//      assets.forEach { asset in
+//        editorContext.addAsset(asset)
+//      }
+//      
+//      picker.dismiss(animated: true, completion: nil)
+//    }
   #endif
   
     // - <UITextFieldDelegate>
   #if os(iOS) || os(watchOS) || os(tvOS)
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     
       textField.endEditing(false)
     

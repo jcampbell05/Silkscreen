@@ -15,7 +15,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
-        let bounds = UIScreen.mainScreen().bounds
+        let bounds = UIScreen.main.bounds
         return Window(frame: bounds)
     }()
     
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        return UINavigationController(rootViewController: self.rootViewController)
     }()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

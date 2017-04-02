@@ -21,7 +21,7 @@ extension UIViewController {
             fatalError("Dragging Session started with view without dragging compatable Window")
         }
         
-        guard let pasteboard = UIPasteboard(name: "com.silkscreen.drag-and-drop", create: true) else {
+        guard let pasteboard = UIPasteboard(name: UIPasteboardName(rawValue: "com.silkscreen.drag-and-drop"), create: true) else {
             fatalError("Pastboard for Dragging Session failed to be created")
         }
         
@@ -33,11 +33,11 @@ extension UIViewController {
         return session
     }
     
-    func findDraggingDestinationForDraggingInfo(info: DraggingInfo) -> DraggingDestination? {
+    func findDraggingDestinationForDraggingInfo(_ info: DraggingInfo) -> DraggingDestination? {
       
         #if os(iOS) || os(watchOS) || os(tvOS)
-        let location = view.convertPoint(info.draggingLocation, fromView: info.destinationWindow)
-        let inside = view.pointInside(location, withEvent: nil)
+        let location = view.convert(info.draggingLocation, from: info.destinationWindow)
+        let inside = view.point(inside: location, with: nil)
         let canAcceptDrag = (self as? DraggingDestination)?.shouldAllowDrag(info) ?? false
         
         if (inside && canAcceptDrag) {

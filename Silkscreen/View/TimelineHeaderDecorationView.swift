@@ -17,7 +17,7 @@ class TimelineHeaderDecorationView: UICollectionReusableView {
         super.init(frame: frame)
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        backgroundColor = UIColor.darkGrayColor()
+        backgroundColor = UIColor.darkGray
       #endif
     }
     

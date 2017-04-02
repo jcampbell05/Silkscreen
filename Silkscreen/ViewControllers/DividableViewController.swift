@@ -16,12 +16,12 @@ class DividableViewController: UIViewController {
   #if os(iOS) || os(watchOS) || os(tvOS)
     private let stackView = UIStackView(arrangedSubviews: [])
   #else
-    private let stackView = UIStackView(views: [])
+    fileprivate let stackView = UIStackView(views: [])
   #endif
   
-    private let arrangedSubviewControllers: [UIViewController]
+    fileprivate let arrangedSubviewControllers: [UIViewController]
     
-    var axis: UILayoutConstraintAxis = .Vertical {
+    var axis: UILayoutConstraintAxis = .vertical {
         didSet {
             updateStackViewProperties()
         }
@@ -37,31 +37,32 @@ class DividableViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-  
-    override func viewDidLoad() {
-        // Add the Stack View since setting it to be the view in `loadView`
-        // causes a crash on Mac OS
-        stackView.frame = view.bounds
-        view.addSubview(stackView)
-      
+    
+    override func loadView() {
         arrangedSubviewControllers.forEach(addArrangedChildViewController)
         updateStackViewProperties()
+        view = stackView
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.setNeedsLayout()
     }
     
-    func addArrangedChildViewController(viewController: UIViewController) {
+    func addArrangedChildViewController(_ viewController: UIViewController) {
         
         viewController.beginAppearanceTransition(true, animated: false)
-        viewController.willMoveToParentViewController(self)
+        viewController.willMove(toParentViewController: self)
         addChildViewController(viewController)
         stackView.addArrangedSubview(viewController.view)
         viewController.endAppearanceTransition()
     }
     
-    private func updateStackViewProperties() {
+    fileprivate func updateStackViewProperties() {
       
       //TODO: Export this properties to be compatiable with UI notation
         // stackView.axis = axis
-        stackView.distribution = .Fill
+        stackView.distribution = .fill
        // stackView.alignment = .Fill
     }
 }

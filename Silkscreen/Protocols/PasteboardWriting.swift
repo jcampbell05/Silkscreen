@@ -11,5 +11,5 @@ import UIKit
 #endif
 
 protocol PasteboardWriting {
-    func writeToPasteboard(pasteboard: UIPasteboard)
+    func writeToPasteboard(_ pasteboard: UIPasteboard)
 }

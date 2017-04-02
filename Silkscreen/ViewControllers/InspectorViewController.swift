@@ -12,9 +12,14 @@ import UIKit
 
 class InspectorViewController: UIViewController {
   
-    override init() {
+//    override init() {
+//        super.init(nibName: nil, bundle: nil)
+//        
+//        title = NSLocalizedString("Inspector", comment: "")
+//    }
+  
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nil, bundle: nil)
-        
         title = NSLocalizedString("Inspector", comment: "")
     }
     

@@ -15,7 +15,7 @@ class EditorContext {
     
     init () {
         
-        (1...5).enumerate().forEach {
+        (1...5).enumerated().forEach {
             _ in
             addTrack()
         }
@@ -23,7 +23,7 @@ class EditorContext {
     
     //MARK:- Tracks
     
-    private(set) var tracks = Frozen<[Track]>(value: [])
+    fileprivate(set) var tracks = Frozen<[Track]>(value: [])
     
     func addTrack() {
         
@@ -38,23 +38,23 @@ class EditorContext {
     
     //MARK:- Assets
     
-    private(set) var assets = Frozen<[PHAsset]>(value: []) {
+    fileprivate(set) var assets = Frozen<[PHAsset]>(value: []) {
         didSet {
             assetsDidChangeSignal.trigger()
         }
     }
     
-    private(set) lazy var assetsDidChangeSignal: Signal<EditorContext> = {
+    fileprivate(set) lazy var assetsDidChangeSignal: Signal<EditorContext> = {
         return Signal(sender: self)
     }()
     
-    func addAsset(asset: PHAsset) {
+    func addAsset(_ asset: PHAsset) {
         assets = assets.append(asset)
     }
     
     //MARK:- Items
     
-    private(set) lazy var trackItemsDidChangeSignal: Signal<EditorContext> = {
+    fileprivate(set) lazy var trackItemsDidChangeSignal: Signal<EditorContext> = {
         return Signal(sender: self)
     }()
 }

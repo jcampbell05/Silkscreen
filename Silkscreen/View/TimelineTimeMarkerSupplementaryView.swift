@@ -13,9 +13,9 @@ import Darwin
 
 class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
     
-    private let textLabel = UILabel()
+    fileprivate let textLabel = UILabel()
     
-    var time: NSTimeInterval = 0 {
+    var time: TimeInterval = 0 {
         didSet {
             textLabel.text = "\(time)"
         }
@@ -29,16 +29,16 @@ class TimelineTimeMarkerSupplementaryView: UICollectionReusableView {
        
         textLabel.frame = bounds
         textLabel.text = "0:00"
-        textLabel.textColor = UIColor.lightGrayColor()
+        textLabel.textColor = UIColor.lightGray
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
   
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         
-        super.applyLayoutAttributes(layoutAttributes)
+        super.apply(layoutAttributes)
         
         if let layoutAttributes = layoutAttributes as? TimelineCollectionViewLayoutAttributes {
             time = layoutAttributes.time

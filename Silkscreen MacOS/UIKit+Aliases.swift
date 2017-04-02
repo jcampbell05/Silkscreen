@@ -21,7 +21,7 @@ typealias UICollectionViewCell = UXCollectionViewCell
 typealias UICollectionViewController = UXCollectionViewController
 typealias UICollectionViewLayoutAttributes = UXCollectionViewLayoutAttributes
 typealias UIBarButtonItem = UXBarButtonItem
-typealias UIEdgeInsets = NSEdgeInsets
+typealias UIEdgeInsets = EdgeInsets
 typealias UIImage = NSImage
 typealias UIImageView = UXImageView
 typealias UIGestureRecognizer = NSGestureRecognizer
@@ -44,11 +44,11 @@ typealias UIViewPropertyAnimator = ViewPropertyAnimator
 typealias UIVisualEffectView = NSVisualEffectView
 typealias UIWindow = NSWindow
 
-func UIEdgeInsetsMake(top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> UIEdgeInsets {
+func UIEdgeInsetsMake(_ top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> UIEdgeInsets {
   return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
 }
 
-func UIEdgeInsetsInsetRect(rect: CGRect, _ insets: UIEdgeInsets) -> CGRect {
+func UIEdgeInsetsInsetRect(_ rect: CGRect, _ insets: UIEdgeInsets) -> CGRect {
   var rect = rect
   rect.origin.x	+= insets.left;
   rect.origin.y	+= insets.top;
@@ -61,14 +61,14 @@ class Asset {
   
   let localIdentifier: String = ""
   
-  static func fetchAssetsWithLocalIdentifiers(identifiers:[String], options: AnyObject?) -> FetchResult {
+  static func fetchAssetsWithLocalIdentifiers(_ identifiers:[String], options: AnyObject?) -> FetchResult {
     return FetchResult()
   }
 }
 
 class PercentDrivenInteractiveTransition {
  
-  func updateInteractiveTransition(progress: CGFloat) {
+  func updateInteractiveTransition(_ progress: CGFloat) {
     
   }
   
@@ -97,10 +97,10 @@ class PresentationController {
   func presentationTransitionWillBegin() {
   }
   
-  func presentationTransitionDidEnd(completed: Bool) {
+  func presentationTransitionDidEnd(_ completed: Bool) {
   }
   
-  func dismissalTransitionDidEnd(completed: Bool) {
+  func dismissalTransitionDidEnd(_ completed: Bool) {
   }
 }
 
@@ -125,18 +125,18 @@ class ViewPropertyAnimator {
 public enum BlurEffectStyle : Int {
   
   
-  case ExtraLight
+  case extraLight
   
-  case Light
+  case light
   
-  case Dark
+  case dark
   
-  
-  @available(iOS 10.0, *)
-  case Regular // Adapts to user interface style
   
   @available(iOS 10.0, *)
-  case Prominent // Adapts to user interface style
+  case regular // Adapts to user interface style
+  
+  @available(iOS 10.0, *)
+  case prominent // Adapts to user interface style
 }
 
 class VisualEffect {
@@ -144,7 +144,7 @@ class VisualEffect {
 
 class UIBlurEffect : VisualEffect {
   
-  private let style: BlurEffectStyle
+  fileprivate let style: BlurEffectStyle
   
   init(style: BlurEffectStyle) {
     self.style = style
@@ -235,7 +235,7 @@ extension UXCollectionView {
 }
 
 extension UXViewController {
-  func beginAppearanceTransition(begin: Bool, animated: Bool) {
+  func beginAppearanceTransition(_ begin: Bool, animated: Bool) {
     
   }
   

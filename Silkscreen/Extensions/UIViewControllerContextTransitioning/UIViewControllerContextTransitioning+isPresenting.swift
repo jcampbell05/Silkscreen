@@ -14,11 +14,11 @@ extension UIViewControllerContextTransitioning {
     
     var isPresenting: Bool {
         #if os(iOS) || os(watchOS) || os(tvOS)
-        guard let toViewController = viewControllerForKey(UITransitionContextToViewControllerKey) else {
+        guard let toViewController = viewController(forKey: UITransitionContextViewControllerKey.to) else {
             return false
         }
         
-        guard let fromViewController = viewControllerForKey(UITransitionContextFromViewControllerKey) else {
+        guard let fromViewController = viewController(forKey: UITransitionContextViewControllerKey.from) else {
             return false
         }
         

@@ -12,9 +12,9 @@ import GPUImage
 // - With Asset Manager
 class RenderEngine: GPUImageFilter {
     
-    func render(context: EditorContext) {
+    func render(_ context: EditorContext) {
         
-        context.tracks.value.reverse().forEach { track in
+        context.tracks.value.reversed().forEach { track in
             
             let renderTrack = RenderTrack()
             

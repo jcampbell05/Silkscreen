@@ -12,23 +12,23 @@ import UIKit
 
 extension UIViewControllerContextTransitioning {
     
-    func addViewForNextViewControllerIfNeeded(aboveOtherViews: Bool) {
+    func addViewForNextViewControllerIfNeeded(_ aboveOtherViews: Bool) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        guard let toViewController = viewControllerForKey(UITransitionContextToViewControllerKey) else {
+        guard let toViewController = viewController(forKey: UITransitionContextViewControllerKey.to) else {
             return
         }
         
-        guard let fromViewController = viewControllerForKey(UITransitionContextFromViewControllerKey) else {
+        guard let fromViewController = viewController(forKey: UITransitionContextViewControllerKey.from) else {
             return
         }
         
         if toViewController.view.superview == nil {
             
             if aboveOtherViews {
-                containerView().addSubview(toViewController.view)
+                containerView.addSubview(toViewController.view)
             } else {
-                containerView().insertSubview(toViewController.view, belowSubview: fromViewController.view)
+                containerView.insertSubview(toViewController.view, belowSubview: fromViewController.view)
             }
         }
       

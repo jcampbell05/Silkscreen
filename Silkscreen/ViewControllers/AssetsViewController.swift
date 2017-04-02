@@ -27,7 +27,7 @@ class AssetsViewController: UICollectionViewController {
         return UILongPressGestureRecognizer(target: self, action: #selector(longPressToDragGestureDidUpdate))
     }()
     
-    override init() {
+    init() {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
         let layout = UICollectionViewLeftAlignedLayout()
@@ -36,8 +36,8 @@ class AssetsViewController: UICollectionViewController {
       #endif
         
         layout.minimumInteritemSpacing = 10
-        layout.itemSize = CGSizeMake(100
-            , 50)
+        layout.itemSize = CGSize(width: 100
+            , height: 50)
         layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
 
         super.init(collectionViewLayout: layout)
@@ -51,12 +51,12 @@ class AssetsViewController: UICollectionViewController {
         
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = UIColor.darkGrayColor()
+        collectionView?.backgroundColor = UIColor.darkGray
         collectionView?.addGestureRecognizer(longPressToDragGestureRecognizer)
-        collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
+        collectionView?.register(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AssetCollectionViewCell()))
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
       
       #if os(iOS) || os(watchOS) || os(tvOS)
@@ -64,19 +64,19 @@ class AssetsViewController: UICollectionViewController {
       #endif
     }
     
-    @objc private func longPressToDragGestureDidUpdate(gestureRecognizer: UIGestureRecognizer) {
+    @objc fileprivate func longPressToDragGestureDidUpdate(_ gestureRecognizer: UIGestureRecognizer) {
         
-        guard gestureRecognizer.state == .Began else {
+        guard gestureRecognizer.state == .began else {
             return
         }
         
-        let location = gestureRecognizer.locationInView(collectionView)
+        let location = gestureRecognizer.location(in: collectionView)
         
-        guard let indexPath = collectionView?.indexPathForItemAtPoint(location) else {
+        guard let indexPath = collectionView?.indexPathForItem(at: location) else {
             return
         }
         
-        guard let cell = collectionView?.cellForItemAtIndexPath(indexPath) else {
+        guard let cell = collectionView?.cellForItem(at: indexPath) else {
             return
         }
       
@@ -88,20 +88,20 @@ class AssetsViewController: UICollectionViewController {
       
         let renderer = UIGraphicsImageRenderer(size: cell.bounds.size)
         
-        let image = renderer.imageWithActions { _ in
-            cell.drawViewHierarchyInRect(cell.bounds, afterScreenUpdates: false)
+        let image = renderer.image { _ in
+            cell.drawHierarchy(in: cell.bounds, afterScreenUpdates: false)
         }
         
         let draggingItem = DraggingItem(pasteboardWriter: asset)
         draggingItem.setDraggingFrame(cell.bounds, image: image)
-        beginDraggingSession(with: draggingItem, location: gestureRecognizer.locationInView(view))
+        beginDraggingSession(with: draggingItem, location: gestureRecognizer.location(in: view))
       
       #endif
     }
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return editorContext?.assets.count ?? 0
     }
   
@@ -109,9 +109,9 @@ class AssetsViewController: UICollectionViewController {
   
   
   #if os(iOS) || os(watchOS) || os(tvOS)
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetCollectionViewCell), forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AssetCollectionViewCell.self), for: indexPath as IndexPath)
         
         if let cell = cell as? AssetCollectionViewCell {
             cell.asset = editorContext?.assets[indexPath.row]

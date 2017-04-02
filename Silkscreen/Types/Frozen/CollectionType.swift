@@ -8,28 +8,28 @@
 
 import Foundation
 
-extension Frozen where T: CollectionType {
+extension Frozen where T: Collection {
     
-    subscript(index: T.Index) -> T.Generator.Element {
+    subscript(index: T.Index) -> T.Iterator.Element {
         get {
             return value[index]
         }
     }
     
-    var count: T.Index.Distance {
+    var count: T.IndexDistance {
         return value.count
     }
 }
 
-extension Frozen where T: RangeReplaceableCollectionType {
+extension Frozen where T: RangeReplaceableCollection {
     
-    func append(element: T.Generator.Element) -> Frozen {
+    func append(_ element: T.Iterator.Element) -> Frozen {
         var newValue = value
         newValue.append(element)
         return Frozen(value: newValue)
     }
     
-    func appendContentsOf<S: SequenceType where S.Generator.Element == T.Generator.Element>(newElements: S) -> Frozen {
+    func appendContentsOf<S: Sequence>(_ newElements: S) -> Frozen where S.Iterator.Element == T.Iterator.Element {
         return Frozen(value: value + newElements)
     }
 }

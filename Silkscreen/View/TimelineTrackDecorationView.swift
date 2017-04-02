@@ -17,8 +17,8 @@ class TimelineTrackDecorationView: UICollectionReusableView {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
         
-        backgroundColor = UIColor.lightGrayColor()
-        layer.borderColor = UIColor.whiteColor().CGColor
+        backgroundColor = UIColor.lightGray
+        layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 1
       
       #endif

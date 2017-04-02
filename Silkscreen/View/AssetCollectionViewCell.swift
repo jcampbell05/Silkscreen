@@ -20,18 +20,18 @@ class AssetCollectionViewCell: UICollectionViewCell {
           #if os(iOS) || os(watchOS) || os(tvOS)
             if let asset = asset {
             
-                let manager = PHImageManager.defaultManager()
+                let manager = PHImageManager.default()
                 let option = PHImageRequestOptions()
                 
-                option.synchronous = true
+                option.isSynchronous = true
                 
-                manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+                manager.requestImage(for: asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
                    
                     guard let result = result else {
                         return
                     }
                     
-                    self.imageView.contentMode = .ScaleAspectFill
+                    self.imageView.contentMode = .scaleAspectFill
                     self.imageView.image = result
                     self.setNeedsLayout()
                 })

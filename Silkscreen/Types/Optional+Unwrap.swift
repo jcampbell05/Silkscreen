@@ -10,9 +10,9 @@ import Foundation
 
 extension Optional {
     
-    func unwrap(callback: (optionalValue: Wrapped) -> Void) {
+    func unwrap(_ callback: (_ optionalValue: Wrapped) -> Void) {
         if let optionalValue = self {
-            callback(optionalValue: optionalValue)
+            callback(optionalValue)
         }
     }
 }

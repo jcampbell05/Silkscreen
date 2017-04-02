@@ -12,17 +12,17 @@ import Photos
 
 class Track {
     
-    private(set) var items = Frozen<[(PHAsset, Int)]>(value: []) {
+    fileprivate(set) var items = Frozen<[(PHAsset, Int)]>(value: []) {
         didSet {
             itemsDidChangeSignal.trigger()
         }
     }
     
-    private(set) lazy var itemsDidChangeSignal: Signal<Track> = {
+    fileprivate(set) lazy var itemsDidChangeSignal: Signal<Track> = {
         return Signal(sender: self)
     }()
     
-    func addItem(asset: PHAsset, time: Int) {
+    func addItem(_ asset: PHAsset, time: Int) {
         items = items.append((asset, time))
     }
 }

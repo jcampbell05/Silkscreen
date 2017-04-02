@@ -12,12 +12,12 @@ import Foundation
 class Slot<T> {
     
     let signalID: String
-    private let signal: Signal<T>
+    fileprivate let signal: Signal<T>
     
-    var callback: ((sender: T) -> Void)? = nil
+    var callback: ((_ sender: T) -> Void)? = nil
  
     init(signal: Signal<T>) {
-        self.signalID = NSUUID().UUIDString
+        self.signalID = UUID().uuidString
         self.signal = signal
     }
     

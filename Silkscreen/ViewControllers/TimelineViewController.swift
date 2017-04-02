@@ -29,55 +29,55 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     
     let layout = TimelineCollectionViewLayout()
     
-    override init() {
+    init() {
         
         super.init(collectionViewLayout: layout)
       
       #if os(iOS) || os(watchOS) || os(tvOS)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Play, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: nil, action: nil)
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
         label.text = "0:00:00"
-        label.textAlignment = .Center
+        label.textAlignment = .center
         
         navigationItem.titleView = label
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .Plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: nil, action: nil)
         
         installsStandardGestureForInteractiveMovement = true
         
       #endif
         
         // Re-enable when layout supports it
-        collectionView?.prefetchingEnabled = false
-        collectionView?.directionalLockEnabled = true
+        collectionView?.isPrefetchingEnabled = false
+        collectionView?.isDirectionalLockEnabled = true
         collectionView?.alwaysBounceVertical = true
         collectionView?.alwaysBounceHorizontal = true
         
-        collectionView?.backgroundColor = UIColor.darkGrayColor()
-        collectionView?.registerClass(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
-        collectionView?.registerClass(TimelineTrackHeaderSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withReuseIdentifier: TimelineElementKindTrackHeader)
-        collectionView?.registerClass(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(AssetCollectionViewCell))
+        collectionView?.backgroundColor = UIColor.darkGray
+        collectionView?.register(TimelineTimeMarkerSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTimeMarker, withReuseIdentifier: TimelineElementKindTimeMarker)
+        collectionView?.register(TimelineTrackHeaderSupplementaryView.self, forSupplementaryViewOfKind: TimelineElementKindTrackHeader, withReuseIdentifier: TimelineElementKindTrackHeader)
+        collectionView?.register(AssetCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AssetCollectionViewCell.self))
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        navigationController?.navigationBar.translucent = false
-        navigationController?.navigationBar.tintColor = UIColor.blackColor()
-        navigationController?.navigationBar.barTintColor = UIColor.lightGrayColor()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = UIColor.black
+        navigationController?.navigationBar.barTintColor = UIColor.lightGray
       #endif
     }
     
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kind, forIndexPath: indexPath)
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kind, for: indexPath)
         
         switch view  {
         case let view as TimelineTrackHeaderSupplementaryView:
@@ -92,7 +92,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return editorContext?.tracks.count ?? 0
     }
   
@@ -100,7 +100,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         let track = editorContext?.tracks[section]
         return track?.items.count ?? 0
@@ -110,9 +110,9 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
      
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AssetCollectionViewCell), forIndexPath: indexPath) as! AssetCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AssetCollectionViewCell.self), for: indexPath as IndexPath) as! AssetCollectionViewCell
         
         cell.asset = editorContext!.tracks[indexPath.section].items[indexPath.row].0
         
@@ -121,25 +121,25 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
   
   #endif
     
-    func shouldAllowDrag(draggingInfo: DraggingInfo) -> Bool {
+    func shouldAllowDrag(_ draggingInfo: DraggingInfo) -> Bool {
         let pasteBoard = draggingInfo.draggingPasteboard
         return pasteBoard.hasStrings
     }
     
-    func draggingEntered(sender: DraggingInfo) {
+    func draggingEntered(_ sender: DraggingInfo) {
     }
     
-    func draggingUpdated(sender: DraggingInfo) {
+    func draggingUpdated(_ sender: DraggingInfo) {
     }
     
-    func draggingExited(sender: DraggingInfo) {
+    func draggingExited(_ sender: DraggingInfo) {
     }
     
-    func draggingEnded(sender: DraggingInfo) {
+    func draggingEnded(_ sender: DraggingInfo) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
       
-        var location = view.convertPoint(sender.draggingLocation, fromView: sender.destinationWindow)
+        var location = view.convert(sender.draggingLocation, from: sender.destinationWindow)
         location.x -= sender.draggingImage.size.width / 2
         
         let time = layout.timeIdAtPoint(location)
@@ -152,9 +152,9 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
             return
         }
         
-        let fetchResult = PHAsset.fetchAssetsWithLocalIdentifiers([localIdentifier], options: nil)
+        let fetchResult = PHAsset.fetchAssets(withLocalIdentifiers: [localIdentifier], options: nil)
       
-        if let asset = fetchResult.firstObject as? PHAsset {
+        if let asset = fetchResult.firstObject {
           track.addItem(asset, time: time)
         }
       
@@ -163,7 +163,7 @@ class TimelineViewController: UICollectionViewController, DraggingDestination, T
     
     // - <TimelineCollectionViewLayoutDelegate>
     
-    func timeForItem(indexPath: NSIndexPath) -> Int {
+    func timeForItem(_ indexPath: IndexPath) -> Int {
         return editorContext!.tracks[indexPath.section].items[indexPath.row].1
     }
 }

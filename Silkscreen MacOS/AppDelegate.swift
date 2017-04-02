@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var rootViewController: EditorViewController!
   var windowController: UXWindowController!
 
-  func applicationDidFinishLaunching(notification: NSNotification) {
+  func applicationDidFinishLaunching(_ notification: Notification) {
     
     rootViewController = EditorViewController()
     windowController = UXWindowController(rootViewController: rootViewController)
@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     windowController.showWindow(self)
   }
 
-  func applicationWillTerminate(notification: NSNotification) {
+  func applicationWillTerminate(_ notification: Notification) {
     // Insert code here to tear down your application
   }
 

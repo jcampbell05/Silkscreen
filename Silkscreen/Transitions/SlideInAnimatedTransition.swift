@@ -12,19 +12,19 @@ import UIKit
 
 @objc class SlideInAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.2
     }
    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
         // - Methods for these which trap when nil
-        guard let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) else {
+        guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
             return
         }
         
-        guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) else {
+        guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else {
             return
         }
         
@@ -35,7 +35,7 @@ import UIKit
         // - Make Built In
         if transitionContext.isPresenting {
             
-            var initialFrame = transitionContext.finalFrameForViewController(targetViewController)
+            var initialFrame = transitionContext.finalFrame(for: targetViewController)
             initialFrame.origin.y = fromViewController.view.frame.height
                 
             targetViewController.view.frame = initialFrame
@@ -43,23 +43,23 @@ import UIKit
         
         animateWithContext(transitionContext, animations: {
                                     
-                                    let finalFrame = transitionContext.finalFrameForViewController(targetViewController)
+                                    let finalFrame = transitionContext.finalFrame(for: targetViewController)
                                     let yOffset = transitionContext.isPresenting ? 0 : targetViewController.view.bounds.height
                                     
-                                    targetViewController.view.frame = CGRectOffset(finalFrame, 0, yOffset)
+                                    targetViewController.view.frame = finalFrame.offsetBy(dx: 0, dy: yOffset)
             },
                                    completion: {
                                     _ in
-                                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
       #endif
     }
     
-    private func animateWithContext(transitionContext: UIViewControllerContextTransitioning, animations: () -> Void, completion: (Bool) -> Void) {
+    func animateWithContext(_ transitionContext: UIViewControllerContextTransitioning, animations: @escaping () -> Void, completion: @escaping (Bool) -> Void) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
         // NOTE: We will use the new property animator in iOS 10 to reverse the presentation animation
-        UIView.animateWithDuration(transitionDuration(transitionContext),
+        UIView.animate(withDuration: transitionDuration(using: transitionContext),
                                    animations: animations,
                                    completion: completion)
       #endif

@@ -14,18 +14,18 @@ import ObjectiveC
 // - BDD
 class Window: UIWindow, UIGestureRecognizerDelegate {
     
-    private lazy var dragGestureRecognizer: UIPanGestureRecognizer = {
+    fileprivate lazy var dragGestureRecognizer: UIPanGestureRecognizer = {
         return UIPanGestureRecognizer(target:self, action:#selector(dragGestureRecognizerDidUpdate))
     }()
     
-    private lazy var longPressRecognizer: UILongPressGestureRecognizer = {
+    fileprivate lazy var longPressRecognizer: UILongPressGestureRecognizer = {
         return UILongPressGestureRecognizer(target:self, action:#selector(longPressRecognizerDidUpdate))
     }()
     
-    private var draggingImageView: UIImageView?
-    private var draggingSession: DraggingSession?
+    fileprivate var draggingImageView: UIImageView?
+    fileprivate var draggingSession: DraggingSession?
 
-    private var lastDraggingDestination: DraggingDestination?
+    fileprivate var lastDraggingDestination: DraggingDestination?
   
   #if os(iOS) || os(watchOS) || os(tvOS)
     override init(frame: CGRect) {
@@ -46,59 +46,58 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
   
   #endif
     
-    func beginDraggingSession(session: DraggingSession) {
+    func beginDraggingSession(_ session: DraggingSession) {
         
         draggingSession = session
         
         let imageView = UIImageView(image: session.image)
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        imageView.frame = CGRectOffset(imageView.frame, session.offset.x - CGRectGetMidX(imageView.frame), session.offset.y + CGRectGetMidY(imageView.frame))
+        imageView.frame = imageView.frame.offsetBy(dx: session.offset.x - imageView.frame.midX, dy: session.offset.y + imageView.frame.midY)
         imageView.layer.shadowRadius = 5
-        imageView.layer.shadowColor = UIColor.blackColor().CGColor
+        imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 0.8
-        imageView.layer.shadowOffset = CGSizeMake(0, 3)
+        imageView.layer.shadowOffset = CGSize(width: 0, height: 3)
         
         addSubview(imageView)
         #endif
         draggingImageView = imageView
     }
 
-    @objc func dragGestureRecognizerDidUpdate(dragGestureRecognizer: UIPanGestureRecognizer) {
+    @objc func dragGestureRecognizerDidUpdate(_ dragGestureRecognizer: UIPanGestureRecognizer) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        let location = dragGestureRecognizer.locationInView(rootViewController?.view)
+        let location = dragGestureRecognizer.location(in: rootViewController?.view)
         
         if let draggingSession = draggingSession {
         
-            let translation = dragGestureRecognizer.translationInView(self)
-            draggingImageView?.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, translation.x, translation.y)
-        
+            let translation = dragGestureRecognizer.translation(in: self)            
+            draggingImageView?.transform = CGAffineTransform.identity.translatedBy(x: translation.x, y: translation.y)
             updateDraggingDestination(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             
-            if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
+            if dragGestureRecognizer.state == .failed || dragGestureRecognizer.state == .ended || dragGestureRecognizer.state == .cancelled {
                 endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             }
         }
       #endif
     }
     
-    @objc func longPressRecognizerDidUpdate(longPressRecognizer: UILongPressGestureRecognizer) {
+    @objc func longPressRecognizerDidUpdate(_ longPressRecognizer: UILongPressGestureRecognizer) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
-        let location = longPressRecognizer.locationInView(rootViewController?.view)
+        let location = longPressRecognizer.location(in: rootViewController?.view)
         
         if let draggingSession = draggingSession {
             updateDraggingDestination(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             
-            if dragGestureRecognizer.state == .Failed || dragGestureRecognizer.state == .Ended || dragGestureRecognizer.state == .Cancelled {
+            if dragGestureRecognizer.state == .failed || dragGestureRecognizer.state == .ended || dragGestureRecognizer.state == .cancelled {
                 endDraggingSession(location, pasteboard: draggingSession.draggingPasteboard, image: draggingSession.image)
             }
         }
       #endif
     }
     
-    private func updateDraggingDestination(location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
+    fileprivate func updateDraggingDestination(_ location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
       
       #if os(iOS) || os(watchOS) || os(tvOS)
         let info = DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self, draggingImage: image)
@@ -118,7 +117,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
       #endif
     }
     
-    private func endDraggingSession(location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
+    fileprivate func endDraggingSession(_ location: CGPoint, pasteboard: UIPasteboard, image: UIImage) {
         
         lastDraggingDestination?.draggingEnded(DraggingInfo(draggingPasteboard: pasteboard, draggingLocation: location, destinationWindow: self, draggingImage: image))
         lastDraggingDestination = nil
@@ -131,7 +130,7 @@ class Window: UIWindow, UIGestureRecognizerDelegate {
     
     // - <UIGestureRecognizerDelegate>
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }

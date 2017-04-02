@@ -11,5 +11,5 @@ import UIKit
 #endif
 
 class TimelineCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
-    var time: NSTimeInterval = 0.0
+    var time: TimeInterval = 0.0
 }

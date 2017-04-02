@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A080C5221008DABC933AE1 /* Pods_Silkscreen_iPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92955942129A30D9844EED45 /* Pods_Silkscreen_iPad.framework */; };
 		74066B2E1DCAAA0900BA086B /* RenderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74066B2D1DCAAA0900BA086B /* RenderTrack.swift */; };
 		740E54A91E88713300B97CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740E54A81E88713300B97CEC /* AppDelegate.swift */; };
 		740E54AB1E88713300B97CEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740E54AA1E88713300B97CEC /* Assets.xcassets */; };
@@ -97,6 +98,8 @@
 /* Begin PBXFileReference section */
 		1D564E6DD341E81EF69F865B /* Pods-Silkscreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen/Pods-Silkscreen.debug.xcconfig"; sourceTree = "<group>"; };
 		4004C309487E746894E05C9F /* Pods-Silkscreen MacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen MacOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen MacOS/Pods-Silkscreen MacOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4852CF202F1C3474F3BAB9D8 /* Pods-Silkscreen iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen iPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad.debug.xcconfig"; sourceTree = "<group>"; };
+		53E277672BCEC75E164137E6 /* Pods-Silkscreen iPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silkscreen iPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad.release.xcconfig"; sourceTree = "<group>"; };
 		74066B2D1DCAAA0900BA086B /* RenderTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTrack.swift; sourceTree = "<group>"; };
 		740E54A61E88713300B97CEC /* Silkscreen MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silkscreen MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		740E54A81E88713300B97CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +321,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A080C5221008DABC933AE1 /* Pods_Silkscreen_iPad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +335,8 @@
 				F46F202266249B210E60C4D0 /* Pods-Silkscreen.release.xcconfig */,
 				4004C309487E746894E05C9F /* Pods-Silkscreen MacOS.debug.xcconfig */,
 				EDCCCBD0732E282516426C4C /* Pods-Silkscreen MacOS.release.xcconfig */,
+				4852CF202F1C3474F3BAB9D8 /* Pods-Silkscreen iPad.debug.xcconfig */,
+				53E277672BCEC75E164137E6 /* Pods-Silkscreen iPad.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -751,9 +757,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74D638F51C4D941F00175740 /* Build configuration list for PBXNativeTarget "Silkscreen iPad" */;
 			buildPhases = (
+				931E600CACC65CF40E1F5566 /* [CP] Check Pods Manifest.lock */,
 				74D638DF1C4D941F00175740 /* Sources */,
 				74D638E01C4D941F00175740 /* Frameworks */,
 				74D638E11C4D941F00175740 /* Resources */,
+				2F5C383CAF4D4F5B2C247BFE /* [CP] Embed Pods Frameworks */,
+				36454EA41B7D4890AF02A07B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -776,11 +785,12 @@
 				TargetAttributes = {
 					740E54A51E88713300B97CEC = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					74D638E21C4D941F00175740 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = NVCGF729Q5;
+						DevelopmentTeam = 4C8V97R8N3;
 					};
 				};
 			};
@@ -853,6 +863,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen MacOS/Pods-Silkscreen MacOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F5C383CAF4D4F5B2C247BFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36454EA41B7D4890AF02A07B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Silkscreen iPad/Pods-Silkscreen iPad-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		931E600CACC65CF40E1F5566 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B0F6AA3FEEFABB3322559222 /* [CP] Check Pods Manifest.lock */ = {
@@ -1014,7 +1069,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Silkscreen MacOS/Bridge.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1044,7 +1099,7 @@
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Silkscreen MacOS/Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1090,7 +1145,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1129,7 +1183,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1137,32 +1190,34 @@
 		};
 		74D638F61C4D941F00175740 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4852CF202F1C3474F3BAB9D8 /* Pods-Silkscreen iPad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = NVCGF729Q5;
+				DEVELOPMENT_TEAM = 4C8V97R8N3;
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silkscreen.silkscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		74D638F71C4D941F00175740 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53E277672BCEC75E164137E6 /* Pods-Silkscreen iPad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = NVCGF729Q5;
+				DEVELOPMENT_TEAM = 4C8V97R8N3;
 				INFOPLIST_FILE = Silkscreen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silkscreen.silkscreen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

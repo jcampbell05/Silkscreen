@@ -9,7 +9,7 @@
 import Foundation
 
 // - Remove
-class Frozen<T: CollectionType> {
+class Frozen<T: Collection> {
     
     let value: T
     

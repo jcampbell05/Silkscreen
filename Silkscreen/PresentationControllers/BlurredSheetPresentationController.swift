@@ -12,32 +12,37 @@
 
 class BlurredSheetPresentationController: UIPresentationController {
     
-    private let blurringView: UIVisualEffectView = UIVisualEffectView(effect: nil)
-    private lazy var tapGesture: UITapGestureRecognizer = {
+    fileprivate let blurringView: UIVisualEffectView = UIVisualEffectView(effect: nil)
+    fileprivate lazy var tapGesture: UITapGestureRecognizer = {
        return UITapGestureRecognizer(target: self, action: #selector(didPerformDismissGesture))
     }()
     
-    private(set) var interactiveDismissTransition: UIPercentDrivenInteractiveTransition? = nil
-    private(set) lazy var blurringViewRadiusAnimator: UIViewPropertyAnimator = {
+    fileprivate(set) var interactiveDismissTransition: UIPercentDrivenInteractiveTransition? = nil
+    fileprivate(set) lazy var blurringViewRadiusAnimator: UIViewPropertyAnimator = {
         
-        guard let transitionCoordinator = self.presentedViewController.transitionCoordinator() else {
+        guard let transitionCoordinator = self.presentedViewController.transitionCoordinator else {
             fatalError("blurringViewRadiusAnimator used outside of a transition")
         }
       
       
-        return UIViewPropertyAnimator(duration: transitionCoordinator.transitionDuration(), curve: transitionCoordinator.completionCurve()) {
-            self.blurringView.effect = UIBlurEffect(style: .Dark)
+        return UIViewPropertyAnimator(duration: transitionCoordinator.transitionDuration, curve: transitionCoordinator.completionCurve) {
+            self.blurringView.effect = UIBlurEffect(style: .dark)
         }
     }()
     
-    private lazy var panGesture: UIPanGestureRecognizer = {
+    fileprivate lazy var panGesture: UIPanGestureRecognizer = {
         return UIPanGestureRecognizer(target: self, action: #selector(panGestureStateDidUpdate))
     }()
     
-    override func frameOfPresentedViewInContainerView() -> CGRect {
+    override var frameOfPresentedViewInContainerView: CGRect {
         let insets = UIEdgeInsetsMake(100, 100, 100, 100)
-        return UIEdgeInsetsInsetRect(super.frameOfPresentedViewInContainerView(), insets)
+        return UIEdgeInsetsInsetRect(super.frameOfPresentedViewInContainerView, insets)
     }
+    
+//    func frameOfPresentedViewInContainerView() -> CGRect {
+//        let insets = UIEdgeInsetsMake(100, 100, 100, 100)
+//        return UIEdgeInsetsInsetRect(super.frameOfPresentedViewInContainerView, insets)
+//    }
     
     override func presentationTransitionWillBegin() {
         
@@ -57,7 +62,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         blurringViewRadiusAnimator.startAnimation()
     }
     
-    override func presentationTransitionDidEnd(completed: Bool) {
+    override func presentationTransitionDidEnd(_ completed: Bool) {
         
         super.presentationTransitionDidEnd(completed)
         
@@ -68,7 +73,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         }
     }
     
-    override func dismissalTransitionDidEnd(completed: Bool) {
+    override func dismissalTransitionDidEnd(_ completed: Bool) {
         
         super.dismissalTransitionDidEnd(completed)
         
@@ -79,28 +84,28 @@ class BlurredSheetPresentationController: UIPresentationController {
         }
     }
     
-    @objc private func panGestureStateDidUpdate() {
+    @objc fileprivate func panGestureStateDidUpdate() {
         
-        let translation = panGesture.translationInView(panGesture.view)
+        let translation = panGesture.translation(in: panGesture.view)
         let progress = translation.y / (panGesture.view?.bounds.height ?? 1.0)
         
         switch panGesture.state {
-        case .Began:
+        case .began:
             interactiveDismissTransition = UIPercentDrivenInteractiveTransition()
             didPerformDismissGesture()
             break
             
-        case .Changed:
-            interactiveDismissTransition?.updateInteractiveTransition(progress)
+        case .changed:
+            interactiveDismissTransition?.update(progress)
             blurringViewRadiusAnimator.fractionComplete = 1 - progress
             break
             
         default:
             if (progress > 0.5) {
-                blurringViewRadiusAnimator.reversed = true
-                interactiveDismissTransition?.finishInteractiveTransition()
+                blurringViewRadiusAnimator.isReversed = true
+                interactiveDismissTransition?.finish()
             } else {
-                interactiveDismissTransition?.cancelInteractiveTransition()
+                interactiveDismissTransition?.cancel()
             }
             
             blurringViewRadiusAnimator.startAnimation()
@@ -110,7 +115,7 @@ class BlurredSheetPresentationController: UIPresentationController {
         }
     }
     
-    @objc private func didPerformDismissGesture() {
-        presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    @objc fileprivate func didPerformDismissGesture() {
+        presentedViewController.dismiss(animated: true, completion: nil)
     }
 }

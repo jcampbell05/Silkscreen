@@ -37,16 +37,15 @@ class DividableViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func loadView() {
+  
+    override func viewDidLoad() {
+        // Add the Stack View since setting it to be the view in `loadView`
+        // causes a crash on Mac OS
+        stackView.frame = view.bounds
+        view.addSubview(stackView)
+      
         arrangedSubviewControllers.forEach(addArrangedChildViewController)
         updateStackViewProperties()
-        view = stackView
-    }
-  
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        view.setNeedsLayout()
     }
     
     func addArrangedChildViewController(viewController: UIViewController) {

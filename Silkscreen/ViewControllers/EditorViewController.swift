@@ -57,12 +57,12 @@ class EditorViewController: DividableViewController, UIViewControllerTransitioni
         #endif
         titleField.text = NSLocalizedString("Untitled Project", comment: "")
       
-      
-        addArrangedChildViewController(contentAreaViewController)
-        addArrangedChildViewController(timelineNavigationController)
-        
-        contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
-        assetsViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
+//      
+//        addArrangedChildViewController(contentAreaViewController)
+//        addArrangedChildViewController(timelineNavigationController)
+//        
+//        contentAreaViewController.view.heightAnchor.constraintEqualToAnchor(view.heightAnchor, multiplier: 0.45, constant: 0.0).active = true
+//        assetsViewController.view.widthAnchor.constraintEqualToAnchor(view.widthAnchor, multiplier: 0.5, constant: 0.0).active = true
     }
     
     required init?(coder aDecoder: NSCoder) {
